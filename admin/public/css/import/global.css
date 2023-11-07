@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Biến màu sắc của web */
+    --primary-color: #00483d;
+    --price-color: #fd475a;
+    --black: black;
+    --white: white;
+    --background: #f6f6f6;
+    --gray: #4e4e4e;
+    --orange: #f25c05;
+    --green: #009981;
+
+    /*Biến font size */
+    --headings: 24px;
+    --subHeading: 16px;
+    --bodyText: 13px;
+    --inputField: 12px;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+html {
+    /* Để dùng đơn vị rem */
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Roboto Regular";
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*============= Common =============*/
+a {
+    text-decoration: none;
+}
+
+input,
+textarea,
+select,
+button {
+    /* Kế thừa từ thử cha  */
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Class căn khối vào giữa  */
+.main-content {
+    width: 1280px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+/* Class kích thước title heading  */
+.heading {
+    color: #171100;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.heading.lv1 {
+    font-size: 2.4rem;
+    line-height: 1.17;
+}
+
+.heading.lv2 {
+    font-size: 1.6rem;
+    line-height: 1.26;
+}

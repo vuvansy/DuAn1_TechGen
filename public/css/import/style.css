@@ -1,0 +1,29 @@
+#header,
+#footer {
+    background: #029ef3;
+}
+
+ul#main-menu {
+    text-align: center;
+}
+
+ul#main-menu li {
+    display: inline-block;
+}
+ul#main-menu li a {
+    padding: 8px 15px;
+    color: #fff;
+    display: block;
+}
+
+h1 {
+    font-size: 18px;
+    padding: 20px 0px;
+}
+table thead tr td {
+    font-weight: bold;
+}
+table tr td {
+    border: 1px solid #c5c5c5;
+    padding: 5px 10px;
+}
