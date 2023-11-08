@@ -14,10 +14,10 @@
     --green: #009981;
 
     /*Biến font size */
-    --heading: 24px;
-    --subHeading: 16px;
-    --bodyText: 13px;
-    --inputField: 12px;
+    --heading: 2.4rem;
+    --subHeading: 1.6rem;
+    --bodyText: 1.3rem;
+    --inputField: 1.2rem;
 }
 
 html,
@@ -71,12 +71,12 @@ button {
 }
 
 .heading.lv1 {
-    font-size: 2.4rem;
+    font-size: var(--heading);
     line-height: 1.17;
 }
 
 .heading.lv2 {
-    font-size: 1.6rem;
+    font-size: var(--subHeading);
     line-height: 1.26;
 }
 
