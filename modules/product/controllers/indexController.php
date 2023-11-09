@@ -23,3 +23,14 @@ function updateAction()
 function deleteAction()
 {
 }
+
+function productDetailAction()
+{
+    load_view('productDetail');
+}
+
+
+function productListAction()
+{
+    load_view('productList');
+}
