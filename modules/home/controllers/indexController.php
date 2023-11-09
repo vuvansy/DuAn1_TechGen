@@ -10,8 +10,4 @@ function indexAction()
 {
     // echo 'Trang chủ';
     load_view('index');
-
 }
-
-
-

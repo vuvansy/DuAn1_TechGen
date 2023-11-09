@@ -14,10 +14,10 @@
     --green: #009981;
 
     /*Biến font size */
-    --headings: 24px;
-    --subHeading: 16px;
-    --bodyText: 13px;
-    --inputField: 12px;
+    --heading: 2.4rem;
+    --subHeading: 1.6rem;
+    --bodyText: 1.3rem;
+    --inputField: 1.2rem;
 }
 
 html,
@@ -56,7 +56,7 @@ button {
 }
 
 /* Class căn khối vào giữa  */
-.main-content {
+.container {
     width: 1280px;
     max-width: calc(100% - 40px);
     margin: 0 auto;
@@ -71,11 +71,28 @@ button {
 }
 
 .heading.lv1 {
-    font-size: 2.4rem;
+    font-size: var(--heading);
     line-height: 1.17;
 }
 
 .heading.lv2 {
-    font-size: 1.6rem;
+    font-size: var(--subHeading);
     line-height: 1.26;
+}
+
+/* Class nút button */
+.btn {
+    display: inline-block;
+    min-width: 98px;
+    padding: 17px 16px;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.btn:hover {
+    opacity: 0.9;
 }
