@@ -5,6 +5,7 @@ get_header();
 
 <main>
     <h1>tien</h1>
+    <p>?mod=post&action=warranty</p>
 </main>
 
 <?php
