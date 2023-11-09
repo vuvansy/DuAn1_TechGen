@@ -1,6 +1,6 @@
 <!-- Footer  -->
 <footer>
-    <p>Học lập trình web đi làm</p>
+    <p>Bắt đầu làm footer</p>
 </footer>
 </body>
 
