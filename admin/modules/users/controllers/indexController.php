@@ -11,34 +11,28 @@ function construct()
 
 
 
-function loginAction()
+function addAction()
 {
 
-
-    load_view('login');
+    load_view('add');
 }
 
-function resetAction()
+function editAction()
 {
 
-    load_view('reset');
+    load_view('edit');
 }
 
-function newpassAction()
-{
-}
-
-//Logout
-function logoutAction()
-{
-}
-
-
-function updateAction()
+function deleteAction()
 {
 
-    load_view('update');
+    load_view('delete');
 }
 
+function listAction()
+{
+
+    load_view('list');
+}
 
 ?>
