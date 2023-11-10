@@ -8,12 +8,27 @@ get_header();
         ?>
         <div class="sidebar-right">
             <div class="product-heading">
-                Thêm mới sản phẩm
+                Danh sách hàng hóa
             </div>
             <div class="product-bar">
-                <a href="#!" class="product-btn-add">Thêm mới</a>
+                <form action="" class="search-product">
+                    <div class="box-form-product">
+                        <!-- input -->
+                        <input type="text" class="search-product-input" placeholder="Tên sản phẩm" />
+                        <!-- Clear button -->
+                        <!-- <button type="reset" class="search-product-clear">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button> -->
+                    </div>
+                    <!-- Submit button -->
+                    <button class="search-product-btn">
+                        Tìm kiếm
+                    </button>
+                </form>
                 <a href="#!" class="product-btn-list">Danh sách</a>
+                <a href="#!" class="product-btn-add">Thêm mới</a>
             </div>
+            
         </div>
     </div>
 </main>
