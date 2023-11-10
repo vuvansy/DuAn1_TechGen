@@ -55,10 +55,18 @@
     background: #DDD;
 }
 
+.confirm_update-container .container-content {
+    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
+    padding-bottom: 2rem;
+}
+
 .confirm_update-container .container-content .head {
     width: 100%;
     height: 4rem;
-    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
 }
 
 .confirm_update-container .container-content .head .inline {
@@ -157,7 +165,7 @@
     font-weight: 700;
     line-height: normal;
     position: absolute;
-    bottom: 0;
+    bottom: 1rem;
     right: 9rem;
 }
 

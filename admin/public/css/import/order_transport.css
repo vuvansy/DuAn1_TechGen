@@ -55,10 +55,19 @@
     background: #DDD;
 }
 
+.transport-container .container-content {
+    border-radius: 1rem;
+    border: 1px solid #DDD;
+    background: #FFF;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+}
+
 .transport-container .container-content .head {
     width: 100%;
     height: 4rem;
-    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
 }
 
 .transport-container .container-content .head .inline {
@@ -94,6 +103,10 @@
     text-align: center;
     line-height: 3rem;
     margin-left: 2rem;
+}
+
+.transport-container .container-content .content-list .list-group .list-item div {
+    border: 1px solid #DDD;
 }
 
 .transport-container .container-content .content-list .list-group .list-item .icon {

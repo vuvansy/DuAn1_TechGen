@@ -55,10 +55,18 @@
     background: #DDD;
 }
 
+.detail-container .container-content {
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+}
+
 .detail-container .container-content .head {
     width: 100%;
     height: 4rem;
-    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
 }
 
 .detail-container .container-content .head .inline {
@@ -113,11 +121,15 @@
     color: #000;
     height: 6rem;
     margin-left: 2rem;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    border-left: 1px solid #DDD;
 }
 
 .detail-container .container-content .content-list .list-group .list-item div {
     line-height: 6rem;
-    text-align: center
+    text-align: center;
+    border: 1px solid #DDD;
 }
 
 .detail-container .container-content .content-list .list-group .list-item .image img {
@@ -140,9 +152,9 @@
 }
 
 .detail-container .container-content .content-list .total-bar .text {
-
+    border: 1px solid #DDD;
 }
 
-.detail-container .container-content .content-list .total-bar .text .total {
-
+.detail-container .container-content .content-list .total-bar .total {
+    border: 1px solid #DDD;
 }
