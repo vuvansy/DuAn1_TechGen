@@ -26,10 +26,36 @@
     <!-- Import file responsive CSS -->
     <link href="public/responsive.css" rel="stylesheet" type="text/css" />
 
+    <!-- JS Jquery  -->
+    <script src="public/js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="public/js/app.js" type="text/javascript"></script>
+    <script src="public/js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
     <!-- Header  -->
-    <header>
+    <header class="header">
+        <div class="header__body">
+            <!-- Logo  -->
+            <a href="">
+                <img src="public/images/logo/Logo1.jpg" alt="TechGen" class="logo" />
+            </a>
+            <!-- Dropdown user -->
+            <div class="dropdown-user">
+                <ul class="dropdown-user__main">
+                    <li>
+                        <button type="button" class="dropdown-user__cta">
+                            <img src="public/images/user/user.png" class="dropdown-user__img">
+                            <h3 class="heading lv2">Văn Sỹ</h3>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-user__sub">
+                            <li><a href="" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
+                            <li><a href="#" title="Thoát">Thoát</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
+            </div>
+        </div>
     </header>
