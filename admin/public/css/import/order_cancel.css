@@ -1,0 +1,165 @@
+.layout-fullscreen {
+    width: 144rem;
+    display: flex;
+    margin-top: 6rem;
+}
+
+.layout-fullscreen .menu {
+    width: 25rem;
+    height: 91.2rem;
+}
+
+.layout-fullscreen .menu .heading {
+    padding: 1.5rem 2rem;
+    width: 25rem;
+}
+
+.layout-fullscreen .menu .heading a {
+    color: #000;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: 'roboto', sans-serif;
+}
+
+.layout-fullscreen .menu .list-group {
+    margin-top: 1.5rem;
+}
+
+.layout-fullscreen .menu .list-group .list {
+    width: 25rem;
+    height: 5rem;
+    padding: 1.5rem 2rem;
+
+}
+
+.layout-fullscreen .menu .list-group .list a {
+    color: #000;
+    font-family: 'roboto', sans-serif;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.cancel-container {
+    width: 119rem;
+    margin: 0 0 181px 0;
+    height: 727px;
+}
+
+.cancel-container .cancel-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    width: 32.3rem;
+    height: 7.3rem;
+    font-family: 'roboto', 'sans-serif';
+    line-height: 7.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.cancel-container .cancel-bar {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.cancel-container .cancel-bar a {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    width: auto;
+    text-decoration: none;
+}
+
+.cancel-container .cancel-bar .cancel-btn-wait {
+    padding: 1rem 2.7rem 1.1rem 2.7rem;
+    background: #DDD;
+}
+
+.cancel-container .cancel-bar .cancel-btn-now {
+    padding: 1rem 1.3rem 1.1rem 1.3rem;
+    background: #DDD;
+}
+
+.cancel-container .cancel-bar .cancel-btn-cancel {
+    padding: 1rem 2.3rem 1.1rem 2.3rem;
+    color: #fff;
+    background: #F25C05;
+}
+
+.cancel-container .cancel-bar .cancel-btn-success {
+    padding: 1rem 2.4rem 1.1rem 2.3rem;
+    background: #DDD;
+}
+
+.cancel-container .container-content {
+
+}
+
+.cancel-container .container-content .head {
+    width: 100%;
+    height: 4rem;
+    margin-top: 1rem;
+}
+
+.cancel-container .container-content .head .inline {
+    display: flex;
+    height: 4rem;
+    padding: 0 2rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cancel-container .container-content .content-list {
+    margin-top: 2rem;
+}
+
+.cancel-container .container-content .content-list .content-bar {
+    display: grid;
+    width: 111rem;
+    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 19.2rem 16rem;
+    background-color: #000;
+    color: #fff;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-left: 2rem;
+}
+
+.cancel-container .container-content .content-list .list-group {
+
+}
+
+.cancel-container .container-content .content-list .list-group .list-item {
+    display: grid;
+    width: 111rem;
+    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 19.2rem 16rem;
+    color: #000;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-left: 2rem;
+}
+
+.cancel-container .container-content .content-list .list-group .list-item .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel-container .container-content .content-list .list-group .list-item .detail {
+    display: block;
+    color: #000;
+    text-decoration: none;
+}

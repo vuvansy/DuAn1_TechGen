@@ -10,14 +10,37 @@ function indexAction()
 {
   
     load_view('index');
+}
 
+function cancelAction()
+{
+    load_view('cancel');
+}
+
+function successAction()
+{
+    load_view('success');
+}
+
+function confirm_listAction()
+{
+    load_view('confirm_list');
+}
+
+function confirm_updateAction()
+{
+    load_view('confirm_update');
+}
+
+function transportAction()
+{
+    load_view('transport');
 }
 
 function updateAction()
 {
     $id = $_POST['id'];
     echo $id;
-
 }
 
 
