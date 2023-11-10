@@ -60,6 +60,7 @@
     border: 1px solid #DDD;
     background: #FFF;
     margin-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 .success-container .container-content .head {
@@ -102,6 +103,10 @@
     text-align: center;
     line-height: 3rem;
     margin-left: 2rem;
+}
+
+.success-container .container-content .content-list .list-group .list-item div {
+    border: 1px solid #DDD;
 }
 
 .success-container .container-content .content-list .list-group .list-item .icon {

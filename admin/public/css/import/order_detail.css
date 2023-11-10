@@ -59,6 +59,7 @@
     border-radius: 1rem 1rem 0 0;
     border: 1px solid #DDD;
     margin-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 .detail-container .container-content .head {
@@ -127,7 +128,8 @@
 
 .detail-container .container-content .content-list .list-group .list-item div {
     line-height: 6rem;
-    text-align: center
+    text-align: center;
+    border: 1px solid #DDD;
 }
 
 .detail-container .container-content .content-list .list-group .list-item .image img {
@@ -150,9 +152,9 @@
 }
 
 .detail-container .container-content .content-list .total-bar .text {
-
+    border: 1px solid #DDD;
 }
 
-.detail-container .container-content .content-list .total-bar .text .total {
-
+.detail-container .container-content .content-list .total-bar .total {
+    border: 1px solid #DDD;
 }
