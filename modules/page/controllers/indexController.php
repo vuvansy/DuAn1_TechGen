@@ -18,3 +18,15 @@ function detailAction()
     // echo 'Trang chủ';
     load_view('index');
 }
+
+function contactAction()
+{
+    // echo 'Trang chủ';
+    load_view('index');
+}
+
+function newsAction()
+{
+    // echo 'Trang chủ';
+    load_view('index');
+}

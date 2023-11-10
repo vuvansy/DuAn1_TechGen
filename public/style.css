@@ -3,8 +3,12 @@
 @import "../public/css/import/style.css";
 @import "../public/css/import/header.css";
 @import "../public/css/import/footer.css";
+<<<<<<< HEAD
 
 
+=======
+@import "../public/css/import/detail_product.css";
+>>>>>>> 9faabcbf9995a7a6cf41628ace68bbe91c80c4d2
 /* @import "../public/css/import/list_product.css";
 @import "../public/css/import/add_cat.css";
 @import "../public/css/import/info_account.css";
