@@ -1,23 +1,5 @@
-/*add PRODUCT*/
-.layout-fullscreen {
-  width: 144rem;
-  display: flex;
-  margin-top: 6rem;
-}
 
-.layout-fullscreen .menu {
-  width: 25rem;
-  height: 91.2rem;
-  background-color: red;
-}
-
-.product-container {
-  width: 119rem;
-  /*margin-left: 250px;*/
-  margin: 0 0 181px 0;
-  /*background-color: #000;*/
-  height: 727px;
-}
+/******************* sidebar-right ***************/
 
 .product-heading {
   font-size: 2.8rem;
@@ -38,22 +20,69 @@
   gap: 2rem;
 }
 
-.product-bar a {
+.product-bar a{
   font-size: 1.6rem;
   font-weight: 600;
-  color: #000;
+  color: #212529;
   text-align: center;
   width: auto;
   cursor: pointer;
 }
 
 .product-bar .product-btn-add {
-  padding: 1rem 2.7rem 1.1rem 2.7rem;
+  padding: 10px 20px 11px 20px;
   background: #ddd;
 }
 
 .product-bar .product-btn-list {
-  padding: 1rem 2.3rem 1.1rem 2.3rem;
+  padding: 10px 20px 11px 20px;
   color: #fff;
   background: #f25c05;
+}
+
+/* ************ box search ***********/
+.box-form-product {
+  position: relative;
+    display: flex;
+    padding-left: 2rem;
+    margin-bottom: 0;
+    border: 1px solid var(--gray);
+    border-radius: 99px;
+}
+
+.search-product {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 40px;
+  gap: 2rem;
+  margin-right: 10px;
+}
+
+.search-product button, .search-product input {
+  outline: none;
+  border: none;
+  background: transparent;
+  
+}
+
+.search-product .search-product-input {
+  width: 260px;
+  height: 40px;
+}
+
+.search-product .search-product-btn {
+  font-size: 1.6rem;
+  font-weight: 400;
+  background: #ddd;
+  color: #212529;
+  cursor: pointer;
+  text-align: center;
+  padding: 9.2px 20px 9.2px 20px;
+}
+
+.search-product .search-product-clear {
+  position: absolute;
+  right: 130px;
 }

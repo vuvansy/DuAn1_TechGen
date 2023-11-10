@@ -1,19 +1,21 @@
 <?php
 get_header();
 ?>
-<main class="layout-fullscreen">
-    <section class="menu">
-    </section>
-    <section class="product-container">
-        <div class="product-heading">
-            Danh sách hàng hóa
+<main>
+    <div class="main-wrapper">
+        <?php
+        get_sidebar();
+        ?>
+        <div class="sidebar-right">
+            <div class="product-heading">
+                Thêm mới sản phẩm
+            </div>
+            <div class="product-bar">
+                <a href="#!" class="product-btn-add">Thêm mới</a>
+                <a href="#!" class="product-btn-list">Danh sách</a>
+            </div>
         </div>
-
-        <div class="product-bar">
-            <a href="#!" class="product-btn-add">Thêm mới</a>
-            <a href="#!" class="product-btn-list">Danh sách</a>
-        </div>
-    </section>
+    </div>
 </main>
 
 <?php

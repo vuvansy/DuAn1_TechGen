@@ -1,8 +1,20 @@
 /*STYLE*/
 @import "../public/fonts/stylesheet.css";
 @import "../public/css/import/global.css";
+<<<<<<< HEAD
 @import "../public/css/import/product.css";
+=======
+
+@import "../public/css/import/order_cancel.css";
+@import "../public/css/import/order_success.css";
+@import "../public/css/import/order_confirm_list.css";
+@import "../public/css/import/order_confirm_update.css";
+@import "../public/css/import/order_transport.css";
+@import "../public/css/import/order_detail.css";
+
+>>>>>>> f668599cf11d963e9c143d66c7bf3b61b0af2cbf
 @import "../public/css/import/layout.css";
+
 /* 
 @import "../public/css/import/list_post.css";
 @import "../public/css/import/list_product.css";
