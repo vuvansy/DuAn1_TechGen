@@ -1,7 +1,6 @@
 .layout-fullscreen {
     width: 144rem;
     display: flex;
-    margin-top: 6rem;
 }
 
 .layout-fullscreen .menu {
@@ -101,10 +100,6 @@
 .cancel-container .cancel-bar .cancel-btn-success {
     padding: 1rem 2.4rem 1.1rem 2.3rem;
     background: #DDD;
-}
-
-.cancel-container .container-content {
-
 }
 
 .cancel-container .container-content .head {

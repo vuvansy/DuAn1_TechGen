@@ -37,6 +37,11 @@ function transportAction()
     load_view('transport');
 }
 
+function detailAction()
+{
+    load_view('detail');
+}
+
 function updateAction()
 {
     $id = $_POST['id'];

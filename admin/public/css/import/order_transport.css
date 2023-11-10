@@ -1,7 +1,6 @@
 .layout-fullscreen {
     width: 144rem;
     display: flex;
-    margin-top: 6rem;
 }
 
 .layout-fullscreen .menu {
@@ -55,7 +54,7 @@
 .transport-container .transport-heading {
     font-size: 2.8rem;
     font-weight: bold;
-    width: 46.6rem;
+    width: 38.5rem;
     height: 7.3rem;
     font-family: 'roboto', 'sans-serif';
     line-height: 7.3rem;

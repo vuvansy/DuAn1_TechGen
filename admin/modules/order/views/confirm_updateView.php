@@ -101,7 +101,7 @@ get_header();
 
                     </div>
 
-                    <a href="#" class="button_update">
+                    <a href="?mod=order&action=confirm_list" class="button_update">
                         Cập nhật
                     </a>
 

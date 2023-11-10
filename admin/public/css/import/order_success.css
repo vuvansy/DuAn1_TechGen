@@ -1,7 +1,6 @@
 .layout-fullscreen {
     width: 144rem;
     display: flex;
-    margin-top: 6rem;
 }
 
 .layout-fullscreen .menu {

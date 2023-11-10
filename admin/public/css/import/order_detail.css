@@ -1,0 +1,176 @@
+.layout-fullscreen {
+    width: 144rem;
+}
+
+.layout-fullscreen .menu {
+    width: 25rem;
+    height: 91.2rem;
+}
+
+.layout-fullscreen .menu .heading {
+    padding: 1.5rem 2rem;
+    width: 25rem;
+}
+
+.layout-fullscreen .menu .heading a {
+    color: #000;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: 'roboto', sans-serif;
+}
+
+.layout-fullscreen .menu .list-group {
+    margin-top: 1.5rem;
+}
+
+.layout-fullscreen .menu .list-group .list {
+    width: 25rem;
+    height: 5rem;
+    padding: 1.5rem 2rem;
+
+}
+
+.layout-fullscreen .menu .list-group .list a {
+    color: #000;
+    font-family: 'roboto', sans-serif;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.detail-container {
+    width: 119rem;
+    margin: 0 0 181px 0;
+    height: 727px;
+}
+
+.detail-container .detail-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    width: 25rem;
+    height: 7.3rem;
+    font-family: 'roboto', 'sans-serif';
+    line-height: 7.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.detail-container .detail-bar {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.detail-container .detail-bar a {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    width: auto;
+    text-decoration: none;
+}
+
+.detail-container .detail-bar .cancel-btn-wait {
+    padding: 1rem 2.7rem 1.1rem 2.7rem;
+    color: #fff;
+    background: #F25C05;
+}
+
+.detail-container .detail-bar .cancel-btn-now {
+    padding: 1rem 1.3rem 1.1rem 1.3rem;
+    background: #DDD;
+}
+
+.detail-container .detail-bar .cancel-btn-cancel {
+    padding: 1rem 2.3rem 1.1rem 2.3rem;
+    background: #DDD;
+}
+
+.detail-container .detail-bar .cancel-btn-success {
+    padding: 1rem 2.4rem 1.1rem 2.3rem;
+    background: #DDD;
+}
+
+.detail-container .container-content .head {
+    width: 100%;
+    height: 4rem;
+    margin-top: 1rem;
+}
+
+.detail-container .container-content .head .inline {
+    display: flex;
+    height: 4rem;
+    padding: 0 2rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detail-container .container-content .content-list {
+    margin-top: 2rem;
+}
+
+.detail-container .container-content .content-list .content-bar {
+    display: flex;
+    width: 111rem;
+    background-color: #000;
+    color: #fff;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-left: 2rem;
+}
+
+.detail-container .container-content .content-list .content-bar .image {
+    width: 10rem;
+}
+
+.detail-container .container-content .content-list .content-bar .name {
+    width: 53rem;
+}
+
+.detail-container .container-content .content-list .content-bar .price {
+    width: 10rem;
+    margin-right: 6.6rem;
+}
+
+.detail-container .container-content .content-list .content-bar .quantity {
+    width: 10rem;
+    margin-right: 5.6rem;
+}
+
+.detail-container .container-content .content-list .content-bar .total {
+    width: 10rem;
+}
+
+.detail-container .container-content .content-list .list-group .list-item {
+    display: grid;
+    width: 111rem;
+    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 19.2rem 16rem;
+    color: #000;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-left: 2rem;
+}
+
+.detail-container .container-content .content-list .list-group .list-item .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-container .container-content .content-list .list-group .list-item .detail {
+    display: block;
+    color: #000;
+    text-decoration: none;
+}

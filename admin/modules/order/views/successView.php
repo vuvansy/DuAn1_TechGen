@@ -49,7 +49,7 @@ get_header();
 
             <div class="success-bar">
 
-                <a href="" class="cancel-btn-wait">
+                <a href="?mod=order&action=confirm_list" class="cancel-btn-wait">
                     Chờ xác nhận
                 </a>
 
@@ -61,7 +61,7 @@ get_header();
                     Đã hủy
                 </a>
 
-                <a href="" class="cancel-btn-success">
+                <a href="?mod=order&action=success" class="cancel-btn-success">
                     Đã hoàn thành
                 </a>
 
