@@ -6,3 +6,25 @@
                 // return false;
             });
         });
+
+//Slide 
+var arr_hinh = [
+    // "images/bn11.png",
+    "public/images/slide/slide2.jpg",
+    "public/images/slide/slide3.jpg",
+    "public/images/slide/slide5.jpg",
+    "public/images/slide/slide1.jpg"
+];
+
+var index = 0;
+function prev() {
+    index--;
+    if (index <= 0) index = arr_hinh.length - 1;
+    document.getElementById('hinh').src = arr_hinh[index];
+};
+function next() {
+    index++;
+    if (index >= arr_hinh.length) index = 0;
+    document.getElementById('hinh').src = arr_hinh[index];
+}
+setInterval("next()", 5000);
