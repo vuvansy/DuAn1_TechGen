@@ -1,0 +1,67 @@
+/* =========== Footer ===========  */
+footer {
+    background: var(--primary-color);
+    /* height: 300px; */
+}
+
+.footer__top .logo {
+    width: 280px;
+    height: 44px;
+}
+
+.footer__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+
+.column {
+    align-items: center;
+}
+
+.footer__top .title {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75;
+}
+
+.footer__top .column .list {
+    margin-top: 18px;
+    padding-left: 0;
+}
+
+.footer__top .list li {
+    margin-bottom: 10px;
+    font-size: var(--bodyText);
+    line-height: 1.5;
+}
+
+.footer__top .list li:hover {
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.footer__bottom {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer__bottom .icon {
+    margin-bottom: 4px;
+}
+
+.footer__bottom .icon > a {
+    color: white;
+    font-size: var(--bodyText);
+    margin: 0 10px;
+}
+
+.footer__bottom span {
+    color: white;
+    font-size: var(--inputField);
+}
