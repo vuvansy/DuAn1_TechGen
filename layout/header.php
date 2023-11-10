@@ -150,7 +150,6 @@
                 <div class="navbar__menu">
                     <!-- Dropdown category -->
                     <div class="dropdown">
-                        <!-- <button><i class="fa-solid fa-bars btn-icon"></i> Danh mục sản phẩm</button> -->
                         <ul id="main-menu">
                             <li>
                                 <button><i class="fa-solid fa-bars btn-icon"></i> Danh mục sản phẩm</button>
