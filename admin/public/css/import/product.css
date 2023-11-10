@@ -1,0 +1,59 @@
+/*add PRODUCT*/
+.layout-fullscreen {
+  width: 144rem;
+  display: flex;
+  margin-top: 6rem;
+}
+
+.layout-fullscreen .menu {
+  width: 25rem;
+  height: 91.2rem;
+  background-color: red;
+}
+
+.product-container {
+  width: 119rem;
+  /*margin-left: 250px;*/
+  margin: 0 0 181px 0;
+  /*background-color: #000;*/
+  height: 727px;
+}
+
+.product-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  width: 32.3rem;
+  height: 7.3rem;
+  font-family: "roboto", "sans-serif";
+  line-height: 7.3rem;
+  text-align: center;
+}
+
+.product-bar {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.product-bar a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  width: auto;
+  cursor: pointer;
+}
+
+.product-bar .product-btn-add {
+  padding: 1rem 2.7rem 1.1rem 2.7rem;
+  background: #ddd;
+}
+
+.product-bar .product-btn-list {
+  padding: 1rem 2.3rem 1.1rem 2.3rem;
+  color: #fff;
+  background: #f25c05;
+}
