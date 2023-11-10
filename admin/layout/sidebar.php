@@ -1,7 +1,4 @@
 <!-- SIDERBAR -->
-<<<<<<< HEAD
-
-=======
 <div class="sidebar-nav">
     <h1 class="heading lv1">DANH MỤC</h1>
     <ul class="sidebar-nav__list">
@@ -25,4 +22,3 @@
         </li>
     </ul>
 </div>
->>>>>>> 628600e32ccafb1f5e3dcfb2b0ae6d2742ce8447
