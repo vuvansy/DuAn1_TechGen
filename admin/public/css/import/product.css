@@ -94,7 +94,7 @@
 .container-product {
   margin-top: 20px;
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 .container-product .head {
@@ -111,6 +111,11 @@
   padding: 0 20px;
   align-items: center;
   gap: 10px;
+}
+
+.container-product .head .inline .heading {
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
 .container-product .list-bar{
@@ -138,7 +143,7 @@
 }
 
 .container-product .list-table .list-desc th {
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #fff;
 }
@@ -177,7 +182,7 @@
   
 }
 .container-product .list-table .list-item td {
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 400;
   color: black;
   border: 1px solid #000;
@@ -188,4 +193,110 @@
   justify-content: center;
   gap: 40px;
   padding-top: 6px;
+}
+
+
+/****************** add.css + edit.css **************************/
+
+.container-product .container-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-product .container-form .container-form-input{
+  width: 1110px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+
+}
+
+.container-form-input .input-text {
+  flex-basis: 270px;
+  margin-bottom: 20px;
+ 
+}
+.container-form-input .input-text input {
+  width: 270px;
+  height: 30px;
+  border: 1px solid #4F4E4E;
+  border-radius: 6px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.container-form-input .input-text p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.container-form-input .input-text .option {
+  width: 270px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-form-input .input-text .option .option-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+
+.container-form-input .input-text .option .option-input .input-checkbox {
+  width: 10px;
+  height: 10px;
+  
+}
+.container-form-input .input-text .option .option-input .text-checkbox{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: black;
+  padding-bottom: 0px;
+}
+
+.container-form-input .input-text .input-file {
+  height: 30px;
+  padding-left: 0px;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 0;
+}
+
+.container-form-input .input-desc {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container-form-input .input-desc p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.container-form-input .input-desc input {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #4F4E4E;
+  border-radius: 6px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.container-form-input .input-desc .input-content {
+  height: 160px;
+  position: relative;
+}
+
+.container-form-input .input-desc .input-content::placeholder {
+  color: red;
+  position: absolute;
+  top: 20px;
 }
