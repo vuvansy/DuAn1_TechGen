@@ -25,8 +25,8 @@ get_header();
                         Tìm kiếm
                     </button>
                 </form>
-                <a href="#!" class="product-btn-list">Danh sách</a>
-                <a href="#!" class="product-btn-add">Thêm mới</a>
+                <a href="?mod=product&action=list" class="product-btn-list">Danh sách</a>
+                <a href="?mod=product&action=add" class="product-btn-add">Thêm mới</a>
             </div>
             <div class="container-product">
                 <div class="head">
@@ -61,7 +61,7 @@ get_header();
                             <td>Hiện</td>
                             <td>
                                 <div class="table-icon">
-                                   <a href="#!"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
+                                   <a href="?mod=product&action=edit"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
                                   <a href="#!">  <img src="./public/images/icon/delete.svg" alt=""></a>
                                 </div>
                             </td>
@@ -76,7 +76,7 @@ get_header();
                             <td>Hiện</td>
                             <td>
                                 <div class="table-icon">
-                                   <a href="#!"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
+                                   <a href="?mod=product&action=edit"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
                                     <a href="#!"><img src="./public/images/icon/delete.svg" alt=""></a>
                                 </div>
                             </td>
