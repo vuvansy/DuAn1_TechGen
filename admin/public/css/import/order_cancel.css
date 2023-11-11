@@ -109,7 +109,7 @@
     margin-left: 2rem;
 }
 
-.cancel-container .container-content .content-list .list-group .list-item div {
+.cancel-container .container-content .content-list .list-group .list-item td {
     border: 1px solid #DDD;
 }
 
@@ -119,8 +119,7 @@
     align-items: center;
 }
 
-.cancel-container .container-content .content-list .list-group .list-item .detail {
-    display: block;
+.cancel-container .container-content .content-list .list-group .list-item .detail a {
     color: #000;
     text-decoration: none;
 }

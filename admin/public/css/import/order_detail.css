@@ -102,12 +102,10 @@
 
 .detail-container .container-content .content-list .content-bar .price {
     width: 16.4rem;
-    /*margin-right: 6.6rem;*/
 }
 
 .detail-container .container-content .content-list .content-bar .quantity {
     width: 17.5rem;
-    /*margin-right: 5.6rem;*/
 }
 
 .detail-container .container-content .content-list .content-bar .total {
@@ -126,7 +124,7 @@
     border-left: 1px solid #DDD;
 }
 
-.detail-container .container-content .content-list .list-group .list-item div {
+.detail-container .container-content .content-list .list-group .list-item td {
     line-height: 6rem;
     text-align: center;
     border: 1px solid #DDD;

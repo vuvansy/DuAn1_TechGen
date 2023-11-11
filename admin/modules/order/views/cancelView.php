@@ -46,227 +46,342 @@ get_header();
                             </div>
                         </div>
 
-                        <div class="content-list">
+                        <table class="content-list">
 
-                            <div class="content-bar">
-                                <div class=""></div>
-                                <div class="">Mã đơn hàng</div>
-                                <div class="">Ngày đặt hàng</div>
-                                <div class="">Số lượng</div>
-                                <div class="">Tổng tiền</div>
-                                <div class="">Trạng thái</div>
-                                <div class="">Chi tiết</div>
-                            </div>
+                            <thead>
+                                <tr class="content-bar">
+                                    <td class="hollow"></td>
+                                    <td class="id">Mã đơn hàng</td>
+                                    <td class="date">Ngày đặt hàng</td>
+                                    <td class="quantity">Số lượng</td>
+                                    <td class="total">Tổng tiền</td>
+                                    <td class="status">Trạng thái</td>
+                                    <td class="detail">Chi tiết</td>
+                                </tr>
+                            </thead>
 
-                            <div class="list-group">
+                            <tbody class="list-group">
 
-                                <div class="list-item">
+                                <tr class="list-item">
 
-                                    <div class="icon">
+                                    <td class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
                                         </svg>
-                                    </div>
+                                    </td>
 
-                                    <div class="id">
+                                    <td class="id">
                                         IT96281
-                                    </div>
+                                    </td>
 
-                                    <div class="date">
+                                    <td class="date">
                                         03/11/2023
-                                    </div>
+                                    </td>
 
-                                    <div class="quantity">
+                                    <td class="quantity">
                                         2
-                                    </div>
+                                    </td>
 
-                                    <div class="total">
+                                    <td class="total">
                                         44.000.000đ
-                                    </div>
+                                    </td>
 
-                                    <div class="status">
+                                    <td class="status">
                                         Đã hủy
-                                    </div>
+                                    </td>
 
-                                    <a href="" class="detail">
-                                        Chi tiết
-                                    </a>
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
 
-                                </div>
+                                </tr>
+                                <tr class="list-item">
 
-                                <div class="list-item">
-
-                                    <div class="icon">
+                                    <td class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
                                         </svg>
-                                    </div>
+                                    </td>
 
-                                    <div class="id">
+                                    <td class="id">
                                         IT96281
-                                    </div>
+                                    </td>
 
-                                    <div class="date">
+                                    <td class="date">
                                         03/11/2023
-                                    </div>
+                                    </td>
 
-                                    <div class="quantity">
+                                    <td class="quantity">
                                         2
-                                    </div>
+                                    </td>
 
-                                    <div class="total">
+                                    <td class="total">
                                         44.000.000đ
-                                    </div>
+                                    </td>
 
-                                    <div class="status">
+                                    <td class="status">
                                         Đã hủy
-                                    </div>
+                                    </td>
 
-                                    <a href="" class="detail">
-                                        Chi tiết
-                                    </a>
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
 
-                                </div>
+                                </tr>
+                                <tr class="list-item">
 
-                                <div class="list-item">
-
-                                    <div class="icon">
+                                    <td class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
                                         </svg>
-                                    </div>
+                                    </td>
 
-                                    <div class="id">
+                                    <td class="id">
                                         IT96281
-                                    </div>
+                                    </td>
 
-                                    <div class="date">
+                                    <td class="date">
                                         03/11/2023
-                                    </div>
+                                    </td>
 
-                                    <div class="quantity">
+                                    <td class="quantity">
                                         2
-                                    </div>
+                                    </td>
 
-                                    <div class="total">
+                                    <td class="total">
                                         44.000.000đ
-                                    </div>
+                                    </td>
 
-                                    <div class="status">
+                                    <td class="status">
                                         Đã hủy
-                                    </div>
+                                    </td>
 
-                                    <a href="" class="detail">
-                                        Chi tiết
-                                    </a>
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
 
-                                </div>
+                                </tr>
+                                <tr class="list-item">
 
-                                <div class="list-item">
-
-                                    <div class="icon">
+                                    <td class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
                                         </svg>
-                                    </div>
+                                    </td>
 
-                                    <div class="id">
+                                    <td class="id">
                                         IT96281
-                                    </div>
+                                    </td>
 
-                                    <div class="date">
+                                    <td class="date">
                                         03/11/2023
-                                    </div>
+                                    </td>
 
-                                    <div class="quantity">
+                                    <td class="quantity">
                                         2
-                                    </div>
+                                    </td>
 
-                                    <div class="total">
+                                    <td class="total">
                                         44.000.000đ
-                                    </div>
+                                    </td>
 
-                                    <div class="status">
+                                    <td class="status">
                                         Đã hủy
-                                    </div>
+                                    </td>
 
-                                    <a href="" class="detail">
-                                        Chi tiết
-                                    </a>
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
 
-                                </div>
+                                </tr>
+                                <tr class="list-item">
 
-                                <div class="list-item">
-
-                                    <div class="icon">
+                                    <td class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
                                         </svg>
-                                    </div>
+                                    </td>
 
-                                    <div class="id">
+                                    <td class="id">
                                         IT96281
-                                    </div>
+                                    </td>
 
-                                    <div class="date">
+                                    <td class="date">
                                         03/11/2023
-                                    </div>
+                                    </td>
 
-                                    <div class="quantity">
+                                    <td class="quantity">
                                         2
-                                    </div>
+                                    </td>
 
-                                    <div class="total">
+                                    <td class="total">
                                         44.000.000đ
-                                    </div>
+                                    </td>
 
-                                    <div class="status">
+                                    <td class="status">
                                         Đã hủy
-                                    </div>
+                                    </td>
 
-                                    <a href="" class="detail">
-                                        Chi tiết
-                                    </a>
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
 
-                                </div>
+                                </tr>
+                                <tr class="list-item">
 
-                                <div class="list-item">
-
-                                    <div class="icon">
+                                    <td class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
                                         </svg>
-                                    </div>
+                                    </td>
 
-                                    <div class="id">
+                                    <td class="id">
                                         IT96281
-                                    </div>
+                                    </td>
 
-                                    <div class="date">
+                                    <td class="date">
                                         03/11/2023
-                                    </div>
+                                    </td>
 
-                                    <div class="quantity">
+                                    <td class="quantity">
                                         2
-                                    </div>
+                                    </td>
 
-                                    <div class="total">
+                                    <td class="total">
                                         44.000.000đ
-                                    </div>
+                                    </td>
 
-                                    <div class="status">
+                                    <td class="status">
                                         Đã hủy
-                                    </div>
+                                    </td>
 
-                                    <a href="" class="detail">
-                                        Chi tiết
-                                    </a>
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
 
-                                </div>
+                                </tr>
+                                <tr class="list-item">
 
-                            </div>
+                                    <td class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
+                                        </svg>
+                                    </td>
 
-                        </div>
+                                    <td class="id">
+                                        IT96281
+                                    </td>
+
+                                    <td class="date">
+                                        03/11/2023
+                                    </td>
+
+                                    <td class="quantity">
+                                        2
+                                    </td>
+
+                                    <td class="total">
+                                        44.000.000đ
+                                    </td>
+
+                                    <td class="status">
+                                        Đã hủy
+                                    </td>
+
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
+
+                                </tr>
+                                <tr class="list-item">
+
+                                    <td class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
+                                        </svg>
+                                    </td>
+
+                                    <td class="id">
+                                        IT96281
+                                    </td>
+
+                                    <td class="date">
+                                        03/11/2023
+                                    </td>
+
+                                    <td class="quantity">
+                                        2
+                                    </td>
+
+                                    <td class="total">
+                                        44.000.000đ
+                                    </td>
+
+                                    <td class="status">
+                                        Đã hủy
+                                    </td>
+
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
+
+                                </tr>
+                                <tr class="list-item">
+
+                                    <td class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M14.6667 2H5.33333C4.59333 2 4 2.59333 4 3.33333V12.6667C4 13.0203 4.14048 13.3594 4.39052 13.6095C4.64057 13.8595 4.97971 14 5.33333 14H14.6667C15.0203 14 15.3594 13.8595 15.6095 13.6095C15.8595 13.3594 16 13.0203 16 12.6667V3.33333C16 2.59333 15.4 2 14.6667 2ZM14.6667 3.33333V12.6667H5.33333V3.33333H14.6667Z" fill="black"/>
+                                        </svg>
+                                    </td>
+
+                                    <td class="id">
+                                        IT96281
+                                    </td>
+
+                                    <td class="date">
+                                        03/11/2023
+                                    </td>
+
+                                    <td class="quantity">
+                                        2
+                                    </td>
+
+                                    <td class="total">
+                                        44.000.000đ
+                                    </td>
+
+                                    <td class="status">
+                                        Đã hủy
+                                    </td>
+
+                                    <td class="detail">
+                                        <a href="" >
+                                            Chi tiết
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
 
                     </div>
 
