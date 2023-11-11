@@ -1,0 +1,414 @@
+.revenue-container {
+    width: 119rem;
+    margin: 0 0 181px 0;
+    height: 727px;
+}
+
+.revenue-container .revenue-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    width: 28.6rem;
+    height: 7.3rem;
+    font-family: 'roboto', 'sans-serif';
+    line-height: 7.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.revenue-container .revenue-bar {
+    width: 115rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.revenue-container .revenue-bar  a {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    width: auto;
+    text-decoration: none;
+}
+
+.revenue-container .revenue-bar .btn-total {
+    width: 16rem;
+    line-height: 4rem;
+    color: #fff;
+    background: #F25C05;
+}
+
+.revenue-container .revenue-bar  .btn-revenue {
+    width: 16rem;
+    background: #DDD;
+    color: #000;
+    line-height: 4rem;
+}
+
+.revenue-container .revenue_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 115rem;
+    height: 19.8rem;
+    margin-top: 2rem;
+}
+
+.revenue-container .revenue_status .inline {
+    display: flex;
+    gap: 2rem;
+    width: 106rem;
+    height: 13.4rem;
+}
+
+.revenue-container .revenue_status .inline > div {
+    width: 25rem;
+    height: 13.4rem;
+    color: #fff;
+    padding: 0.7rem;
+    position: relative;
+}
+
+.revenue-container .revenue_status .inline > div > div:nth-child(1) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.revenue-container .revenue_status .inline > div > div:nth-child(2) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 600;
+    vertical-align: middle;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+}
+
+.revenue-container .revenue_status .inline .user {
+    background: #DD3668;
+}
+
+.revenue-container .revenue_status .inline .product {
+    background: #FF9190;
+}
+
+.revenue-container .revenue_status .inline .order {
+    background: #329D9C;
+}
+
+.revenue-container .revenue_status .inline .category {
+    background: #12C1C1;
+}
+
+.revenue-container .revenue_chart {
+    display: flex;
+    width: 115rem;
+    height: 38.9rem;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.revenue-container .revenue_chart .left {
+    width: 57rem;
+    height: 38.9rem;
+}
+
+.revenue-container .revenue_chart .left .head {
+    width: 57rem;
+    height: 4rem;
+}
+
+.revenue-container .revenue_chart .left .head .inline {
+    display: flex;
+    width: 27rem;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.revenue-container .revenue_chart .left .head .inline .text {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.revenue-container .revenue_chart .left .content {
+    width: 57rem;
+    height: 34.9rem;
+}
+
+.revenue-container .revenue_chart .left .content .heading {
+    display: flex;
+    height: 4rem;
+    width: 27.6rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-shrink: 0;
+    margin: 0.7rem auto 0 auto;
+}
+
+.revenue-container .revenue_chart .left .content .heading .line {
+    width: 8.7rem;
+    height: 1.5rem;
+    background: #161FFF;
+}
+
+.revenue-container .revenue_chart .left .content .heading .title {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart {
+    display: flex;
+    flex-direction: column;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .top {
+    height: 26.5rem;
+    display: flex;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .top .left-chart {
+
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .top .right-chart {
+    display: flex;
+    flex-direction: row;
+    width: 41.4rem;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .top .right-chart > div {
+    display: flex;
+    align-items: flex-end;
+    /*justify-content: center;*/
+    width: 3.3rem;
+    height: 100%;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .top .right-chart div span {
+    display: block;
+    width: 1.7rem;
+    margin: 0 auto;
+    height: 5rem;
+    border: 1px solid #DDD;
+    background: #161FFF;;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .top .right-chart div:nth-child(11) span {
+    height: 10rem;
+    background: #161FFF;;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .top .right-chart div:nth-child(7) span {
+    height: 15rem;
+    background: #161FFF;;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .top .left-chart div {
+    width: 9.1rem;
+    height: 2.8rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .bottom {
+    display: flex;
+    width: 39.6rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 9rem;
+}
+
+.revenue-container .revenue_chart .left .content .main-chart .bottom div {
+    width: 3.3rem;
+    height: 2.8rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+}
+
+.revenue-container .revenue_chart .right {
+    width: 57rem;
+    height: 38.9rem;
+}
+
+.revenue-container .revenue_chart .right .head {
+    width: 57rem;
+    height: 4rem;
+}
+
+.revenue-container .revenue_chart .right .head .inline {
+    display: flex;
+    width: 27rem;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.revenue-container .revenue_chart .right .head .inline .text {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.revenue-container .revenue_chart .right .content {
+    width: 57rem;
+    height: 34.9rem;
+}
+
+.revenue-container .revenue_chart .right .content .heading {
+    display: flex;
+    height: 4rem;
+    width: 36.6rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-shrink: 0;
+    margin: 0.7rem auto 0 auto;
+}
+
+.revenue-container .revenue_chart .right .content .heading .head-left {
+    width: 18.2rem;
+    display: flex;
+    gap: 1.2rem
+}
+
+.revenue-container .revenue_chart .right .content .heading .head-right {
+    display: flex;
+    width: 15.1rem;
+    gap: 1.2rem
+}
+
+.revenue-container .revenue_chart .right .content .heading .head-left .line {
+    width: 4.6rem;
+    height: 1.5rem;
+    background: #161FFF;
+}
+
+.revenue-container .revenue_chart .right .content .heading .head-left .title {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.revenue-container .revenue_chart .right .content .heading .head-right .line {
+    width: 4.6rem;
+    height: 1.5rem;
+    background: #FF0303;
+}
+
+.revenue-container .revenue_chart .right .content .heading .head-right .title {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart {
+    display: flex;
+    flex-direction: column;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top {
+    height: 26.5rem;
+    display: flex;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top .right-chart {
+    display: flex;
+    flex-direction: row;
+    width: 41.4rem;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top .right-chart > div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 3.3rem;
+    height: 100%;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top .right-chart div .success {
+    display: block;
+    width: 1rem;
+    height: 5rem;
+    border: 1px solid #DDD;
+    background: #161FFF;;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top .right-chart div .cancel {
+    display: block;
+    width: 1rem;
+    height: 5rem;
+    border: 1px solid #DDD;
+    background: #FF0303;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top .right-chart div:nth-child(7) .success {
+    height: 15rem;
+    background: #161FFF;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top .right-chart div:nth-child(11) .success {
+    height: 10rem;
+    background: #161FFF;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top .right-chart div:nth-child(1) .cancel {
+    height: 10rem;
+    background: #FF0303;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .top .left-chart div {
+    width: 9.1rem;
+    height: 2.8rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .bottom {
+    display: flex;
+    width: 39.6rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 9rem;
+}
+
+.revenue-container .revenue_chart .right .content .main-chart .bottom div {
+    width: 3.3rem;
+    height: 2.8rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+}
