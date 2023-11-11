@@ -45,7 +45,12 @@
  .product-name {
    width: 100%;
  }
- 
+
+ .product-name h2 {
+  font-size: 24px;
+  font-weight: bold;
+ }
+
  .product-name p {
    font-size: 12px;
    margin-top: 16px;
