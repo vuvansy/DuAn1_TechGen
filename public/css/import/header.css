@@ -171,6 +171,7 @@ ul#main-menu {
     width: 200px;
     position: absolute;
     background: var(--primary-color);
+    z-index: 1;
 }
 
 ul#main-menu li {
@@ -238,4 +239,32 @@ ul.sub-menu li :hover {
     font-size: 1.4rem;
     margin: 0;
     padding: 0;
+}
+
+/* === Slide ===*/
+.slide__body {
+    margin-top: 30px;
+    width: 100%;
+    height: 360px;
+    position: relative;
+}
+
+#hinh {
+    width: 100%;
+    height: 100%;
+}
+
+.slide__body .fa-chevron-circle-left {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    color: var(--background);
+    font-size: 35px;
+}
+.slide__body .fa-chevron-circle-right {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    color: var(--background);
+    font-size: 35px;
 }

@@ -1,0 +1,129 @@
+.transport-container {
+    width: 119rem;
+    margin: 0 0 181px 0;
+    height: 727px;
+}
+
+.transport-container .transport-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    width: 38.5rem;
+    height: 7.3rem;
+    font-family: 'roboto', 'sans-serif';
+    line-height: 7.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.transport-container .transport-bar {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.transport-container .transport-bar a {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    width: auto;
+    text-decoration: none;
+}
+
+.transport-container .transport-bar .cancel-btn-wait {
+    padding: 1rem 2.7rem 1.1rem 2.7rem;
+    background: #DDD;
+}
+
+.transport-container .transport-bar .cancel-btn-now {
+    padding: 1rem 1.3rem 1.1rem 1.3rem;
+    color: #fff;
+    background: #F25C05;
+}
+
+.transport-container .transport-bar .cancel-btn-cancel {
+    padding: 1rem 2.3rem 1.1rem 2.3rem;
+    background: #DDD;
+}
+
+.transport-container .transport-bar .cancel-btn-success {
+    padding: 1rem 2.4rem 1.1rem 2.3rem;
+    background: #DDD;
+}
+
+.transport-container .container-content {
+    border-radius: 1rem;
+    border: 1px solid #DDD;
+    background: #FFF;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.transport-container .container-content .head {
+    width: 100%;
+    height: 4rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
+}
+
+.transport-container .container-content .head .inline {
+    display: flex;
+    height: 4rem;
+    padding: 0 2rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.transport-container .container-content .content-list {
+    margin-top: 2rem;
+}
+
+.transport-container .container-content .content-list .content-bar {
+    display: grid;
+    width: 111rem;
+    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 14.2rem 10rem 11rem;
+    background-color: #000;
+    color: #fff;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-left: 2rem;
+}
+
+.transport-container .container-content .content-list .list-group .list-item {
+    display: grid;
+    width: 111rem;
+    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 14.2rem 10rem 11rem;
+    color: #000;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-left: 2rem;
+}
+
+.transport-container .container-content .content-list .list-group .list-item div {
+    border: 1px solid #DDD;
+}
+
+.transport-container .container-content .content-list .list-group .list-item .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transport-container .container-content .content-list .list-group .list-item .update {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.transport-container .container-content .content-list .list-group .list-item .detail {
+    display: block;
+    color: #000;
+    text-decoration: none;
+}

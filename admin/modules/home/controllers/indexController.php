@@ -13,5 +13,11 @@ function indexAction()
 
 }
 
+function checkAction()
+{
+    // echo 'Trang chủ';
+    load_view('check');
+}
+
 
 

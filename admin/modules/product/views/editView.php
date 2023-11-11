@@ -8,7 +8,7 @@ get_header();
         ?>
         <div class="sidebar-right">
             <div class="product-heading">
-                Thêm mới sản phẩm
+                Cập nhật sản phẩm
             </div>
             <div class="product-bar">
                 <a href="#!" class="product-btn-add">Thêm mới</a>

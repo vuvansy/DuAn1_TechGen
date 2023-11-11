@@ -1,18 +1,4 @@
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
- 
- 
- .container {
-   width: 1280px;
-   max-width: calc(100%-40px);
-   font-family: "Roboto Regular";
-   margin: 0 auto;
- 
- }
- 
+
  .product-details {
    margin-top: 30px;
    display: flex;
@@ -93,9 +79,7 @@
    justify-content: center;
    cursor: pointer;
  }
- .color-cell:first-child {
-   border-color: #00483D; /* Thiết lập border color cho cột đầu tiên */
-}
+
  
  /* dụng lượng sản phẩm */
  .product-GB {
@@ -190,8 +174,7 @@
   .other-conten h2, 
   .parameter-conten h2, 
   .posts h2,
-  .comment-heading h2,
-  .product-name h2 {
+  .comment-heading h2 {
    font-size: 24px;
    font-weight: bold;
   }
