@@ -8,11 +8,11 @@ get_header();
         ?>
         <div class="sidebar-right">
             <div class="product-heading">
-                Danh sách hàng hóa
+                Thêm mới hàng hóa
             </div>
             <div class="product-bar">
-                <a href="#!" class="product-btn-list">Danh sách</a>
-                <a href="#!" class="product-btn-add">Thêm mới</a>
+                <a href="?mod=product&action=list" class="product-btn-list">Danh sách</a>
+                <a href="?mod=product&action=add" class="product-btn-add">Thêm mới</a>
             </div>
             <div class="container-product">
                 <div class="head">
@@ -78,11 +78,11 @@ get_header();
                         </div>
                         <div class="input-desc">
                             <p>Mô tả ngắn</p>
-                            <input type="text" placeholder="Mô tả ngắn">
+                            <textarea>Mô tả ngắn</textarea>
                         </div>
                         <div class="input-desc">
                             <p>Nội dung</p>
-                            <input class="input-content" type="text" placeholder="Nội dung">
+                            <textarea class="input-content">Nội dung</textarea>
                         </div>
                     </div>
                 </div>
