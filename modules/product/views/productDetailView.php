@@ -26,7 +26,7 @@
                 <!-- thông tin sp -->
                 <!-- tên sp -->
                 <div class="product-name">
-                    <h2>iPhone 14 Pro Max | Chính Hãng VNA</h2>
+                    <h2>IPhone 14 Pro Max | Chính Hãng VNA</h2>
                     <p>Thương hiệu APPLE SKU | 220909018Mã vạch | 381525 </p>
                 </div>
                 <!-- tên sp -->

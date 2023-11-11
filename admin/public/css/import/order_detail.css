@@ -1,49 +1,3 @@
-.layout-fullscreen {
-    width: 144rem;
-}
-
-.layout-fullscreen .menu {
-    width: 25rem;
-    height: 91.2rem;
-}
-
-.layout-fullscreen .menu .heading {
-    padding: 1.5rem 2rem;
-    width: 25rem;
-}
-
-.layout-fullscreen .menu .heading a {
-    color: #000;
-    font-size: 2.4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    font-family: 'roboto', sans-serif;
-}
-
-.layout-fullscreen .menu .list-group {
-    margin-top: 1.5rem;
-}
-
-.layout-fullscreen .menu .list-group .list {
-    width: 25rem;
-    height: 5rem;
-    padding: 1.5rem 2rem;
-
-}
-
-.layout-fullscreen .menu .list-group .list a {
-    color: #000;
-    font-family: 'roboto', sans-serif;
-    text-decoration: none;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: capitalize;
-}
-
 .detail-container {
     width: 119rem;
     margin: 0 0 181px 0;
@@ -101,10 +55,18 @@
     background: #DDD;
 }
 
+.detail-container .container-content {
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+}
+
 .detail-container .container-content .head {
     width: 100%;
     height: 4rem;
-    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
 }
 
 .detail-container .container-content .head .inline {
@@ -159,11 +121,15 @@
     color: #000;
     height: 6rem;
     margin-left: 2rem;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    border-left: 1px solid #DDD;
 }
 
 .detail-container .container-content .content-list .list-group .list-item div {
     line-height: 6rem;
-    text-align: center
+    text-align: center;
+    border: 1px solid #DDD;
 }
 
 .detail-container .container-content .content-list .list-group .list-item .image img {
@@ -186,9 +152,9 @@
 }
 
 .detail-container .container-content .content-list .total-bar .text {
-
+    border: 1px solid #DDD;
 }
 
-.detail-container .container-content .content-list .total-bar .text .total {
-
+.detail-container .container-content .content-list .total-bar .total {
+    border: 1px solid #DDD;
 }

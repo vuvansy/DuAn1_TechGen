@@ -1,26 +1,32 @@
 /*STYLE*/
 @import "../public/fonts/stylesheet.css";
 @import "../public/css/import/global.css";
-
 @import "../public/css/import/product.css";
 
-
+/* Order  */
 @import "../public/css/import/order_cancel.css";
 @import "../public/css/import/order_success.css";
 @import "../public/css/import/order_confirm_list.css";
 @import "../public/css/import/order_confirm_update.css";
 @import "../public/css/import/order_transport.css";
 @import "../public/css/import/order_detail.css";
-
-
+/* Layout  */
 @import "../public/css/import/layout.css";
 
-/* 
-@import "../public/css/import/list_post.css";
-@import "../public/css/import/list_product.css";
-@import "../public/css/import/add_cat.css";
+/* Category  */
+@import "../public/css/import/category.css";
+
+/* Admin user  */
 @import "../public/css/import/info_account.css";
-@import "../public/css/import/change_pass.css";
-@import "../public/css/import/sidebar.css";
-@import "../public/css/import/menu.css";
-@import "../public/css/import/detail_order.css"; */
+@import "../public/css/import/change_account.css";
+
+/* Comment  */
+@import "../public/css/import/comment.css";
+
+/* Statistical  */
+
+@import "../public/css/import/revenue.css";
+@import "../public/css/import/warning.css";
+
+/* @import "../public/css/import/detail_order.css";
+@import "../public/css/import/list_product.css"; */

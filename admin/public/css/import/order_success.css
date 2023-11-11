@@ -1,50 +1,3 @@
-.layout-fullscreen {
-    width: 144rem;
-    display: flex;
-}
-
-.layout-fullscreen .menu {
-    width: 25rem;
-    height: 91.2rem;
-}
-
-.layout-fullscreen .menu .heading {
-    padding: 1.5rem 2rem;
-    width: 25rem;
-}
-
-.layout-fullscreen .menu .heading a {
-    color: #000;
-    font-size: 2.4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    font-family: 'roboto', sans-serif;
-}
-
-.layout-fullscreen .menu .list-group {
-    margin-top: 1.5rem;
-}
-
-.layout-fullscreen .menu .list-group .list {
-    width: 25rem;
-    height: 5rem;
-    padding: 1.5rem 2rem;
-
-}
-
-.layout-fullscreen .menu .list-group .list a {
-    color: #000;
-    font-family: 'roboto', sans-serif;
-    text-decoration: none;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: capitalize;
-}
-
 .success-container {
     width: 119rem;
     margin: 0 0 181px 0;
@@ -102,10 +55,19 @@
     background: #F25C05;
 }
 
+.success-container .container-content {
+    border-radius: 1rem;
+    border: 1px solid #DDD;
+    background: #FFF;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+}
+
 .success-container .container-content .head {
     width: 100%;
     height: 4rem;
-    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
 }
 
 .success-container .container-content .head .inline {
@@ -141,6 +103,10 @@
     text-align: center;
     line-height: 3rem;
     margin-left: 2rem;
+}
+
+.success-container .container-content .content-list .list-group .list-item div {
+    border: 1px solid #DDD;
 }
 
 .success-container .container-content .content-list .list-group .list-item .icon {
