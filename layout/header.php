@@ -95,7 +95,7 @@
             <div class="container">
                 <div class="header-heading__body">
                     <!-- Logo  -->
-                    <a href="">
+                    <a href="?">
                         <img src="public/images/logo/logo2.jpg" alt="TechGen" class="logo" />
                     </a>
                     <!-- Search box  -->
@@ -118,7 +118,7 @@
                     <!-- Order-tools  -->
                     <div class="order-tools">
                         <div class="admin">
-                            <a href="">
+                            <a href="?mod=users&action=index">
                                 <span>
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g id="user">
@@ -170,7 +170,7 @@
                     <!-- Navbar_list  -->
                     <ul class="navbar__list">
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Trang chủ</a>
+                            <a href="?" class="navbar__link">Trang chủ</a>
                         </li>
                         <li class="navbar__item">
                             <a href="" class="navbar__link">Giới thiệu</a>
