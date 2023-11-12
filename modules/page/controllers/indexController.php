@@ -25,7 +25,7 @@ function contactAction()
     load_view('index');
 }
 
-function newsAction()
+function newAction()
 {
     // echo 'Trang chủ';
     load_view('index');
