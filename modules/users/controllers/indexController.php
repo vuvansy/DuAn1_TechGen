@@ -44,5 +44,11 @@ function activeAction()
 {
 }
 
+function updateAction()
+{
+    load_view('update');
+}
+
+
 
 ?>
