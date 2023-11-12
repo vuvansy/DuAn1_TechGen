@@ -7,7 +7,7 @@ get_header();
     <section class="login">
         <div class="container">
             <div class="form__account">
-                <div class="form__account--left">
+                <div class="account__inner">
                     <h1 class="heading-title">ĐĂNG NHẬP</h1>
                     <form action="" id="form-login" method="POST">
                         <div class="form__group">
