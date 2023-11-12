@@ -1,5 +1,262 @@
 /*========= COMMENT ========= */
 
 /* LIST  */
+.comment-title {
+    font-size: 24px;
+    font-weight: bold;
+}
 
-/* EDIT  */
+.search-comment,
+.box-form-comment>input,
+button {
+    height: 40px;
+}
+
+.box-form-comment {
+    margin-right: 8px;
+
+}
+
+.box-form-comment input {
+    padding-left: 10px;
+}
+
+.search-comment-btn {
+    width: 100px;
+}
+
+.search-comment {
+    float: right;
+    display: flex;
+}
+
+/* nội dung comment */
+.comment-content {
+    margin-top: 60px;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    width: 100%;
+    height: 40px;
+    background-color: #F6F6F6;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.head .icon,
+.head-name {
+    margin-left: 20px;
+}
+
+.head-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* bảng */
+table {
+    width: 1180px;
+    border-collapse: collapse;
+    margin: 20px 20px 20px 20px;
+}
+
+thead,
+tbody {
+    height: 30px;
+}
+
+tbody tr td a {
+    color: #000000;
+}
+
+tbody tr td a:hover {
+    color: royalblue;
+}
+
+th {
+    font-size: 13px;
+    background-color: #000000;
+    color: #ffff;
+    text-align: center;
+    /* căn giữa nội dung theo chiều ngang */
+    vertical-align: middle;
+}
+
+.product {
+    width: 310px;
+}
+
+.quantity,
+.new {
+    width: 250px;
+}
+
+.old {
+    width: 200px;
+}
+
+.detail {
+    width: 150px;
+}
+
+tbody tr {
+    border: 0.5px solid #DDDDDD;
+    font-size: 13px;
+}
+
+tbody tr td {
+    text-align: center;
+    /* căn giữa nội dung theo chiều ngang */
+    vertical-align: middle;
+    border: 1px solid #DDDDDD;
+}
+
+
+
+/* =======EDIT======= */
+
+.comment-detail-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* tìm kiếm */
+.search-comment-detail {
+    float: right;
+    display: flex;
+}
+
+.search-comment-detail,
+.box-form-comment-detail>input,
+button {
+    height: 40px;
+}
+
+.box-form-comment-detail {
+    margin-right: 8px;
+
+}
+
+.box-form-comment-detailinput {
+    padding-left: 10px;
+}
+
+.search-comment-detail-btn {
+    width: 100px;
+}
+
+
+/* nội dung chi tiết comment */
+.comment-detail-content {
+    margin-top: 60px;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+
+}
+
+.comment-detail-content .head {
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    width: 100%;
+    height: 40px;
+    background-color: #F6F6F6;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.comment-detail-content .head .icon,
+.head-name {
+    margin-left: 20px;
+}
+
+.comment-detail-content .head-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* bảng */
+.table-detail {
+    width: 1170px;
+    border-collapse: collapse;
+    margin: 20px 0px 20px 23px;
+}
+
+thead,
+tbody {
+    height: 30px;
+}
+
+.table-detail>th {
+    font-size: 13px;
+    background-color: #000000;
+    color: #ffff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.content-detail {
+    width: 435px;
+    vertical-align: middle;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+
+.content-detail input {
+    margin: -2px 0 0 -77px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.date,
+.user-comment,
+.delete {
+    width: 225px;
+}
+
+.delete button {
+    background: none;
+    border: none;
+    height: 30px;
+    cursor: pointer;
+}
+
+.delete button i {
+    color: #FD475A;
+}
+
+tbody tr {
+    border: 1px solid #DDDDDD;
+    font-size: 13px;
+}
+
+.tbody-detail tr td {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #DDDDDD;
+}
+
+.full-btn {
+    display: flex;
+    margin: 20px 24px;
+}
+
+.check-all,
+.cancel-all,
+.delete-all {
+    margin-right: 10px;
+    height: 40px;
+    width: 110px;
+    background-color: #025959;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}

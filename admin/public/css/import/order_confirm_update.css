@@ -72,7 +72,7 @@
 .confirm_update-container .container-content .head .inline {
     display: flex;
     height: 4rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
     align-items: center;
     gap: 1rem;
 }
@@ -85,11 +85,12 @@
 .confirm_update-container .container-content .content-list .content-bar {
     width: 111rem;
     color: #000;
-    margin-left: 4rem;
+    margin: 0 auto;
     display: flex;
     height: 4rem;
     gap: 45rem;
     text-align: center;
+    padding-left: 2rem;
 }
 
 .confirm_update-container .container-content .content-list .content-bar .id {
@@ -113,10 +114,10 @@
 }
 
 .confirm_update-container .container-content .content-list .list-group {
-    width: 100%;
+    width: 106rem;
     display: flex;
     gap: 6rem;
-    margin-left: 4rem;
+    margin: 0 auto;
 }
 
 .confirm_update-container .container-content .content-list .list-group .id {
@@ -131,6 +132,7 @@
     font-size: 1.3rem;
     font-style: normal;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .confirm_update-container .container-content .content-list .list-group .status {
@@ -149,9 +151,19 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    cursor: pointer;
 }
 
-.confirm_update-container .container-content .button_update {
+.confirm_update-container .container-content .content-list .list-group .status select option {
+    cursor: pointer;
+    font-family: Roboto, sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    height: 3rem;
+}
+
+.confirm_update-container .container-content .list-group .button_update {
     display: block;
     width: 11rem;
     height: 4rem;
@@ -166,7 +178,9 @@
     line-height: normal;
     position: absolute;
     bottom: 1rem;
-    right: 9rem;
+    right: 6.3rem;
+    border: none;
+    outline: none;
 }
 
 
