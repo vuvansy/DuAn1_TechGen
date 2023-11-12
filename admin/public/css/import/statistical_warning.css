@@ -16,12 +16,12 @@
 }
 
 .warning-container .warning-bar {
-    width: 100%;
     height: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 2rem;
+    width: 115rem;
 }
 
 .warning-container .warning-bar a {
@@ -54,6 +54,7 @@
     background: #FFF;
     margin-top: 1rem;
     padding-bottom: 2rem;
+    width: 115rem;
 }
 
 .warning-container .container-content .head {
@@ -73,6 +74,7 @@
 
 .warning-container .container-content .content-list {
     margin: 2rem auto 0 auto;
+    width: 111rem;
 }
 
 .warning-container .container-content .content-list thead {
@@ -92,6 +94,9 @@
 
 .warning-container .container-content .content-list thead tr td {
     vertical-align: middle;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .warning-container .container-content .content-list thead tr .image {
