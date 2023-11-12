@@ -141,7 +141,7 @@
                                 </span>
                                 <div>
                                     <span>Giỏ hàng của bạn</span>
-                                    <span>(0) sản phẩm</span>
+                                    <span>(10) sản phẩm</span>
                                 </div>
                             </a>
                         </div>
@@ -157,7 +157,7 @@
                     <div class="dropdown">
                         <ul id="main-menu">
                             <li>
-                                <button><i class="fa-solid fa-bars btn-icon"></i> Danh mục sản phẩm</button>
+                                <button class="main-menu__cta"><i class="fa-solid fa-bars btn-icon"></i> Danh mục sản phẩm</button>
                                 <ul class="sub-menu">
                                     <li><a href="./">Đồng hồ</a></li>
                                     <li><a href="">Laptop</a></li>
