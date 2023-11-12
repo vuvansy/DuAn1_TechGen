@@ -66,14 +66,13 @@
 .warning-container .container-content .head .inline {
     display: flex;
     height: 4rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
     align-items: center;
     gap: 1rem;
 }
 
 .warning-container .container-content .content-list {
-    margin-top: 2rem;
-    margin-left: 2rem;
+    margin: 2rem auto 0 auto;
 }
 
 .warning-container .container-content .content-list thead {
@@ -96,23 +95,23 @@
 }
 
 .warning-container .container-content .content-list thead tr .image {
-    width: 29rem;
+    width: 10rem;
 }
 
 .warning-container .container-content .content-list thead tr .id {
-    width: 18.6rem;
+    width: 20rem;
 }
 
 .warning-container .container-content .content-list thead tr .name {
-    width: 31.6rem;
+    width: 45rem;
 }
 
 .warning-container .container-content .content-list thead tr .exists {
-    width: 22.9rem;
+    width: 20rem;
 }
 
 .warning-container .container-content .content-list thead tr .add {
-    width: 8.9rem;
+    width: 16rem;
 }
 
 .warning-container .container-content .content-list tbody {
