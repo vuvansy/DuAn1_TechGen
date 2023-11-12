@@ -3,8 +3,8 @@ get_header();
 ?>
 
 <main>
-    <!-- Reset New password Account -->
-    <section class="newPassword">
+    <!-- Reset Edit password Account -->
+    <section class="editPassword">
         <div class="container">
             <div class="form__account">
                 <div class="account__inner">
@@ -29,7 +29,7 @@ get_header();
                             <?php echo form_error('confirm-pass'); ?>
                         </div>
 
-                        <input type="submit" name="btn-new-pass" class="btn user__cta" id="btn-login" value="CẬP NHẬT" />
+                        <input type="submit" name="btn-edit-pass" class="btn user__cta" id="btn-login" value="CẬP NHẬT" />
                         <?php echo form_error('account'); ?>
                     </form>
 

@@ -29,6 +29,12 @@ function newPassAction()
     load_view('newPass');
 }
 
+function editPassAction()
+{
+
+    load_view('editPass');
+}
+
 function resetOkAction()
 {
 

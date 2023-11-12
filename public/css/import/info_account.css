@@ -130,7 +130,7 @@
     color: var(--white);
 }
 /* ============ Reset password Account  ============*/
-
+.newPassword .form__group,
 .resetPassword .form__group {
     width: 340px;
 }
