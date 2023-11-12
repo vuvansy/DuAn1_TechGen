@@ -98,3 +98,34 @@
     width: 50%;
     text-align: left;
 }
+
+/* ============ Update  ============*/
+
+.form__group .image__user {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#form-login input[type="file"] {
+    width: 100%;
+}
+
+.avatar__user {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.avatar__user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subtitle__user {
+    margin-top: 20px;
+    font-size: 2.8rem;
+    color: var(--white);
+}
