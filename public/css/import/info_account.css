@@ -129,3 +129,8 @@
     font-size: 2.8rem;
     color: var(--white);
 }
+/* ============ Reset password Account  ============*/
+
+.resetPassword .form__group {
+    width: 340px;
+}
