@@ -13,11 +13,6 @@ function indexAction()
     load_view('index');
 }
 
-function introduceAction()
-{
-    // echo 'Trang chủ';
-    load_view('introduce');
-}
 
 function warrantyAction()
 {
