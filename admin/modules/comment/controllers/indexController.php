@@ -15,3 +15,16 @@ function indexAction()
 function updateAction()
 {
 }
+
+function commentListAction()
+{
+
+    load_view('commentList');
+}
+
+function commentDetailAction()
+{
+
+    load_view('commentDetail');
+}
+

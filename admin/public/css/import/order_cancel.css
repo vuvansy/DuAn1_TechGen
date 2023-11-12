@@ -73,13 +73,13 @@
 .cancel-container .container-content .head .inline {
     display: flex;
     height: 4rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
     align-items: center;
     gap: 1rem;
 }
 
 .cancel-container .container-content .content-list {
-    margin-top: 2rem;
+    margin: 2rem auto 0 auto;
 }
 
 .cancel-container .container-content .content-list .content-bar {
@@ -91,11 +91,6 @@
     height: 3rem;
     text-align: center;
     line-height: 3rem;
-    margin-left: 2rem;
-}
-
-.cancel-container .container-content .content-list .list-group {
-
 }
 
 .cancel-container .container-content .content-list .list-group .list-item {
@@ -106,7 +101,6 @@
     height: 3rem;
     text-align: center;
     line-height: 3rem;
-    margin-left: 2rem;
 }
 
 .cancel-container .container-content .content-list .list-group .list-item td {

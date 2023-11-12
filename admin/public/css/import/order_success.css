@@ -73,14 +73,14 @@
 .success-container .container-content .head .inline {
     display: flex;
     height: 4rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
     align-items: center;
     gap: 1rem;
 }
 
 .success-container .container-content .content-list {
-    margin-top: 2rem;
-    margin-left: 2rem;
+    margin: 2rem auto 0 auto;
+
 }
 
 .success-container .container-content .content-list thead {
