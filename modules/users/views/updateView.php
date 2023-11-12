@@ -9,7 +9,7 @@ get_header();
             <div class="form__account">
                 <div class="account__inner">
                     <h1 class="heading-title">CẬP NHẬT THÔNG TIN</h1>
-                    <form action="" id="form-login" method="POST">
+                    <form action="" id="form-login" enctype="multipart/form-data" method="POST">
                         <div class="row-form__group">
                             <div class="form__group">
                                 <label for="fullname">Họ tên</label>
