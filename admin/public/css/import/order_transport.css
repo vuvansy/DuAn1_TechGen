@@ -97,24 +97,31 @@
 .transport-container .container-content .content-list .list-group .list-item {
     display: grid;
     width: 111rem;
-    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 14.2rem 10rem 11rem;
+    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 14.2rem 10rem 10.9rem;
     color: #000;
     height: 3rem;
     text-align: center;
     line-height: 3rem;
+    border-left: 1px solid #DDD;
+    border-right: none;
+    border-bottom: 1px solid #DDD;
+    border-top: none;
 }
 
 .transport-container .container-content .content-list .list-group .list-item td {
-    border: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
 }
 
-.transport-container .container-content .content-list .list-group .list-item .icon {
+.transport-container .container-content .content-list .list-group .list-item .icon-order {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.transport-container .container-content .content-list .list-group .list-item .update a {
+.transport-container .container-content .content-list .list-group .list-item .update-order a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -122,7 +129,7 @@
     align-items: center;
 }
 
-.transport-container .container-content .content-list .list-group .list-item .detail a {
+.transport-container .container-content .content-list .list-group .list-item .detail-order a {
     color: #000;
     text-decoration: none;
 }
