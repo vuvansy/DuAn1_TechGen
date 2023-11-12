@@ -104,11 +104,13 @@
     margin-left: 2rem;
 }
 
-.confirm_list-container .container-content .content-list .list-group .list-item div {
+.confirm_list-container .container-content .content-list .list-group .list-item td {
     border: 1px solid #DDD;
 }
 
-.confirm_list-container .container-content .content-list .list-group .list-item .update {
+.confirm_list-container .container-content .content-list .list-group .list-item td .update {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

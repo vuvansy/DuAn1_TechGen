@@ -1,6 +1,5 @@
 <?php get_header() ?>
 
-
 <main>
     <div class="container">
         <div class="product-details">
@@ -79,12 +78,8 @@
                     </button>
                 </div>
                 <!-- btn mua sp -->
-
             </div>
             <!-- thông tin sp -->
-
-            <!-- </div> -->
-            <!-- </div> -->
             <!-- div chứa thông tin sản phẩm -->
 
         </div>
@@ -262,12 +257,133 @@
                     </div>
                 </div>
                 <!-- trả lời admin -->
-
-
-
-
             </div>
         </div>
+
+        <!-- sản phẩm liên quan -->
+        <div class="product-related">
+            <div class="product-title">
+                <h2>Sản phẩm liên quan</h2>
+            </div>
+            <div class="product-related-list">
+                <!-- item -->
+                <div class="item">
+                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
+                    <div class="info">
+                        <div class="trademark">
+                            <span>APPLE</span>
+                        </div>
+                        <div class="name">
+                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
+                        </div>
+                    </div>
+                    <div class="pab">
+                        <div class="price">
+                            <strong>22.000.000đ</strong><br>
+                            <strike>29.900.000đ</strike>
+                            <span class="percent">-10.01%</span>
+                        </div>
+                        <div class="btn-buy">
+                            <button>Mua Ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="item">
+                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
+                    <div class="info">
+                        <div class="trademark">
+                            <span>APPLE</span>
+                        </div>
+                        <div class="name">
+                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
+                        </div>
+                    </div>
+                    <div class="pab">
+                        <div class="price">
+                            <strong>22.000.000đ</strong><br>
+                            <strike>29.900.000đ</strike>
+                            <span class="percent">-10.01%</span>
+                        </div>
+                        <div class="btn-buy">
+                            <button>Mua Ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="item">
+                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
+                    <div class="info">
+                        <div class="trademark">
+                            <span>APPLE</span>
+                        </div>
+                        <div class="name">
+                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
+                        </div>
+                    </div>
+                    <div class="pab">
+                        <div class="price">
+                            <strong>22.000.000đ</strong><br>
+                            <strike>29.900.000đ</strike>
+                            <span class="percent">-10.01%</span>
+                        </div>
+                        <div class="btn-buy">
+                            <button>Mua Ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="item">
+                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
+                    <div class="info">
+                        <div class="trademark">
+                            <span>APPLE</span>
+                        </div>
+                        <div class="name">
+                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
+                        </div>
+                    </div>
+                    <div class="pab">
+                        <div class="price">
+                            <strong>22.000.000đ</strong><br>
+                            <strike>29.900.000đ</strike>
+                            <span class="percent">-10.01%</span>
+                        </div>
+                        <div class="btn-buy">
+                            <button>Mua Ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="item">
+                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
+                    <div class="info">
+                        <div class="trademark">
+                            <span>APPLE</span>
+                        </div>
+                        <div class="name">
+                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
+                        </div>
+                    </div>
+                    <div class="pab">
+                        <div class="price">
+                            <strong>22.000.000đ</strong><br>
+                            <strike>29.900.000đ</strike>
+                            <span class="percent">-10.01%</span>
+                        </div>
+                        <div class="btn-buy">
+                            <button>Mua Ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- item -->
+            </div>
+        </div>
+        <!-- sản phẩm liên quan -->
     </div>
 </main>
 

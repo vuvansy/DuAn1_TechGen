@@ -46,107 +46,43 @@ get_header();
                             </div>
                         </div>
 
-                        <div class="content-list">
+                        <table class="content-list">
 
-                            <div class="content-bar">
-                                <div class="image">Hình ảnh</div>
-                                <div class="name">Sản phẩm</div>
-                                <div class="price">Đơn giá</div>
-                                <div class="quantity">Số lượng</div>
-                                <div class="total">Thành tiền</div>
-                            </div>
+                            <thead>
+                                <tr class="content-bar">
+                                    <td class="image">Hình ảnh</td>
+                                    <td class="name">Sản phẩm</td>
+                                    <td class="price">Đơn giá</td>
+                                    <td class="quantity">Số lượng</td>
+                                    <td class="total">Thành tiền</td>
+                                </tr>
+                            </thead>
 
-                            <div class="list-group">
+                            <tbody class="list-group">
 
-                                <div class="list-item">
+                                <tr class="list-item">
 
-                                    <div class="image">
+                                    <td class="image">
                                         <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                    </div>
-                                    <div class="name">IPhone 14 Pro Max</div>
-                                    <div class="price">44.000.000đ</div>
-                                    <div class="quantity">1</div>
-                                    <div class="total">44.000.000đ</div>
+                                    </td>
+                                    <td class="name">IPhone 14 Pro Max</td>
+                                    <td class="price">44.000.000đ</td>
+                                    <td class="quantity">1</td>
+                                    <td class="total">44.000.000đ</td>
 
-                                </div>
-                                <div class="list-item">
+                                </tr>
 
-                                    <div class="image">
-                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                    </div>
-                                    <div class="name">IPhone 14 Pro Max</div>
-                                    <div class="price">44.000.000đ</div>
-                                    <div class="quantity">1</div>
-                                    <div class="total">44.000.000đ</div>
+                            </tbody>
 
-                                </div>
-                                <div class="list-item">
+                            <tr class="total-bar">
 
-                                    <div class="image">
-                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                    </div>
-                                    <div class="name">IPhone 14 Pro Max</div>
-                                    <div class="price">44.000.000đ</div>
-                                    <div class="quantity">1</div>
-                                    <div class="total">44.000.000đ</div>
+                                <td class="text">Tổng tiền</td>
 
-                                </div>
-                                <div class="list-item">
+                                <td class="total">88.000.000đ</td>
 
-                                    <div class="image">
-                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                    </div>
-                                    <div class="name">IPhone 14 Pro Max</div>
-                                    <div class="price">44.000.000đ</div>
-                                    <div class="quantity">1</div>
-                                    <div class="total">44.000.000đ</div>
+                            </tr>
 
-                                </div>
-                                <div class="list-item">
-
-                                    <div class="image">
-                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                    </div>
-                                    <div class="name">IPhone 14 Pro Max</div>
-                                    <div class="price">44.000.000đ</div>
-                                    <div class="quantity">1</div>
-                                    <div class="total">44.000.000đ</div>
-
-                                </div>
-                                <div class="list-item">
-
-                                    <div class="image">
-                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                    </div>
-                                    <div class="name">IPhone 14 Pro Max</div>
-                                    <div class="price">44.000.000đ</div>
-                                    <div class="quantity">1</div>
-                                    <div class="total">44.000.000đ</div>
-
-                                </div>
-                                <div class="list-item">
-
-                                    <div class="image">
-                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                    </div>
-                                    <div class="name">IPhone 14 Pro Max</div>
-                                    <div class="price">44.000.000đ</div>
-                                    <div class="quantity">1</div>
-                                    <div class="total">44.000.000đ</div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="total-bar">
-
-                                <div class="text">Tổng tiền</div>
-
-                                <div class="total">88.000.000đ</div>
-
-                            </div>
-
-                        </div>
+                        </table>
 
                     </div>
 

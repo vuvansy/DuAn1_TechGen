@@ -45,7 +45,12 @@
  .product-name {
    width: 100%;
  }
- 
+
+ .product-name h2 {
+  font-size: 24px;
+  font-weight: bold;
+ }
+
  .product-name p {
    font-size: 12px;
    margin-top: 16px;
@@ -79,6 +84,10 @@
    justify-content: center;
    cursor: pointer;
  }
+
+ .color-cell:first-child {
+  border: 1px solid #00483D;
+}
 
  
  /* dụng lượng sản phẩm */
@@ -229,10 +238,6 @@
    color: #00483D;
  }
  
- 
- /*  sản phẩm  */
- 
- 
  /* bài viết  */
  .posts h2 {
    text-align: center;
@@ -249,9 +254,7 @@
    width: 100%;
    display: flex;
    justify-content: center;
-   /* căn giữa theo chiều ngang */
    align-items: center;
-   /* căn giữa theo chiều dọc */
  }
  
  .posts img {
@@ -272,6 +275,7 @@
    color: #ffff;
    border-radius: 10px;
    border: 0px;
+   cursor: pointer;
  }
  
  /*  comment */
@@ -296,7 +300,6 @@
    margin-top: 30px;
  }
  
- /*  padding  placeholder="Nhập bình luận của bạn" vào trông */
  #comment-input::placeholder {
    padding-left: 5px;
  }
@@ -311,13 +314,12 @@
    color: #ffff;
    border: 0px;
    border-radius: 4px;
+   cursor: pointer;
  }
  
  /* Danh sách các bình luận sẽ được hiển thị ở đây */
  #comment-list {
    margin-top: 90px;
-  
-   border: 1px solid #DDDDDD;
  }
  
  .comment-user {
@@ -373,5 +375,88 @@
  .conten-admin p {
    padding: 26px 36px;
  }
- 
- /*  comment */
+
+ /* sản phẩm liên quan */
+.product-related {
+margin-top: 30px;
+}
+
+.product-title h2 {
+ font-size: 24px;
+ font-weight: 700;
+}
+
+.product-related-list {
+ display: grid;
+ grid-template-columns: repeat(5, 232px);
+ gap: 30px;
+}
+
+.item {
+margin-top: 30px;
+/* width: 232px; */
+height: 390px;
+}
+.item .imgs img {
+border-radius: 10px;
+}
+
+.item .info {
+margin-top: 15px;
+}
+
+.trademark span {
+font-size: 13px;
+color: #4F4E4E;
+}
+
+.name {
+  margin-top: 10px;
+}
+
+.name strong {
+  font-size: 14px;
+ font-weight: 700;
+}
+
+.pab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.price strong {
+  font-size: 16px;
+  color: #FD475A;
+}
+
+.price strike {
+  font-size: 12px;
+  color: #4E4E4E;
+}
+
+.price .percent {
+  font-size: 12px;
+  color: #FD475A;
+}
+
+.price ,.btn-buy {
+ margin: 0;
+}
+.btn-buy {
+  padding-right: 10px;
+}
+
+.btn-buy button {
+  width: 88px;
+  height: 36px;
+  border: 1px solid #FD475A;
+  color: #FD475A;
+  font-size: 13px;
+  background-color: #ffff;
+  cursor: pointer;
+}
+
+
+

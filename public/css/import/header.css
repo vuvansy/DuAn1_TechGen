@@ -174,15 +174,16 @@ ul#main-menu {
     z-index: 1;
 }
 
-ul#main-menu li {
-    display: inline;
+ul.sub-menu li {
+    padding: 10px 0;
 }
 
 ul#main-menu li a {
+    padding: 10px 28px;
     font-size: var(--subHeading);
 }
 
-ul.sub-menu li :hover {
+ul.sub-menu li:hover {
     background: var(--orange);
     text-shadow: 1px 0 0 currentColor;
 }
