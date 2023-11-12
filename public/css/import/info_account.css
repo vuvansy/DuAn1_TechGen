@@ -1,1 +1,82 @@
-/*ADD CAT*/
+/* ============ Account  ============*/
+
+/* Common  */
+#form-login input[type="text"],
+#form-login input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    height: 39px;
+    margin: 4px 0;
+    padding: 0 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.form__account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+    height: 630px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 1px 2px 15px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar__user,
+.form__account--left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+
+.btn.user__cta {
+    border: 1px solid var(--white);
+    padding: 14px 37px;
+    border-radius: 10px;
+}
+
+.btn.user__cta:hover {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    background: var(--white);
+}
+
+/* ============ Login  ============*/
+
+.heading-title {
+    font-size: 3.6rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.form__group {
+    text-align: left;
+    margin: 20px;
+}
+
+.control__reset {
+    padding-left: 90px;
+}
+
+.form__account--left {
+    flex-basis: 65%;
+}
+
+.sidebar__user {
+    flex-basis: 35%;
+    background: #025959;
+    color: var(--white);
+    border-radius: 0 10px 10px 0;
+}
+
+.sidebar__user--heading {
+    font-size: 3rem;
+}
+
+.sidebar__user--desc {
+    padding: 30px 0;
+}

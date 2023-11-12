@@ -8,31 +8,41 @@ function construct()
     load('lib', 'email');
 }
 
+function indexAction()
+{
+    load_view('index');
+}
+
 function regAction()
 {
-}
 
-function activeAction()
-{
-}
-
-function loginAction()
-{
+    load_view('reg');
 }
 
 function resetAction()
 {
+    load_view('reset');
 }
-function newpassAction()
+function newPassAction()
 {
+
+    load_view('newPass');
 }
 
 function resetOkAction()
 {
+
+    load_view('resetOk');
 }
 
 function logoutAction()
 {
 }
+
+
+function activeAction()
+{
+}
+
 
 ?>
