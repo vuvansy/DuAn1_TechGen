@@ -2,25 +2,28 @@
 get_header();
 //show_array($list_users);
 ?>
-
 <main>
     <div class="button">
         <button class="button-1">Giỏ hàng</button>
         <button class="button-2">Quản lí đơn hàng</button>
     </div>
+    <h1>Chi tiết đơn hàng</h1>
     <div class="box">
-        <div class="box-left">
-            <h1>Giỏ hàng của bạn</h1>
-            <table class="tableStyle-2">
+        <div class="box-left-none">
+
+            <table class="tableStyle-1">
                 <tr>
+                    <th>Mã đơn hàng</th>
                     <th>Sản phẩm</th>
                     <th>Số lượng</th>
                     <th>Giá</th>
                     <th>Thành tiền</th>
 
+
                 </tr>
                 <tbody id="dssp">
                     <tr>
+                        <td> IT69280</td>
                         <td>
                             <div class="table-product">
                                 <div class="table-product-img">
@@ -41,58 +44,21 @@ get_header();
                                         <a href="">Xóa</a>
                                     </div>
                                 </div>
+                            </div>
                         </td>
-                        <td>1</td>
-                        <td>22.000.000đ</td>
-                        <td>22.000.000đ</td>
-
+                        <td>2</td>
+                        <td>44.000.000đ</td>
+                        <td>44.000.000đ</td>
 
                     </tr>
                 </tbody>
 
             </table>
+            <div class="total">
+                <p>Tổng tiền : <span>44.000.000đ</span></p>
+            </div>
         </div>
-        <div class="box-right">
-            <h2>Thanh toán</h2>
-            <div class="right-detail">
-                <p>Sản phẩm: <span>3</span></p>
-                <p>22.000.000đ</p>
-            </div>
-            <h3>Thông tin vận chuyển</h3>
-            <input type="text" placeholder="Họ và tên">
-            <div class="input-b">
-                <input class="input-1" type="text" placeholder="Email">
-                <input class="input-2" type="number" placeholder="Số điện thoại">
-            </div>
-            <input type="text" placeholder="Địa chỉ">
 
-            <h3>Phương thức thanh toán</h3>
-            <div class="pay-all">
-                <div class="pay">
-                    <div class="pay-1">
-                        <i class="fa-solid fa-record-vinyl"></i>
-                        <p>Phương thức thanh toán</p>
-                    </div>
-
-                    <p>Miễn phí</p>
-                </div>
-                <div class="pay-2">
-                    <i class="fa-solid fa-record-vinyl"></i>
-                    <p>Thanh toán onilne</p>
-
-                </div>
-
-            </div>
-            <div class="right-detail new">
-                <p>Tổng cộng: </p>
-                <p>22.000.000đ</p>
-            </div>
-            <div class="button-bottom">
-                <button>Thanh toán</button>
-            </div>
-
-
-        </div>
     </div>
     <h1 style="text-align: left">SẢN PHẨM LIÊN QUAN</h1>
     <div class="product">
@@ -232,6 +198,8 @@ get_header();
 
     </div>
 </main>
+
+
 
 <?php
 get_footer();
