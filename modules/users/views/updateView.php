@@ -4,7 +4,7 @@ get_header();
 
 <main>
     <!-- Update Account -->
-    <section class="register">
+    <section class="updateAccount">
         <div class="container">
             <div class="form__account">
                 <div class="account__inner">
