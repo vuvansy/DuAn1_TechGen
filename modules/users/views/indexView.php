@@ -38,7 +38,7 @@ get_header();
                     <h1 class="sidebar__user--heading">Xin chào, Bạn</h1>
                     <p class="sidebar__user--desc">Hãy bắt đầu với chúng tôi. Nếu bạn chưa có tài khoản.</p>
                     <div class="">
-                        <a href=""><button class="btn user__cta">ĐĂNG KÝ</button></a>
+                        <a href="?mod=users&action=reg"><button class="btn user__cta">ĐĂNG KÝ</button></a>
                     </div>
 
                 </div>
