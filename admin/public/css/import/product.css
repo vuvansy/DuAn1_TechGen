@@ -1,0 +1,310 @@
+
+/******************* sidebar-right ***************/
+
+.product-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  width: 32.3rem;
+  height: 7.3rem;
+  font-family: "roboto", "sans-serif";
+  line-height: 7.3rem;
+  text-align: center;
+}
+
+.product-bar {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.product-bar a{
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #212529;
+  text-align: center;
+  width: auto;
+  cursor: pointer;
+}
+
+.search-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 40px;
+  gap: 2rem;
+  margin-right: 10px;
+}
+
+.box-form-product {
+  width: 260px;
+  height: 40px;
+    display: flex;
+    padding-left: 2rem;
+    margin-bottom: 0;
+    border: 1px solid var(--gray);
+    
+}
+
+.search-product button, .search-product input {
+  outline: none;
+  border: none;
+  background: transparent;
+  
+}
+
+.search-product .search-product-input {
+  width: 240px;
+  height: 40px;
+}
+
+.search-product .search-product-btn {
+  font-size: 1.6rem;
+  font-weight: 400;
+  background: #ddd;
+  color: #212529;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+}
+
+.search-product .search-product-btn:hover {
+  padding: 10px 20px 11px 20px;
+  color: #fff;
+  background: #f25c05;
+}
+.search-product .search-product-clear {
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.product-bar .product-btn-add, .product-bar .product-btn-list  {
+  padding: 10px 20px 11px 20px;
+  background: #ddd;
+}
+
+.product-bar .product-btn-add:hover {
+  padding: 10px 20px 11px 20px;
+  color: #fff;
+  background: #f25c05;
+}
+.product-bar .product-btn-list:hover {
+  padding: 10px 20px 11px 20px;
+  color: #fff;
+  background: #f25c05;
+}
+
+
+/***************** list.css **********************/
+/*****************list table css******************/
+.container-product {
+  margin-top: 20px;
+  border: 1px solid;
+  border-radius: 10px 10px 0 0;
+}
+
+.container-product .head {
+  width: 100%;
+  height: 40px;
+  background-color: #F6F6F6;
+  border: 1px solid #ddd;
+  border-radius: 10px 10px 0 0;
+}
+
+.container-product .head .inline {
+  display: flex;
+  height: 40px;
+  padding: 0 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-product .head .inline .heading {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.container-product .list-bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.container-product .list-table {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1110px;
+  border: 1px solid #000;
+}
+
+
+.container-product .list-table .list-desc {
+  color: #fff;
+  height: 30px;
+  text-align: center;
+  line-height: 29px;
+  background-color: #000;
+  
+}
+
+.container-product .list-table .list-desc th {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.container-product .list-table .list-desc .msp {
+  width: 100px;
+}
+
+.container-product .list-table .list-desc .tsp {
+  width: 330px;
+}
+.container-product .list-table .list-desc .sl {
+  width: 110px;
+}
+.container-product .list-table .list-desc .dg {
+  width: 110px;
+}
+.container-product .list-table .list-desc .gg {
+  width: 110px;
+}
+.container-product .list-table .list-desc .lh {
+  width: 140px;
+}
+.container-product .list-table .list-desc .tt {
+  width: 100px;
+}
+.container-product .list-table .list-desc .tv {
+  width: 110px;
+}
+
+.container-product .list-table .list-item {
+  color: #000;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #000;
+  
+}
+.container-product .list-table .list-item td {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: black;
+  border: 1px solid #000;
+}
+.container-product .list-table .list-item .table-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 6px;
+}
+
+
+/****************** add.css + edit.css **************************/
+
+.container-product .container-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-product .container-form .container-form-input{
+  width: 1110px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+
+}
+
+.container-form-input .input-text {
+  flex-basis: 270px;
+  margin-bottom: 20px;
+ 
+}
+.container-form-input .input-text input {
+  width: 270px;
+  height: 30px;
+  border: 1px solid #4F4E4E;
+  border-radius: 6px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.container-form-input .input-text p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.container-form-input .input-text .option {
+  width: 270px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-form-input .input-text .option .option-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+
+.container-form-input .input-text .option .option-input .input-checkbox {
+  width: 10px;
+  height: 10px;
+  
+}
+.container-form-input .input-text .option .option-input .text-checkbox{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: black;
+  padding-bottom: 0px;
+}
+
+.container-form-input .input-text .input-file {
+  height: 30px;
+  padding-left: 0px;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 0;
+}
+
+.container-form-input .input-desc {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container-form-input .input-desc p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.container-form-input .input-desc textarea {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #4F4E4E;
+  border-radius: 6px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding-top: 10px;
+}
+
+.container-form-input .input-desc .input-content {
+  height: 160px;
+
+}
+
+

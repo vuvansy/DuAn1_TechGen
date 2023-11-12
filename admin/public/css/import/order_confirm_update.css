@@ -1,0 +1,173 @@
+.confirm_update-container {
+    width: 119rem;
+    margin: 0 0 181px 0;
+    height: 727px;
+}
+
+.confirm_update-container .confirm_update-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    width: 35.5rem;
+    height: 7.3rem;
+    font-family: 'roboto', 'sans-serif';
+    line-height: 7.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.confirm_update-container .confirm_update-bar {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.confirm_update-container .confirm_update-bar a {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    width: auto;
+    text-decoration: none;
+}
+
+.confirm_update-container .confirm_update-bar .cancel-btn-wait {
+    padding: 1rem 2.7rem 1.1rem 2.7rem;
+    background: #F25C05;
+    color: #fff;
+}
+
+.confirm_update-container .confirm_update-bar .cancel-btn-now {
+    padding: 1rem 1.3rem 1.1rem 1.3rem;
+    background: #DDD;
+}
+
+.confirm_update-container .confirm_update-bar .cancel-btn-cancel {
+    padding: 1rem 2.3rem 1.1rem 2.3rem;
+    background: #DDD;
+}
+
+.confirm_update-container .confirm_update-bar .cancel-btn-success {
+    padding: 1rem 2.4rem 1.1rem 2.3rem;
+    background: #DDD;
+}
+
+.confirm_update-container .container-content {
+    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
+    padding-bottom: 2rem;
+}
+
+.confirm_update-container .container-content .head {
+    width: 100%;
+    height: 4rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #DDD;
+}
+
+.confirm_update-container .container-content .head .inline {
+    display: flex;
+    height: 4rem;
+    padding: 0 2rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.confirm_update-container .container-content .content-list {
+    height: 14rem;
+    position: relative;
+}
+
+.confirm_update-container .container-content .content-list .content-bar {
+    width: 111rem;
+    color: #000;
+    margin-left: 4rem;
+    display: flex;
+    height: 4rem;
+    gap: 45rem;
+    text-align: center;
+}
+
+.confirm_update-container .container-content .content-list .content-bar .id {
+    color: #000;
+    font-family: Roboto, sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+    width: 10rem;
+}
+
+.confirm_update-container .container-content .content-list .content-bar .status {
+    color: #000;
+    font-family: Roboto, sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+    width: 10rem;
+}
+
+.confirm_update-container .container-content .content-list .list-group {
+    width: 100%;
+    display: flex;
+    gap: 6rem;
+    margin-left: 4rem;
+}
+
+.confirm_update-container .container-content .content-list .list-group .id {
+    width: 50rem;
+    height: 3rem;
+    border-radius: 0.6rem;
+    border: 1px solid #4F4E4E;
+    background: #FFF;
+    line-height: 3rem;
+    padding-left: 1rem;
+    font-family: Roboto, sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.confirm_update-container .container-content .content-list .list-group .status {
+    width: 50rem;
+    height: 3rem;
+}
+
+.confirm_update-container .container-content .content-list .list-group .status select {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.6rem;
+    padding-left: 1rem;
+    color: #000;
+    font-family: Roboto, sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.confirm_update-container .container-content .button_update {
+    display: block;
+    width: 11rem;
+    height: 4rem;
+    padding: 1.2rem 2.9rem;
+    color: #fff;
+    border-radius: 1rem;
+    background: #00483D;
+    font-family: Roboto, sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: absolute;
+    bottom: 1rem;
+    right: 9rem;
+}
+
+
+
