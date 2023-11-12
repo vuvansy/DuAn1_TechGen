@@ -12,12 +12,13 @@
   }
   
   .product-bar {
-    width: 100%;
-    height: 4rem;
+    width: 1190px;
+    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 2rem;
+    padding-left: 20px;
   }
   
   .product-bar a{
@@ -61,17 +62,18 @@
   }
   
   .search-product .search-product-btn {
+    width: 100px;
+    height: 40px;
     font-size: 1.6rem;
     font-weight: 400;
     background: #ddd;
     color: #212529;
     cursor: pointer;
     text-align: center;
-    padding: 10px 20px 10px 20px;
+    
   }
   
   .search-product .search-product-btn:hover {
-    padding: 10px 20px 11px 20px;
     color: #fff;
     background: #f25c05;
   }
@@ -84,34 +86,44 @@
   }
   
   .product-bar .product-btn-add, .product-bar .product-btn-list  {
-    padding: 10px 20px 11px 20px;
+    width: 110px;
+    height: 40px;
     background: #ddd;
+    padding: 12px;
   }
   
+  .product-bar .product-btn-add, .product-bar .product-btn-add {
+    margin-right: 20px;
+  }
+
   .product-bar .product-btn-add:hover {
-    padding: 10px 20px 11px 20px;
     color: #fff;
     background: #f25c05;
   }
   .product-bar .product-btn-list:hover {
-    padding: 10px 20px 11px 20px;
+   
     color: #fff;
     background: #f25c05;
   }
   
   
   /***************** list-user.css **********************/
+  .box-container-product {
+    width: 1190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .container-product {
+    width: 1150px;
     margin-top: 20px;
     border: 1px solid;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
   }
   
   .container-product .head {
-    width: 100%;
     height: 40px;
     background-color: #F6F6F6;
-    border: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
   }
   
@@ -139,9 +151,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     width: 1110px;
-    border: 1px solid #000;
   }
-  
   
   .container-product .list-table .list-desc {
     color: #fff;
@@ -188,7 +198,7 @@
     color: #000;
     height: 30px;
     text-align: center;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     
   }
   .container-product .list-table .list-item td {

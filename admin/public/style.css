@@ -1,7 +1,14 @@
 /*STYLE*/
 @import "../public/fonts/stylesheet.css";
 @import "../public/css/import/global.css";
+
+/****** product-admin **********/
 @import "../public/css/import/product.css";
+
+
+
+/*************** user-admin ******************/
+@import "../public/css/import/user_list.css";
 
 /* Order  */
 @import "../public/css/import/order_cancel.css";
@@ -19,21 +26,19 @@
 @import "../public/css/import/layout.css";
 
 /* Category  */
-@import "../public/css/import/category.css";
+/* @import "../public/css/import/category.css"; */
 
 /* Admin user  */
 @import "../public/css/import/info_account.css";
 @import "../public/css/import/change_account.css";
 
 /* Comment  */
-@import "../public/css/import/comment.css";
+/* @import "../public/css/import/comment.css"; */
 
 /* Statistical  */
 
 @import "../public/css/import/revenue.css";
 @import "../public/css/import/warning.css";
 
-
-@import "../public/css/import/user_list.css";
 /* @import "../public/css/import/detail_order.css";
 @import "../public/css/import/list_product.css"; */
