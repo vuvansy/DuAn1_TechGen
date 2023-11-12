@@ -231,9 +231,9 @@ get_slideshow();
                             </h3>
                             <div class="product__info--foot">
                                 <div class="product__price">
-                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="latest-price">2200.900.000đ</span>
                                     <span class="price-and-discount">
-                                        <label class="price-old">29.900.000đ</label>
+                                        <label class="price-old">2900.900.000đ</label>
                                         <small>10.1%</small>
                                     </span>
                                 </div>
