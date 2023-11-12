@@ -1,10 +1,21 @@
 <?php
 get_header();
-//show_array($list_users);
 ?>
-
 <main>
-    <h1>Category</h1>
+    <div class="main-wrapper">
+        <?php
+        get_sidebar();
+        ?>
+        <div class="sidebar-right">
+            <div class="product-heading">
+                Thêm mới sản phẩm
+            </div>
+            <div class="product-bar">
+                <a href="#!" class="product-btn-add">Thêm mới</a>
+                <a href="#!" class="product-btn-list">Danh sách</a>
+            </div>
+        </div>
+    </div>
 </main>
 
 <?php
