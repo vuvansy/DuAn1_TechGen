@@ -4,6 +4,7 @@ get_header();
 ?>
 
 <main>
+<<<<<<< HEAD
 <section id="news">
         <div class="container">
           <h2 class="news__heading">
@@ -70,6 +71,10 @@ get_header();
         </div>
       </section>
 </main>
+=======
+
+<main>
+>>>>>>> 31c1d2f7e280813315348618ea10f2e37c5c31f2
 
 <?php
 get_footer();

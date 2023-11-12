@@ -73,13 +73,13 @@
 .transport-container .container-content .head .inline {
     display: flex;
     height: 4rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
     align-items: center;
     gap: 1rem;
 }
 
 .transport-container .container-content .content-list {
-    margin-top: 2rem;
+    margin: 2rem auto 0 auto;
 }
 
 .transport-container .container-content .content-list .content-bar {
@@ -91,7 +91,6 @@
     height: 3rem;
     text-align: center;
     line-height: 3rem;
-    margin-left: 2rem;
 }
 
 .transport-container .container-content .content-list .list-group .list-item {
@@ -102,7 +101,6 @@
     height: 3rem;
     text-align: center;
     line-height: 3rem;
-    margin-left: 2rem;
 }
 
 .transport-container .container-content .content-list .list-group .list-item td {
@@ -115,11 +113,12 @@
     align-items: center;
 }
 
-.transport-container .container-content .content-list .list-group .list-item .update {
+.transport-container .container-content .content-list .list-group .list-item .update a {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 
 .transport-container .container-content .content-list .list-group .list-item .detail a {

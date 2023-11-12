@@ -72,13 +72,14 @@
 .detail-container .container-content .head .inline {
     display: flex;
     height: 4rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
     align-items: center;
     gap: 1rem;
 }
 
 .detail-container .container-content .content-list {
-    margin-top: 2rem;
+    margin: 2rem auto 0 auto;
+    width: 111rem;
 }
 
 .detail-container .container-content .content-list .content-bar {
@@ -89,7 +90,6 @@
     height: 3rem;
     text-align: center;
     line-height: 3rem;
-    margin-left: 2rem;
 }
 
 .detail-container .container-content .content-list .content-bar .image {
@@ -112,13 +112,16 @@
     width: 14.1rem;
 }
 
+.detail-container .container-content .content-list .list-group {
+    width: 111rem;
+}
+
 .detail-container .container-content .content-list .list-group .list-item {
     display: grid;
     width: 111rem;
     grid-template-columns: 10rem 53rem 16.4rem 17.5rem 14.1rem;
     color: #000;
     height: 6rem;
-    margin-left: 2rem;
     border-right: 1px solid #DDD;
     border-bottom: 1px solid #DDD;
     border-left: 1px solid #DDD;
@@ -144,7 +147,6 @@
     font-size: 1.3rem;
     font-style: normal;
     font-weight: 700;
-    margin-left: 2rem;
     height: 3rem;
     line-height: 3rem;
 }

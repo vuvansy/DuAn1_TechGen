@@ -1,6 +1,5 @@
 <?php get_header() ?>
 
-
 <main>
     <div class="container">
         <div class="product-details">
@@ -79,12 +78,8 @@
                     </button>
                 </div>
                 <!-- btn mua sp -->
-
             </div>
             <!-- thông tin sp -->
-
-            <!-- </div> -->
-            <!-- </div> -->
             <!-- div chứa thông tin sản phẩm -->
 
         </div>

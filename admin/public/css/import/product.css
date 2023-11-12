@@ -220,7 +220,7 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 10px;
-
+  
 }
 
 .container-form-input .input-text {
@@ -229,6 +229,16 @@
  
 }
 .container-form-input .input-text input {
+  width: 270px;
+  height: 30px;
+  border: 1px solid #4F4E4E;
+  border-radius: 6px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.container-form-input .input-text .select-box {
   width: 270px;
   height: 30px;
   border: 1px solid #4F4E4E;
@@ -250,7 +260,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
 }
 
 .container-form-input .input-text .option .option-input {
@@ -261,8 +270,8 @@
 }
 
 .container-form-input .input-text .option .option-input .input-checkbox {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   
 }
 .container-form-input .input-text .option .option-input .text-checkbox{
@@ -306,5 +315,28 @@
   height: 160px;
 
 }
+.container-form-input .box-btn-update {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.container-form-input .box-btn-update .btn-update {
+  width: 110px;
+  height: 40px;
+  color: #fff;
+  border-radius: 4px;
+  background: #00483D;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.container-form-input .box-btn-update .btn-update:hover {
+  background: #f25c05;
+}
 
