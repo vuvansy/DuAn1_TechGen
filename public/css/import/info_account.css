@@ -134,3 +134,9 @@
 .resetPassword .form__group {
     width: 340px;
 }
+
+.resetOkPassword .heading-title {
+    width: 410px;
+    line-height: 1.7;
+    color: var(--orange);
+}
