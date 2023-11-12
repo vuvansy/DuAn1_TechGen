@@ -13,20 +13,8 @@ function indexAction()
     load_view('index');
 }
 
-function detailAction()
-{
-    // echo 'Trang chủ';
-    load_view('index');
-}
-
 function contactAction()
 {
     // echo 'Trang chủ';
-    load_view('index');
-}
-
-function newAction()
-{
-    // echo 'Trang chủ';
-    load_view('index');
+    load_view('contact');
 }
