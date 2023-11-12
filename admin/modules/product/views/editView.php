@@ -21,7 +21,7 @@ get_header();
                             <img src="./public/images/icon/border-all.svg" alt="">
                         </div>
                         <div class="heading">
-                           Cập nhật hàng hóa
+                            Cập nhật hàng hóa
                         </div>
                     </div>
                 </div>
@@ -49,11 +49,14 @@ get_header();
                         </div>
                         <div class="input-text">
                             <p>Loại hàng</p>
-                            <input type="text" placeholder="Loại hàng">
+                            <select class="select-box" name="" id="">
+                                <option value="">Điện Thoại</option>
+                                <option value="">Laptop</option>
+                            </select>
                         </div>
                         <div class="input-text">
                             <p>Ngày nhập</p>
-                            <input type="text" placeholder="Ngày nhập">
+                            <input type="date" placeholder="Ngày nhập">
                         </div>
                         <div class="input-text">
                             <p>Mã sản phẩm</p>
@@ -84,6 +87,9 @@ get_header();
                             <p>Nội dung</p>
                             <textarea class="input-content">Nội dung</textarea>
                         </div>
+                        <div class="box-btn-update">
+                        <a href="?mod=product&action=list" class="btn-update"><p>Cập nhật</p></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,14 +97,14 @@ get_header();
         </div>
     </div>
     </div>
-   
+
 </main>
 <script>
-       let check = document.getElementById("block");
-       check.checked = true ; 
-       let uncheck = document.getElementById("none");
-       uncheck.checked = false ; 
-    </script>
+    let check = document.getElementById("block");
+    check.checked = true;
+    let uncheck = document.getElementById("none");
+    uncheck.checked = false;
+</script>
 <?php
 get_footer();
 ?>
