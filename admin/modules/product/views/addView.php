@@ -56,7 +56,7 @@ get_header();
                         </div>
                         <div class="input-text">
                             <p>Ngày nhập</p>
-                            <input type="text" placeholder="Ngày nhập">
+                            <input type="date" placeholder="Ngày nhập">
                         </div>
                         <div class="input-text">
                             <p>Mã sản phẩm</p>

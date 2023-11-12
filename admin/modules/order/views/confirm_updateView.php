@@ -53,23 +53,24 @@ get_header();
 
                             </div>
 
-                            <div class="list-group">
+                            <form class="list-group">
 
                                 <div class="id">
                                     IT968280
                                 </div>
 
                                 <label class="status">
-                                    <select name="" id="">
-                                        <option value="">Chờ xác nhận</option>
+                                    <select name="status_order" id="">
+                                        <option value="0">Chờ xác nhận</option>
+                                        <option value="1">Đang vận chuyển</option>
+                                        <option value="3">Đã hủy</option>
+                                        <option value="4">Đã giao hàng</option>
                                     </select>
                                 </label>
 
-                            </div>
+                                <input type="submit" class="button_update" value="Cập nhật">
 
-                            <a href="?mod=order&action=confirm_list" class="button_update">
-                                Cập nhật
-                            </a>
+                            </form>
 
                         </div>
 

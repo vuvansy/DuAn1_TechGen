@@ -72,15 +72,17 @@ get_header();
 
                                 </tr>
 
+                                <tr class="total-bar">
+
+                                    <td class="text">Tổng tiền</td>
+
+                                    <td class="total">88.000.000đ</td>
+
+                                </tr>
+
                             </tbody>
 
-                            <tr class="total-bar">
 
-                                <td class="text">Tổng tiền</td>
-
-                                <td class="total">88.000.000đ</td>
-
-                            </tr>
 
                         </table>
 
