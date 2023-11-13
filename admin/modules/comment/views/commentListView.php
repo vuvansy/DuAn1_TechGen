@@ -62,7 +62,6 @@ get_header();
                              <a href="?mod=comment&action=commentDetail">Xem chi tiết</a>
                             </td>
                         </tr>
-                        <!-- Thêm các dòng bình luận khác nếu cần -->
                     </tbody>
                     <tbody class="table-tbody">
                         <tr>
@@ -74,7 +73,6 @@ get_header();
                              <a href="?mod=comment&action=commentDetail">Xem chi tiết</a>
                             </td>
                         </tr>
-                        <!-- Thêm các dòng bình luận khác nếu cần -->
                     </tbody>
                     <tbody class="table-tbody" >
                         <tr>
@@ -86,7 +84,6 @@ get_header();
                              <a href="?mod=comment&action=commentDetail">Xem chi tiết</a>
                             </td>
                         </tr>
-                        <!-- Thêm các dòng bình luận khác nếu cần -->
                     </tbody>
                 </table>
 
