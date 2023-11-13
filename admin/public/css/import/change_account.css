@@ -1,8 +1,5 @@
 /*====UPDATE USER=====*/
 
-/* LIST USER  */
-
-/*====ADD USER====*/
 *,
 *:before,
 *:after {
@@ -160,4 +157,9 @@ body {
   display: block;
   margin-left: auto;
 }
+
+
+/* LIST USER  */
+
+/*====ADD USER====*/
 
