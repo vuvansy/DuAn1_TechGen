@@ -205,7 +205,7 @@ get_slideshow();
             <img src="public/images/slide/slide_h1.png" alt="" class="post_thumb">
         </div>
     </section>
-    <!-- Product home  -->
+    <!-- Product -->
     <section class="product">
         <div class="container">
             <div class="product__body">
@@ -245,13 +245,13 @@ get_slideshow();
                     </div>
                     <!-- Product item 2  -->
                     <div class="product__item">
-                        <a href="">
+                        <a href="?mod=product&action=productDetail">
                             <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
                         </a>
                         <div class="product__info">
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
-                                <a href="!#" class="line-clamp break-all line-2">
+                                <a href="?mod=product&action=productDetail" class="line-clamp break-all line-2">
                                     Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
@@ -791,14 +791,12 @@ get_slideshow();
                             <a href=""><img src="public/images/slide/slide_4.png" alt=""></a>
                             <div class="laptop__title">
                                 <p class="heading lv1">Macbook Pro</p>
-                                <span>MacBook M1 giảm giá</span>
                             </div>
                         </div>
                         <div class="laptop__top--right">
                             <a href=""><img src="public/images/slide/slide_4.png" alt=""></a>
                             <div class="laptop__title">
                                 <p class="heading lv1">Laptop Apple</p>
-                                <span>MacBook M1 giảm giá</span>
                             </div>
                         </div>
                     </div>

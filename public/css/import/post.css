@@ -57,6 +57,63 @@
 .about__item {
   margin-bottom: 1rem;
 }
+=======
+    margin: 3rem 0;
+  }
+  .about__heading {
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 2rem;
+  }
+  .about__media {
+    display: flex;
+    justify-content: center;
+    gap: 0 1.5rem;
+    padding: 1.5rem 0;
+  }
+  .about__img {
+    width: 60rem;
+    height: 30rem;
+    object-fit: cover;
+    display: block;
+  }
+  .about__img--modify {
+    width: 90rem;
+  }
+  .about__title {
+    color: #000;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1rem;
+  }
+  .about__desc {
+    color: #000;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .about__desc + .about__desc {
+    margin: 1rem 0;
+  }
+  .about__item--strong {
+    color: #000;
+    font-weight: 600;
+  }
+  .about__timer {
+    list-style: initial;
+    padding-left: 2.5rem;
+  }
+  .about__item {
+    margin-bottom: 1rem;
+  }
   
 /*====warranty==== */
 
@@ -75,6 +132,7 @@
 .privacy__subheading {
   color: #000;
   font-size: 1.6rem;
+  font-size: 1.3rem;
   font-style: normal;
   font-weight: 700;
   margin-bottom: 2rem;

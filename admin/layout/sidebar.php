@@ -15,10 +15,10 @@
             <a href="" class="sidebar-nav__link">Bình luận</a>
         </li>
         <li class="sidebar-nav__item">
-            <a href="" class="sidebar-nav__link">Đơn hàng</a>
+            <a href="?mod=order&action=confirm_list" class="sidebar-nav__link">Đơn hàng</a>
         </li>
         <li class="sidebar-nav__item">
-            <a href="" class="sidebar-nav__link">Thống kê</a>
+            <a href="?mod=statistical&action=revenue" class="sidebar-nav__link">Thống kê</a>
         </li>
     </ul>
 </div>
