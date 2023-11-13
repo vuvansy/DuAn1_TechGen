@@ -3,8 +3,8 @@ get_header();
 ?>
 <main>
     <div class="button">
-        <button class="button-1">Giỏ hàng</button>
-        <button class="button-2">Quản lí đơn hàng</button>
+        <a href="?mod=order&action=index"><button class="button-1">Giỏ hàng</button></a>
+        <a href="?mod=order&action=cartview"><button class="button-2">Quản lí đơn hàng</button></a>
     </div>
     <h1>Chi tiết đơn hàng</h1>
     <div class="box">
