@@ -107,95 +107,106 @@ get_slideshow();
                 <h2 class="category__heading heading lv1">DANH MỤC NỔI BẬT</h2>
                 <div class="category__list">
                     <!-- Category item 1  -->
-                    <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>Màn máy tính</span>
-                        </a>
-                    </div>
+                    <?php
+                    foreach ($category as $item) {
+                        // show_array($item);
+                    ?>
+
+                        <div class="category-item">
+                            <a href="">
+                                <div class="category-item__thumb">
+                                    <img src="public/images/category/laptop.webp" alt="laptop">
+                                </div>
+                                <span><?php echo $item['category_name'] ?></span>
+                            </a>
+                        </div>
+
+                    <?php
+                    }
+                    ?>
+
+
                     <!-- Category item 2  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>Đồng hồ</span>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- Category item 3  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>Phụ kiện gaming</span>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- Category item 4  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>MacBook</span>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- Category item 5  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>MacBook</span>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- Category item 6  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>MacBook</span>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- Category item 7  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>MacBook</span>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- Category item 8  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>MacBook</span>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- Category item 9  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>MacBook</span>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- Category item 10  -->
-                    <div class="category-item">
+                    <!-- <div class="category-item">
                         <a href="">
                             <div class="category-item__thumb">
                                 <img src="public/images/category/laptop.webp" alt="laptop">
                             </div>
                             <span>MacBook</span>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
     </section>
@@ -205,7 +216,7 @@ get_slideshow();
             <img src="public/images/slide/slide_h1.png" alt="" class="post_thumb">
         </div>
     </section>
-    <!-- Product -->
+    <!-- Product  -->
     <section class="product">
         <div class="container">
             <div class="product__body">
