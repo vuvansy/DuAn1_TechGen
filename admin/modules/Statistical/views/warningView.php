@@ -42,90 +42,175 @@ get_header();
                         <table class="content-list">
                             <thead>
                                 <tr>
-                                    <td class="image">
+                                    <th>
                                         Hình ảnh
-                                    </td>
-                                    <td class="id">
+                                    </th>
+                                    <th>
                                         Mã sản phẩm
-                                    </td>
-                                    <td class="name">
+                                    </th>
+                                    <th>
                                         Tên sản phẩm
-                                    </td>
-                                    <td class="exists">
+                                    </th>
+                                    <th>
                                         Tồn kho
-                                    </td>
-                                    <td class="add">
+                                    </th>
+                                    <th>
                                         Thêm
-                                    </td>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 <tr>
-                                    <td class="image">
+                                    <td class="image-warning">
                                         <img src="public/images/product/Iphone/iphone1.jpg" alt="">
                                     </td>
-                                    <td class="id">
+                                    <td class="id-warning">
                                         00001
                                     </td>
-                                    <td class="name">
+                                    <td class="name-warning">
                                         iphone 14 pro max
                                     </td>
-                                    <td class="exists">
+                                    <td class="exists-warning">
                                         0
                                     </td>
-                                    <td class="add">
+                                    <td class="add-warning">
                                         <a href="">Thêm</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="image">
+                                    <td class="image-warning">
                                         <img src="public/images/product/Iphone/iphone1.jpg" alt="">
                                     </td>
-                                    <td class="id">
+                                    <td class="id-warning">
                                         00001
                                     </td>
-                                    <td class="name">
+                                    <td class="name-warning">
                                         iphone 14 pro max
                                     </td>
-                                    <td class="exists">
+                                    <td class="exists-warning">
                                         0
                                     </td>
-                                    <td class="add">
+                                    <td class="add-warning">
                                         <a href="">Thêm</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="image">
+                                    <td class="image-warning">
                                         <img src="public/images/product/Iphone/iphone1.jpg" alt="">
                                     </td>
-                                    <td class="id">
+                                    <td class="id-warning">
                                         00001
                                     </td>
-                                    <td class="name">
+                                    <td class="name-warning">
                                         iphone 14 pro max
                                     </td>
-                                    <td class="exists">
+                                    <td class="exists-warning">
                                         0
                                     </td>
-                                    <td class="add">
+                                    <td class="add-warning">
                                         <a href="">Thêm</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="image">
+                                    <td class="image-warning">
                                         <img src="public/images/product/Iphone/iphone1.jpg" alt="">
                                     </td>
-                                    <td class="id">
+                                    <td class="id-warning">
                                         00001
                                     </td>
-                                    <td class="name">
+                                    <td class="name-warning">
                                         iphone 14 pro max
                                     </td>
-                                    <td class="exists">
+                                    <td class="exists-warning">
                                         0
                                     </td>
-                                    <td class="add">
+                                    <td class="add-warning">
+                                        <a href="">Thêm</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="image-warning">
+                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
+                                    </td>
+                                    <td class="id-warning">
+                                        00001
+                                    </td>
+                                    <td class="name-warning">
+                                        iphone 14 pro max
+                                    </td>
+                                    <td class="exists-warning">
+                                        0
+                                    </td>
+                                    <td class="add-warning">
+                                        <a href="">Thêm</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="image-warning">
+                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
+                                    </td>
+                                    <td class="id-warning">
+                                        00001
+                                    </td>
+                                    <td class="name-warning">
+                                        iphone 14 pro max
+                                    </td>
+                                    <td class="exists-warning">
+                                        0
+                                    </td>
+                                    <td class="add-warning">
+                                        <a href="">Thêm</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="image-warning">
+                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
+                                    </td>
+                                    <td class="id-warning">
+                                        00001
+                                    </td>
+                                    <td class="name-warning">
+                                        iphone 14 pro max
+                                    </td>
+                                    <td class="exists-warning">
+                                        0
+                                    </td>
+                                    <td class="add-warning">
+                                        <a href="">Thêm</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="image-warning">
+                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
+                                    </td>
+                                    <td class="id-warning">
+                                        00001
+                                    </td>
+                                    <td class="name-warning">
+                                        iphone 14 pro max
+                                    </td>
+                                    <td class="exists-warning">
+                                        0
+                                    </td>
+                                    <td class="add-warning">
+                                        <a href="">Thêm</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="image-warning">
+                                        <img src="public/images/product/Iphone/iphone1.jpg" alt="">
+                                    </td>
+                                    <td class="id-warning">
+                                        00001
+                                    </td>
+                                    <td class="name-warning">
+                                        iphone 14 pro max
+                                    </td>
+                                    <td class="exists-warning">
+                                        0
+                                    </td>
+                                    <td class="add-warning">
                                         <a href="">Thêm</a>
                                     </td>
                                 </tr>

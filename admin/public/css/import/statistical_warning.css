@@ -60,8 +60,6 @@
 .warning-container .container-content .head {
     width: 100%;
     height: 4rem;
-    border-radius: 1rem 1rem 0 0;
-    border: 1px solid #DDD;
 }
 
 .warning-container .container-content .head .inline {
@@ -78,18 +76,21 @@
 }
 
 .warning-container .container-content .content-list thead {
-    /*display: grid;*/
     width: 111rem;
-    /*grid-template-columns:  18.5rem 19.3rem 19.2rem 16rem;*/
     background-color: #000;
     color: #fff;
     height: 3rem;
     text-align: center;
-
+    border: none;
 }
 
 .warning-container .container-content .content-list thead tr {
+    display: grid;
+    grid-template-columns: 10rem 20rem 45rem 20rem 16rem;
+    width: 111rem;
     height: 3rem;
+    line-height: 3rem;
+    border: none;
 }
 
 .warning-container .container-content .content-list thead tr td {
@@ -97,48 +98,38 @@
     font-size: 1.3rem;
     font-style: normal;
     font-weight: 400;
-}
-
-.warning-container .container-content .content-list thead tr .image {
-    width: 10rem;
-}
-
-.warning-container .container-content .content-list thead tr .id {
-    width: 20rem;
-}
-
-.warning-container .container-content .content-list thead tr .name {
-    width: 45rem;
-}
-
-.warning-container .container-content .content-list thead tr .exists {
-    width: 20rem;
-}
-
-.warning-container .container-content .content-list thead tr .add {
-    width: 16rem;
+    border: none;
 }
 
 .warning-container .container-content .content-list tbody {
     width: 111rem;
     color: #000;
     height: auto;
-    /*padding-bottom: 2rem;*/
-    border: 1px solid #ddd;
+    border: none;
 }
 
 .warning-container .container-content .content-list tbody tr {
+    display: grid;
+    grid-template-columns: 10rem 20rem 45rem 20rem 16rem;
+    line-height: 6rem;
+    height: 6rem;
     text-align: center;
-    height: auto;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #DDD;
+    border-left: 1px solid #DDD;
 }
 
 .warning-container .container-content .content-list tbody tr td {
-    border: 1px solid #DDD;
     text-align: center;
     vertical-align: middle;
     padding: 0;
     margin: 0;
-    height: 5.8rem;
+    height: 6rem;
+    border-top: none;
+    border-right: 1px solid #DDD;
+    border-bottom: none;
+    border-left: none;
 }
 
 .warning-container .container-content .content-list tbody tr td a {
@@ -146,9 +137,15 @@
     text-decoration: none;
 }
 
-.warning-container .container-content .content-list tbody tr .image img {
+.warning-container .container-content .content-list tbody tr .image-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning-container .container-content .content-list tbody tr .image-warning img {
     width: 5.9rem;
-    height: 5.9rem;
-    margin: 0 auto;
+    height: 5.8rem;
+    /*margin: 0 auto;*/
 }
 
