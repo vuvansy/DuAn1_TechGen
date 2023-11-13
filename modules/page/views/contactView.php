@@ -3,7 +3,6 @@
 get_header();
 //show_array($list_users);
 ?>
-
 <main>
 <section id="contact">
         <div class="container">
@@ -61,8 +60,6 @@ get_header();
         </div>
       </section>
 </main>
-
-
 <?php
 get_footer();
 ?>  

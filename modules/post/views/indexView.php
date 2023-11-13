@@ -30,12 +30,12 @@ get_header();
                   <tr>
                     <td>
                       <ul class="list">
-                        <li class="item">Laptop, Màn hình</li>
-                        <li class="item">Điện thoại/Máy tính bảng</li>
-                        <li class="item">iPhone</li>
-                        <li class="item">Macbook/iPad/iMac/Apple Watch</li>
-                        <li class="item">Điện thoại/Máy tính bảng</li>
-                        <li class="item">Điện thoại/Máy tính bảng</li>
+                        <li class="item1">Laptop, Màn hình</li>
+                        <li class="item1">Điện thoại/Máy tính bảng</li>
+                        <li class="item1">iPhone</li>
+                        <li class="item1">Macbook/iPad/iMac/Apple Watch</li>
+                        <li class="item1">Điện thoại/Máy tính bảng</li>
+                        <li class="item1">Điện thoại/Máy tính bảng</li>
                       </ul>
                     </td>
                     <td>30 ngày</td>
@@ -51,7 +51,7 @@ get_header();
                   <tr>
                     <td>
                       <ul class="list">
-                        <li class="item">Samsung Watch</li>
+                        <li class="item1">Samsung Watch</li>
                       </ul>
                     </td>
                     <td>30 ngày</td>
@@ -65,8 +65,8 @@ get_header();
                   <tr>
                     <td>
                       <ul class="list">
-                        <li class="item">Smart Watch</li>
-                        <li class="item">Smart Home</li>
+                        <li class="item1">Smart Watch</li>
+                        <li class="item1">Smart Home</li>
                       </ul>
                     </td>
                     <td>15 ngày (Riêng Máy lọc không khí: 30 ngày)</td>
@@ -75,8 +75,8 @@ get_header();
                   <tr>
                     <td>
                       <ul class="list">
-                        <li class="item">Phụ kiện nhỏ hơn 1tr</li>
-                        <li class="item">Phụ kiện lớn hơn 1tr</li>
+                        <li class="item1">Phụ kiện nhỏ hơn 1tr</li>
+                        <li class="item1">Phụ kiện lớn hơn 1tr</li>
                       </ul>
                     </td>
                     <td>15 ngày</td>
@@ -85,7 +85,7 @@ get_header();
                   <tr>
                     <td>
                       <ul class="list">
-                        <li class="item">Tivi</li>
+                        <li class="item1">Tivi</li>
                       </ul>
                     </td>
                     <td>15 ngày</td>
@@ -108,21 +108,21 @@ get_header();
             </p>
             <h3 class="privacy__title">Điều kiện đổi mới và trả lại:</h3>
             <ul class="privacy__list">
-              <li class="privacy__item">Hình thức máy và hộp máy như mới</li>
-              <li class="privacy__item">
+              <li class="privacy__item1">Hình thức máy và hộp máy như mới</li>
+              <li class="privacy__item1">
                 Phụ kiện và các loại quà tặng đi kèm: còn đầy đủ, nguyên vẹn,
                 không có dấu hiệu móp mép, cong vênh
               </li>
-              <li class="privacy__item">
+              <li class="privacy__item1">
                 Máy không có dấu hiệu tác động từ bên ngoài: Rơi, vỡ, móp méo,
                 cong vênh, trầy xước, bị dung dịch hoá chất và chất lỏng xâm
                 nhập vào.
               </li>
-              <li class="privacy__item">
+              <li class="privacy__item1">
                 Máy đã được gỡ các loại tài khoản cá nhân như iCloud, Gmail, Mi
                 account …
               </li>
-              <li class="privacy__item">
+              <li class="privacy__item1">
                 Lỗi điểm chết màn hình : màn hình có từ 3 điểm chết trở lên hoặc
                 1 điểm chết có kích thước lớn hơn 1mm đối với điện thoại và từ 5
                 điểm chết trở lên đối với laptop./li>
@@ -164,16 +164,16 @@ get_header();
                   <tr>
                     <td>
                       <ul class="list">
-                        <li class="item">
+                        <li class="item1">
                           Sản phẩm được bảo hành miễn phí nếu sản phẩm đó còn
                           thời hạn bảo hành được tính từ ngày quý khách mua
                           hàng.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Khi đổi sản phẩm, thời hạn bảo hành còn lại của sản
                           phẩm cũ được chuyển sang sản phẩm tương đương.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Chính sách bảo hành của TECHGEN chỉ áp dụng cho các
                           sản phẩm do Hoàng Hà Mobile cung cấp.
                         </li>
@@ -181,49 +181,49 @@ get_header();
                     </td>
                     <td>
                       <ul class="list">
-                        <li class="item">
+                        <li class="item1">
                           Bảo hành do lỗi vật liệu và gia công trên sản phẩm
                           trong điều kiện sử dụng bình thường. Những lỗi xảy ra
                           do sử dụng không đúng với quy cách của nhà sản xuất
                           (chập, cháy, nổ) đều không được bảo hành.
                         </li>
-                        <li class="item" style="list-style: none">
+                        <li class="item1" style="list-style: none">
                           Điều kiện bảo hành không áp dụng cho:
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Hỏng hóc do gặp sơ xuất, lạm dụng, dùng sai cách, lũ
                           lụt, hoả hoạn, động đất hoặc những nguyên nhân bên
                           ngoài khác.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Hỏng hóc do tự ý can thiệp vào phần cứng của máy, tự ý
                           tháo mở máy, tác động vào máy (trong đó có nâng cấp và
                           mở rộng) bởi bất cứ cá nhân, đơn vị nào bên ngoài mà
                           không thuộc uỷ quyền bảo hành của TECHGEN.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Hỏng hóc do máy bị rơi vỡ va đập, cong vênh, móp, méo,
                           trầy, lõm và bị vỡ ở các cổng, số serial đã bị xoá mờ
                           hoặc mất.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Máy bị ẩm mốc, cháy chập, bị dung dịch, hoá chất và
                           các loại chất lỏng xâm nhập vào.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Số IMEl trên máy và phiếu bảo hành không trùng khớp
                           với nhau.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Mất phiếu bảo hành của sản phẩm. Sản phẩm không thể
                           xác định được nguồn gốc mua tại TECHGEN một cách hợp
                           lệ.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Phiếu bảo hành tự ý sửa đổi hoặc gạch xoá, rách nát
                           không nhìn rõ được số IMEl, không ghi rõ ngày mua hàng
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Tem niêm phong bảo hành bị rách, vỡ, bị dán đè hoặc bị
                           sửa đổi
                         </li>
@@ -231,23 +231,23 @@ get_header();
                     </td>
                     <td>
                       <ul class="list">
-                        <li class="item">
+                        <li class="item1">
                           Quý khách nên sử dụng sạc theo đúng quy chuẩn của nhà
                           sản xuất (nếu không sẽ dễ gây lỗi nguồn sản phẩm)
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Quý khách vui lòng tự sao lưu tất cả các dữ liệu cá
                           nhân trước khi mang sản phẩm tới trung tâm bảo hành,
                           trong quá trình bảo hành Hoàng Hà Mobile không chịu
                           trách nhiệm về mọi mất mát dữ liệu cá nhân và các ứng
                           dụng cài đặt thêm được lưu trữ trong máy.
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Hoàng Hà không chịu trách nhiệm về phụ kiện không phải
                           của máy khi gửi bảo hạnh như : cường lực, ốp lưng, thẻ
                           nhớ, sim, PPF, ốp camera….
                         </li>
-                        <li class="item">
+                        <li class="item1">
                           Các trường hợp tự ý up ROM và chạy phần mềm khác ở
                           ngoài TECHGEN Root máy, can thiệp phần mềm ngoài Hệ
                           thống Hoàng Hà sẽ không được bảo hành. Khách hàng khi
