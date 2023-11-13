@@ -1,11 +1,8 @@
 <?php
 get_header();
-//show_array($list_users);
 ?>
-
-<main>
-<<<<<<< HEAD
-<section id="news">
+    <main>
+      <section id="news">
         <div class="container">
           <h2 class="news__heading">
             TECHGEN liên kết cùng các đơn vị tài chính ưu đãi trả góp iPhone 15
@@ -70,12 +67,7 @@ get_header();
           </p>
         </div>
       </section>
-</main>
-=======
-
-<main>
->>>>>>> 31c1d2f7e280813315348618ea10f2e37c5c31f2
-
+    </main>
 <?php
 get_footer();
-?> 
+?>
