@@ -1,8 +1,8 @@
 <?php
 get_header();
-?>
-<?php
 get_slideshow();
+// Đường dẫn hình ảnh
+$imagesURL = "public/images";
 ?>
 <!-- Main  -->
 <main>
@@ -111,11 +111,10 @@ get_slideshow();
                     foreach ($category as $item) {
                         // show_array($item);
                     ?>
-
                         <div class="category-item">
                             <a href="">
                                 <div class="category-item__thumb">
-                                    <img src="public/images/category/laptop.webp" alt="laptop">
+                                    <img src="<?php echo $imagesURL ?>/category/<?php echo $item['category_image'] ?>" alt="laptop">
                                 </div>
                                 <span><?php echo $item['category_name'] ?></span>
                             </a>
@@ -124,89 +123,6 @@ get_slideshow();
                     <?php
                     }
                     ?>
-
-
-                    <!-- Category item 2  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>Đồng hồ</span>
-                        </a>
-                    </div> -->
-                    <!-- Category item 3  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>Phụ kiện gaming</span>
-                        </a>
-                    </div> -->
-                    <!-- Category item 4  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>MacBook</span>
-                        </a>
-                    </div> -->
-                    <!-- Category item 5  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>MacBook</span>
-                        </a>
-                    </div> -->
-                    <!-- Category item 6  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>MacBook</span>
-                        </a>
-                    </div> -->
-                    <!-- Category item 7  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>MacBook</span>
-                        </a>
-                    </div> -->
-                    <!-- Category item 8  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>MacBook</span>
-                        </a>
-                    </div> -->
-                    <!-- Category item 9  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>MacBook</span>
-                        </a>
-                    </div> -->
-                    <!-- Category item 10  -->
-                    <!-- <div class="category-item">
-                        <a href="">
-                            <div class="category-item__thumb">
-                                <img src="public/images/category/laptop.webp" alt="laptop">
-                            </div>
-                            <span>MacBook</span>
-                        </a>
-                    </div> -->
                 </div>
             </div>
     </section>
