@@ -90,10 +90,6 @@
   padding: 12px;
 }
 
-.product-bar .product-btn-add,
-.product-bar .product-btn-add {
-  margin-right: 20px;
-}
 
 .product-bar .product-btn-add:hover {
   color: #fff;
@@ -110,15 +106,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 .container-product {
   width: 100%;
-  margin-top: 20px;
   border: 1px solid;
   border-radius: 10px;
 }
 
 .container-product .head {
+  width: 100%;
   height: 40px;
   background-color: #f6f6f6;
   border-radius: 10px 10px 0 0;
@@ -142,12 +139,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 20px;
 }
 
 .container-product .list-table {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 91%;
+  width: 100%;
 }
 
 .container-product .list-table th, .container-product .list-table td{
