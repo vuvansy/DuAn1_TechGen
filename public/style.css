@@ -14,7 +14,7 @@
 
 /* Order  */
 @import "../public/css/import/cart.css";
-/* @import "../public/css/import/detail_order.css"; */
+@import "../public/css/import/detail_order.css";
 
 /* Post Page  */
 @import "../public/css/import/post.css";
