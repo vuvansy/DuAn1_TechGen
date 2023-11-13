@@ -198,13 +198,11 @@
   color: #000;
   height: 30px;
   text-align: center;
-  /* border: 1px solid #000; */
 }
 .container-product .list-table .list-item td {
   font-size: 1.3rem;
   font-weight: 400;
   color: black;
-  /* border: 1px solid #000; */
   line-height: 21px;
 }
 
@@ -345,3 +343,6 @@
   cursor: pointer;
   background: #f25c05;
 }
+
+
+/*test*/
