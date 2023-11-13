@@ -159,7 +159,7 @@
                             <li>
                                 <button class="main-menu__cta"><i class="fa-solid fa-bars btn-icon"></i> Danh mục sản phẩm</button>
                                 <ul class="sub-menu">
-                                    <li><a href="./">Đồng hồ</a></li>
+                                    <li><a href="?mod=product&action=productList">Đồng hồ</a></li>
                                     <li><a href="">Laptop</a></li>
                                     <li><a href="">Điện thoại</a></li>
                                     <li><a href="">Tai nghe</a></li>
@@ -173,19 +173,19 @@
                             <a href="?" class="navbar__link">Trang chủ</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Giới thiệu</a>
+                            <a href="?mod=post&action=warranty" class="navbar__link">Giới thiệu</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Bảo hành</a>
+                            <a href="?mod=post&action=index" class="navbar__link">Bảo hành</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Tin tức</a>
+                            <a href="?mod=page&action=index" class="navbar__link">Tin tức</a>
                         </li>
                         <li class="navbar__item">
                             <a href="" class="navbar__link">Hướng dẫn</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Liên hệ</a>
+                            <a href="?mod=page&action=contact" class="navbar__link">Liên hệ</a>
                         </li>
                     </ul>
                     <!-- Hotline  -->
