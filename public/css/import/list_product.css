@@ -39,7 +39,6 @@
     background-color: #ffff;
 }
 
-
 .product-related-list {
     display: grid;
     grid-template-columns: repeat(5, 232px);
