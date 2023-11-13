@@ -8,22 +8,15 @@ get_header();
         ?>
         <div class="sidebar-right">
             <div class="product-heading">
-            Danh sách khách hàng    
+                Danh sách khách hàng
             </div>
             <div class="product-bar">
-                <form action="" class="search-product">
+                <form action="" id="search-product" class="search-product" method="POST">
                     <div class="box-form-product">
                         <!-- input -->
-                        <input type="text" class="search-product-input" placeholder="Tên người dùng" />
-                        <!-- Clear button -->
-                        <!-- <button type="reset" class="search-product-clear">
-                            <i class="fa-solid fa-circle-xmark"></i>
-                        </button> -->
+                        <input type="text" name="box-search-product" id="box-search-product" class="search-product-input" value="" placeholder="Tên sản phẩm" />
                     </div>
-                    <!-- Submit button -->
-                    <button class="search-product-btn">
-                        Tìm kiếm
-                    </button>
+                    <input type="submit" id="search-product-btn" class="search-product-btn" value="Tìm kiếm">
                 </form>
                 <a href="?mod=users&action=list" class="product-btn-list">Danh sách</a>
                 <a href="?mod=users&action=add" class="product-btn-add">Thêm mới</a>
@@ -62,12 +55,12 @@ get_header();
                             <td>Kích hoạt</td>
                             <td>
                                 <div class="table-icon">
-                                   <a href="#!"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
-                                  <a href="#!">  <img src="./public/images/icon/delete.svg" alt=""></a>
+                                    <a href="#!"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
+                                    <a href="#!"> <img src="./public/images/icon/delete.svg" alt=""></a>
                                 </div>
                             </td>
                         </tr>
-                       <tr class="list-item">
+                        <tr class="list-item">
                             <td>1</td>
                             <td>Vũ Văn Sỹ</td>
                             <td>0332xxxxxx</td>
@@ -77,8 +70,8 @@ get_header();
                             <td>Kích hoạt</td>
                             <td>
                                 <div class="table-icon">
-                                   <a href="#!"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
-                                  <a href="#!">  <img src="./public/images/icon/delete.svg" alt=""></a>
+                                    <a href="#!"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
+                                    <a href="#!"> <img src="./public/images/icon/delete.svg" alt=""></a>
                                 </div>
                             </td>
                         </tr>

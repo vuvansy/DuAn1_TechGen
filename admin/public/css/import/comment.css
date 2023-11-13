@@ -87,6 +87,13 @@
     color: royalblue;
 }
 
+.table-thead-detail tr {
+    border: 1px solid black;
+}
+.table-thead tr {
+    border: 1px solid #000000;
+}
+
 .table-thead th {
     font-size: 13px;
     background-color: #000000;
@@ -199,18 +206,19 @@
     background-color: #000000;
 
 }
+.thead-content-detail {
+    width: 435px;
+}
 
+.thead-none {
+    width: 20px;
+}
 .table-thead-detail tr th {
     color: #ffff;
     vertical-align: middle;
     align-items: center;
     height: 30px;
     font-size: 13px;
-}
-
-
-.table-tbody-detail tr {
-    height: 30px;
 }
 
 .table-thead-detail>th {
@@ -221,35 +229,43 @@
     vertical-align: middle;
 }
 
-.content-detail {
-    width: 435px;
-    vertical-align: middle;
-    align-items: center;
-
+.table-tbody-detail tr {
+    height: 30px;
 }
 
-.content-detail .check-input {
-    /* width: 12px;
-    height: 12px; */
-    float: left;
-    vertical-align: middle;
-    cursor: pointer;
-    margin: auto 0;
 
+.check-input input {
+    width: 100%;
 }
 
-.content-detail p {
+/* .content-detail p {
     float: left;
     margin-left: 2px;
+} */
+
+.check-input {
+    width: 35px;
+    text-align: center; /* Căn giữa theo chiều ngang */
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
 }
 
+/* Định dạng cho input bên trong thẻ td */
+.check-input input {
+    margin: 0; /* Loại bỏ margin mặc định của input */
+}
+.tbody-content-detail {
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 12px;
+
+}
 .date,
 .user-comment,
 .delete {
-    width: 225px;
+    width: 150px;
 }
 
-.delete button {
+.delete a {
     background: none;
     border: none;
     height: 30px;
@@ -284,13 +300,13 @@
     margin: 0 auto;
 }
 
-.full-btn button:hover {
+.full-btn a:hover {
     background-color: #F25C05;
 }
 
-.check-all button,
-.cancel-all button,
-.delete-all button {
+.check-all,
+.cancel-all,
+.delete-all  {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 10px;
@@ -302,4 +318,7 @@
     font-size: 12px;
     border-radius: 4px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

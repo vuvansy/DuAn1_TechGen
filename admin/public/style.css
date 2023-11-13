@@ -2,6 +2,8 @@
 @import "../public/fonts/stylesheet.css";
 @import "../public/css/import/global.css";
 
+/* product-admin */
+
 /****** product-admin **********/
 @import "../public/css/import/product.css";
 
@@ -40,6 +42,5 @@
 @import "../public/css/import/warning.css";
 
 
-@import "../public/css/import/user_list.css";
 /* @import "../public/css/import/detail_order.css";
 @import "../public/css/import/list_product.css"; */
