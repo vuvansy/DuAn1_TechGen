@@ -15,11 +15,11 @@ get_header();
 
                     <div class="revenue-bar">
 
-                        <a href="" class="btn-total">
+                        <a href="?mod=statistical&action=revenue" class="btn-total">
                             Doanh thu
                         </a>
 
-                        <a href="" class="btn-revenue">
+                        <a href="?mod=statistical&action=warning" class="btn-revenue">
                             Sản phẩm sắp hết
                         </a>
 

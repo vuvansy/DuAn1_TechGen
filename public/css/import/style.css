@@ -176,11 +176,16 @@
     background: var(--primary-color);
     color: #fff;
     font-size: 14px;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
 .header h4 a {
     color: #fff;
+}
+
+.header h4 a:hover {
+    color: #009981;
 }
 
 .header:after {
@@ -200,12 +205,12 @@
 }
 
 .product__list {
-    gap: 20px 10px;
+    gap: 20px 31px;
     padding: 20px 10px;
     flex-wrap: wrap;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .product__item {
@@ -233,7 +238,13 @@
 }
 
 .product__info {
-    padding: 15px 5px;
+    padding: 15px 10px;
+}
+
+.product-brand,
+.product__info--title a {
+    font-size: var(--bodyText);
+    font-weight: 600;
 }
 
 .product-brand {
@@ -243,14 +254,13 @@
 
 .product__info--title a {
     margin: 10px 0;
-    font-weight: 600;
     color: #171100;
-    font-size: var(--bodyText);
     line-height: 1.2;
 }
 
+.product-brand:hover,
 .product__info--title a:hover {
-    color: var(--price-color);
+    color: var(--title-hover);
 }
 
 .product__info--foot {
@@ -271,6 +281,7 @@
     font-size: 1.4rem;
 }
 .product__info--foot .product__price {
+    width: 100px;
     padding-right: 10px;
 }
 
@@ -339,8 +350,8 @@
 }
 
 .poster-laptop__right .laptop__title {
-    top: 10%;
-    left: 10%;
+    top: 8%;
+    left: 5%;
 }
 
 /* ============  Corevalue  ============*/

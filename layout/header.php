@@ -95,7 +95,7 @@
             <div class="container">
                 <div class="header-heading__body">
                     <!-- Logo  -->
-                    <a href="">
+                    <a href="?">
                         <img src="public/images/logo/logo2.jpg" alt="TechGen" class="logo" />
                     </a>
                     <!-- Search box  -->
@@ -118,7 +118,7 @@
                     <!-- Order-tools  -->
                     <div class="order-tools">
                         <div class="admin">
-                            <a href="">
+                            <a href="?mod=users&action=index">
                                 <span>
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g id="user">
@@ -141,7 +141,7 @@
                                 </span>
                                 <div>
                                     <span>Giỏ hàng của bạn</span>
-                                    <span>(0) sản phẩm</span>
+                                    <span>(10) sản phẩm</span>
                                 </div>
                             </a>
                         </div>
@@ -157,12 +157,13 @@
                     <div class="dropdown">
                         <ul id="main-menu">
                             <li>
-                                <button><i class="fa-solid fa-bars btn-icon"></i> Danh mục sản phẩm</button>
+                                <button class="main-menu__cta"><i class="fa-solid fa-bars btn-icon"></i> Danh mục sản phẩm</button>
                                 <ul class="sub-menu">
-                                    <li><a href="./">Đồng hồ</a></li>
-                                    <li><a href="">Laptop</a></li>
+                                    <li><a href="?mod=product&action=productList">Đồng hồ thông minh</a></li>
+                                    <li><a href="">Laptop - Máy tính cầm tay</a></li>
+                                    <li><a href="">PC-Máy tính bộ</a></li>
                                     <li><a href="">Điện thoại</a></li>
-                                    <li><a href="">Tai nghe</a></li>
+                                    <li><a href="">Tai nghe & Phụ kiện</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -170,22 +171,22 @@
                     <!-- Navbar_list  -->
                     <ul class="navbar__list">
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Trang chủ</a>
+                            <a href="?" class="navbar__link">Trang chủ</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Giới thiệu</a>
+                            <a href="?mod=post&action=index" class="navbar__link">Giới thiệu</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Bảo hành</a>
+                            <a href="?mod=post&action=warranty" class="navbar__link">Bảo hành</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Tin tức</a>
+                            <a href="?mod=page&action=index" class="navbar__link">Tin tức</a>
                         </li>
                         <li class="navbar__item">
                             <a href="" class="navbar__link">Hướng dẫn</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__link">Liên hệ</a>
+                            <a href="?mod=page&action=contact" class="navbar__link">Liên hệ</a>
                         </li>
                     </ul>
                     <!-- Hotline  -->

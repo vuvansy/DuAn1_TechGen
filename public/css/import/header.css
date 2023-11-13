@@ -36,10 +36,19 @@
     justify-content: space-between;
     height: 80px;
 }
+
 /* Logo  */
+
+.header-heading__body > a {
+    width: 290px;
+    height: 38px;
+}
 .header-heading__body .logo {
-    width: 280px;
-    height: 44px;
+    /* width: 280px;
+    height: 44px; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 /* Search box  */
 .search-box .border-form {
@@ -113,10 +122,12 @@
 /* order-tools  */
 
 .order-tools {
-    gap: 22px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 22px;
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .order-tools .cart a,
@@ -127,8 +138,8 @@
     color: var(--gray);
 }
 
-.cart a {
-    width: 154px;
+.order-tools .cart a {
+    width: 160px;
     height: 40px;
 }
 
@@ -168,7 +179,7 @@ ul#main-menu {
 .sub-menu {
     top: 40px;
     display: none;
-    width: 200px;
+    min-width: 240px;
     position: absolute;
     background: var(--primary-color);
     z-index: 1;
@@ -178,14 +189,14 @@ ul.sub-menu li {
     padding: 10px 0;
 }
 
-ul#main-menu li a {
+ul.sub-menu li a {
+    font-weight: 600;
     padding: 10px 28px;
-    font-size: var(--subHeading);
+    font-size: var(--priceText);
 }
 
 ul.sub-menu li:hover {
     background: var(--orange);
-    text-shadow: 1px 0 0 currentColor;
 }
 /* Navbar_list  */
 .navbar__list {
@@ -200,7 +211,7 @@ ul.sub-menu li:hover {
     padding: 4px 24px;
     color: var(--white);
     font-size: 1.6rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .navbar__link::after {
@@ -219,6 +230,7 @@ ul.sub-menu li:hover {
     transform-origin: left;
 }
 
+.navbar__contact:hover,
 .navbar__link:hover {
     text-shadow: 1px 0 0 currentColor;
 }

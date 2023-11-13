@@ -2,22 +2,22 @@
 
 /* LIST  */
 .comment-title {
+    width: 100%;
     font-size: 24px;
     font-weight: bold;
 }
 
 .search-comment,
-.box-form-comment>input,
-button {
+.search-comment-input,
+.search-comment-btn {
     height: 40px;
 }
 
 .box-form-comment {
     margin-right: 8px;
-
 }
 
-.box-form-comment input {
+.search-comment-btn {
     padding-left: 10px;
 }
 
@@ -32,20 +32,27 @@ button {
 
 /* nội dung comment */
 .comment-content {
+    /* width: 1220px; */
+    width: 100%;
     margin-top: 60px;
     border: 1px solid #DDDDDD;
     border-radius: 10px;
+    padding-bottom: 20px;
+}
 
+.comment-content>.table-comment-list {
+    text-align: center;
+    align-content: center;
 }
 
 .head {
     display: flex;
     align-items: center;
-    /* Căn giữa theo chiều dọc */
     width: 100%;
     height: 40px;
     background-color: #F6F6F6;
     border-radius: 10px 10px 0px 0px;
+    margin-bottom: 20px;
 }
 
 .head .icon,
@@ -59,26 +66,28 @@ button {
 }
 
 /* bảng */
-table {
-    width: 1180px;
+.table-comment-list {
+    width: 95%;
     border-collapse: collapse;
-    margin: 20px 20px 20px 20px;
+    margin: 0 auto;
+    margin-left: 0 auto;
+
 }
 
-thead,
-tbody {
+.table-thead,
+.table-tbody {
     height: 30px;
 }
 
-tbody tr td a {
+.table-tbody tr td a {
     color: #000000;
 }
 
-tbody tr td a:hover {
+.table-tbody tr td a:hover {
     color: royalblue;
 }
 
-th {
+.table-thead th {
     font-size: 13px;
     background-color: #000000;
     color: #ffff;
@@ -104,12 +113,12 @@ th {
     width: 150px;
 }
 
-tbody tr {
+.table-tbody tr {
     border: 0.5px solid #DDDDDD;
     font-size: 13px;
 }
 
-tbody tr td {
+.table-tbody tr td {
     text-align: center;
     /* căn giữa nội dung theo chiều ngang */
     vertical-align: middle;
@@ -132,8 +141,7 @@ tbody tr td {
 }
 
 .search-comment-detail,
-.box-form-comment-detail>input,
-button {
+.search-comment-detail-btn {
     height: 40px;
 }
 
@@ -153,6 +161,7 @@ button {
 
 /* nội dung chi tiết comment */
 .comment-detail-content {
+    width: 100%;
     margin-top: 60px;
     border: 1px solid #DDDDDD;
     border-radius: 10px;
@@ -162,7 +171,6 @@ button {
 .comment-detail-content .head {
     display: flex;
     align-items: center;
-    /* Căn giữa theo chiều dọc */
     width: 100%;
     height: 40px;
     background-color: #F6F6F6;
@@ -182,17 +190,30 @@ button {
 
 /* bảng */
 .table-detail {
-    width: 1170px;
+    width: 95%;
     border-collapse: collapse;
-    margin: 20px 0px 20px 23px;
+    margin: 0 auto;
 }
 
-thead,
-tbody {
+.table-thead-detail {
+    background-color: #000000;
+
+}
+
+.table-thead-detail tr th {
+    color: #ffff;
+    vertical-align: middle;
+    align-items: center;
+    height: 30px;
+    font-size: 13px;
+}
+
+
+.table-tbody-detail tr {
     height: 30px;
 }
 
-.table-detail>th {
+.table-thead-detail>th {
     font-size: 13px;
     background-color: #000000;
     color: #ffff;
@@ -204,13 +225,22 @@ tbody {
     width: 435px;
     vertical-align: middle;
     align-items: center;
-    /* Căn giữa theo chiều dọc */
+
 }
 
-.content-detail input {
-    margin: -2px 0 0 -77px;
+.content-detail .check-input {
+    /* width: 12px;
+    height: 12px; */
+    float: left;
     vertical-align: middle;
     cursor: pointer;
+    margin: auto 0;
+
+}
+
+.content-detail p {
+    float: left;
+    margin-left: 2px;
 }
 
 .date,
@@ -226,36 +256,49 @@ tbody {
     cursor: pointer;
 }
 
-.delete button i {
+.delete>a>i {
     color: #FD475A;
 }
 
-tbody tr {
+
+.table-tbody-detail tr {
     border: 1px solid #DDDDDD;
     font-size: 13px;
 }
 
-.tbody-detail tr td {
-    text-align: center;
-    vertical-align: middle;
+.table-tbody-detail tr td {
     border: 1px solid #DDDDDD;
 }
 
-.full-btn {
-    display: flex;
-    margin: 20px 24px;
+.table-tbody-detail,
+.date,
+.user-comment,
+.delete {
+    text-align: center;
+    vertical-align: middle;
 }
 
-.check-all,
-.cancel-all,
-.delete-all {
+.full-btn {
+    width: 95%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.full-btn button:hover {
+    background-color: #F25C05;
+}
+
+.check-all button,
+.cancel-all button,
+.delete-all button {
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-right: 10px;
     height: 40px;
     width: 110px;
     background-color: #025959;
     color: white;
     border: none;
-    margin-right: 10px;
     font-size: 12px;
     border-radius: 4px;
     cursor: pointer;
