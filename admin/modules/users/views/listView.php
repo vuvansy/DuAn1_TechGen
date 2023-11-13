@@ -19,8 +19,9 @@ get_header();
                     <input type="submit" id="search-product-btn" class="search-product-btn" value="Tìm kiếm">
                 </form>
                 <a href="?mod=users&action=list" class="product-btn-list">Danh sách</a>
-                <a href="#!" class="product-btn-add">Thêm mới</a>
+                <a href="?mod=users&action=add" class="product-btn-add">Thêm mới</a>
             </div>
+            <div class="box-container-product">
             <div class="container-product">
                 <div class="head">
                     <div class="inline">
@@ -77,6 +78,7 @@ get_header();
                     </table>
                 </div>
 
+            </div>
             </div>
         </div>
     </div>
