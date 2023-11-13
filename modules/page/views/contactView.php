@@ -116,6 +116,7 @@ get_header()
       </div>
     </footer>
   </main>
+
 <?php
 get_footer()
 ?>
