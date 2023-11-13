@@ -205,7 +205,7 @@ get_slideshow();
             <img src="public/images/slide/slide_h1.png" alt="" class="post_thumb">
         </div>
     </section>
-    <!-- Product home  -->
+    <!-- Product -->
     <section class="product">
         <div class="container">
             <div class="product__body">
@@ -791,14 +791,12 @@ get_slideshow();
                             <a href=""><img src="public/images/slide/slide_4.png" alt=""></a>
                             <div class="laptop__title">
                                 <p class="heading lv1">Macbook Pro</p>
-                                <span>MacBook M1 giảm giá</span>
                             </div>
                         </div>
                         <div class="laptop__top--right">
                             <a href=""><img src="public/images/slide/slide_4.png" alt=""></a>
                             <div class="laptop__title">
                                 <p class="heading lv1">Laptop Apple</p>
-                                <span>MacBook M1 giảm giá</span>
                             </div>
                         </div>
                     </div>
