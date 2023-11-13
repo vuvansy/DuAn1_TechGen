@@ -179,7 +179,7 @@ ul#main-menu {
 .sub-menu {
     top: 40px;
     display: none;
-    min-width: 200px;
+    min-width: 240px;
     position: absolute;
     background: var(--primary-color);
     z-index: 1;
@@ -189,14 +189,14 @@ ul.sub-menu li {
     padding: 10px 0;
 }
 
-ul#main-menu li a {
+ul.sub-menu li a {
+    font-weight: 600;
     padding: 10px 28px;
-    font-size: var(--subHeading);
+    font-size: var(--priceText);
 }
 
 ul.sub-menu li:hover {
     background: var(--orange);
-    text-shadow: 1px 0 0 currentColor;
 }
 /* Navbar_list  */
 .navbar__list {
@@ -231,7 +231,6 @@ ul.sub-menu li:hover {
 }
 
 .navbar__contact:hover,
-.dropdown button:hover,
 .navbar__link:hover {
     text-shadow: 1px 0 0 currentColor;
 }

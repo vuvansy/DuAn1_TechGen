@@ -4,8 +4,9 @@ get_header();
 
 <main>
     <div class="button">
-        <button class="button-1">Giỏ hàng</button>
-        <button class="button-2">Quản lí đơn hàng</button>
+        <a href="?mod=order&action=index"><button class="button-1">Giỏ hàng</button></a>
+        <a href="?mod=order&action=cartview"><button class="button-2">Quản lí đơn hàng</button></a>
+
     </div>
     <div class="box">
         <div class="box-left">
@@ -58,12 +59,17 @@ get_header();
                 <p>22.000.000đ</p>
             </div>
             <h3>Thông tin vận chuyển</h3>
-            <input type="text" placeholder="Họ và tên">
-            <div class="input-b">
-                <input class="input-1" type="text" placeholder="Email">
-                <input class="input-2" type="number" placeholder="Số điện thoại">
-            </div>
-            <input type="text" placeholder="Địa chỉ">
+            <form action="" method="get">
+                <input type="text" name="hovaten" placeholder="Họ và tên">
+                <div class="input-b">
+                    <input class="input-1" name="email-" type="text" n placeholder="Email">
+                    <input class="input-2" name="sdt" type="number" placeholder="Số điện thoại">
+                </div>
+                <input type="text" name="address" placeholder="Địa chỉ">
+
+
+            </form>
+
 
             <h3>Phương thức thanh toán</h3>
             <div class="pay-all">
@@ -87,7 +93,8 @@ get_header();
                 <p>22.000.000đ</p>
             </div>
             <div class="button-bottom">
-                <button>Thanh toán</button>
+                <a href="?mod=order&action=success"><button>Thanh toán</button></a>
+
             </div>
 
 
@@ -99,16 +106,18 @@ get_header();
         <div class="product-deal">
             <div class="box-product">
                 <div class="img">
-                    <img src="public/images/category/iphone.webp" alt="TechGen" class="" />
+                    <a href=""><img src="public/images/category/iphone.webp" alt="TechGen" class="" /></a>
+
 
                 </div>
                 <div class="category">
-                    <p>APPLE</p>
+                    <a href="">APPLE</a>
+
 
                 </div>
                 <div class="detail">
+                    <a href="">IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</a>
 
-                    <p>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</p>
                 </div>
                 <div class="price">
                     <span>22.000.000đ</span>
@@ -124,16 +133,18 @@ get_header();
             </div>
             <div class="box-product">
                 <div class="img">
-                    <img src="public/images/category/iphone.webp" alt="TechGen" class="" />
+                    <a href=""><img src="public/images/category/iphone.webp" alt="TechGen" class="" /></a>
+
 
                 </div>
                 <div class="category">
-                    <p>APPLE</p>
+                    <a href="">APPLE</a>
+
 
                 </div>
                 <div class="detail">
+                    <a href="">IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</a>
 
-                    <p>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</p>
                 </div>
                 <div class="price">
                     <span>22.000.000đ</span>
@@ -149,16 +160,18 @@ get_header();
             </div>
             <div class="box-product">
                 <div class="img">
-                    <img src="public/images/category/iphone.webp" alt="TechGen" class="" />
+                    <a href=""><img src="public/images/category/iphone.webp" alt="TechGen" class="" /></a>
+
 
                 </div>
                 <div class="category">
-                    <p>APPLE</p>
+                    <a href="">APPLE</a>
+
 
                 </div>
                 <div class="detail">
+                    <a href="">IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</a>
 
-                    <p>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</p>
                 </div>
                 <div class="price">
                     <span>22.000.000đ</span>
@@ -174,16 +187,18 @@ get_header();
             </div>
             <div class="box-product">
                 <div class="img">
-                    <img src="public/images/category/iphone.webp" alt="TechGen" class="" />
+                    <a href=""><img src="public/images/category/iphone.webp" alt="TechGen" class="" /></a>
+
 
                 </div>
                 <div class="category">
-                    <p>APPLE</p>
+                    <a href="">APPLE</a>
+
 
                 </div>
                 <div class="detail">
+                    <a href="">IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</a>
 
-                    <p>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</p>
                 </div>
                 <div class="price">
                     <span>22.000.000đ</span>
@@ -199,16 +214,18 @@ get_header();
             </div>
             <div class="box-product">
                 <div class="img">
-                    <img src="public/images/category/iphone.webp" alt="TechGen" class="" />
+                    <a href=""><img src="public/images/category/iphone.webp" alt="TechGen" class="" /></a>
+
 
                 </div>
                 <div class="category">
-                    <p>APPLE</p>
+                    <a href="">APPLE</a>
+
 
                 </div>
                 <div class="detail">
+                    <a href="">IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</a>
 
-                    <p>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</p>
                 </div>
                 <div class="price">
                     <span>22.000.000đ</span>
@@ -222,6 +239,7 @@ get_header();
                     <button class="button-shop-n">Mua ngay</button>
                 </div>
             </div>
+
 
         </div>
 

@@ -1,7 +1,5 @@
-
 <?php
-get_header();
-//show_array($list_users);
+get_header()
 ?>
 
 <main>
@@ -64,7 +62,5 @@ get_header();
 
 
 <?php
-get_footer();
-?>  
-    
-
+get_footer()
+?>

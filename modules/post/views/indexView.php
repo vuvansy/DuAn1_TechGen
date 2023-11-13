@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <main>
-<section id="privacy">
+<section id="about">
         <div class="container">
           <h2 class="privacy__heading">Chính Sách Bảo Hành</h2>
           <p class="privacy__subheading">
@@ -270,8 +270,8 @@ get_header();
           </div>
         </div>
       </section>
-<main>
+</main>
 
 <?php
 get_footer();
-?>
+?>  

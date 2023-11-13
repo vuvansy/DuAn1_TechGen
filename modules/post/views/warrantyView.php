@@ -4,132 +4,274 @@ get_header();
 ?>
 
 <main>
-<section id="about">
+<section id="privacy">
         <div class="container">
-          <h2 class="about__heading">Giới thiệu TechGen</h2>
-          <div class="about__content">
-            <h3 class="about__title">1.Giới thiệu chung</h3>
-            <p class="about__desc">
-              Công ty Công Nghệ mới TECHGEN sở hữu chuỗi cửa hàng TECHGEN - là
-              nhà bán lẻ hàng đầu, chuyên cung cấp các sản phẩm công nghệ chính
-              hãng tại thị trường Việt Nam. Năm 2013, TECHGEN được thành lập,
-              từng bước trở thành địa chỉ đáng tin cậy của người tiêu dùng Việt.
-              Với khẩu hiệu “Nếu những gì chúng tôi không có, nghĩa là bạn không
-              cần”, chúng tôi đã, đang và sẽ tiếp tục nỗ lực đem đến các sản
-              phẩm công nghệ chính hãng đa dạng, phong phú đi kèm mức giá tốt
-              nhất phục vụ nhu cầu của quý khách hàng.
-            </p>
-            <p class="about__desc">
-              Sau hơn 10 năm phát triển, TECHGEN đã trở thành cái tên không còn
-              xa lạ với người tiêu dùng trong nước. Hiện nay chúng tôi đang sở
-              hữu mạng lưới hơn 30 chi nhánh phủ trên khắp cả nước, trong đó bao
-              gồm hai trung tâm bảo hành tại Hà Nội và một trung tâm bảo hành
-              tại thành phố Hồ Chí Minh. Đến với chuỗi cửa hàng của TECHGEN, quý
-              khách có thể hoàn toàn yên tâm về uy tín, chất lượng sản phẩm với
-              mức giá rẻ hơn khoảng 15-20% so với giá bán trên thị trường. Song
-              song với đó, chúng tôi cũng luôn nỗ lực phục vụ đem đến trải
-              nghiệm dịch vụ tốt nhất cho khách hàng.
-            </p>
-            <div class="about__media">
-              <img src="public/images/postpage/page1.jpg" alt="" class="about__img" />
-              <img src="public/images/postpage/page2.jpg" alt="" class="about__img" />
+          <h2 class="privacy__heading">Chính Sách Bảo Hành</h2>
+          <p class="privacy__subheading">
+            TECHGEN chân thành cảm ơn Quý khách hàng, dưới đây là chi tiết chính
+            sách bảo hành của TECHGEN áp dụng với tất cả các sản phẩm, TECHGEN
+            luôn nỗ lực để có được chất lượng dịch vụ tốt nhất dành cho Quý
+            khách hàng.
+          </p>
+          <div class="privacy__content">
+            <h3 class="privacy__title">
+              1. Chính sách đổi mới miễn phí và quy định nhập lại, trả lại
+            </h3>
+            <div class="privacy__table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Loại sản phẩm</th>
+                    <th>Đổi mới miễn phí</th>
+                    <th>Quy định nhập lại, trả lại</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <ul class="list">
+                        <li class="item1">Laptop, Màn hình</li>
+                        <li class="item1">Điện thoại/Máy tính bảng</li>
+                        <li class="item1">iPhone</li>
+                        <li class="item1">Macbook/iPad/iMac/Apple Watch</li>
+                        <li class="item1">Điện thoại/Máy tính bảng</li>
+                        <li class="item1">Điện thoại/Máy tính bảng</li>
+                      </ul>
+                    </td>
+                    <td>30 ngày</td>
+                    <td>
+                      Trong vòng 30 ngày đầu nhập lại máy, trừ phí 20% trên giá
+                      hiện tại (hoặc trên giá tại thời điểm mua hàng nếu giá mua
+                      này thấp hơn giá hiện tại), Các sản phẩm màn hình không hỗ
+                      trợ nhập lại, Sau 30 ngày, nhập lại theo giá thoả thuận
+                      (Riêng đối với dòng điện thoại cao cấp XOR: Không hỗ trợ
+                      nhập lại, trả lại! )
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ul class="list">
+                        <li class="item1">Samsung Watch</li>
+                      </ul>
+                    </td>
+                    <td>30 ngày</td>
+                    <td>
+                      Trong vòng 30 ngày đầu nhập lại máy, trừ phí 30% trên giá
+                      hiện tại (hoặc trên giá tại thời điểm mua hàng nếu giá mua
+                      này thấp hơn giá hiện tại) Sau 30 ngày, nhập lại theo giá
+                      thoả thuận
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ul class="list">
+                        <li class="item1">Smart Watch</li>
+                        <li class="item1">Smart Home</li>
+                      </ul>
+                    </td>
+                    <td>15 ngày (Riêng Máy lọc không khí: 30 ngày)</td>
+                    <td>Không hỗ trợ nhập lại</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ul class="list">
+                        <li class="item1">Phụ kiện nhỏ hơn 1tr</li>
+                        <li class="item1">Phụ kiện lớn hơn 1tr</li>
+                      </ul>
+                    </td>
+                    <td>15 ngày</td>
+                    <td>Không hỗ trợ nhập lại</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ul class="list">
+                        <li class="item1">Tivi</li>
+                      </ul>
+                    </td>
+                    <td>15 ngày</td>
+                    <td>Không hỗ trợ nhập lại</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <h3 class="about__title">2.Những dấu mốc quan trọng</h3>
-            <ul class="about__timer">
-              <li class="about__item">
-                <span class="about__item--strong">Năm 2013:</span> Thành lập cửa
-                hàng Hoàng Hà Mobile đầu tiên tọa lạc trên con phố sầm uất của
-                Thủ đô Hà Nội ở địa chỉ 194 Lê Duẩn.
+            <h3 class="privacy__title">*Đổi mới miễn phí:</h3>
+            <p class="privacy__desc">
+              Áp dụng với sản phẩm có lỗi phần cứng do nhà sản xuất, với một số
+              trường hợp nhất định, TECHGEN sẽ gửi sản phẩm thẩm định lỗi tại
+              trung tâm bảo hành của hãng, thời gian thẩm định tuỳ thuộc vào
+              TTBH của hãng. TECHGEN cam kết sẽ luôn vì quyền lợi của quý khách
+              hàng!
+            </p>
+            <p class="privacy__desc">
+              Lỗi phần mềm không được áp dụng trong Trường hợp này mà chỉ khắc
+              phục lỗi phần mềm.
+            </p>
+            <h3 class="privacy__title">Điều kiện đổi mới và trả lại:</h3>
+            <ul class="privacy__list">
+              <li class="privacy__item1">Hình thức máy và hộp máy như mới</li>
+              <li class="privacy__item1">
+                Phụ kiện và các loại quà tặng đi kèm: còn đầy đủ, nguyên vẹn,
+                không có dấu hiệu móp mép, cong vênh
               </li>
-              <li class="about__item">
-                <span class="about__item--strong">Năm 2015:</span> TECHGEN chính
-                thức trở thành nhà phân phối ĐTDĐ chính hãng hợp tác với nhiều
-                nhãn hàng lớn hàng đầu như Samsung, OPPO, Nokia, Huawei,..
+              <li class="privacy__item1">
+                Máy không có dấu hiệu tác động từ bên ngoài: Rơi, vỡ, móp méo,
+                cong vênh, trầy xước, bị dung dịch hoá chất và chất lỏng xâm
+                nhập vào.
               </li>
-              <li class="about__item">
-                <span class="about__item--strong">Năm 2018:</span> Với kinh
-                nghiệm 5 năm trong lĩnh vực bán lẻ, TECHGEN phát triển mạnh mẽ
-                và liên tục mở thêm nhiều chi nhánh mới.
+              <li class="privacy__item1">
+                Máy đã được gỡ các loại tài khoản cá nhân như iCloud, Gmail, Mi
+                account …
               </li>
-              <li class="about__item">
-                <span class="about__item--strong">Năm 2022:</span> TECHGEN tự
-                hào trở thành nhà bán lẻ ủy quyền chính thức của Apple tại Việt
-                Nam. Các sản phẩm Apple chính hãng VN/A do Apple Việt Nam phân
-                phối được bán tại hệ thống Hoàng Hà Mobile với mức giá tốt nhất
-                thị trường cùng chế độ bảo hành uy tín.
-              </li>
-              <li class="about__item">
-                <span class="about__item--strong">Năm 2023: </span> Kỉ niệm 10
-                năm hoạt động trong lĩnh vực bán lẻ các sản phẩm công
-                nghệ,TECHGEN đã khẳng định được chỗ đứng vững chắc trên thị
-                trường cũng như trong tiềm thức người tiêu dùng.
+              <li class="privacy__item1">
+                Lỗi điểm chết màn hình : màn hình có từ 3 điểm chết trở lên hoặc
+                1 điểm chết có kích thước lớn hơn 1mm đối với điện thoại và từ 5
+                điểm chết trở lên đối với laptop./li>
               </li>
             </ul>
-            <div class="about__media">
-              <img
-                src="public/images/postpage/page3.jpg"
-                alt=""
-                class="about__img about__img--modify"
-              />
+            <h3 class="privacy__title">2. Chính sách về bảo hành</h3>
+            <p class="privacy__desc">
+              TECHGEN cam kết tất cả các sản phẩm bán ra tại Hoàng Hà Mobile đều
+              là sản phẩm chính hãng, và nhận được các chế độ bảo hành chính
+              hãng.
+            </p>
+            <p class="privacy__desc">
+              Quý khách hàng có thể tới trực tiếp các Trung tâm bảo hành chính
+              hãng hoặc tới các cửa hàng TECHGEN gần nhất để được tiếp nhận bảo
+              hành chính hãng.
+            </p>
+            <p class="privacy__desc">
+              Quý khách xem địa chỉ trung tâm bảo hành chính hãng tại đây:
+              https://techgen.com/trung-tam-bao-hanh
+            </p>
+            <p class="privacy__desc">
+              Thời gian bảo hành áp dụng cho máy mới: 12 tháng hoặc theo quy
+              định của hãng.
+            </p>
+            <p class="privacy__desc">
+              Thời gian bảo hành áp dụng cho máy cũ: 6 tháng hoặc theo quy định
+              củaTECHGEN.
+            </p>
+            <div class="privacy__table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nguyên tắc bảo hành</th>
+                    <th>Điều kiện bảo hành</th>
+                    <th>Lưu ý</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <ul class="list">
+                        <li class="item1">
+                          Sản phẩm được bảo hành miễn phí nếu sản phẩm đó còn
+                          thời hạn bảo hành được tính từ ngày quý khách mua
+                          hàng.
+                        </li>
+                        <li class="item1">
+                          Khi đổi sản phẩm, thời hạn bảo hành còn lại của sản
+                          phẩm cũ được chuyển sang sản phẩm tương đương.
+                        </li>
+                        <li class="item1">
+                          Chính sách bảo hành của TECHGEN chỉ áp dụng cho các
+                          sản phẩm do Hoàng Hà Mobile cung cấp.
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="list">
+                        <li class="item1">
+                          Bảo hành do lỗi vật liệu và gia công trên sản phẩm
+                          trong điều kiện sử dụng bình thường. Những lỗi xảy ra
+                          do sử dụng không đúng với quy cách của nhà sản xuất
+                          (chập, cháy, nổ) đều không được bảo hành.
+                        </li>
+                        <li class="item1" style="list-style: none">
+                          Điều kiện bảo hành không áp dụng cho:
+                        </li>
+                        <li class="item1">
+                          Hỏng hóc do gặp sơ xuất, lạm dụng, dùng sai cách, lũ
+                          lụt, hoả hoạn, động đất hoặc những nguyên nhân bên
+                          ngoài khác.
+                        </li>
+                        <li class="item1">
+                          Hỏng hóc do tự ý can thiệp vào phần cứng của máy, tự ý
+                          tháo mở máy, tác động vào máy (trong đó có nâng cấp và
+                          mở rộng) bởi bất cứ cá nhân, đơn vị nào bên ngoài mà
+                          không thuộc uỷ quyền bảo hành của TECHGEN.
+                        </li>
+                        <li class="item1">
+                          Hỏng hóc do máy bị rơi vỡ va đập, cong vênh, móp, méo,
+                          trầy, lõm và bị vỡ ở các cổng, số serial đã bị xoá mờ
+                          hoặc mất.
+                        </li>
+                        <li class="item1">
+                          Máy bị ẩm mốc, cháy chập, bị dung dịch, hoá chất và
+                          các loại chất lỏng xâm nhập vào.
+                        </li>
+                        <li class="item1">
+                          Số IMEl trên máy và phiếu bảo hành không trùng khớp
+                          với nhau.
+                        </li>
+                        <li class="item1">
+                          Mất phiếu bảo hành của sản phẩm. Sản phẩm không thể
+                          xác định được nguồn gốc mua tại TECHGEN một cách hợp
+                          lệ.
+                        </li>
+                        <li class="item1">
+                          Phiếu bảo hành tự ý sửa đổi hoặc gạch xoá, rách nát
+                          không nhìn rõ được số IMEl, không ghi rõ ngày mua hàng
+                        </li>
+                        <li class="item1">
+                          Tem niêm phong bảo hành bị rách, vỡ, bị dán đè hoặc bị
+                          sửa đổi
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="list">
+                        <li class="item1">
+                          Quý khách nên sử dụng sạc theo đúng quy chuẩn của nhà
+                          sản xuất (nếu không sẽ dễ gây lỗi nguồn sản phẩm)
+                        </li>
+                        <li class="item1">
+                          Quý khách vui lòng tự sao lưu tất cả các dữ liệu cá
+                          nhân trước khi mang sản phẩm tới trung tâm bảo hành,
+                          trong quá trình bảo hành Hoàng Hà Mobile không chịu
+                          trách nhiệm về mọi mất mát dữ liệu cá nhân và các ứng
+                          dụng cài đặt thêm được lưu trữ trong máy.
+                        </li>
+                        <li class="item1">
+                          Hoàng Hà không chịu trách nhiệm về phụ kiện không phải
+                          của máy khi gửi bảo hạnh như : cường lực, ốp lưng, thẻ
+                          nhớ, sim, PPF, ốp camera….
+                        </li>
+                        <li class="item1">
+                          Các trường hợp tự ý up ROM và chạy phần mềm khác ở
+                          ngoài TECHGEN Root máy, can thiệp phần mềm ngoài Hệ
+                          thống Hoàng Hà sẽ không được bảo hành. Khách hàng khi
+                          đi bảo hành yêu cầu mang theo phiếu bảo hành
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <h3 class="about__title">3.Tôn chỉ hoạt động</h3>
-            <p class="about__desc">
-              TECHGEN luôn hoạt động dựa trên tôn chỉ đặt khách hàng là trung
-              tâm, mọi nỗ lực để đạt được mục tiêu cao nhất là làm hài lòng
-              người dùng thông qua các sản phẩm được cung cấp và dịch vụ khách
-              hàng. Hoàng Hà Mobile đang từng bước xây dựng dịch vụ khách hàng
-              vượt trội, xứng đáng là đơn vị bán lẻ hàng đầu tại Việt Nam. Sự
-              tin tưởng và ủng hộ nhiệt tình của quý khách hàng tại chuỗi chi
-              nhánh đã phần nào khẳng định hiệu quả hoạt động của đội ngũ nhân
-              viên Hoàng Hà Mobile.
+            <h3 class="privacy__title">Thời gian tiếp nhận bảo hành:</h3>
+            <p class="privacy__desc">
+              Tại cửa hàng TECHGEN: Theo giờ làm việc của các cửa hàng TECHGEN
+              trên cả nước
             </p>
-            <p class="about__desc">
-              Đối với quý khách hàng, chúng tôi luôn đặt cái tâm làm gốc, làm
-              việc với tinh thần nghiêm túc, trung thực và có trách nhiệm, để
-              mang tới trải nghiệm dịch vụ tốt nhất.
+            <p class="privacy__desc">
+              Tại TTBH Hãng: Theo giờ làm việc của TTBH hãng.
             </p>
-            <p class="about__desc">
-              Đối với đồng nghiệp, chúng tôi đề cao văn hóa học hỏi, đoàn kết,
-              tương trợ lẫn nhau tạo nên môi trường làm việc tôn trọng - công
-              bằng - văn minh cho nhân viên trong công ty.
-            </p>
-            <p class="about__desc">
-              Đối với các đối tác, TECHGEN luôn làm việc dựa trên nguyên tắc tôn
-              trọng, cùng tạo ra giá trị cho cộng đồng và cùng phát triển bền
-              vững.
-            </p>
-            <h3 class="about__title">4.Tầm nhìn và sứ mệnh</h3>
-            <p class="about__desc">
-              Những năm qua, chúng tôi không ngừng cải thiện dịch vụ tại các chi
-              nhánh và hỗ trợ khách hàng qua các kênh online.TECHGEN cam kết
-              mang đến những sản phẩm chất lượng và chế độ bảo hành uy tín, sẵn
-              sàng hỗ trợ khách hàng trong thời gian nhanh nhất.
-            </p>
-            <p class="about__desc">
-              Trong tương lai, TECHGEN sẽ tiếp tục mở rộng hệ thống chi nhánh,
-              hướng tới mục tiêu có mặt tại 63 tỉnh thành trên toàn quốc. Đồng
-              thời, nâng cao chất lượng dịch vụ, hạn chế những rủi ro, lắng nghe
-              và tiếp thu góp ý của quý khách hàng nhằm đem đến trải nghiệm tốt
-              nhất khi mua sắm tại Hoàng Hà Mobile.
-            </p>
-            <p class="about__desc">
-              Cuối cùng, TECHGEN hy vọng sẽ trở thành nhà tiên phong đưa những
-              sản phẩm công nghệ mới nhất đến tay người dùng sớm nhất, tạo ra
-              cuộc sống hiện đại nơi công nghệ kết nối con người, công nghệ phục
-              vụ con người
-            </p>
-            <div class="about__media">
-              <img
-                src="public/images/postpage/page4.jpg"
-                alt=""
-                class="about__img about__img--modify"
-              />
-            </div>
           </div>
         </div>
       </section>
-</main>
+<main>
 
 <?php
 get_footer();
-?>  
+?>

@@ -2,7 +2,6 @@
 get_header();
 ?>
 <main>
-
     <div class="main-wrapper">
         <?php
         get_sidebar();
@@ -28,48 +27,50 @@ get_header();
                     <div class="head-name">Chi tiết bình luận</div>
                 </div>
                 <table class="table-detail">
-                    <thead>
+                    <thead class="table-thead-detail">
                         <tr>
-                            <th class="content-detail">Nội dung</th>
-                            <th class="date">Bình luận</th>
+                            <th class="thead-none"></th>
+                            <th class="thead-content-detail">Nội dung</th>
+                            <th class="date">Ngày bình luận</th>
                             <th class="user-comment">Người bình luận</th>
                             <th class="delete">Xóa</th>
 
                         </tr>
                     </thead>
-                    <tbody class="tbody-detail">
+                    <tbody class="table-tbody-detail">
                         <tr>
-                            <td class="content-detail">
+                            <td class="check-input">
                                 <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected">
+                            </td>
+                            <td class="tbody-content-detail">
                                 Chả biết 15 như nào chứ thấy 14prm vẫn đỉnh cao mà, đầm tay thật
                             </td>
                             <td class="date">2018-02-24</td>
                             <td class="user-comment">Khang</td>
-                            <td class="delete"><button><i class="fa-solid fa-trash-can"></i></button></td>
+                            <td class="delete"><a href=""><i class="fa-solid fa-trash-can"></i></a>
                         </tr>
                         <tr>
-                            <td class="content-detail">
+                            <td class="check-input">
                                 <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected">
+                            </td>
+                            <td class="tbody-content-detail">
                                 Chả biết 15 như nào chứ thấy 14prm vẫn đỉnh cao mà, đầm tay thật
                             </td>
                             <td class="date">2018-02-24</td>
                             <td class="user-comment">Khang</td>
-                            <td class="delete"><button><i class="fa-solid fa-trash-can"></i></button></td>
+                            <td class="delete"><a href=""><i class="fa-solid fa-trash-can"></i></a>
                         </tr>
-                        <!-- Thêm các dòng bình luận khác nếu cần -->
                     </tbody>
                 </table>
-                 
+
                 <div class="full-btn">
-                        <button class="check-all">Chọn tất cả</button>
-                        <button class="cancel-all">Bỏ chọn tất cả</button>
-                        <button class="delete-all">Xóa tất cả</button>
-                    </div>
+                    <a class="check-all" href="">Chọn tất cả</a>
+                    <a class="cancel-all" href="">Bỏ chọn tất cả</a>
+                    <a class="delete-all" href="">Xóa tất cả</a>
+                </div>
             </div>
         </div>
     </div>
-
-
 </main>
 
 

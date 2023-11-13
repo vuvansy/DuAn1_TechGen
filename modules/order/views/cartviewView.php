@@ -3,8 +3,8 @@ get_header();
 ?>
 <main>
     <div class="button">
-        <button class="button-1">Giỏ hàng</button>
-        <button class="button-2">Quản lí đơn hàng</button>
+        <a href="?mod=order&action=index"><button class="button-1">Giỏ hàng</button></a>
+        <a href="?mod=order&action=cartview"><button class="button-2">Quản lí đơn hàng</button></a>
     </div>
     <h1>Quản lí đơn hàng</h1>
     <div class="box">
@@ -31,9 +31,17 @@ get_header();
                         <td>Giao hàng thành công</td>
                         <td>
                             <div class="bw">
-                                <a style="color: blue;" href="">Chi tiết</a>
+                                <div class="left-tt">
+                                    <a style="color: blue;" href="?mod=order&action=orderDetail">Chi
+                                        tiết</a>
+                                </div>
 
-                                <a style="color: red;" href="">Xóa</a>
+
+                                <div class="right-tt">
+                                    <a style="color: red;" href="">Xóa</a>
+                                </div>
+
+
                             </div>
 
 

@@ -19,7 +19,7 @@ get_header();
                     <input type="text" class="search-comment-input" placeholder="Tên sản phẩm..." />
                 </div>
                 <!-- Submit button -->
-                <button class="search-comment-btn"> Tìm kiếm</button>
+                <button class="search-comment-btn">Tìm kiếm</button>
             </form>
 
             <div class="comment-content">
@@ -29,8 +29,8 @@ get_header();
                     </div>
                     <div class="head-name">Danh sách bình luận</div>
                 </div>
-                <table>
-                    <thead>
+                <table class="table-comment-list">
+                    <thead class="table-thead">
                         <tr>
                             
                             <th class="product">Hàng hóa</th>
@@ -40,7 +40,7 @@ get_header();
                             <th class="detail">Chi tiết</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="table-tbody">
                         <tr>
                             <td class="product">iPhone 14 Pro Max</td>
                             <td class="quantity">5</td>
@@ -52,7 +52,7 @@ get_header();
                         </tr>
                         <!-- Thêm các dòng bình luận khác nếu cần -->
                     </tbody>
-                    <tbody>
+                    <tbody class="table-tbody">
                         <tr>
                             <td class="product">iPhone 14 Pro Max</td>
                             <td class="quantity">5</td>
@@ -62,9 +62,8 @@ get_header();
                              <a href="?mod=comment&action=commentDetail">Xem chi tiết</a>
                             </td>
                         </tr>
-                        <!-- Thêm các dòng bình luận khác nếu cần -->
                     </tbody>
-                    <tbody>
+                    <tbody class="table-tbody">
                         <tr>
                             <td class="product">iPhone 14 Pro Max</td>
                             <td class="quantity">5</td>
@@ -74,9 +73,8 @@ get_header();
                              <a href="?mod=comment&action=commentDetail">Xem chi tiết</a>
                             </td>
                         </tr>
-                        <!-- Thêm các dòng bình luận khác nếu cần -->
                     </tbody>
-                    <tbody>
+                    <tbody class="table-tbody" >
                         <tr>
                             <td class="product">iPhone 14 Pro Max</td>
                             <td class="quantity">5</td>
@@ -86,7 +84,6 @@ get_header();
                              <a href="?mod=comment&action=commentDetail">Xem chi tiết</a>
                             </td>
                         </tr>
-                        <!-- Thêm các dòng bình luận khác nếu cần -->
                     </tbody>
                 </table>
 
