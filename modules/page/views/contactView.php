@@ -1,8 +1,7 @@
-
 <?php
-get_header();
-//show_array($list_users);
+get_header()
 ?>
+
 <main>
 <section id="contact">
         <div class="container">
@@ -60,8 +59,8 @@ get_header();
         </div>
       </section>
 </main>
-<?php
-get_footer();
-?>  
-    
 
+
+<?php
+get_footer()
+?>

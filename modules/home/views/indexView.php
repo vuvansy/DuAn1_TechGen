@@ -231,9 +231,9 @@ get_slideshow();
                             </h3>
                             <div class="product__info--foot">
                                 <div class="product__price">
-                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="latest-price">2200.900.000đ</span>
                                     <span class="price-and-discount">
-                                        <label class="price-old">29.900.000đ</label>
+                                        <label class="price-old">2900.900.000đ</label>
                                         <small>10.1%</small>
                                     </span>
                                 </div>
@@ -779,9 +779,9 @@ get_slideshow();
         <div class="container">
             <div class="poster-laptop__body">
                 <div class="poster-laptop__left">
-                    <a href=""><img src="public/images/slide/slide_7.jpg" alt=""></a>
+                    <a href=""><img src="public/images/slide/slide_6.jpg" alt=""></a>
                     <div class="laptop__title">
-                        <p class="heading lv1">Macbook Pro</p>
+                        <p class="heading lv1">Laptop Apple MacBook Air 13</p>
                         <span>Macbook Pro M1 giảm giá sâu nhất trong năm 2023</span>
                     </div>
                 </div>
@@ -797,7 +797,7 @@ get_slideshow();
                         <div class="laptop__top--right">
                             <a href=""><img src="public/images/slide/slide_4.png" alt=""></a>
                             <div class="laptop__title">
-                                <p class="heading lv1">Laptop Apple MacBook Air 13</p>
+                                <p class="heading lv1">Laptop Apple</p>
                                 <span>MacBook M1 giảm giá</span>
                             </div>
                         </div>
