@@ -62,13 +62,13 @@ get_header();
 
                                 <tr class="list-item">
 
-                                    <td class="image">
+                                    <td class="image-order">
                                         <img src="public/images/product/Iphone/iphone1.jpg" alt="">
                                     </td>
-                                    <td class="name">IPhone 14 Pro Max</td>
-                                    <td class="price">44.000.000đ</td>
-                                    <td class="quantity">1</td>
-                                    <td class="total">44.000.000đ</td>
+                                    <td class="name-order">IPhone 14 Pro Max</td>
+                                    <td class="price-order">44.000.000đ</td>
+                                    <td class="quantity-order">1</td>
+                                    <td class="total-order">44.000.000đ</td>
 
                                 </tr>
 
@@ -81,8 +81,6 @@ get_header();
                                 </tr>
 
                             </tbody>
-
-
 
                         </table>
 

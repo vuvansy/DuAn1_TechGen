@@ -80,7 +80,7 @@
 
 .success-container .container-content .content-list {
     margin: 2rem auto 0 auto;
-
+    width: 111rem;
 }
 
 .success-container .container-content .content-list thead {
@@ -102,15 +102,22 @@
 .success-container .container-content .content-list .list-group .list-item {
     display: grid;
     width: 111rem;
-    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 19.2rem 16rem;
+    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 19.2rem 15.9rem;
     color: #000;
     height: 3rem;
     text-align: center;
     line-height: 3rem;
+    border-left: 1px solid #DDD;
+    border-right: none;
+    border-bottom: 1px solid #DDD;
+    border-top: none;
 }
 
 .success-container .container-content .content-list .list-group .list-item td {
-    border: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 .success-container .container-content .content-list .list-group .list-item td a {
@@ -118,13 +125,13 @@
     color: #000;
 }
 
-.success-container .container-content .content-list .list-group .list-item .icon {
+.success-container .container-content .content-list .list-group .list-item .icon-order {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.success-container .container-content .content-list .list-group .list-item .detail {
+.success-container .container-content .content-list .list-group .list-item .detail-order {
     display: block;
     color: #000;
     text-decoration: none;
