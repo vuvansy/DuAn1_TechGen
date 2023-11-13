@@ -35,3 +35,29 @@
 .control__option--item > i {
     padding-right: 6px;
 }
+
+/* pagination  */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.pagging {
+    margin: 0 auto;
+}
+ul.pagging li {
+    list-style: none;
+    float: left;
+    padding: 0px 2px;
+}
+ul.pagging li a {
+    display: block;
+    padding: 5px 7px;
+    color: #333;
+    border: 1px solid #dedede;
+}
+ul.pagging li.active a {
+    border: 1px solid #f00;
+    color: #f00;
+}

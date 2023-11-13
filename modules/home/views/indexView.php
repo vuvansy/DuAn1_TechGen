@@ -245,13 +245,13 @@ get_slideshow();
                     </div>
                     <!-- Product item 2  -->
                     <div class="product__item">
-                        <a href="">
+                        <a href="?mod=product&action=productDetail">
                             <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
                         </a>
                         <div class="product__info">
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
-                                <a href="!#" class="line-clamp break-all line-2">
+                                <a href="?mod=product&action=productDetail" class="line-clamp break-all line-2">
                                     Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>

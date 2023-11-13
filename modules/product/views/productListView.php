@@ -345,7 +345,23 @@ get_slideshow();
                     </div>
                 </div>
             </div>
-
+            <div class="pagination">
+                <ul class="pagging">
+                    <li><a href="">
+                            <svg class="control-icon" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 1L0.5 6L5.5 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a></li>
+                    <li class="active"><a href="?mod=users&act=main&page=1">1</a></li>
+                    <li><a href="?mod=users&act=main&page=2">2</a></li>
+                    <li><a href="?mod=users&act=main&page=3">3</a></li>
+                    <li><a href="?mod=users&act=main&page=2">
+                            <svg class="control-next-icon" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 1L0.5 6L5.5 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a></li>
+                </ul>
+            </div>
         </div>
     </section>
 </main>
