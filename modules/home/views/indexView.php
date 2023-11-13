@@ -231,9 +231,9 @@ get_slideshow();
                             </h3>
                             <div class="product__info--foot">
                                 <div class="product__price">
-                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="latest-price">2200.900.000đ</span>
                                     <span class="price-and-discount">
-                                        <label class="price-old">29.900.000đ</label>
+                                        <label class="price-old">2900.900.000đ</label>
                                         <small>10.1%</small>
                                     </span>
                                 </div>
@@ -245,13 +245,13 @@ get_slideshow();
                     </div>
                     <!-- Product item 2  -->
                     <div class="product__item">
-                        <a href="">
+                        <a href="?mod=product&action=productDetail">
                             <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
                         </a>
                         <div class="product__info">
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
-                                <a href="!#" class="line-clamp break-all line-2">
+                                <a href="?mod=product&action=productDetail" class="line-clamp break-all line-2">
                                     Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
@@ -779,9 +779,9 @@ get_slideshow();
         <div class="container">
             <div class="poster-laptop__body">
                 <div class="poster-laptop__left">
-                    <a href=""><img src="public/images/slide/slide_7.jpg" alt=""></a>
+                    <a href=""><img src="public/images/slide/slide_6.jpg" alt=""></a>
                     <div class="laptop__title">
-                        <p class="heading lv1">Macbook Pro</p>
+                        <p class="heading lv1">Laptop Apple MacBook Air 13</p>
                         <span>Macbook Pro M1 giảm giá sâu nhất trong năm 2023</span>
                     </div>
                 </div>
@@ -797,7 +797,7 @@ get_slideshow();
                         <div class="laptop__top--right">
                             <a href=""><img src="public/images/slide/slide_4.png" alt=""></a>
                             <div class="laptop__title">
-                                <p class="heading lv1">Laptop Apple MacBook Air 13</p>
+                                <p class="heading lv1">Laptop Apple</p>
                                 <span>MacBook M1 giảm giá</span>
                             </div>
                         </div>
