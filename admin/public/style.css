@@ -18,7 +18,7 @@
 @import "../public/css/import/layout.css";
 
 /* Category  */
-/* @import "../public/css/import/category.css"; */
+@import "../public/css/import/category.css";
 
 /* Admin user  */
 @import "../public/css/import/info_account.css";

@@ -120,17 +120,17 @@ justify-content: center;
 .box{
     display: flex;
 }
-.box-left{
+.box .box-left{
     width: 70%;
     min-height: 500px;
 }
-.box-right{
+.box .box-right{
     width: 30%;
-    background-color: #F6F6F6;
+    background-color: #e0e0e0;
     min-height: 600px;
     padding: 15px;
 }
-.box-right h2{
+.box .box-right h2{
     font-size: 25px;
     font-weight: 500;
     margin: 30px 0;
@@ -148,7 +148,14 @@ justify-content: center;
     font-weight: 500;
     margin-bottom: 10px;
 }
-input{
+.input-b input{
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #958b8b;
+    margin-bottom: 10px;
+}
+.box-right input{
     padding: 10px 20px;
     width: 100%;
     border-radius: 10px;
@@ -199,6 +206,7 @@ input{
     background-color: #00483D;
     
     color: white;
+    cursor: pointer;
 }
 /* QUẢN LÝ GIỎ HÀNG  */
 
@@ -221,6 +229,7 @@ table{
     display: flex;
     justify-content: space-between;
 }
+ 
 .button .button-1{
 
 width: 220px;
@@ -299,4 +308,8 @@ margin-right: 30px;
     position: absolute;
     right: 0;
     bottom: 0;
+    
+}
+.box-product .button-shop-n {
+    cursor: pointer;
 }
