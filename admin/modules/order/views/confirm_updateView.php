@@ -55,9 +55,11 @@ get_header();
 
                             <form class="list-group">
 
-                                <div class="id">
-                                    IT968280
-                                </div>
+                                <label>
+                                    <select class="id" name="id_order" disabled>
+                                        <option value="id">IT968280</option>
+                                    </select>
+                                </label>
 
                                 <label class="status">
                                     <select name="status_order" id="">

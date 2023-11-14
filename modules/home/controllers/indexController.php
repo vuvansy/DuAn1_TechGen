@@ -10,7 +10,7 @@ function indexAction()
 {
 
     $list_category = get_category();
-    // show_array($list_category);
+//     show_array($list_category);
 
     $list_product = get_product();
     // show_array($list_product);
@@ -21,7 +21,6 @@ function indexAction()
     $data['category'] = $list_category;
     // Product 
     $data['product'] = $list_product;
-
 
     load_view('index', $data);
 }

@@ -8,12 +8,13 @@ function construct()
 
 function indexAction()
 {
-  
     load_view('index');
 }
 
 function cancelAction()
 {
+
+
     load_view('cancel');
 }
 
