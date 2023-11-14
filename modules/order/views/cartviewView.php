@@ -49,6 +49,56 @@ get_header();
 
                                 </td>
                             </tr>
+                            <tr>
+                                <td>IT69280</td>
+                                <td>2</td>
+                                <td>44.000.000</td>
+                                <td>COD</td>
+                                <td>02/11/2023</td>
+                                <td>Giao hàng thành công</td>
+                                <td>
+                                    <div class="bw">
+                                        <div class="left-tt">
+                                            <a style="color: blue;" href="?mod=order&action=orderDetail">Chi
+                                                tiết</a>
+                                        </div>
+
+
+                                        <div class="right-tt">
+                                            <a style="color: red;" href="">Xóa</a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>IT69280</td>
+                                <td>2</td>
+                                <td>44.000.000</td>
+                                <td>COD</td>
+                                <td>02/11/2023</td>
+                                <td>Giao hàng thành công</td>
+                                <td>
+                                    <div class="bw">
+                                        <div class="left-tt">
+                                            <a style="color: blue;" href="?mod=order&action=orderDetail">Chi
+                                                tiết</a>
+                                        </div>
+
+
+                                        <div class="right-tt">
+                                            <a style="color: red;" href="">Xóa</a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </td>
+                            </tr>
                         </tbody>
 
                     </table>
@@ -71,7 +121,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
@@ -97,7 +148,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
@@ -123,7 +175,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
@@ -149,7 +202,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
@@ -175,7 +229,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
