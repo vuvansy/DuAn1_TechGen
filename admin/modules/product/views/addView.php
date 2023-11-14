@@ -22,7 +22,7 @@ get_header();
                                 <img src="./public/images/icon/border-all.svg" alt="">
                             </div>
                             <div class="heading">
-                                Danh sách hàng hóa
+                                Thêm mới hàng hóa
                             </div>
                         </div>
                     </div>

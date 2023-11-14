@@ -7,22 +7,22 @@ get_header();
         get_sidebar();
         ?>
         <div class="sidebar-right">
-            <div class="product-heading">
+            <div class="user-heading">
                 Danh sách khách hàng
             </div>
-            <div class="product-bar">
-                <form action="" id="search-product" class="search-product" method="POST">
-                    <div class="box-form-product">
+            <div class="user-bar">
+                <form action="" id="search-user" class="search-user" method="POST">
+                    <div class="box-form-user">
                         <!-- input -->
-                        <input type="text" name="box-search-product" id="box-search-product" class="search-product-input" value="" placeholder="Tên sản phẩm" />
+                        <input type="text" name="box-search-user" id="box-search-user" class="search-user-input" value="" placeholder="Tên sản phẩm" />
                     </div>
-                    <input type="submit" id="search-product-btn" class="search-product-btn" value="Tìm kiếm">
+                    <input type="submit" id="search-user-btn" class="search-user-btn" value="Tìm kiếm">
                 </form>
-                <a href="?mod=users&action=list" class="product-btn-list">Danh sách</a>
-                <a href="?mod=users&action=add" class="product-btn-add">Thêm mới</a>
+                <a href="?mod=users&action=list" class="user-btn-list">Danh sách</a>
+                <a href="?mod=users&action=add" class="user-btn-add">Thêm mới</a>
             </div>
-            <div class="box-container-product">
-            <div class="container-product">
+            <div class="box-container-user">
+            <div class="container-user">
                 <div class="head">
                     <div class="inline">
                         <div class="icon">
@@ -55,7 +55,7 @@ get_header();
                             <td>Kích hoạt</td>
                             <td>
                                 <div class="table-icon">
-                                    <a href="#!"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
+                                    <a href="?mod=users&action=edit"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
                                     <a href="#!"> <img src="./public/images/icon/delete.svg" alt=""></a>
                                 </div>
                             </td>
@@ -70,7 +70,7 @@ get_header();
                             <td>Kích hoạt</td>
                             <td>
                                 <div class="table-icon">
-                                    <a href="#!"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
+                                    <a href="?mod=users&action=edit"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
                                     <a href="#!"> <img src="./public/images/icon/delete.svg" alt=""></a>
                                 </div>
                             </td>
