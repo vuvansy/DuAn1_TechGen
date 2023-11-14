@@ -6,8 +6,9 @@ get_header();
         <?php
         get_sidebar();
         ?>
-       <section id="user">
-        <div class="container">
+        <div class="sidebar-right">
+        <section id="user">
+        <div>
           <div class="user__top">
             <h2 class="user__heading">Cập nhật khách hàng</h2>
             <div class="user__actions">
@@ -117,13 +118,12 @@ get_header();
                   </div>
                 </div>
               </div>
-              <button type="submit" class="user__btn user__submit">
-                Cập nhật
-              </button>
+              <input type="submit" class="user__btn user__submit" value="Cập nhật">
             </form>
           </div>
         </div>
       </section>
+        </div>
     </main>
         </div>
     </div>

@@ -2,7 +2,6 @@
 get_header();
 ?>
 <main>
-
     <div class="main-wrapper">
         <?php
         get_sidebar();
@@ -17,9 +16,11 @@ get_header();
                 <div class="box-form-comment">
                     <!-- input -->
                     <input type="text" class="search-comment-input" placeholder="Tên sản phẩm..." />
+                    <input type="submit"  class="search-comment-submit" value="Tìm kiếm" >
                 </div>
                 <!-- Submit button -->
-                <button class="search-comment-btn">Tìm kiếm</button>
+               
+                <!-- <button class="search-comment-btn">Tìm kiếm</button> -->
             </form>
 
             <div class="comment-content">
@@ -30,7 +31,7 @@ get_header();
                     <div class="head-name">Danh sách bình luận</div>
                 </div>
                 <table class="table-comment-list">
-                    <thead class="table-thead">
+                    <thead class="table-thead-comment">
                         <tr>
                             
                             <th class="product">Hàng hóa</th>

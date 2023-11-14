@@ -13,14 +13,15 @@ get_header();
             <form action="" class="search-comment-detail">
                 <div class="box-form-comment-detail">
                     <!-- input -->
-                    <input type="text" class="search-comment-input" placeholder="" />
+                    <input type="text" class="search-comment-detail-input" placeholder="Nhập tên" />
+                    <input type="submit" class="search-comment-detail-btn" value="Tìm kiếm">
                 </div>
                 <!-- Submit button -->
-                <button class="search-comment-detail-btn">Tìm kiếm</button>
+
             </form>
 
             <div class="comment-detail-content">
-                <div class="head">
+                <div class="head-comment-detail">
                     <div class="icon">
                         <img src="./public/images/icon/border-all.svg" alt="">
                     </div>
@@ -39,7 +40,8 @@ get_header();
                     </thead>
                     <tbody class="table-tbody-detail">
                         <tr>
-                            <td class="check-input">
+                            <form action="">
+                            <td class="check-input-comment-detail">
                                 <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected">
                             </td>
                             <td class="tbody-content-detail">
@@ -48,9 +50,11 @@ get_header();
                             <td class="date">2018-02-24</td>
                             <td class="user-comment">Khang</td>
                             <td class="delete"><a href=""><i class="fa-solid fa-trash-can"></i></a>
+                            </form>
                         </tr>
                         <tr>
-                            <td class="check-input">
+                        <form action="">
+                            <td class="check-input-comment-detail">
                                 <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected">
                             </td>
                             <td class="tbody-content-detail">
@@ -59,11 +63,12 @@ get_header();
                             <td class="date">2018-02-24</td>
                             <td class="user-comment">Khang</td>
                             <td class="delete"><a href=""><i class="fa-solid fa-trash-can"></i></a>
+                            </form>
                         </tr>
                     </tbody>
                 </table>
 
-                <div class="full-btn">
+                <div class="full-btn-comment-detail">
                     <a class="check-all" href="">Chọn tất cả</a>
                     <a class="cancel-all" href="">Bỏ chọn tất cả</a>
                     <a class="delete-all" href="">Xóa tất cả</a>

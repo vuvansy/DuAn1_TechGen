@@ -10,7 +10,7 @@ function indexAction()
 {
 
     $list_category = get_category();
-    // show_array($list_category);
+    //     show_array($list_category);
 
     // $get_category_by_id = get_category_by_id();
 
