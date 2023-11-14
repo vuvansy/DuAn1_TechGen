@@ -260,130 +260,146 @@
             </div>
         </div>
 
-        <!-- sản phẩm liên quan -->
-        <div class="product-related">
-            <div class="product-title">
-                <h2>Sản phẩm liên quan</h2>
+        <!-- productRelated  -->
+        <section class="productRelated">
+            <div class="productRelated__body">
+                <div class="productRelated__heading">
+                    <h2 class="heading lv1">SẢN PHẨM LIÊN QUAN</h2>
+                </div>
+                <div class="product__list">
+                    <!-- Product item 1  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product item 2  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product item 3  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product item 4  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product item 5  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="product-related-list">
-                <!-- item -->
-                <div class="item">
-                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
-                    <div class="info">
-                        <div class="trademark">
-                            <span>APPLE</span>
-                        </div>
-                        <div class="name">
-                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
-                        </div>
-                    </div>
-                    <div class="pab">
-                        <div class="price">
-                            <strong>22.000.000đ</strong><br>
-                            <strike>29.900.000đ</strike>
-                            <span class="percent">-10.01%</span>
-                        </div>
-                        <div class="btn-buy">
-                            <button>Mua Ngay</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- item -->
-                <!-- item -->
-                <div class="item">
-                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
-                    <div class="info">
-                        <div class="trademark">
-                            <span>APPLE</span>
-                        </div>
-                        <div class="name">
-                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
-                        </div>
-                    </div>
-                    <div class="pab">
-                        <div class="price">
-                            <strong>22.000.000đ</strong><br>
-                            <strike>29.900.000đ</strike>
-                            <span class="percent">-10.01%</span>
-                        </div>
-                        <div class="btn-buy">
-                            <button>Mua Ngay</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- item -->
-                <!-- item -->
-                <div class="item">
-                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
-                    <div class="info">
-                        <div class="trademark">
-                            <span>APPLE</span>
-                        </div>
-                        <div class="name">
-                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
-                        </div>
-                    </div>
-                    <div class="pab">
-                        <div class="price">
-                            <strong>22.000.000đ</strong><br>
-                            <strike>29.900.000đ</strike>
-                            <span class="percent">-10.01%</span>
-                        </div>
-                        <div class="btn-buy">
-                            <button>Mua Ngay</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- item -->
-                <!-- item -->
-                <div class="item">
-                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
-                    <div class="info">
-                        <div class="trademark">
-                            <span>APPLE</span>
-                        </div>
-                        <div class="name">
-                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
-                        </div>
-                    </div>
-                    <div class="pab">
-                        <div class="price">
-                            <strong>22.000.000đ</strong><br>
-                            <strike>29.900.000đ</strike>
-                            <span class="percent">-10.01%</span>
-                        </div>
-                        <div class="btn-buy">
-                            <button>Mua Ngay</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- item -->
-                <!-- item -->
-                <div class="item">
-                    <div class="imgs"><img src="public/images/product/Iphone/phonemian.jpg" alt="anh"></div>
-                    <div class="info">
-                        <div class="trademark">
-                            <span>APPLE</span>
-                        </div>
-                        <div class="name">
-                            <strong>IPhone 14 Pro Max - Chính hãng VN/A. Bảo hành 12 tháng.</strong>
-                        </div>
-                    </div>
-                    <div class="pab">
-                        <div class="price">
-                            <strong>22.000.000đ</strong><br>
-                            <strike>29.900.000đ</strike>
-                            <span class="percent">-10.01%</span>
-                        </div>
-                        <div class="btn-buy">
-                            <button>Mua Ngay</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- item -->
-            </div>
-        </div>
-        <!-- sản phẩm liên quan -->
+        </section>
     </div>
 </main>
 
