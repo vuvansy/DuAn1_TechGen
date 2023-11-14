@@ -242,6 +242,10 @@
     padding: 15px 10px;
 }
 
+/* .product__info--title {
+    min-height: 65px;
+} */
+
 .product-brand,
 .product__info--title a {
     font-size: var(--bodyText);

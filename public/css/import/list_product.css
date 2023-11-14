@@ -5,13 +5,14 @@
 }
 
 .productDetail__heading > h2 {
-    padding: 13px 0;
-    font-size: 2.4rem;
-    font-weight: 600;
+    padding: 13px 20px;
+    font-size: 2.8rem;
+    font-weight: 900;
     line-height: 1.2;
     letter-spacing: -0.02em;
     background: var(--white);
     border-radius: 10px;
+    text-transform: capitalize;
 }
 
 .productDetail__heading .desc {
@@ -62,8 +63,4 @@ ul.pagging li.active a {
     color: var(--white);
     background: var(--price-color);
     font-weight: 600;
-}
-
-.control-next-icon {
-    rotate: 180deg;
 }

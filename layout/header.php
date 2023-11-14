@@ -163,7 +163,7 @@
                                     $category = get_category();
                                     foreach ($category as $item) {
                                     ?>
-                                        <li><a href="?mod=product&action=index&id=<?php echo $item['id_category'] ?>"><?php echo $item['category_name'] ?></a></li>
+                                        <li><a href="?mod=product&action=productList&cat_id=<?php echo $item['id_category'] ?>"><?php echo $item['category_name'] ?></a></li>
                                     <?php
                                     }
                                     ?>

@@ -66,7 +66,7 @@ $imagesURL = "public/images";
                         // show_array($item);
                     ?>
                         <div class="category-item">
-                            <a href="?mod=product&action=productList&id=<?php echo $item['id_category'] ?>">
+                            <a href="?mod=product&action=productList&cat_id=<?php echo $item['id_category'] ?>">
                                 <div class="category-item__thumb">
                                     <img src="<?php echo $imagesURL ?>/category/<?php echo $item['category_image'] ?>" alt="laptop">
                                 </div>

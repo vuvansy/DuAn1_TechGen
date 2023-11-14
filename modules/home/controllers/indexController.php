@@ -8,10 +8,6 @@ function construct()
 
 function indexAction()
 {
-
-
-
-
     $get_product_sale = get_product_sale();
     // show_array($get_product_new);
 
@@ -31,7 +27,6 @@ function indexAction()
     $data['product_clock'] = $get_product_clock;
     //Danh sách hàng hóa Flash-sales
     $data['product_sale'] = $get_product_sale;
-
 
     load_view('index', $data);
 }

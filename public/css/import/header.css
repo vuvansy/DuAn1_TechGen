@@ -186,10 +186,11 @@ ul#main-menu {
 }
 
 ul.sub-menu li {
-    padding: 10px 0;
+    padding: 4px 0;
 }
 
 ul.sub-menu li a {
+    display: block;
     text-transform: capitalize;
     font-weight: 600;
     padding: 10px 28px;
