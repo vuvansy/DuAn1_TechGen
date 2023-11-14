@@ -57,7 +57,7 @@
 
 .confirm_update-container .container-content {
     margin-top: 1rem;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 1rem;
     border: 1px solid #DDD;
     padding-bottom: 2rem;
 }
@@ -133,6 +133,14 @@
     font-style: normal;
     font-weight: 700;
     cursor: pointer;
+}
+
+.confirm_update-container .container-content .content-list .list-group .id select option {
+    color: #000;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .confirm_update-container .container-content .content-list .list-group .status {
