@@ -141,7 +141,9 @@
     justify-content: center;
     text-align: center;
 }
-
+.list-table-section th, td {
+    font-size: 13px;
+}
 
 /* add */
 .section-form{
