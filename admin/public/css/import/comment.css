@@ -19,6 +19,11 @@
 .search-comment-submit {
     height: 40px;
 }
+
+ .box-form-comment .search-comment-input:focus,
+ .box-form-comment .search-comment-input:valid {
+    padding-left: 10px;
+}
 .box-form-comment .search-comment-input,
 .box-form-comment .search-comment-submit {
     border: 1px solid #4F4E4E;
@@ -151,6 +156,10 @@
     margin-right: 8px;
 }
 
+.box-form-comment-detail .search-comment-detail-input:focus,
+.box-form-comment-detail .search-comment-detail-input:valid {
+    padding-left: 10px;
+}
 .search-comment-detail .search-comment-detail-input,
 .search-comment-detail-btn{
     height: 40px;
