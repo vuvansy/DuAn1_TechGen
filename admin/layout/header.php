@@ -37,7 +37,7 @@
     <header class="header">
         <div class="header__body">
             <!-- Logo  -->
-            <a href="">
+            <a href="?mod=home&action=index">
                 <img src="public/images/logo/Logo1.jpg" alt="TechGen" class="logo" />
             </a>
             <!-- Dropdown user -->

@@ -23,10 +23,7 @@ function successAction()
     load_view('success');
 }
 
-function confirm_listAction()
-{
-    load_view('confirm_list');
-}
+
 
 function confirm_updateAction()
 {
@@ -42,11 +39,3 @@ function detailAction()
 {
     load_view('detail');
 }
-
-function updateAction()
-{
-    $id = $_POST['id'];
-    echo $id;
-}
-
-

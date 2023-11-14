@@ -8,6 +8,11 @@ function construct()
     load('lib', 'email');
 }
 
+function indexAction()
+{
+
+    load_view('index');
+}
 
 
 
