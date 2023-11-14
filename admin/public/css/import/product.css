@@ -139,7 +139,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .container-product .list-table {
@@ -213,17 +213,18 @@
 /****************** add.css + edit.css **************************/
 
 .container-product .container-form {
-  width: 92%;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  padding: 0 20px;
 }
 .container-product .container-form .container-form-input {
-  width: 99%;
+  width: 100%;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 10px;
+  column-gap: 33px;
   row-gap: 20px;
 }
 
