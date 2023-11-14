@@ -15,7 +15,6 @@ function indexAction()
 
 function regAction()
 {
-
     load_view('reg');
 }
 
