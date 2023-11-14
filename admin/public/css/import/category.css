@@ -224,6 +224,14 @@
 }
 .category-box .section-form-input{
     width: 90%;
+
+
+
+
+
+
+    
+    
 }
 .section-form-input-new{
     display: flex;
@@ -252,6 +260,12 @@
     margin: 10px 0;
     
 } */
+.section-form-input-new .input-texts >p {
+    padding-bottom: 10px;
+}
+.option-input-check .text-checkbox {
+padding-left: 10px;
+}
 .section-form-input .input-update-text-none{
     width: 50%;
     margin: 10px 0;
