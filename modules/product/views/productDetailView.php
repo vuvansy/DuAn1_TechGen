@@ -27,6 +27,7 @@
                 <div class="product-name">
                     <h2>IPhone 14 Pro Max | Chính Hãng VNA</h2>
                     <p>Thương hiệu APPLE SKU | 220909018Mã vạch | 381525 </p>
+                    <p class="short-describe">Cấu hình iPhone 14 Pro Max mạnh mẽ, hiệu năng cực khủng từ chipset A16 Bionic</p>
                 </div>
                 <!-- tên sp -->
 
@@ -64,18 +65,15 @@
                     </div>
                     <div class="sale">
                         <p>29.900.000đ đ</p>
+                        <small>10.1%</small>
                     </div>
                 </div>
                 <!-- giá sp -->
 
                 <!-- btn mua sp -->
                 <div class="product-buy">
-                    <button class="buybtn">
-                        <p>Mua</p>
-                    </button>
-                    <button class="addbtn">
-                        <p>Thêm vào giỏ hàng</p>
-                    </button>
+                    <a class="buybtn" href="">Mua</a>
+                    <a class="addbtn" href="">Thêm vào giỏ hàng</a>
                 </div>
                 <!-- btn mua sp -->
             </div>
@@ -186,7 +184,7 @@
             <form id="comment-form">
                 <h3>Bình luận</h3>
                 <input type="text" id="comment-input" placeholder="Nhập bình luận của bạn">
-                <button type="button" id="submit-button">Gửi</button>
+                <input class="comment-form-submit" type="submit" name="" id="">
             </form>
 
             <div id="comment-list">

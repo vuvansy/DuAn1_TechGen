@@ -4,8 +4,6 @@ get_header();
 <main>
     <div class="main-wrapper">
 
-
-
         <?php
         get_sidebar();
         ?>

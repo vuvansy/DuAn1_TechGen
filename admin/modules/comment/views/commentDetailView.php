@@ -13,7 +13,7 @@ get_header();
             <form action="" class="search-comment-detail">
                 <div class="box-form-comment-detail">
                     <!-- input -->
-                    <input type="text" class="search-comment-detail-input" placeholder="Nhập tên" />
+                    <input type="text" class="search-comment-detail-input" placeholder="Nhập tên..." />
                     <input type="submit" class="search-comment-detail-btn" value="Tìm kiếm">
                 </div>
                 <!-- Submit button -->
@@ -41,7 +41,7 @@ get_header();
                     <tbody class="table-tbody-detail">
                         <tr>
                             <form action="">
-                            <td class="check-input">
+                            <td class="check-input-comment-detail">
                                 <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected">
                             </td>
                             <td class="tbody-content-detail">
@@ -54,7 +54,7 @@ get_header();
                         </tr>
                         <tr>
                         <form action="">
-                            <td class="check-input">
+                            <td class="check-input-comment-detail">
                                 <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected">
                             </td>
                             <td class="tbody-content-detail">
@@ -68,7 +68,7 @@ get_header();
                     </tbody>
                 </table>
 
-                <div class="full-btn">
+                <div class="full-btn-comment-detail">
                     <a class="check-all" href="">Chọn tất cả</a>
                     <a class="cancel-all" href="">Bỏ chọn tất cả</a>
                     <a class="delete-all" href="">Xóa tất cả</a>
