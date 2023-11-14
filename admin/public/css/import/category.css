@@ -9,8 +9,8 @@
 
 
 /* list */
-.section {
-    width: 90%;
+.main-wrapper .section {
+    width: 100%;
     padding: 10px;
     
 }
@@ -152,6 +152,7 @@
 .section-form .section-form-input {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     
 }
@@ -161,9 +162,10 @@
 }
 .section-form-input .input-texts input {
     width: 70%;
-    height: 30px;
-    padding: 10px ;
-    border-radius: 10px;
+    
+    padding: 4px;
+    border-radius: 6px;
+    
 
     
     
@@ -175,6 +177,7 @@
 
 .section-form-input .input-text-none{
     width: 50% ;
+    flex: 1;
     margin: 20px 0;
 }
 .section-form-input .input-text-nones{
@@ -205,35 +208,56 @@
     cursor: pointer;
 }
 /* update */   
+.category-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.category-box .input-update-img-category{
+    width: 10%;
+}
 .section-form-input .input-update-img img {
     width: 100px;
     height: 100px;
     margin-right: 10px;
     
 }
+.category-box .section-form-input{
+    width: 90%;
+}
+.section-form-input-new{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.section-form-input-new .input-texts-update{
+    width: 50%;
+}
 .section-form-input .input-texts-update input {
-    width: 80%;
+    width: 70%;
+    height: 30px;
     margin: 20px 0;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 0 10px;
+    border-radius: 6px;
 }
 .section-form-input .input-texts-update p{
     font-weight: 700;
 }
-.section-form-input .input-texts-update {
+/* .section-form-input .input-texts-update {
     width: 40%;
     height: 30px;
     padding: 10px ;
     border-radius: 10px;
     margin: 10px 0;
     
-}
+} */
 .section-form-input .input-update-text-none{
-    width: 40%;
+    width: 50%;
     margin: 10px 0;
 }
 .section-form-input .input-update-text-nones{
-    width: 40%;
+    width: 50%;
     margin: 10px 0;
 }
 .section-form-input .input-update-text-none span{
@@ -251,4 +275,9 @@
     align-items: center;
     text-align: center;
 }
-
+.section-form-input{
+    display: flex;
+}
+.section-add-category {
+    justify-content: right;
+}
