@@ -23,49 +23,56 @@
     font-size: 30px ;
     font-weight: 700;
 }
-.section-bar-items .box-form-section input {
+.section-bar-items .box-form-section input:first-child{
     width: 260px;
     height: 40px;
     padding: 0 20px;
     margin-right: 5px;
 }
-.section-bar-items .box-form-section button {
+.section-bar-items .box-form-section input:last-child{
     width: 100;
     height: 40px;
     margin-right: 40px;
     padding: 0 20px;
+    background-color: #DDDDDD;
+}
+.section-bar-items .box-form-section input:last-child:hover{
+    background-color: white;
 }
 .section-bar .section-right-a {
     display: flex;
     justify-content: center;
 }
-.section-bar .section-right-a .section-right-i {
-    width: 110px;
-    height: 40px;
-    background-color: #DDDDDD ;
-    margin-right: 40px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    
+.section-bar a {
+   
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #212529;
+        text-align: center;
+        width: auto;
+        height: 40px;
+        padding: 12px ;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+      
 }
-.section-bar .section-right-a .section-right-i a{
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-    
-}
-.section-bar .section-right-a .section-right-i:hover {
-    background-color: #F25C05;
-    color: white;
-}
-.section-bar .section-right-a .section-right-i a:hover {
-    
-    color: white;
+.product-btn-list-category {
+    margin-right: 30px;
+    background-color: #DDDDDD;
 }
 
-
+.product-btn-add-category{
+    background-color: #DDDDDD;
+}
+.product-btn-list-category:hover{
+    background-color: #FF7E00  ;
+    color: white;
+}
+.product-btn-add-category:hover{
+    background-color: #FF7E00  ;
+    color: white;
+}
 .container-section .header .nav {
     display: flex;
     align-items: center;
@@ -187,18 +194,20 @@
     display: flex;
     justify-content: right;
 }
-.section-add-category .btn-add-category {
+.section-add-category input {
     width: 110px;
     height: 40px;
     background-color: #025959;
     color: white;
     font-weight: 700;
+    cursor: pointer;
 }
 /* update */   
 .section-form-input .input-update-img img {
     width: 100px;
     height: 100px;
     margin-right: 10px;
+    
 }
 .section-form-input .input-texts-update input {
     width: 80%;
@@ -210,18 +219,19 @@
     font-weight: 700;
 }
 .section-form-input .input-texts-update {
-    width: 45%;
+    width: 40%;
     height: 30px;
     padding: 10px ;
     border-radius: 10px;
+    margin: 10px 0;
     
 }
 .section-form-input .input-update-text-none{
-    width: 50%;
+    width: 40%;
     margin: 10px 0;
 }
 .section-form-input .input-update-text-nones{
-    width: 50%;
+    width: 40%;
     margin: 10px 0;
 }
 .section-form-input .input-update-text-none span{

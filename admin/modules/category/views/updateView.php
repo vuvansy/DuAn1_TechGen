@@ -17,23 +17,22 @@ get_header();
                         <div class="box-form-section">
 
                             <input type="text" class="search-section-input" placeholder="Tên sản phẩm" />
-                            <button class="search-section-btn">Tìm kiếm</button>
+                            <input type="submit" name="search" value="Tìm kiếm">
 
                         </div>
 
 
                     </form>
                 </div>
-                <div class="section-right-a">
-                    <div class="section-right-i">
-                        <a href="?mod=category&action=list" class="product-btn-list">Danh sách</a>
-                    </div>
-                    <div class="section-right-i">
-                        <a href="?mod=category&action=add" class="product-btn-add">Thêm mới</a>
-                    </div>
+
+                <a href="?mod=category&action=list" class="product-btn-list-category">Danh sách</a>
 
 
-                </div>
+                <a href="?mod=category&action=add" class="product-btn-add-category">Thêm mới</a>
+
+
+
+
 
 
             </div>
@@ -83,7 +82,7 @@ get_header();
                         </div>
                         <div class="section-add-category">
                             <a href="?mod=category&action=list">
-                                <button class="btn-add-category" name="capnhap" value="Thêm">Cập nhập</button>
+                                <input type="submit" name="update" value="Cập nhập">
                             </a>
                         </div>
                     </form>
