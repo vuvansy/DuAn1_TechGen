@@ -1,3 +1,154 @@
-/*GIỎ HÀNG*/
+
 
 /* QUẢN LÝ GIỎ HÀNG  */
+.detail-orders h2{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    
+}
+.order-detail-table {
+    text-align: center;
+}
+.order-detail-tbody tr td img{
+    width: 100px;
+    height: 100px;
+}
+.order-detail-thead  tr{
+    background-color: #00483D;
+}
+.order-detail-thead  tr th{
+    
+    vertical-align: middle;
+    color: white;
+    font-weight: 700;
+}
+.order-detail-tbody tr td {
+    vertical-align: middle;
+}
+.order-detail-tbody-img{
+    display: flex;
+    justify-content: center;
+}
+.table-orders-detail{
+   text-align: left;
+}
+.toal-orders {
+    margin: 20px 0;
+    text-align: right;
+    font-weight: 700;
+}
+.table-orders-detail .orders-detail p{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.table-orders-detail .orders-color p{
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.table-orders-detail .orders-category p{
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.table-orders-detail .orders-button a{
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: red;
+}
+
+/*GIỎ HÀNG*/
+.box-order-left h3 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    margin: 20px 0;
+}
+.box-order-all {
+    display: flex;
+    width: 100%;
+}
+.box-order-all .box-order-left{
+    width: 70%;
+}
+.box-order-all .box-order-right{
+    width: 30%;
+}
+.order-detail-tbody td input {
+    
+    text-align: center;
+}
+.box-order-right{
+    min-height: 560px;
+    background-color:#e2dfdf;
+    padding: 20px 15px;
+}
+.box-order-right h3{
+    font-size: 24px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #cecccc;
+}
+.box-order-right .right-detail {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    margin: 25px 0;
+    font-size: 13px;
+}
+.box-order-right .right-detail.new p{
+    font-size: 1.6rem;
+}
+.box-order-right h4{
+    font-size: 16px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.input-b {
+    display: flex;
+}
+.box-order-right .input-1{
+    width: 100%;
+    padding: 10px ;
+    margin: 12px 0;
+    border-radius: 5px;
+}
+.box-order-right .right-detail .new p{
+    font-size: 1.6rem;
+}
+
+.option-input {
+    display: flex;
+    
+    
+}
+
+.box-order-right .input-2{
+    margin-left: 15px;
+    width: 40%;
+}
+.box-order-right .input--1{
+    width: 60%;
+}
+.option-detail {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-order-right .button-bottom input {
+    
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #00483D;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+
+}
+.box-order-right .button-bottom input:hover{
+    background-color: #0b7464;
+}

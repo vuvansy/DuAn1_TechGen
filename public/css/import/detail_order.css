@@ -1,71 +1,7 @@
-/*DETAIL ORDER*/
-.table-product {
-    display: flex;
-}
-.table-product .table-product-img {
-    width: 100px;
-    height: 100px;
-}
-.table-product .table-product-img img {
-    margin-top: 50px;
-}
 
-.product-detail {
-    margin-top: 60px;
-    font-weight: 500;
-}
-.tableStyle {
-    width: 100%;
-}
-.tableStyle td {
-    height: 230px;
-    padding: 10px;
-}
-.tableStyle-1 {
-    width: 100%;
-}
-.tableStyle-1 td {
-    height: 230px;
-    padding: 10px;
-}
-.box-left .tableStyle-1 {
-    width: 80%;
-}
-
-.box-left-none {
-    width: 100%;
-}
-.box-left-0fnone {
-    width: 100%;
-}
-.table-product-detail {
-    text-align: left;
-}
-.product-category {
-    margin: 10px 0;
-}
-.product-button a {
-    color: red;
-    font-weight: 400;
-}
-.total {
-    margin-top: 20px;
-    font-size: 20px;
-    text-align: right;
-    font-weight: 500;
-}
 
 /* ĐẶT HÀNG THÀNH CÔNG  */
-/* main{
-    margin: 30px auto;
-    width: 90%;
-    
-  
-   
-    align-items: center;
-    
-    justify-content: center;
-} */
+
 .success {
     display: flex;
 
@@ -76,7 +12,8 @@
 }
 .content {
     display: flex;
-    padding: 20px 54px 25px 55px;
+    min-height: 400px;
+    
     flex-direction: column;
     align-items: center;
     gap: 30px;
@@ -93,126 +30,37 @@
     color: #f25c05;
     text-decoration: none;
     border: 1px solid #595959;
-    padding: 10px 20px;
+    padding: 20px 30px;
     border-radius: 20px;
     font-size: 16px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
-
-/*GIỎ HÀNG*/
-.tableStyle-2 td {
-    height: 230px;
-    padding: 10px;
-}
-.cartView .box {
-    min-height: 300px;
-    display: flex;
-}
-
-.box {
-    display: flex;
-    justify-content: space-between;
-}
-
-.box .box-left {
-    width: 70%;
-    min-height: 500px;
-}
-.box .box-right {
-    width: 30%;
-    background-color: #e0e0e0;
-    min-height: 600px;
-    padding: 15px;
-}
-.box .box-right h2 {
-    font-size: 25px;
-    font-weight: 500;
-    margin: 30px 0;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #958b8b;
-}
-.right-detail {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.box-right h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-.input-b input {
-    padding: 10px 20px;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #958b8b;
-    margin-bottom: 10px;
-}
-.box-right input {
-    padding: 10px 20px;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #958b8b;
-    margin-bottom: 10px;
-}
-.input-b {
-    display: flex;
-}
-.input-1 {
-    width: 60%;
-    margin-right: 10px;
-}
-.input-2 {
-    width: 40%;
-}
-
-.pay {
-    display: flex;
-    justify-content: space-between;
-}
-.pay-1 {
-    display: flex;
-}
-.pay-1 p {
-    margin-left: 10px;
-    margin-bottom: 20px;
-}
-.pay-2 {
-    display: flex;
-}
-.pay-2 p {
-    margin-left: 10px;
-    margin-bottom: 40px;
-}
-.pay-all {
-    border-bottom: 2px solid #958b8b;
-}
-.new {
-    margin: 20px 0;
-}
-.button-bottom button {
-    width: 100%;
-    height: 40px;
+.content a:hover{
     background-color: #00483d;
-
     color: white;
-    cursor: pointer;
+    font-weight: 600;
 }
-/* QUẢN LÝ GIỎ HÀNG  */
+.content strong{
+    font-weight: 600;
+}
 
-th {
+
+/* QUẢN LÝ đơn hàng */
+.box-left-0fnone{
+    min-height: 300px;
+}
+.box-left-0fnone th {
     background-color: #00483d;
     color: white;
     padding-top: 10px;
 }
-h1 {
+.container h1 {
     font-size: 30px;
     text-align: center;
     font-weight: 700;
     margin: 40px 0;
 }
-table {
+.box-left-0fnone table {
     text-align: center;
 }
 .bw {
@@ -220,6 +68,8 @@ table {
     justify-content: space-between;
 }
 
+
+/* splq */
 .cartView__control {
     margin-top: 30px;
 }

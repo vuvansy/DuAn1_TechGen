@@ -9,98 +9,102 @@ get_header();
                 <a href="?mod=order&action=index" class="btn cart__cta">Giỏ hàng</a>
                 <a href="?mod=order&action=cartview" class="btn cart__cta">Quản lí đơn hàng</a>
             </div>
-            <div class="box">
-                <div class="box-left">
-                    <h1>Giỏ hàng của bạn</h1>
-                    <table class="tableStyle-2">
-                        <tr>
-                            <th>Sản phẩm</th>
-                            <th>Số lượng</th>
-                            <th>Giá</th>
-                            <th>Thành tiền</th>
-
-                        </tr>
-                        <tbody id="dssp">
+            <div class="box-order-all">
+                <div class="box-order-left">
+                    <h3>Giỏ hàng của bạn</h3>
+                    <table class="order-detail-table">
+                        <thead class="order-detail-thead">
                             <tr>
+
+                                <th class="th-order-detail-h">Hình ảnh</th>
+                                <th class="th-order-detail-s">Sản phẩm</th>
+                                <th class="th-order-detail-sl">Số lượng</th>
+                                <th class="th-order-detail-g">Giá</th>
+                                <th class="th-order-detail-t">Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody class="order-detail-tbody">
+                            <tr>
+
                                 <td>
-                                    <div class="table-product">
-                                        <div class="table-product-img">
-                                            <img src="public/images/category/iphone.webp" alt="TechGen" class="" />
-                                        </div>
-                                        <div class="table-product-detail">
-                                            <div class="product-detail">
-                                                <p>IPhone 14 Pro Max 128GB VNA - Bảo hành 12 tháng</p>
-                                            </div>
-                                            <div class="product-color">
-                                                <p>Color: Depp purple</p>
+                                    <div class="order-detail-tbody-img">
+                                        <img src="public/images/category/laptop.webp" alt="">
+                                    </div>
 
-                                            </div>
-                                            <div class="product-category">
-                                                <p>Dung lượng: 128G</p>
-                                            </div>
-                                            <div class="product-button">
-                                                <a href="">Xóa</a>
-                                            </div>
-                                        </div>
                                 </td>
-                                <td>1</td>
-                                <td>22.000.000đ</td>
-                                <td>22.000.000đ</td>
+                                <td>
+                                    <div class="table-orders-detail">
+                                        <div class="orders-detail">
+                                            <p>IPhone 14 Pro Max 128GB VNA - Bảo hành 12 tháng</p>
+                                        </div>
+                                        <div class="orders-color">
+                                            <p>Color: Depp purple</p>
 
+                                        </div>
+                                        <div class="orders-category">
+                                            <p>Dung lượng: 128G</p>
+                                        </div>
+                                        <div class="orders-button">
+                                            <a href="">Xóa</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><input type="number" name="soluong" id="" value="0" min="0" max="10"></td>
+                                <td>22.000.000đ</td>
+                                <td>22.000.000đ</td>
 
                             </tr>
-                        </tbody>
 
+                        </tbody>
                     </table>
                 </div>
-                <div class="box-right">
-                    <h2>Thanh toán</h2>
-                    <div class="right-detail">
+                <div class="box-order-right">
+                    <h3>Thanh toán</h3>
+                    <div class="right-detail new">
                         <p>Sản phẩm: <span>3</span></p>
                         <p>22.000.000đ</p>
                     </div>
-                    <h3>Thông tin vận chuyển</h3>
-                    <form action="" method="get">
-                        <input type="text" name="hovaten" placeholder="Họ và tên">
+                    <h4>Thông tin vận chuyển</h4>
+                    <form action="" method="post">
+                        <input class="input-1" type="text" placeholder="Họ và tên">
                         <div class="input-b">
-                            <input class="input-1" name="email-" type="text" n placeholder="Email">
-                            <input class="input-2" name="sdt" type="number" placeholder="Số điện thoại">
+                            <input class="input-1 input--1 " type="text" placeholder="Email">
+                            <input class="input-1 input-2" type="number" placeholder="Số điện thoại">
                         </div>
-                        <input type="text" name="address" placeholder="Địa chỉ">
+                        <input class="input-1" type="text" placeholder="Địa chỉ">
 
+                        <h4>Phương thức thanh toán</h4>
+                        <div class="input-text">
 
-                    </form>
+                            <div class="option">
+                                <div class="option-input">
+                                    <input class="input-checkbox" type="checkbox" id="product_status"
+                                        name="product_status">
+                                    <div class="option-detail">
+                                        <p>Thanh toán khi nhận hàng</p>
+                                        <p>Miễn phí</p>
+                                    </div>
 
-
-                    <h3>Phương thức thanh toán</h3>
-                    <div class="pay-all">
-                        <div class="pay">
-                            <div class="pay-1">
-                                <i class="fa-solid fa-record-vinyl"></i>
-                                <p>Phương thức thanh toán</p>
+                                </div>
+                                <div class="option-input">
+                                    <input class="input-checkbox" type="checkbox" id="special" name="special">
+                                    <p>Thanh toán online</p>
+                                </div>
                             </div>
-
-                            <p>Miễn phí</p>
                         </div>
-                        <div class="pay-2">
-                            <i class="fa-solid fa-record-vinyl"></i>
-                            <p>Thanh toán onilne</p>
-
+                        <div class="right-detail new">
+                            <p>Tổng cộng: </p>
+                            <p>22.000.000đ</p>
                         </div>
-
-                    </div>
-                    <div class="right-detail new">
-                        <p>Tổng cộng: </p>
-                        <p>22.000.000đ</p>
-                    </div>
-                    <div class="button-bottom">
-                        <a href="?mod=order&action=success"><button>Thanh toán</button></a>
-
-                    </div>
-
+                        <div class="button-bottom">
+                            <input type="submit" value="Thanh toán">
+                        </div>
+                    </form>
 
                 </div>
             </div>
+
+
             <!-- productRelated  -->
             <section class="productRelated">
                 <div class="productRelated__body">
@@ -117,7 +121,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
@@ -143,7 +148,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
@@ -169,7 +175,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
@@ -195,7 +202,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
@@ -221,7 +229,8 @@ get_header();
                                 <h3 class="product__info--title">
                                     <span class="product-brand">Apple</span>
                                     <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
+                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
