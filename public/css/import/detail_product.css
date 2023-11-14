@@ -53,6 +53,10 @@
     font-size: 12px;
     margin-top: 16px;
 }
+.product-name .short-describe {
+    font-size: 12px;
+    margin-top: 16px;
+}
 
 /*  màu sắc */
 .product-color {
@@ -120,6 +124,7 @@
     border: 1px solid #00483d;
 }
 
+
 /* dụng lượng sản phẩm */
 .product-price {
     width: 370px;
@@ -128,18 +133,25 @@
 }
 
 /* giá sp  */
-.cost {
+.product-price .cost {
     font-size: 16px;
+    font-weight: 600;
 }
 
-.sale {
+.product-price .sale p {
     margin-left: 16px;
-    font-size: 12px;
+    font-size: 13px;
     text-decoration: line-through;
 }
 
-.cost,
-.sale {
+.product-price small {
+    font-size: 13px;
+    color: red;
+    margin-left: 5px;
+}
+
+.product-price.cost,
+.product-price .sale {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,6 +174,9 @@
     background-color: #00483d;
     color: #ffff;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*  sản phẩm  */
@@ -204,20 +219,20 @@
     width: 496px;
 }
 
-table {
+.parameter table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 16px;
 }
 
-tr,
+.parameter table tr,
 td {
     border: 1px solid#DDDDDD;
     padding: 8px;
     height: 36px;
 }
 
-tr:nth-child(even) {
+.parameter table  tr:nth-child(even) {
     background-color: #dddddd;
 }
 
@@ -295,7 +310,7 @@ tr:nth-child(even) {
     padding-left: 5px;
 }
 
-.comment-full form button {
+.comment-full form .comment-form-submit {
     width: 104px;
     height: 30px;
     text-align: center;
