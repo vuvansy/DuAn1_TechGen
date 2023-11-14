@@ -12,7 +12,8 @@
 }
 .content {
     display: flex;
-    padding: 20px 54px 25px 55px;
+    min-height: 400px;
+    
     flex-direction: column;
     align-items: center;
     gap: 30px;
@@ -29,16 +30,25 @@
     color: #f25c05;
     text-decoration: none;
     border: 1px solid #595959;
-    padding: 10px 20px;
+    padding: 20px 30px;
     border-radius: 20px;
     font-size: 16px;
-    margin-top: 50px;
+    margin-top: 20px;
+}
+.content a:hover{
+    background-color: #00483d;
+    color: white;
+    font-weight: 600;
+}
+.content strong{
+    font-weight: 600;
 }
 
 
-
 /* QUẢN LÝ đơn hàng */
-
+.box-left-0fnone{
+    min-height: 300px;
+}
 .box-left-0fnone th {
     background-color: #00483d;
     color: white;

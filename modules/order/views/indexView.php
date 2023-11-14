@@ -49,7 +49,7 @@ get_header();
                                         </div>
                                     </div>
                                 </td>
-                                <td><input type="number" name="soluong" id="" value="1"></td>
+                                <td><input type="number" name="soluong" id="" value="0" min="0" max="10"></td>
                                 <td>22.000.000đ</td>
                                 <td>22.000.000đ</td>
 
@@ -60,7 +60,7 @@ get_header();
                 </div>
                 <div class="box-order-right">
                     <h3>Thanh toán</h3>
-                    <div class="right-detail">
+                    <div class="right-detail new">
                         <p>Sản phẩm: <span>3</span></p>
                         <p>22.000.000đ</p>
                     </div>

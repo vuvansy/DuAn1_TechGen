@@ -76,11 +76,11 @@
     width: 30%;
 }
 .order-detail-tbody td input {
-    width: 30%;
+    
     text-align: center;
 }
 .box-order-right{
-    max-height: 500px;
+    min-height: 560px;
     background-color:#e2dfdf;
     padding: 20px 15px;
 }
@@ -88,18 +88,21 @@
     font-size: 24px;
     padding-bottom: 10px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-bottom: 2px solid #cecccc;
 }
-.box-order-right .right-detail{
+.box-order-right .right-detail {
     display: flex;
     justify-content: space-between;
     font-weight: 700;
-    margin: 15px 0;
+    margin: 25px 0;
     font-size: 13px;
 }
+.box-order-right .right-detail.new p{
+    font-size: 1.6rem;
+}
 .box-order-right h4{
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     margin: 10px 0;
 }
@@ -109,8 +112,11 @@
 .box-order-right .input-1{
     width: 100%;
     padding: 10px ;
-    margin: 4px 0;
+    margin: 12px 0;
     border-radius: 5px;
+}
+.box-order-right .right-detail .new p{
+    font-size: 1.6rem;
 }
 
 .option-input {
