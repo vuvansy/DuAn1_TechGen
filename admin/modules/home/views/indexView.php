@@ -7,9 +7,428 @@ get_header();
         get_sidebar();
         ?>
         <div class="sidebar-right">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus deserunt reiciendis totam magni eaque tempore nam aspernatur voluptatibus qui debitis odio nemo odit quasi adipisci dolorem animi atque natus officia maxime impedit praesentium eveniet non, repellendus quas! Necessitatibus animi, eum natus saepe obcaecati recusandae aperiam fugit libero soluta, quo sint deserunt laborum ipsam? Inventore minus distinctio obcaecati doloribus quibusdam magni quos odio suscipit, accusantium aspernatur similique quasi? Aliquid excepturi, libero quo mollitia vero, recusandae nesciunt a tempora laboriosam saepe sapiente laudantium qui eaque! Repudiandae hic quam deserunt eius omnis doloribus quasi praesentium repellat provident consectetur a, cumque cupiditate assumenda temporibus nemo odit rem fugiat optio ea amet? Eaque ratione sint blanditiis possimus accusamus. Temporibus reprehenderit illo eveniet odit tempora quidem. Nobis nesciunt modi rerum a dolor dolorem, odio accusamus labore excepturi asperiores omnis earum, enim facere voluptate veritatis eum ducimus, reprehenderit quibusdam quia fugiat impedit! Blanditiis neque alias explicabo placeat esse consectetur ipsa sunt consequuntur sequi voluptatem officia fuga, voluptas unde officiis dicta? Sed esse inventore, in quas provident cumque iure? Quae soluta commodi inventore tempora, iusto architecto repellat. Nemo velit omnis cumque aspernatur, consequuntur laudantium nam! Maiores optio, harum velit eius placeat ut facere consequatur ullam sunt aliquid architecto cumque, assumenda dicta nulla, voluptate quibusdam nihil dolore fugiat ducimus perferendis nam non. Maiores alias perferendis doloremque expedita ducimus commodi corporis aut suscipit repellat! Molestiae, quas doloremque error tempore, voluptatum consectetur similique dicta unde repudiandae repellat sint saepe accusantium? Accusantium illo reiciendis placeat? In natus esse quo necessitatibus sed consectetur nobis ipsa molestias! Laboriosam, accusamus! Quam repellendus voluptatem nostrum magni modi unde aliquid enim cum. Pariatur ipsa non, incidunt distinctio possimus illum obcaecati dolore mollitia ea animi, itaque expedita voluptas rem? Perspiciatis a asperiores ullam! Pariatur impedit aliquid, voluptatum, cupiditate ex, veritatis sunt vel sed eaque assumenda alias beatae eum ut corporis nihil? Magni sed, accusantium asperiores dolorem modi blanditiis ipsa rerum autem, consectetur quisquam, esse laudantium aliquam quos molestias rem deleniti. Aliquam, dolores officia. Illo non aperiam doloremque dolorem velit placeat, dolor earum, recusandae, cum nulla voluptatum explicabo dignissimos accusamus voluptatem quae minima quod soluta ipsa quia quo eos voluptate. Iure, reprehenderit velit culpa exercitationem tempore, porro amet quisquam quos architecto doloremque error eveniet animi magnam. Minus ad, cupiditate illo exercitationem a odit, repellendus fugiat odio quod, deserunt repellat id ea at facilis voluptatum! Totam, consequatur ab. Tenetur incidunt ipsum, id fugit provident repudiandae voluptatem? Soluta pariatur animi itaque?
-            </p>
+            <section class="revenue-container">
+
+                <div class="revenue-heading">
+                    Thống kê doanh thu
+                </div>
+
+                <div class="revenue-bar">
+
+                    <a href="?mod=home&action=index" class="btn-total">
+                        Doanh thu
+                    </a>
+
+                    <a href="?mod=Statistical&action=warning" class="btn-revenue">
+                        Sản phẩm sắp hết
+                    </a>
+
+                </div>
+
+                <div class="revenue_status">
+
+                    <div class="inline">
+
+                        <div class="user">
+                            <div class="title">
+                                Tổng số khách hàng
+                            </div>
+                            <div class="number">
+                                4
+                            </div>
+                        </div>
+
+                        <div class="product">
+                            <div class="title">
+                                Tổng số sản phẩm
+                            </div>
+                            <div class="number">
+                                4
+                            </div>
+                        </div>
+
+                        <div class="order">
+                            <div class="title">
+                                Tổng số đơn hàng
+                            </div>
+                            <div class="number">
+                                4
+                            </div>
+                        </div>
+
+                        <div class="category">
+                            <div class="title">
+                                Tổng số sản phẩm
+                            </div>
+                            <div class="number">
+                                4
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="revenue_chart">
+
+                    <div class="left">
+
+                        <div class="head">
+                            <div class="inline">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M14 1H2C1.73478 1 1.48043 1.10536 1.29289 1.29289C1.10536 1.48043 1 1.73478 1 2L1 14C1 14.2652 1.10536 14.5196 1.29289 14.7071C1.48043 14.8946 1.73478 15 2 15H14C14.2652 15 14.5196 14.8946 14.7071 14.7071C14.8946 14.5196 15 14.2652 15 14V2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1ZM13 3V7H9V3H13ZM7 3V7H3V3H7ZM3 13V9H7V13H3ZM9 13V9H13V13H9Z" fill="black" />
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    Doanh thu theo tháng
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content">
+
+                            <div class="heading">
+                                <div class="line"></div>
+                                <div class="title">
+                                    Doanh thu theo tháng
+                                </div>
+                            </div>
+
+                            <div class="main-chart">
+
+                                <div class="top">
+                                    <div class="left-chart">
+                                        <div class="price">
+                                            40,000,000
+                                        </div>
+                                        <div class="price">
+                                            35,000,000
+                                        </div>
+                                        <div class="price">
+                                            30,000,000
+                                        </div>
+                                        <div class="price">
+                                            25,000,000
+                                        </div>
+                                        <div class="price">
+                                            20,000,000
+                                        </div>
+                                        <div class="price">
+                                            15,000,000
+                                        </div>
+                                        <div class="price">
+                                            10,000,000
+                                        </div>
+                                        <div class="price">
+                                            5,000,000
+                                        </div>
+                                        <div class="price">
+                                            0
+                                        </div>
+                                    </div>
+                                    <div class="right-chart">
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class=""></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="bottom">
+
+                                    <div class="month">
+                                        1
+                                    </div>
+
+                                    <div class="month">
+                                        2
+                                    </div>
+
+                                    <div class="month">
+                                        3
+                                    </div>
+
+                                    <div class="month">
+                                        4
+                                    </div>
+
+                                    <div class="month">
+                                        5
+                                    </div>
+
+                                    <div class="month">
+                                        6
+                                    </div>
+
+                                    <div class="month">
+                                        7
+                                    </div>
+
+                                    <div class="month">
+                                        8
+                                    </div>
+
+                                    <div class="month">
+                                        9
+                                    </div>
+
+                                    <div class="month">
+                                        10
+                                    </div>
+
+                                    <div class="month">
+                                        11
+                                    </div>
+
+                                    <div class="month">
+                                        12
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="right">
+
+                        <div class="head">
+                            <div class="inline">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M14 1H2C1.73478 1 1.48043 1.10536 1.29289 1.29289C1.10536 1.48043 1 1.73478 1 2L1 14C1 14.2652 1.10536 14.5196 1.29289 14.7071C1.48043 14.8946 1.73478 15 2 15H14C14.2652 15 14.5196 14.8946 14.7071 14.7071C14.8946 14.5196 15 14.2652 15 14V2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1ZM13 3V7H9V3H13ZM7 3V7H3V3H7ZM3 13V9H7V13H3ZM9 13V9H13V13H9Z" fill="black" />
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    Đơn hàng theo tháng
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content">
+
+                            <div class="heading">
+                                <div class="head-left">
+                                    <div class="line"></div>
+                                    <div class="title">
+                                        Đơn hàng thành công
+                                    </div>
+                                </div>
+                                <div class="head-right">
+                                    <div class="line"></div>
+                                    <div class="title">
+                                        Đơn hàng bị hủy
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="main-chart">
+
+                                <div class="top">
+                                    <div class="left-chart">
+                                        <div class="price">
+                                            0.8
+                                        </div>
+                                        <div class="price">
+                                            0.7
+                                        </div>
+                                        <div class="price">
+                                            0.6
+                                        </div>
+                                        <div class="price">
+                                            0.5
+                                        </div>
+                                        <div class="price">
+                                            0.4
+                                        </div>
+                                        <div class="price">
+                                            0.3
+                                        </div>
+                                        <div class="price">
+                                            0.2
+                                        </div>
+                                        <div class="price">
+                                            0.1
+                                        </div>
+                                        <div class="price">
+                                            0
+                                        </div>
+                                    </div>
+                                    <div class="right-chart">
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+                                        <div class="month">
+                                            <span class="success"></span>
+                                            <span class="cancel"></span>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="bottom">
+
+                                    <div class="month">
+                                        1
+                                    </div>
+
+                                    <div class="month">
+                                        2
+                                    </div>
+
+                                    <div class="month">
+                                        3
+                                    </div>
+
+                                    <div class="month">
+                                        4
+                                    </div>
+
+                                    <div class="month">
+                                        5
+                                    </div>
+
+                                    <div class="month">
+                                        6
+                                    </div>
+
+                                    <div class="month">
+                                        7
+                                    </div>
+
+                                    <div class="month">
+                                        8
+                                    </div>
+
+                                    <div class="month">
+                                        9
+                                    </div>
+
+                                    <div class="month">
+                                        10
+                                    </div>
+
+                                    <div class="month">
+                                        11
+                                    </div>
+
+                                    <div class="month">
+                                        12
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
         </div>
     </div>
 </main>

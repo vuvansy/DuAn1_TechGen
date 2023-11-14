@@ -25,7 +25,7 @@ get_header();
                     </form>
                 </div>
 
-                <a href="?mod=category&action=list" class="product-btn-list-category">Danh sách</a>
+                <a href="?mod=category&action=index" class="product-btn-list-category">Danh sách</a>
 
 
                 <a href="?mod=category&action=add" class="product-btn-add-category">Thêm mới</a>

@@ -15,7 +15,7 @@ get_header();
 
                 <div class="success-bar">
 
-                    <a href="?mod=order&action=confirm_list" class="cancel-btn-wait">
+                    <a href="?mod=order&action=index" class="cancel-btn-wait">
                         Chờ xác nhận
                     </a>
 
@@ -470,5 +470,3 @@ get_header();
 <?php
 get_footer();
 ?>
-
-

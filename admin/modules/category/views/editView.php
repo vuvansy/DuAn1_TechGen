@@ -22,20 +22,12 @@ get_header();
 
                         </div>
 
-
                     </form>
                 </div>
 
                 <a href="?mod=category&action=list" class="product-btn-list-category">Danh sách</a>
 
-
                 <a href="?mod=category&action=add" class="product-btn-add-category">Thêm mới</a>
-
-
-
-
-
-
             </div>
             <div class="container-section">
                 <div class="header">
@@ -60,8 +52,7 @@ get_header();
 
                                     <div class="input-texts-update">
                                         <p>Mã loại</p>
-                                        <input class="input-texts-update-1" type="text" name="maloai"
-                                            placeholder="it6903">
+                                        <input class="input-texts-update-1" type="text" name="maloai" placeholder="it6903">
                                     </div>
                                     <div class="input-texts-update">
                                         <p>Tên loại</p>
@@ -71,8 +62,7 @@ get_header();
                                         <span>Trạng thái</span>
                                         <div class="option">
                                             <div class="option-update-input-check">
-                                                <input class="input-checkbox-update" name="check" type="checkbox"
-                                                    id="block">
+                                                <input class="input-checkbox-update" name="check" type="checkbox" id="block">
                                                 <p class="text-checkbox-update">Hiển thị </p>
                                             </div>
 
@@ -95,7 +85,6 @@ get_header();
                     </form>
 
                 </div>
-
 
             </div>
         </div>
