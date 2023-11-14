@@ -5,14 +5,19 @@
     font-size: 24px;
     font-weight: 700;
     text-align: center;
+    margin: 30px 0;
     
 }
 .order-detail-table {
     text-align: center;
+    width: 100%;
 }
 .order-detail-tbody tr td img{
     width: 100px;
     height: 100px;
+}
+.order-detail-thead{
+    height: 30px;
 }
 .order-detail-thead  tr{
     background-color: #00483D;

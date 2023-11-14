@@ -46,8 +46,10 @@
 
 
 /* QUẢN LÝ đơn hàng */
+
 .box-left-0fnone{
     min-height: 300px;
+    
 }
 .box-left-0fnone th {
     background-color: #00483d;
@@ -62,6 +64,7 @@
 }
 .box-left-0fnone table {
     text-align: center;
+    width: 100%;
 }
 .bw {
     display: flex;
