@@ -17,85 +17,38 @@ $imagesURL = "public/images";
 
                 <div class="flash-sales__list">
                     <!-- Flash-sales__item 1 -->
-                    <div class="product-sales__item">
-                        <a href="">
-                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                        </a>
-                        <div class="product-sales__info">
-                            <h3 class="product-sales__info--title">
-                                <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                </a>
-                            </h3>
-                            <div class="product-sales__info--foot">
-                                <span class="latest-price">22.900.000đ</span>
-                                <span class="price-and-discount">
-                                    <label class="price-old">29.900.000đ</label>
-                                    <small>10.1%</small>
-                                </span>
+                    <?php
+                    foreach ($product_sale as $item) {
+                        $category = get_category_by_id($item['id_category']);
+                        if ($item['product_sale'] > 0) {
+                            $sale = (($item['product_price'] - $item['product_sale']) / $item['product_price']) * 100;
+                        } else {
+                            $sale = 0;
+                        }
+
+                    ?>
+                        <div class="product-sales__item">
+                            <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
+                                <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="" class="thumb">
+                            </a>
+                            <div class="product-sales__info">
+                                <h3 class="product-sales__info--title">
+                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
+                                        <?php echo $item['product_name'] ?>
+                                    </a>
+                                </h3>
+                                <div class="product-sales__info--foot">
+                                    <span class="latest-price"><?php echo currency_format($item['product_sale'], 'đ'); ?></span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
+                                        <small><?php echo round($sale, 1) ?>%</small>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Flash-sales__item 2 -->
-                    <div class="product-sales__item">
-                        <a href="">
-                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                        </a>
-                        <div class="product-sales__info">
-                            <h3 class="product-sales__info--title">
-                                <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                </a>
-                            </h3>
-                            <div class="product-sales__info--foot">
-                                <span class="latest-price">22.900.000đ</span>
-                                <span class="price-and-discount">
-                                    <label class="price-old">29.900.000đ</label>
-                                    <small>10.1%</small>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Flash-sales__item 3 -->
-                    <div class="product-sales__item">
-                        <a href="">
-                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                        </a>
-                        <div class="product-sales__info">
-                            <h3 class="product-sales__info--title">
-                                <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                </a>
-                            </h3>
-                            <div class="product-sales__info--foot">
-                                <span class="latest-price">22.900.000đ</span>
-                                <span class="price-and-discount">
-                                    <label class="price-old">29.900.000đ</label>
-                                    <small>10.1%</small>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Flash-sales__item 4 -->
-                    <div class="product-sales__item">
-                        <a href="">
-                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                        </a>
-                        <div class="product-sales__info">
-                            <h3 class="product-sales__info--title">
-                                <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                </a>
-                            </h3>
-                            <div class="product-sales__info--foot">
-                                <span class="latest-price">22.900.000đ</span>
-                                <span class="price-and-discount">
-                                    <label class="price-old">29.900.000đ</label>
-                                    <small>10.1%</small>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -108,11 +61,12 @@ $imagesURL = "public/images";
                 <div class="category__list">
                     <!-- Category item 1  -->
                     <?php
+                    $category = get_category();
                     foreach ($category as $item) {
                         // show_array($item);
                     ?>
                         <div class="category-item">
-                            <a href="">
+                            <a href="?mod=product&action=productList&id=<?php echo $item['id_category'] ?>">
                                 <div class="category-item__thumb">
                                     <img src="<?php echo $imagesURL ?>/category/<?php echo $item['category_image'] ?>" alt="laptop">
                                 </div>
@@ -156,7 +110,7 @@ $imagesURL = "public/images";
                     ?>
                         <div class="product__item">
                             <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
-                                <img src="<?php echo $imagesURL ?>/product/iphone/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
+                                <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
                             </a>
                             <div class="product__info">
                                 <h3 class="product__info--title">
@@ -211,7 +165,7 @@ $imagesURL = "public/images";
                     ?>
                         <div class="product__item">
                             <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
-                                <img src="<?php echo $imagesURL ?>/product/laptop/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
+                                <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
                             </a>
                             <div class="product__info">
                                 <h3 class="product__info--title">
@@ -266,7 +220,7 @@ $imagesURL = "public/images";
                     ?>
                         <div class="product__item">
                             <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
-                                <img src="<?php echo $imagesURL ?>/product/clock/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
+                                <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
                             </a>
                             <div class="product__info">
                                 <h3 class="product__info--title">

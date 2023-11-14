@@ -9,13 +9,11 @@ function construct()
 function indexAction()
 {
 
-    $list_category = get_category();
-    //     show_array($list_category);
 
-    // $get_category_by_id = get_category_by_id();
 
-    $list_product = get_product();
-    // show_array($list_product);
+
+    $get_product_sale = get_product_sale();
+    // show_array($get_product_new);
 
     //Laptop $id =1
     $get_product_laptop = get_product_by_id_category(1);
@@ -26,16 +24,13 @@ function indexAction()
     $get_product_clock = get_product_by_id_category(10);
 
     //===Để đưa dữ liệu qua form view===
-    // category 
-    $data['category'] = $list_category;
 
-    // Product 
-    $data['product'] = $list_product;
-
-    //Danh sách hàng hóa theo mã loại
+    //Danh sách hàng hóa theo loại
     $data['product_laptop'] = $get_product_laptop;
     $data['product_phone'] = $get_product_phone;
     $data['product_clock'] = $get_product_clock;
+    //Danh sách hàng hóa Flash-sales
+    $data['product_sale'] = $get_product_sale;
 
 
     load_view('index', $data);

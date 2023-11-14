@@ -190,6 +190,7 @@ ul.sub-menu li {
 }
 
 ul.sub-menu li a {
+    text-transform: capitalize;
     font-weight: 600;
     padding: 10px 28px;
     font-size: var(--priceText);

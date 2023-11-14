@@ -159,11 +159,15 @@
                             <li>
                                 <button class="main-menu__cta"><i class="fa-solid fa-bars btn-icon"></i> Danh mục sản phẩm</button>
                                 <ul class="sub-menu">
-                                    <li><a href="?mod=product&action=productList">Đồng hồ thông minh</a></li>
-                                    <li><a href="">Laptop - Máy tính cầm tay</a></li>
-                                    <li><a href="">PC-Máy tính bộ</a></li>
-                                    <li><a href="">Điện thoại</a></li>
-                                    <li><a href="">Tai nghe & Phụ kiện</a></li>
+                                    <?php
+                                    $category = get_category();
+                                    foreach ($category as $item) {
+                                    ?>
+                                        <li><a href="?mod=product&action=index&id=<?php echo $item['id_category'] ?>"><?php echo $item['category_name'] ?></a></li>
+                                    <?php
+                                    }
+                                    ?>
+
                                 </ul>
                             </li>
                         </ul>
