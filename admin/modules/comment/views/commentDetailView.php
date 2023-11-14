@@ -13,7 +13,7 @@ get_header();
             <form action="" class="search-comment-detail">
                 <div class="box-form-comment-detail">
                     <!-- input -->
-                    <input type="text" class="search-comment-detail-input" placeholder="Nhập tên" />
+                    <input type="text" class="search-comment-detail-input" placeholder="Nhập tên..." />
                     <input type="submit" class="search-comment-detail-btn" value="Tìm kiếm">
                 </div>
                 <!-- Submit button -->
