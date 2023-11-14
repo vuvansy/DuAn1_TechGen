@@ -23,10 +23,10 @@ function editAction()
     load_view('edit');
 }
 
-function deleteAction()
+function updateAction()
 {
 
-    load_view('delete');
+    load_view('update');
 }
 
 function listAction()

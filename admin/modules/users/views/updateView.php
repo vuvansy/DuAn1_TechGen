@@ -117,9 +117,7 @@ get_header();
                   </div>
                 </div>
               </div>
-              <button type="submit" class="user__btn user__submit">
-                Cập nhật
-              </button>
+              <input type="submit" class="user__btn user__submit" value="Cập nhật">
             </form>
           </div>
         </div>

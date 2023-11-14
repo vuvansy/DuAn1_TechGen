@@ -101,7 +101,7 @@ get_header();
                   <input type="file" name="file" id="file" class="user__file" />
                 </div>
               </div>
-              <button type="submit" class="user__btn user__submit">Thêm</button>
+              <input type="submit" class="user__btn user__submit" value="Thêm">
             </form>
           </div>
         </div>
