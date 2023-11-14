@@ -6,8 +6,9 @@ get_header();
         <?php
         get_sidebar();
         ?>
+        <div class="sidebar-right">
         <section id="user">
-        <div class="container">
+        <div >
           <div class="user__top">
             <h2 class="user__heading">Thêm mới khách hàng</h2>
             <div class="user__actions">
@@ -106,6 +107,7 @@ get_header();
           </div>
         </div>
       </section>
+        </div>
         </div>
     </div>
 

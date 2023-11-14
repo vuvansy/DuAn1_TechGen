@@ -244,18 +244,18 @@
 }
 
 
-.check-input input {
+.check-input-comment-detail input {
     width: 100%;
 }
 
-.check-input {
+.check-input-comment-detail {
     width: 35px;
     text-align: center; 
     vertical-align: middle; 
 }
 
 
-.check-input input {
+.check-input-comment-detail input {
     margin: 0; 
 }
 .tbody-content-detail {
@@ -299,13 +299,13 @@
     vertical-align: middle;
 }
 
-.full-btn {
+.full-btn-comment-detail {
     width: 95%;
     display: flex;
     margin: 0 auto;
 }
 
-.full-btn a:hover {
+.full-btn-comment-detail a:hover {
     background-color: #F25C05;
 }
 
