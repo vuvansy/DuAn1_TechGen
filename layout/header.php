@@ -118,17 +118,58 @@
                     <!-- Order-tools  -->
                     <div class="order-tools">
                         <div class="admin">
-                            <a href="?mod=users&action=index">
-                                <span>
-                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g id="user">
-                                            <path id="Vector" d="M21.6667 22.75V20.5833C21.6667 19.4341 21.2102 18.3319 20.3975 17.5192C19.5848 16.7065 18.4826 16.25 17.3334 16.25H8.66671C7.51744 16.25 6.41524 16.7065 5.60258 17.5192C4.78992 18.3319 4.33337 19.4341 4.33337 20.5833V22.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path id="Vector_2" d="M13 11.9167C15.3932 11.9167 17.3333 9.97657 17.3333 7.58333C17.3333 5.1901 15.3932 3.25 13 3.25C10.6067 3.25 8.66663 5.1901 8.66663 7.58333C8.66663 9.97657 10.6067 11.9167 13 11.9167Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span>Đăng nhập</span>
-                            </a>
+                            <!-- Login Success  -->
+                            <?php if (isset($_SESSION['user'])) : ?>
+                                <div class="dropdown__login">
+                                    <ul class="main__login">
+                                        <li>
+                                            <div class="main__login--btn">
+                                                <span>
+                                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g id="user">
+                                                            <path id="Vector" d="M21.6667 22.75V20.5833C21.6667 19.4341 21.2102 18.3319 20.3975 17.5192C19.5848 16.7065 18.4826 16.25 17.3334 16.25H8.66671C7.51744 16.25 6.41524 16.7065 5.60258 17.5192C4.78992 18.3319 4.33337 19.4341 4.33337 20.5833V22.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path id="Vector_2" d="M13 11.9167C15.3932 11.9167 17.3333 9.97657 17.3333 7.58333C17.3333 5.1901 15.3932 3.25 13 3.25C10.6067 3.25 8.66663 5.1901 8.66663 7.58333C8.66663 9.97657 10.6067 11.9167 13 11.9167Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <div class="subject__login">
+                                                    <span>Xin chào,</span>
+                                                    <span class="line-clamp break-all">Vũ Văn Sỹ</span>
+                                                </div>
+                                            </div>
+                                            <ul class="sub__login">
+                                                <?php if ($_SESSION['user']['user_role'] == 1) : ?>
+                                                    <li>
+                                                        <a href="./admin/?"><i class="fa-solid fa-house"></i> Trang quản trị</a>
+                                                    </li>
+                                                <?php endif ?>
+                                                <li>
+                                                    <a href="?mod=users&action=update"><i class="fa-solid fa-bookmark"></i> Cập nhật thông tin</a>
+                                                </li>
+                                                <li>
+                                                    <a href="?mod=users&action=editPass"><i class="fa-solid fa-gear"></i> Đổi mật khẩu</a>
+                                                </li>
+                                                <li>
+                                                    <a href="?mod=users&action=logout"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php else : ?>
+                                <!-- No Login  -->
+                                <a href="?mod=users&action=index">
+                                    <span>
+                                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g id="user">
+                                                <path id="Vector" d="M21.6667 22.75V20.5833C21.6667 19.4341 21.2102 18.3319 20.3975 17.5192C19.5848 16.7065 18.4826 16.25 17.3334 16.25H8.66671C7.51744 16.25 6.41524 16.7065 5.60258 17.5192C4.78992 18.3319 4.33337 19.4341 4.33337 20.5833V22.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path id="Vector_2" d="M13 11.9167C15.3932 11.9167 17.3333 9.97657 17.3333 7.58333C17.3333 5.1901 15.3932 3.25 13 3.25C10.6067 3.25 8.66663 5.1901 8.66663 7.58333C8.66663 9.97657 10.6067 11.9167 13 11.9167Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span>Đăng nhập</span>
+                                </a>
+                            <?php endif ?>
                         </div>
                         <div class="cart">
                             <a href="">
