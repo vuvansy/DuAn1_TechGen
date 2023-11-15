@@ -76,7 +76,8 @@ get_header();
 
                                     <td>
                                         <div class="table-section-icon">
-                                            <a href="?mod=category&action=update"> <i class="fa-sharp fa-solid fa-pencil icons"></i></a>
+                                            <a href="?mod=category&action=edit"> <i
+                                                    class="fa-sharp fa-solid fa-pencil icons"></i></a>
                                             <a href="#!"> <i class="fa-solid fa-trash-can icons"></i></a>
                                         </div>
                                     </td>
