@@ -51,12 +51,26 @@
 .heading-title {
     font-size: 3.6rem;
     font-weight: 900;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .form__group {
     text-align: left;
     margin: 20px;
+}
+
+.account__inner p.text-danger {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: red;
+}
+
+.account__inner--title > p.text-danger {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.6rem;
 }
 
 .control__reset {
@@ -79,6 +93,8 @@
 }
 
 .sidebar__user--desc {
+    width: 300px;
+    line-height: 1.5;
     padding: 30px 0;
 }
 
@@ -96,6 +112,7 @@
 
 .row-form__group .form__group {
     width: 50%;
+    height: 80px;
     text-align: left;
 }
 
