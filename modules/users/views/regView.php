@@ -9,13 +9,16 @@ get_header();
             <div class="form__account">
                 <div class="sidebar__user">
                     <h1 class="sidebar__user--heading">Xin chào, Bạn</h1>
-                    <p class="sidebar__user--desc">Hãy bắt đầu với chúng tôi. Nếu bạn chưa có tài khoản.</p>
+                    <p class="sidebar__user--desc">Bắt đầu mua sắm với chúng tôi. Nếu bạn đăng ký tài khoản thành công đăng nhập để mua sắm tiện lợi hơn.</p>
                     <div class="">
                         <a href="?mod=users&action=index"><button class="btn user__cta">ĐĂNG NHẬP</button></a>
                     </div>
                 </div>
                 <div class="account__inner">
-                    <h1 class="heading-title">ĐĂNG KÝ</h1>
+                    <div class="account__inner--title">
+                        <h1 class="heading-title">ĐĂNG KÝ</h1>
+                        <?php echo form_error('account'); ?>
+                    </div>
                     <form action="" id="form-login" method="POST">
                         <div class="row-form__group">
                             <div class="form__group">
@@ -34,20 +37,20 @@ get_header();
                         <div class="row-form__group">
                             <div class="form__group">
                                 <label for="email">Email</label>
-                                <input type="text" name="email" id="email" value="" placeholder="Email..." />
+                                <input type="text" name="email" id="email" value="<?php echo set_value('email'); ?>" placeholder="Email..." />
                                 <?php echo form_error('email'); ?>
                             </div>
 
                             <div class="form__group">
                                 <label for="phone">Số Điện thoại</label>
-                                <input type="text" name="phone" id="phone" value="" placeholder="Số điện thoại..." />
+                                <input type="text" name="phone" id="phone" value="<?php echo set_value('phone'); ?>" placeholder="Số điện thoại..." />
                                 <?php echo form_error('phone'); ?>
                             </div>
                         </div>
 
                         <div class="form__group">
                             <label for="address">Địa chỉ</label>
-                            <input type="text" name="address" id="address" value="" placeholder="Địa chỉ..." />
+                            <input type="text" name="address" id="address" value="<?php echo set_value('address'); ?>" placeholder="Địa chỉ..." />
                             <?php echo form_error('address'); ?>
                         </div>
 
@@ -59,14 +62,13 @@ get_header();
                             </div>
 
                             <div class="form__group">
-                                <label for="confirm-pass">Xác nhận mật khẩu</label>
-                                <input type="password" name="confirm-pass" id="confirm-pass" value="" placeholder="Password" />
-                                <?php echo form_error('password'); ?>
+                                <label for="confirm_pass">Xác nhận mật khẩu</label>
+                                <input type="password" name="confirm_pass" id="confirm_pass" value="" placeholder="Password" />
+                                <?php echo form_error('confirm_pass'); ?>
                             </div>
                         </div>
 
                         <input type="submit" name="btn-reg" class="btn user__cta" id="btn-login" value="ĐĂNG KÝ" />
-                        <?php echo form_error('account'); ?>
                     </form>
                 </div>
             </div>

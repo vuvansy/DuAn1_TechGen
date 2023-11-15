@@ -1,5 +1,5 @@
 <?php
-defined('APPPATH') OR exit('Không được quyền truy cập phần này');
+defined('APPPATH') or exit('Không được quyền truy cập phần này');
 
 // Include file config/database
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'database.php';
@@ -23,22 +23,26 @@ require COREPATH . DIRECTORY_SEPARATOR . 'base.php';
 session_start();
 ob_start();
 
-function info_user($username,$field){
+//Trả về Fullname của người login
+function info_user($username, $field)
+{
     $list_users = db_fetch_array('SELECT * FROM `guest` WHERE 1');
-    foreach($list_users as $user){
-        if($username == $user['username']){
-            if(array_key_exists($field,$user)){
+    foreach ($list_users as $user) {
+        if ($username == $user['username']) {
+            if (array_key_exists($field, $user)) {
                 return $user[$field];
             }
         }
     }
 }
 
-function user_login(){
-    if(!empty($_SESSION['user_login'])){
+//Trả về Username của người login
+function user_login()
+{
+    if (!empty($_SESSION['user_login'])) {
         return $_SESSION['user_login'];
-    }  
     }
+}
 
 if (is_array($autoload)) {
     foreach ($autoload as $type => $list_auto) {
@@ -56,19 +60,3 @@ if (is_array($autoload)) {
 db_connect($db);
 
 require COREPATH . DIRECTORY_SEPARATOR . 'router.php';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
