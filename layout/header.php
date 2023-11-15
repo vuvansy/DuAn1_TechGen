@@ -117,6 +117,7 @@
                     </div>
                     <!-- Order-tools  -->
                     <div class="order-tools">
+                        <!-- User Login  -->
                         <div class="admin">
                             <!-- Login Success  -->
                             <?php if (isset($_SESSION['user'])) : ?>
@@ -171,8 +172,9 @@
                                 </a>
                             <?php endif ?>
                         </div>
+                        <!-- Cart  -->
                         <div class="cart">
-                            <a href="">
+                            <a href="?mod=order&action=index">
                                 <span id="cart-total">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6.5 2.16666L3.25 6.49999V21.6667C3.25 22.2413 3.47827 22.7924 3.8846 23.1987C4.29093 23.605 4.84203 23.8333 5.41667 23.8333H20.5833C21.158 23.8333 21.7091 23.605 22.1154 23.1987C22.5217 22.7924 22.75 22.2413 22.75 21.6667V6.49999L19.5 2.16666H6.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
