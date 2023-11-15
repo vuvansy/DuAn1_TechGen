@@ -8,7 +8,7 @@ function construct()
 
 function indexAction()
 {
-
+    /*load_*/
     load_view('index');
 }
 
