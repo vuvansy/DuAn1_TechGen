@@ -28,7 +28,7 @@ get_header();
                         <div class="form__group">
                             <input type="checkbox" name="remember_me" id="remember_me">
                             <label for="remember_me" class="remember">Ghi nhớ thông tin</label>
-                            <a class="control__reset" href="">Quên mật khẩu?</a>
+                            <a class="control__reset" href="?mod=users&action=reset">Quên mật khẩu?</a>
                         </div>
 
                         <input type="submit" name="btn-login" class="btn user__cta" id="btn-login" value="ĐĂNG NHẬP" />

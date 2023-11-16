@@ -141,7 +141,7 @@
                                             <ul class="sub__login">
                                                 <?php if (info_user(user_login(), 'user_role') == 1) : ?>
                                                     <li>
-                                                        <a href="./admin/?"><i class="fa-solid fa-house"></i> Trang quản trị</a>
+                                                        <a href="./admin/?"><i class="fa-solid fa-user-gear"></i> Trang quản trị</a>
                                                     </li>
                                                 <?php endif ?>
                                                 <li>
