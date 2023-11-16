@@ -6,6 +6,7 @@ function base_url($url = "")
     return $config['base_url'] . $url;
 }
 
+//Hàm chuyển hướng
 function redirect($url = "")
 {
     global $config;

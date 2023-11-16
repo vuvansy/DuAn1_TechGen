@@ -5,7 +5,18 @@
                 $(this).find(".sub-menu a").css("color", "#FFFF");
                 // return false;
             });
+
+            // Navbar Dropdown category 
+            $(".main__login li").click(function() {
+                $(this).children(".sub__login").toggle(0);
+                $(this).find(".sub__login a").css("color", "var(--gray)");
+                // return false;
+            });
         });
+
+    
+            
+        
 
 //Slide 
 var arr_hinh = [
