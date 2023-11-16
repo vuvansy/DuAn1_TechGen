@@ -71,6 +71,7 @@
     color: var(--primary-color);
     font-weight: 600;
     font-size: 1.6rem;
+    /* display: none; */
 }
 
 .control__reset {
