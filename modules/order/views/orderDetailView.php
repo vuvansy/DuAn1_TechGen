@@ -1,6 +1,39 @@
 <?php
 get_header();
 ?>
+<?php
+    $detailHtml = '';
+    foreach ($detail as $item) {
+        $product = get_product_by_id($item['id_product']);
+        $detailHtml .= '
+            <tr>
+                <td>IT'.$item['id_order'].'</td>
+                <td class="table-orders-product">
+                    <div class="order-detail-tbody-img">
+                        <img src="public/images/product/'.$product['product_image'].'" alt="">
+                    </div>
+                    <div class="table-orders-detail">
+                        <div class="orders-detail">
+                            <p>'.$product['product_name'].'</p>
+                        </div>
+                        <div class="orders-color">
+                            <p>Color: Depp purple</p>
+                        </div>
+                        <div class="orders-category">
+                            <p>Dung lượng: 128G</p>
+                        </div>
+                        <div class="orders-button">
+                            <a href="">Xóa</a>
+                        </div>
+                    </div>
+                </td>
+                <td>'.$item['order_detail_quantity'].'</td>
+                <td>'.number_format(($item['order_detail_total'] / $item['order_detail_quantity']), 0, '', '.' ).'</td>
+                <td>'.number_format($item['order_detail_total'], 0, '', '.' ).'</td>
+            </tr>
+        ';
+    }
+?>
 
 <main>
     <section class="cartShow">
@@ -13,113 +46,24 @@ get_header();
             <!-- chi tiết đơn hàng -->
             <div class="detail-orders">
                 <h2>Chi tiết đơn hàng</h2>
-                <table class="order-detail-table">
-                    <thead class="order-detail-thead">
+                <table class="table-orders-detail-list">
+                    <thead class="order-detail-thead-list">
                         <tr>
                             <th class="th-order-detail-m">Mã đơn hàng</th>
-                            <th class="th-order-detail-h">Hình ảnh</th>
                             <th class="th-order-detail-s">Sản phẩm</th>
                             <th class="th-order-detail-sl">Số lượng</th>
                             <th class="th-order-detail-g">Giá</th>
                             <th class="th-order-detail-t">Thành tiền</th>
                         </tr>
                     </thead>
-                    <tbody class="order-detail-tbody">
-                        <tr>
-                            <td>IT123</td>
-                            <td>
-                                <div class="order-detail-tbody-img">
-                                    <img src="public/images/category/laptop.webp" alt="">
-                                </div>
-
-                            </td>
-                            <td>
-                                <div class="table-orders-detail">
-                                    <div class="orders-detail">
-                                        <p>IPhone 14 Pro Max 128GB VNA - Bảo hành 12 tháng</p>
-                                    </div>
-                                    <div class="orders-color">
-                                        <p>Color: Depp purple</p>
-
-                                    </div>
-                                    <div class="orders-category">
-                                        <p>Dung lượng: 128G</p>
-                                    </div>
-                                    <div class="orders-button">
-                                        <a href="">Xóa</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>2</td>
-                            <td>22.000.000đ</td>
-                            <td>22.000.000đ</td>
-                        </tr>
-                        <tr>
-                            <td>IT123</td>
-                            <td>
-                                <div class="order-detail-tbody-img">
-                                    <img src="public/images/category/laptop.webp" alt="">
-                                </div>
-
-                            </td>
-                            <td>
-                                <div class="table-orders-detail">
-                                    <div class="orders-detail">
-                                        <p>IPhone 14 Pro Max 128GB VNA - Bảo hành 12 tháng</p>
-                                    </div>
-                                    <div class="orders-color">
-                                        <p>Color: Depp purple</p>
-
-                                    </div>
-                                    <div class="orders-category">
-                                        <p>Dung lượng: 128G</p>
-                                    </div>
-                                    <div class="orders-button">
-                                        <a href="">Xóa</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>2</td>
-                            <td>22.000.000đ</td>
-                            <td>22.000.000đ</td>
-                        </tr>
-                        <tr>
-                            <td>IT123</td>
-                            <td>
-                                <div class="order-detail-tbody-img">
-                                    <img src="public/images/category/laptop.webp" alt="">
-                                </div>
-
-                            </td>
-                            <td>
-                                <div class="table-orders-detail">
-                                    <div class="orders-detail">
-                                        <p>IPhone 14 Pro Max 128GB VNA - Bảo hành 12 tháng</p>
-                                    </div>
-                                    <div class="orders-color">
-                                        <p>Color: Depp purple</p>
-
-                                    </div>
-                                    <div class="orders-category">
-                                        <p>Dung lượng: 128G</p>
-                                    </div>
-                                    <div class="orders-button">
-                                        <a href="">Xóa</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>2</td>
-                            <td>22.000.000đ</td>
-                            <td>22.000.000đ</td>
-                        </tr>
+                    <tbody class="order-detail-tbody-list">
+                        <?=$detailHtml?>
                     </tbody>
                 </table>
                 <div class="toal-orders">
-                    <p>Tổng tiền: 90.000.000đ</p>
+                    <p>Tổng tiền: <?=number_format($totalOrder, 0, '', '.')?></p>
                 </div>
             </div>
-
-
 
             <section class="productRelated">
                 <div class="productRelated__body">
