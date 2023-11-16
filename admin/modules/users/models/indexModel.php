@@ -28,3 +28,4 @@ function update_user($data, $id)
 {
   return db_update("user", $data, "`id_user` = '{$id}'");
 }
+

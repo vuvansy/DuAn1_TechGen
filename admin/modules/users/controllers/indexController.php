@@ -241,3 +241,4 @@ function editAction()
     $data['info_user'] = $info_userr;
     load_view('edit', $data);
 }
+
