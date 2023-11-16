@@ -137,7 +137,15 @@
     font-weight: 400;
     margin-bottom: 1rem;
 }
+
 .table-orders-detail .orders-button {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: red;
+    text-decoration: none;
+}
+
+.table-orders-detail .orders-button a {
     font-size: 1.2rem;
     font-weight: 700;
     color: red;
@@ -290,4 +298,61 @@
 }
 .box-order-right .button-bottom input:hover{
     background-color: #0b7464;
+}
+
+.table-orders-detail-list {
+    width: auto;
+    margin: 0 auto;
+}
+
+.order-detail-thead-list {
+    width: auto;
+}
+
+.order-detail-thead-list tr {
+    display: grid;
+    height: 3rem;
+    grid-template-columns: 19rem 37rem 15rem 15rem 18rem;
+    background: #00483D;
+    color: #fff;
+
+}
+
+.order-detail-thead-list tr th {
+    line-height: 3rem;
+}
+
+.order-detail-tbody-list tr {
+    display: grid;
+    min-height: 12rem;
+    grid-template-columns: 19rem 37rem 15rem 15rem 18rem;
+    text-align: center;
+    line-height: 11rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #DDD;
+}
+
+.order-detail-tbody-list tr td {
+    min-height: 12rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    padding: 0;
+    border: none;
+}
+
+.order-detail-tbody-list tr .table-orders-product {
+    display: flex;
+}
+
+.order-detail-tbody-list tr .table-orders-product div {
+    line-height: normal;
+}
+
+
+.order-detail-tbody-list tr .table-orders-product div img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+    margin-top: 1rem;
 }

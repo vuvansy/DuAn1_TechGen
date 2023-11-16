@@ -17,5 +17,18 @@ function create_detail_order($data) {
     return db_insert('order_detail',$data);
 }
 
+function get_order_all() {
+    return db_fetch_array("SELECT * FROM `order_tg`");
+}
+
+function get_detail_order($order) {
+    return db_fetch_array("SELECT * FROM `order_detail` WHERE `id_order` = " .$order);
+}
+
+function get_total_order($order) {
+    $sql = "SELECT `order_total` FROM `order_tg` WHERE `id_order` = " . $order;
+    return db_fetch_row($sql);
+}
+
 
 ?>
