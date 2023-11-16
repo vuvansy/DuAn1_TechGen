@@ -20,21 +20,11 @@ require LIBPATH . DIRECTORY_SEPARATOR . 'database.php';
 
 require COREPATH . DIRECTORY_SEPARATOR . 'base.php';
 
+//Khai báo khi làm việc với session
 session_start();
 ob_start();
 
-//Trả về Fullname của người login
-function info_user($username, $field)
-{
-    $list_users = db_fetch_array('SELECT * FROM `guest` WHERE 1');
-    foreach ($list_users as $user) {
-        if ($username == $user['username']) {
-            if (array_key_exists($field, $user)) {
-                return $user[$field];
-            }
-        }
-    }
-}
+
 
 //Trả về Username của người login
 function user_login()
@@ -43,6 +33,25 @@ function user_login()
         return $_SESSION['user_login'];
     }
 }
+
+// Trả về Fullname của người login
+//Sự dụng để hiện Ddropdown__login quản trị của phía Admin info_user(user_login(), 'user_role') == 1)
+
+function info_user($username, $field)
+{
+    $list_users = db_fetch_array("SELECT * FROM `user`");
+    if (isset($_SESSION['is_login']))
+        foreach ($list_users as $user) {
+            // show_array($user);
+            if ($username == $user['username']) {
+                if (array_key_exists($field, $user)) {
+                    return $user[$field];
+                }
+            }
+        }
+}
+
+
 
 if (is_array($autoload)) {
     foreach ($autoload as $type => $list_auto) {

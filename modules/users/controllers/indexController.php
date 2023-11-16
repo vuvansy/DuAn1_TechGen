@@ -8,11 +8,62 @@ function construct()
     load('lib', 'email');
 }
 
+//Xử lý User đăng nhập vào Website
 function indexAction()
 {
+    global $error, $username, $password;
+
+    if (isset($_POST['btn-login'])) {
+        $error = array();
+
+        //Kiểm tra Username
+        if (empty($_POST['username'])) {
+            $error['username'] = "Không được để trống tên đăng nhập";
+        } else {
+            if (!is_username($_POST["username"])) {
+                $error["username"] = "Tên đăng nhập phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            } else {
+                $username = $_POST["username"];
+            }
+        }
+
+        //Kiểm tra password
+        if (empty($_POST['password'])) {
+            $error['password'] = "Không được để trống tên Password";
+        } else {
+            if (!is_password($_POST['password'])) {
+                $error['password'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            } else {
+                $password = md5($_POST['password']);
+            }
+        }
+
+        //Kết luận
+        if (empty($error)) {
+            //Nhớ đăng nhập 
+            if (isset($_POST['remember_me'])) {
+                setcookie('is_login', true, time() + 3600);
+                setcookie('user_login', $username);
+            }
+            if (check_login($username, $password)) {
+                //Lưu trữ phiên đăng nhập lên SESSION
+                $_SESSION['is_login'] = true;
+                $_SESSION['user_login'] = $username;
+
+                // show_array($_SESSION);
+                //Chuyển hướng vào trong hệ thống
+                $error['account'] = "Đăng nhập thành công";
+                // redirect("");
+            } else {
+                $error['account'] = "Tên đăng nhập hoặc mật khẩu không tồn tại";
+            }
+        }
+    }
+
     load_view('index');
 }
 
+//Xử lý đăng ký tài khoản cho User
 function regAction()
 {
     global $error, $username, $email, $fullname, $phone, $password, $address, $confirm_pass;
@@ -30,7 +81,6 @@ function regAction()
                 $fullname = $_POST['fullname'];
             }
         }
-
 
         //Kiểm tra Username
         if (empty($_POST['username'])) {
@@ -95,7 +145,6 @@ function regAction()
                 $confirm_pass = md5($_POST['confirm_pass']);
             }
         }
-        // echo $confirm_pass;
 
         #Kết luận
         #Dữ liệu gửi lên DATABASE
@@ -111,11 +160,9 @@ function regAction()
                 );
                 // show_array($data);
                 add_user($data);
-                $error["account"] = "Đăng ký thành công!";
-                //Thông báo
-                // redirect("?mod=users&action=index");
+                $error["account"] = '<i class="fa-regular fa-circle-check"></i> Đăng ký thành công!';
             } else {
-                $error['account'] = "Email hoặc User đã tồn tại trên hệ thống";
+                $error['account'] = '<i class="fa-solid fa-triangle-exclamation"></i> Email hoặc User đã tồn tại trên hệ thống';
             }
         }
     }
@@ -146,6 +193,15 @@ function resetOkAction()
 
 function logoutAction()
 {
+    //COOKIE
+    // setcookie('is_login',true,time()-3600);
+    // setcookie('user_login', $username,time()-3600);
+
+    //SESSION
+    unset($_SESSION['is_login']);
+    unset($_SESSION['user_login']);
+
+    redirect("?mod=home&action=index");
 }
 
 

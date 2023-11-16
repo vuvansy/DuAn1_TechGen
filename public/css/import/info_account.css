@@ -60,7 +60,7 @@
 }
 
 .account__inner p.text-danger {
-    font-weight: 600;
+    font-weight: 400;
     color: var(--primary-color);
     margin-bottom: 20px;
     font-size: 1.3rem;
@@ -93,7 +93,7 @@
 }
 
 .sidebar__user--desc {
-    width: 300px;
+    width: 350px;
     line-height: 1.5;
     padding: 30px 0;
 }
@@ -112,7 +112,7 @@
 
 .row-form__group .form__group {
     width: 50%;
-    height: 80px;
+    height: 78px;
     text-align: left;
 }
 
