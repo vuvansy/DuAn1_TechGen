@@ -48,9 +48,10 @@ get_header();
                         </div>
 
                         <div class="form__group">
-                            <label for="image" class="image__user">Hình</label>
-                            <input type="file" name="image" id="image" value="<?php echo $info_user_by_id['image'] ?>" placeholder="Địa chỉ..." />
-                            <?php echo form_error('image'); ?>
+                            <label for="new_image" class="image__user">Hình</label>
+                            <input type="file" name="new_image" id="new_image" value="" placeholder="Địa chỉ..." />
+                            <input type="hidden" name="image" value="<?php echo $info_user_by_id['image'] ?>">
+                            <?php echo form_error('new_image'); ?>
                         </div>
 
                         <input type="submit" name="btn-update" class="btn user__cta" id="btn-login" value="CẬP NHẬT" />
@@ -59,10 +60,10 @@ get_header();
                 </div>
                 <div class="sidebar__user">
                     <div class="avatar__user">
-                        <?php if (info_user(is_login(), 'image') == '') : ?>
+                        <?php if ($info_user_by_id['image'] == '') : ?>
                             <img src="public/images/user/user2.jpg" alt="">
                         <?php else : ?>
-                            <img src="public/images/user/<?php echo $info_user_by_id['image'] ?>" alt="<?php echo info_user(is_login(), 'image') ?>">
+                            <img src="public/images/user/<?php echo info_user(user_login(), 'image'); ?>" alt="<?php echo info_user(is_login(), 'image') ?>">
                         <?php endif; ?>
                     </div>
                     <h2 class="subtitle__user"><?php echo $info_user_by_id['fullname'] ?></h2>
