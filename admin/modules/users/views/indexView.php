@@ -45,36 +45,26 @@ get_header();
                                 <th class="kh">Kích Hoạt</th>
                                 <th class="tv">Tác Vụ</th>
                             </tr>
-                            <tr class="list-item">
-                                <td>1</td>
-                                <td>Vũ Văn Sỹ</td>
-                                <td>0332xxxxxx</td>
-                                <td>vuvansy0811@gmail.com</td>
-                                <td>Hồ Chí Minh</td>
-                                <td>Quản Trị viên</td>
-                                <td>Kích hoạt</td>
-                                <td>
-                                    <div class="table-icon">
-                                        <a href="?mod=users&action=edit"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
-                                        <a href="#!"> <img src="./public/images/icon/delete.svg" alt=""></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="list-item">
-                                <td>1</td>
-                                <td>Vũ Văn Sỹ</td>
-                                <td>0332xxxxxx</td>
-                                <td>vuvansy0811@gmail.com</td>
-                                <td>Hồ Chí Minh</td>
-                                <td>Quản Trị viên</td>
-                                <td>Kích hoạt</td>
-                                <td>
-                                    <div class="table-icon">
-                                        <a href="?mod=users&action=edit"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
-                                        <a href="#!"> <img src="./public/images/icon/delete.svg" alt=""></a>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php if (!empty($list_user)) {
+                                foreach ($list_user as $user) {
+                            ?>
+                                    <tr class="list-item">
+                                        <td><?php echo intval($user['id_user']) ?></td>
+                                        <td><?php echo $fullname = empty($user['fullname']) ? "Không có" : $user['fullname'] ?></td>
+                                        <td><?php echo $phone = empty($user['phone']) ? "Không có" : $user['phone'] ?></td>
+                                        <td><?php echo $email = empty($user['email']) ? "Không có" : $user['email'] ?></td>
+                                        <td><?php echo $address = empty($user['address']) ? "Không có" : $user['address'] ?></td>
+                                        <td><?php echo $roles = (int)($user['user_role']) === 1 ? "Quản trị viên" : 'Khách hàng' ?></td>
+                                        <td><?php echo $active = (int)($user['is_active']) === 1 ? "Kích hoạt" : "Chưa kích hoạt" ?></td>
+                                        <td>
+                                            <div class="table-icon">
+                                                <a href="?mod=users&action=edit&id=<?php echo intval($user['id_user']) ?>"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
+                                                <a href="?mod=users&action=delete&id=<?php echo intval($user['id_user']) ?>"> <img src="./public/images/icon/delete.svg" alt=""></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                            <?php   }
+                            } ?>
                         </table>
                     </div>
 
