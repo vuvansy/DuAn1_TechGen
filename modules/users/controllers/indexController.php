@@ -76,8 +76,8 @@ function regAction()
         if (empty($_POST['fullname'])) {
             $error['fullname'] = "Không được để trống họ tên";
         } else {
-            if (!is_username($_POST['fullname'])) {
-                $error['fullname'] = "Họ tên phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            if (!is_fullname($_POST['fullname'])) {
+                $error['fullname'] = "Họ tên chỉ được chứa chữ cái, khoảng trắng!";
             } else {
                 $fullname = $_POST['fullname'];
             }
@@ -187,8 +187,8 @@ function updateAction()
         if (empty($_POST['fullname'])) {
             $error['fullname'] = "Không được để trống họ tên";
         } else {
-            if (!is_username($_POST['fullname'])) {
-                $error['fullname'] = "Họ tên phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            if (!is_fullname($_POST['fullname'])) {
+                $error['fullname'] = "Họ tên chỉ được chứa chữ cái, khoảng trắng!";
             } else {
                 $fullname = $_POST['fullname'];
             }
@@ -269,6 +269,78 @@ function updateAction()
 
     load_view('update', $data);
 }
+
+
+function editPassAction()
+{
+    global $error, $pass_old, $pass_new, $pass_confirm;
+    //Lấy Về id_User
+    $id_user = info_user(user_login(), 'id_user');
+    //Lấy thông tin của User theo id trả về Value form
+    $info_user_by_id = get_user_by_id($id_user);
+    // echo $info_user_by_id['password'];
+    // show_array($info_user_by_id);
+    if (isset($_POST['btn-editPass'])) {
+        $error = array();
+
+        //Kiểm tra Pass_old
+        if (empty($_POST['pass_old'])) {
+            $error['pass_old'] = "Không được để trống tên Password";
+        } else {
+            if (!is_pass_old($_POST["pass_old"])) {
+                $error['pass_old'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            } else {
+                $pass_old = md5($_POST['pass_old']);
+            }
+        }
+
+        //Kiểm tra pass_new
+        if (empty($_POST['pass_new'])) {
+            $error['pass_new'] = "Không được để trống tên Password";
+        } else {
+            if (!is_pass_new($_POST["pass_new"])) {
+                $error['pass_new'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            } else {
+                $pass_new = md5($_POST['pass_new']);
+            }
+        }
+
+        // Kiểm tra pass_new
+        if (empty($_POST['pass_confirm'])) {
+            $error['pass_confirm'] = "Không được để trống tên Password";
+        } else {
+            if (!is_pass_confirm($_POST["pass_confirm"])) {
+                $error['pass_confirm'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            } else {
+                $pass_confirm = md5($_POST['pass_confirm']);
+            }
+        }
+
+        //Kết luận
+        if (empty($error)) {
+            if ($info_user_by_id['password'] != $pass_old) {
+                $error['pass_old'] = "Mật khẩu cũ không đúng";
+            } else {
+                if ($pass_new != $pass_confirm) {
+                    $error['pass_confirm'] = "Mật khẩu mới không khớp!";
+                } else {
+                    $data = array(
+                        'password' => $pass_new,
+                    );
+                    //cập nhật
+                    update_user($data, $id_user);
+                    $error["account"] = '<i class="fa-regular fa-circle-check"></i> Đổi mật khẩu thành công!';
+                    header("refresh: 1; url=?mod=home&action=index");
+                }
+            }
+        }
+    }
+
+
+    $data['info_user_by_id'] = $info_user_by_id;
+    load_view('editPass', $data);
+}
+
 function resetAction()
 {
     load_view('reset');
@@ -277,12 +349,6 @@ function newPassAction()
 {
 
     load_view('newPass');
-}
-
-function editPassAction()
-{
-
-    load_view('editPass');
 }
 
 function resetOkAction()
