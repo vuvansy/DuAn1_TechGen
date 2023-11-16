@@ -55,7 +55,7 @@ function indexAction()
                 $error['account'] = "Đăng nhập thành công";
                 // redirect("");
             } else {
-                $error['account'] = "Tên đăng nhập hoặc mật khẩu không tồn tại";
+                $error['account'] = "Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.";
             }
         }
     }
@@ -169,6 +169,99 @@ function regAction()
     load_view('reg');
 }
 
+function updateAction()
+{
+    global $error, $username, $email, $fullname, $phone, $password, $address, $image;
+    //Lấy Về id_User
+    $id_user = info_user(user_login(), 'id_user');
+    // echo $id_user;
+    if (isset($_POST['btn-update'])) {
+        $error = array();
+
+        //Kiểm tra Fullname
+        if (empty($_POST['fullname'])) {
+            $error['fullname'] = "Không được để trống họ tên";
+        } else {
+            if (!is_username($_POST['fullname'])) {
+                $error['fullname'] = "Họ tên phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            } else {
+                $fullname = $_POST['fullname'];
+            }
+        }
+
+        //Kiểm tra Username
+        if (empty($_POST['username'])) {
+            $error['username'] = "Không được để trống tên đăng nhập";
+        } else {
+            if (!is_username($_POST["username"])) {
+                $error["username"] = "Tên đăng nhập phải từ 6-32 kí tự và không có kí tự đặc biệt";
+            } else {
+                $username = $_POST["username"];
+            }
+        }
+
+        //Kiểm tra Email
+        if (empty($_POST["email"])) {
+            $error["email"] = "Không được để trống email";
+        } else {
+            if (!is_email($_POST["email"])) {
+                $error["email"] = "Email không đúng định dạng";
+            } else {
+                $email = $_POST["email"];
+            }
+        }
+
+        //Kiểm tra Phone
+        if (empty($_POST['phone'])) {
+            $error['phone'] = "Không được để trống Số điện thoại";
+        } else {
+            if (!is_phone($_POST['phone'])) {
+                $error['phone'] = "Số điện thoại không đúng định dạng";
+            } else {
+                $phone = $_POST['phone'];
+            }
+        }
+
+        //Địa chỉ 
+        if (empty($_POST['address'])) {
+            $error["address"] = "Không được để trống địa chỉ";
+        } else {
+            $address = $_POST["address"];
+        }
+
+        //image User
+
+        $save_image = save_file("image", "public/images/user/");
+        $image = $save_image ? $save_image : $image;
+
+        #Kết luận
+        #Dữ liệu gửi lên DATABASE
+        if (empty($error)) {
+            $data = array(
+                'fullname' => $fullname,
+                'username' => $username,
+                'email' => $email,
+                'phone' => $phone,
+                'address' => $address,
+                'image ' => $image,
+            );
+            // show_array($data);
+            update_user($data, $id_user);
+            $error["account"] = '<i class="fa-regular fa-circle-check"></i> Cập nhật tài khoản thành công!';
+        } else {
+            $error['account'] = '<i class="fa-solid fa-triangle-exclamation"></i> Cập nhật không thành công!';
+        }
+    }
+
+    //Lấy thông tin của User theo id trả về Value form
+    $info_user_by_id = get_user_by_id($id_user);
+    // show_array($info_user_by_id);
+    // echo info_user(is_login(), 'image');
+    //Để đưa dữ liệu qua form view
+    $data['info_user_by_id'] = $info_user_by_id;
+
+    load_view('update', $data);
+}
 function resetAction()
 {
     load_view('reset');
@@ -209,10 +302,6 @@ function activeAction()
 {
 }
 
-function updateAction()
-{
-    load_view('update');
-}
 
 
 

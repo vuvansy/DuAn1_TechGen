@@ -27,3 +27,18 @@ function check_login($username, $password)
         return false;
     }
 }
+
+//hàm Update User
+function update_user($data, $id_user)
+{
+    return db_update('user', $data, "`id_user` = '{$id_user}'");
+}
+
+
+//Lấy thông tin username ra theo id_user
+function  get_user_by_id($id_user)
+{
+    $item = db_fetch_row("SELECT *FROM `user` WHERE `id_user` = '{$id_user}'");
+    if (!empty($item))
+        return $item;
+}
