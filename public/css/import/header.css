@@ -146,6 +146,7 @@
 }
 /* Login Success dropdown__login */
 ul.main__login {
+    cursor: pointer;
     position: relative;
 }
 

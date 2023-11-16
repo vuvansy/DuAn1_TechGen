@@ -63,7 +63,7 @@ $imagesURL = "public/images";
                                         <small><?php echo round($sale, 1) ?>%</small>
                                     </span>
                                 </div>
-                                <a class="btn cart-btn" href="?mod=order&cation=add&id=<?php echo $item['id_product'] ?>">
+                                <a class="btn cart-btn" href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
                                     Mua ngay
                                 </a>
                             </div>
