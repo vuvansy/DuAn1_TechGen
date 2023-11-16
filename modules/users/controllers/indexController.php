@@ -305,7 +305,7 @@ function editPassAction()
             }
         }
 
-        // Kiểm tra pass_new
+        // Kiểm tra pass_confirm
         if (empty($_POST['pass_confirm'])) {
             $error['pass_confirm'] = "Không được để trống tên Password";
         } else {
@@ -343,12 +343,103 @@ function editPassAction()
 
 function resetAction()
 {
+    global $error, $username, $fullname, $email;
+    if (isset($_POST['btn-reset'])) {
+        $error = array();
+
+        //Kiểm tra Email
+        if (empty($_POST['email'])) {
+            $error['email'] = "Không được để trống tên Email";
+        } else {
+            if (!is_email($_POST['email'])) {
+                $error['email'] = "Email nhập không đúng định dạng";
+            } else {
+                $email = $_POST['email'];
+            }
+        }
+
+        //Kết Luận 
+        if (empty($error)) {
+            if (check_email($email)) {
+                // echo "Email tồn tại trên hệ thống";
+                //Tạo mã $reset_token
+                $reset_token = md5($email . time());
+                $data = array(
+                    'reset_token' => $reset_token
+                );
+                //Cập nhật mã reset pass cho user cần khôi phục mật khẩu
+                update_reset_token($data, $email);
+
+                //Gửi link khoi phục vào email của người dùng
+                $link = base_url("?mod=users&action=newpass&reset_token={$reset_token}");
+                $content = "<p>Xin chào: $fullname</p>
+                <p>Bạn vui lòng click vào link sau để thiết lập lại MK: {$link}</p>
+                <p>Nếu không phải yêu cầu của bạn bạn vui lòng bỏ qua email này</p>";
+
+                send_mail($email, "", 'Khôi phục mật khẩu của bạn', $content);
+            } else {
+                $error['account'] = "Email không tồn tại trên hệ thống";
+            }
+        }
+    }
     load_view('reset');
 }
+
 function newPassAction()
 {
 
-    load_view('newPass');
+    global $error, $username, $password;
+
+    $reset_token = $_GET['reset_token'];
+    if (!empty($reset_token)) {
+        // echo $reset_token;
+        //Kiểm tra $reset_token tồn tại hay chưa
+        if (check_reset_token($reset_token)) {
+            // echo "Hiển thị form";
+            if (isset($_POST['btn-new-pass'])) {
+                $error = array();
+
+                //Kiểm tra password
+                if (empty($_POST['password'])) {
+                    $error['password'] = "Không được để trống tên Password";
+                } else {
+                    if (!is_password($_POST['password'])) {
+                        $error['password'] = "Password nhập không đúng định dạng";
+                    } else {
+                        $password = md5($_POST['password']);
+                    }
+                }
+
+                // Kiểm tra pass_confirm
+                if (empty($_POST['pass_confirm'])) {
+                    $error['pass_confirm'] = "Không được để trống tên Password";
+                } else {
+                    if (!is_pass_confirm($_POST["pass_confirm"])) {
+                        $error['pass_confirm'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
+                    } else {
+                        $pass_confirm = md5($_POST['pass_confirm']);
+                    }
+                }
+
+                //Kết luận
+                if (empty($error)) {
+                    if ($password != $pass_confirm) {
+                        $error['pass_confirm'] = "Mật khẩu mới không khớp!";
+                    } else {
+                        $data = array(
+                            'password' => $password
+                        );
+                        update_pass($data, $reset_token);
+                        $error["account"] = '<i class="fa-regular fa-circle-check"></i> Đổi mật khẩu thành công!';
+                        header("refresh: 1; url=?mod=users&action=resetOk");
+                    }
+                }
+            }
+            load_view('newPass');
+        } else {
+            echo "Yêu cầu lấy lại mật khẩu không hợp lệ";
+        }
+    }
 }
 
 function resetOkAction()
