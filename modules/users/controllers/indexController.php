@@ -51,9 +51,10 @@ function indexAction()
                 $_SESSION['user_login'] = $username;
 
                 // show_array($_SESSION);
-                //Chuyển hướng vào trong hệ thống
                 $error['account'] = "Đăng nhập thành công";
-                // redirect("");
+
+                //Xử lý chuyển hướng vào trong hệ thống
+                header("refresh: 1; url=?mod=home&action=index");
             } else {
                 $error['account'] = "Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.";
             }
@@ -66,7 +67,7 @@ function indexAction()
 //Xử lý đăng ký tài khoản cho User
 function regAction()
 {
-    global $error, $username, $email, $fullname, $phone, $password, $address, $confirm_pass;
+    global $error, $username, $email, $fullname, $phone, $password, $address, $new_image, $confirm_pass;
 
     if (isset($_POST['btn-reg'])) {
         $error = array();
@@ -171,10 +172,14 @@ function regAction()
 
 function updateAction()
 {
-    global $error, $username, $email, $fullname, $phone, $password, $address, $image;
+    global $error, $username, $email, $fullname, $phone, $address, $image, $new_image;
     //Lấy Về id_User
     $id_user = info_user(user_login(), 'id_user');
     // echo $id_user;
+
+    // $id_image = info_user(user_login(), 'image');
+    // echo ($id_image);
+
     if (isset($_POST['btn-update'])) {
         $error = array();
 
@@ -230,9 +235,11 @@ function updateAction()
         }
 
         //image User
+        // echo var_dump($_POST['image']);
 
-        $save_image = save_file("image", "public/images/user/");
-        $image = $save_image ? $save_image : $image;
+        $save_image = save_file("new_image", "public/images/user/");
+        // echo var_dump($_FILES['new_image']);
+        $save_image ? $image = $save_image  : $image = $_POST['image'];
 
         #Kết luận
         #Dữ liệu gửi lên DATABASE
@@ -243,7 +250,7 @@ function updateAction()
                 'email' => $email,
                 'phone' => $phone,
                 'address' => $address,
-                'image ' => $image,
+                'image' => $image,
             );
             // show_array($data);
             update_user($data, $id_user);
