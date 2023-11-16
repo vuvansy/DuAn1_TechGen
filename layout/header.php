@@ -120,7 +120,7 @@
                         <!-- User Login  -->
                         <div class="admin">
                             <!-- Login Success  -->
-                            <?php if (isset($_SESSION['user'])) : ?>
+                            <?php if (isset($_SESSION['user_login'])) : ?>
                                 <div class="dropdown__login">
                                     <ul class="main__login">
                                         <li>
@@ -135,11 +135,11 @@
                                                 </span>
                                                 <div class="subject__login">
                                                     <span>Xin chào,</span>
-                                                    <span class="line-clamp break-all">Vũ Văn Sỹ</span>
+                                                    <span class="line-clamp break-all"><?php echo info_user(user_login(), 'fullname'); ?></span>
                                                 </div>
                                             </div>
                                             <ul class="sub__login">
-                                                <?php if ($_SESSION['user']['user_role'] == 1) : ?>
+                                                <?php if (info_user(user_login(), 'user_role') == 1) : ?>
                                                     <li>
                                                         <a href="./admin/?"><i class="fa-solid fa-house"></i> Trang quản trị</a>
                                                     </li>

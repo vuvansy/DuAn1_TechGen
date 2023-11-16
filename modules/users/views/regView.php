@@ -9,7 +9,7 @@ get_header();
             <div class="form__account">
                 <div class="sidebar__user">
                     <h1 class="sidebar__user--heading">Xin chào, Bạn</h1>
-                    <p class="sidebar__user--desc">Bắt đầu mua sắm với chúng tôi. Nếu bạn đăng ký tài khoản thành công đăng nhập để mua sắm tiện lợi hơn.</p>
+                    <p class="sidebar__user--desc">Bắt đầu mua sắm với chúng tôi. Nếu bạn đăng ký tài khoản thành công đăng nhập để mua sắm & thanh toán tiện lợi hơn.</p>
                     <div class="">
                         <a href="?mod=users&action=index"><button class="btn user__cta">ĐĂNG NHẬP</button></a>
                     </div>
