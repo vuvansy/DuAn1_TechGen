@@ -2,6 +2,67 @@
 get_header();
 ?>
 
+<?php
+
+//    $_SESSION['user'] = [
+//        'id' => 3,
+//        'name' => 'tiến',
+//        'email' => 'ngyasuooo@gmail.com',
+//        'phone' => '0338015163',
+//        'address' => 'hòa lạc, phường hoànd đông, thành phố Hồ Chí Minh'
+//    ];
+//    unset($_SESSION['user']);
+    $cartHtm = '';
+    $key = 0;
+    $cartQuantity = 0;
+    $cartTotal = 0;
+    if(isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+        $cartHtm .= '
+            <table class="order-detail-table">
+                <thead class="order-detail-thead">
+                    <tr>
+                        <th class="th-order-detail-s">Sản phẩm</th>
+                        <th class="th-order-detail-sl">Số lượng</th>
+                        <th class="th-order-detail-g">Giá</th>
+                        <th class="th-order-detail-t">Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody class="order-detail-tbody">
+        ';
+        foreach ($_SESSION['cart'] as $item) {
+            $cartQuantity += $item['count'];
+            $cartTotal += $item['price'] * $item['count'];
+            $cartHtm .= '
+            <tr>
+                <td class="order-detail-tbody-product">
+                    <img src="public/images/product/'.$item['image'].'" alt="">
+                    <div class="table-orders-detail">
+                        <p class="orders-detail">'.$item['name'].'</p>
+                        <p class="orders-color">Color: Depp purple</p>
+                        <p class="orders-category">Dung lượng: 128G</p>
+                        <a href="?mod=order&action=remove&key='.$key.'" class="orders-button" >Xóa</a>
+                    </div>
+                </td>
+                <td class="update-order-count">
+                    <a href="?mod=order&action=up&key='.$key.'" class="count-down">+</a>
+                    <div class="count">'.$item['count'].'</div>
+                    <a href="?mod=order&action=down&key='.$key.'" class="count-up">-</a>
+                </td>
+                <td class="price-oder-number">'.number_format($item['price'],0, ',', '.' ).'</td>
+                <td class="total-oder-number">'.number_format(($item['price'] * $item['count']),0, ',', '.' ).'</td>
+            </tr>
+        ';
+            $key++;
+        }
+        $cartHtm .= '</tbody>
+            </table>';
+    } else {
+        $cartHtm .= '
+          <h1> Bạn chưa thêm sản phẩm nào vào giỏ hàng !</h1>  
+        ';
+    }
+?>
+
 <main>
     <section class="cartShow">
         <div class="container">
@@ -12,73 +73,53 @@ get_header();
             <div class="box-order-all">
                 <div class="box-order-left">
                     <h3>Giỏ hàng của bạn</h3>
-                    <table class="order-detail-table">
-                        <thead class="order-detail-thead">
-                            <tr>
-
-                                <th class="th-order-detail-h">Hình ảnh</th>
-                                <th class="th-order-detail-s">Sản phẩm</th>
-                                <th class="th-order-detail-sl">Số lượng</th>
-                                <th class="th-order-detail-g">Giá</th>
-                                <th class="th-order-detail-t">Thành tiền</th>
-                            </tr>
-                        </thead>
-                        <tbody class="order-detail-tbody">
-                            <tr>
-
-                                <td>
-                                    <div class="order-detail-tbody-img">
-                                        <img src="public/images/category/laptop.webp" alt="">
-                                    </div>
-
-                                </td>
-                                <td>
-                                    <div class="table-orders-detail">
-                                        <div class="orders-detail">
-                                            <p>IPhone 14 Pro Max 128GB VNA - Bảo hành 12 tháng</p>
-                                        </div>
-                                        <div class="orders-color">
-                                            <p>Color: Depp purple</p>
-
-                                        </div>
-                                        <div class="orders-category">
-                                            <p>Dung lượng: 128G</p>
-                                        </div>
-                                        <div class="orders-button">
-                                            <a href="">Xóa</a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td><input type="number" name="soluong" id="" value="0" min="0" max="10"></td>
-                                <td>22.000.000đ</td>
-                                <td>22.000.000đ</td>
-
-                            </tr>
-
-                        </tbody>
-                    </table>
+                    <?=$cartHtm?>
                 </div>
                 <div class="box-order-right">
                     <h3>Thanh toán</h3>
                     <div class="right-detail new">
-                        <p>Sản phẩm: <span>3</span></p>
-                        <p>22.000.000đ</p>
+                        <p>Sản phẩm: <span><?=$cartQuantity?></span></p>
+                        <p><?=number_format($cartTotal,0, ',', '.' )?></p>
                     </div>
                     <h4>Thông tin vận chuyển</h4>
-                    <form action="" method="post">
-                        <input class="input-1" type="text" placeholder="Họ và tên">
+                    <form action="?mod=order&action=pay" method="POST">
+                        <input class="input-1" name="name_delivery" type="text" value="<?php
+                            if(isset($_SESSION['user'])) {
+                                echo $_SESSION['user']['name'];
+                            } else {
+                                echo '';
+                            }
+                        ?>" placeholder="Họ và tên">
                         <div class="input-b">
-                            <input class="input-1 input--1 " type="text" placeholder="Email">
-                            <input class="input-1 input-2" type="number" placeholder="Số điện thoại">
+                            <input class="input-1 input--1" name="email_delivery" type="text" value="<?php
+                                if(isset($_SESSION['user'])) {
+                                    echo $_SESSION['user']['email'];
+                                } else {
+                                    echo '';
+                                }
+                            ?>" placeholder="Email">
+                            <input class="input-1 input-2" name="phone_delivery" type="text" value="<?php
+                                if(isset($_SESSION['user'])) {
+                                    echo $_SESSION['user']['phone'];
+                                } else {
+                                    echo '';
+                                }
+                            ?>" placeholder="Số điện thoại">
                         </div>
-                        <input class="input-1" type="text" placeholder="Địa chỉ">
+                        <input class="input-1" name="address_delivery" value="<?php
+                            if(isset($_SESSION['user'])) {
+                                echo $_SESSION['user']['address'];
+                            } else {
+                                echo '';
+                            }
+                        ?>" type="text" placeholder="Địa chỉ">
 
                         <h4>Phương thức thanh toán</h4>
                         <div class="input-text">
 
                             <div class="option">
                                 <div class="option-input">
-                                    <input class="input-checkbox" type="checkbox" id="product_status"
+                                    <input value="1" class="input-checkbox" name="delivery-order" type="radio" checked id="product_status"
                                         name="product_status">
                                     <div class="option-detail">
                                         <p>Thanh toán khi nhận hàng</p>
@@ -87,14 +128,16 @@ get_header();
 
                                 </div>
                                 <div class="option-input">
-                                    <input class="input-checkbox" type="checkbox" id="special" name="special">
+                                    <input value="2" class="input-checkbox" name="delivery-order" type="radio" id="special" name="special">
                                     <p>Thanh toán online</p>
                                 </div>
                             </div>
                         </div>
                         <div class="right-detail new">
                             <p>Tổng cộng: </p>
-                            <p>22.000.000đ</p>
+                            <p><?=number_format($cartTotal,0, ',', '.' )?></p>
+                            <input type="hidden" name="order_total" value="<?=$cartTotal?>">
+                            <input type="hidden" name="order_quantity" value="<?=$cartQuantity?>">
                         </div>
                         <div class="button-bottom">
                             <input type="submit" value="Thanh toán">
