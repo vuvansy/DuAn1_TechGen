@@ -15,5 +15,5 @@ call_function(array('construct', $action_name));
 
 
 //Chặn hành động cố tình vào các trang khác khi chưa đăng nhập
-// if (!is_login() && get_action() != 'login')
-//     redirect("?mod=users&action=login");
+if (!is_login() && get_action() != 'login')
+    redirect("?mod=users&action=login");

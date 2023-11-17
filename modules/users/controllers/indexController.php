@@ -138,7 +138,7 @@ function regAction()
         if (empty($_POST['confirm_pass'])) {
             $error['confirm_pass'] = "Không được để trống tên Password";
         } else {
-            if (!is_password($_POST['confirm_pass'])) {
+            if (!is_confirm_pass($_POST['confirm_pass'])) {
                 $error['confirm_pass'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
             } else if ($_POST['password'] != $_POST['confirm_pass']) {
                 $error['confirm_pass'] = "Mật khẩu và xác nhận mật khẩu không khớp.";
@@ -237,6 +237,7 @@ function updateAction()
         //image User
         // echo var_dump($_POST['image']);
 
+        //Xử lý images
         $save_image = save_file("new_image", "public/images/user/");
         // echo var_dump($_FILES['new_image']);
         $save_image ? $image = $save_image  : $image = $_POST['image'];
@@ -460,13 +461,6 @@ function logoutAction()
 
     redirect("?mod=home&action=index");
 }
-
-
-function activeAction()
-{
-}
-
-
 
 
 ?>

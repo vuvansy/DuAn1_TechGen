@@ -101,10 +101,23 @@
                     <!-- Search box  -->
                     <div class="search-box">
                         <div class="border-form">
-                            <form action="" class="search-form">
-                                <input type="text" class="search-form__input" placeholder="Nhập từ khóa cần tìm gì?" />
+                            <?php
+                            // $where = '';
+                            // if (isset($_POST['btn-submit'])) {
+                            // $search = $_POST['search'];
+                            // echo $search;
+                            // $where = "WHERE `product_name` LIKE '%$search%'";
+                            // echo $where;
+                            // $list_product = db_fetch_array("SELECT * FROM `product` $where");
+                            // $list_product = get_product_search($where);
+                            // show_array($list_product);
+                            // }
+                            if (!isset($search)) $search = "";
+                            ?>
+                            <form action="?mod=product&action=productsearch" class="search-form" method="POST">
+                                <input type="text" name="search" class="search-form__input" value="" placeholder="Nhập từ khóa cần tìm gì?" />
                                 <!-- Submit button -->
-                                <button type="submit" class="search-form__btn">
+                                <button type="submit" name="btn-submit" class="search-form__btn">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
 
