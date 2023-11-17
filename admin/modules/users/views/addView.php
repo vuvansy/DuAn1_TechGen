@@ -11,7 +11,7 @@ get_header();
         <div>
           <div class="user__top">
             <h2 class="user__heading">Thêm mới khách hàng</h2>
-            <?php if (!empty($data)) echo $toast = empty($success) ? $failed : $success  ?>
+            <p style="padding-top: 10px; color: #00483d;"><?php if (!empty($data)) echo $toast = empty($success) ? $failed : $success  ?></p>
             <div class="user__actions">
               <a href="?mod=users&action=index" class="user-btn-list">Danh sách</a>
               <a href="?mod=users&action=add" class="user-btn-add">Thêm mới</a>

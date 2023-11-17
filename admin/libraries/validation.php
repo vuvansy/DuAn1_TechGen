@@ -26,6 +26,16 @@ function is_password(){
   return false;
 }
 
+#phoneNumber
+
+function is_phone()
+{
+  $partten = "/^0\d{9}$/";
+  if (preg_match($partten, $_POST['phone'], $matchs))
+    return true;
+  return false;
+}
+
 #error
 function form_error($label_field){
   global $error;

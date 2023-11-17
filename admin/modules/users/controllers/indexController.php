@@ -47,7 +47,11 @@ function addAction()
         if (empty($_POST['phone'])) {
             $error['phone'] = "Không được để trống trường này";
         } else {
-            $phone = $_POST['phone'];
+        if (!is_phone($_POST['phone'])) {
+            $error['phone'] = "Mật khẩu là số và bao gồm 10 số";
+            } else {
+                $phone = $_POST['phone'];
+            }
         }
         // Email
         if (empty($_POST['email'])) {
@@ -70,7 +74,7 @@ function addAction()
             $error['username'] = "Không được để trống trường này";
         } else {
             if (!is_username()) {
-                $error['username'] = "Tên đăng nhập không đúng định dạng";
+                $error['username'] = "Tên đăng nhập phải từ 6-32 kí tự và không có kí tự đặc biệt";
             } else {
                 $username = $_POST['username'];
             }
@@ -80,7 +84,7 @@ function addAction()
             $error['password'] = "Không được để trống trường này";
         } else {
             if (!is_password()) {
-                $error['password'] = "Mật khẩu không đúng định dạng";
+                $error['password'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
             } else {
                 $password = $_POST['password'];
             }
@@ -152,7 +156,11 @@ function editAction()
         if (empty($_POST['phone'])) {
             $error['phone'] = "Không được để trống trường này";
         } else {
-            $phone = $_POST['phone'];
+            if (!is_phone($_POST['phone'])) {
+            $error['phone'] = "Mật khẩu phải là số và bao gồm 10 số";
+            } else {
+                $phone = $_POST['phone'];
+            }
         }
         // Email
         if (empty($_POST['email'])) {
