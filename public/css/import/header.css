@@ -140,6 +140,10 @@
     color: var(--gray);
 }
 
+.order-tools .admin {
+    width: 120px;
+}
+
 .order-tools .cart a {
     width: 160px;
     height: 40px;
