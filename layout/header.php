@@ -102,16 +102,6 @@
                     <div class="search-box">
                         <div class="border-form">
                             <?php
-                            // $where = '';
-                            // if (isset($_POST['btn-submit'])) {
-                            // $search = $_POST['search'];
-                            // echo $search;
-                            // $where = "WHERE `product_name` LIKE '%$search%'";
-                            // echo $where;
-                            // $list_product = db_fetch_array("SELECT * FROM `product` $where");
-                            // $list_product = get_product_search($where);
-                            // show_array($list_product);
-                            // }
                             if (!isset($search)) $search = "";
                             ?>
                             <form action="?mod=product&action=productsearch" class="search-form" method="POST">
