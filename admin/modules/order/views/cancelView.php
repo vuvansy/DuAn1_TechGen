@@ -1,6 +1,53 @@
 <?php
 get_header();
 ?>
+<?php
+$status = [
+    0 => 'chờ xác nhận',
+    1 => 'đang vận chuyển',
+    2 => 'đã hủy',
+    3 => 'đã giao hàng',
+];
+$oder_cancel_html = '';
+foreach ($orderListCancel as $value) {
+    $detailLink = "?mod=order&action=detail&key=" . $value['id_order'] ;
+    $oder_cancel_html .= '
+        <tr class="list-item">
+
+            <td class="icon-order">
+                <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
+            </td>
+
+            <td class="id-order">
+                IT'.$value['id_order'].'
+            </td>
+
+            <td class="date-order">
+                '.$value['order_date'].'
+            </td>
+
+            <td class="quantity-order">
+                '.$value['order_quantity'].'
+            </td>
+
+            <td class="total-order">
+                '.number_format($value['order_total'], 0, '', '.').'
+            </td>
+
+            <td class="status-order">
+                '.$status[$value['order_status']].'
+            </td>
+
+            <td class="detail-order">
+                <a href="'.$detailLink.'">
+                    Chi tiết
+                </a>
+            </td>
+
+        </tr>
+    ';
+}
+?>
 <main>
     <div class="main-wrapper">
         <?php
@@ -63,336 +110,140 @@ get_header();
 
                             <tbody class="list-group">
 
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Đã hủy
-                                    </td>
-
-                                    <td class="detail-order">
-                                        <a href="?mod=order&action=detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
+                            <?=$oder_cancel_html?>
+
+<!--                                <tr class="list-item">-->
+<!---->
+<!--                                    <td class="icon-order">-->
+<!--                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="id-order">-->
+<!--                                        IT96281-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="date-order">-->
+<!--                                        03/11/2023-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="quantity-order">-->
+<!--                                        2-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="total-order">-->
+<!--                                        44.000.000đ-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="status-order">-->
+<!--                                        Đã hủy-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="detail-order">-->
+<!--                                        <a href="?mod=order&action=detail">-->
+<!--                                            Chi tiết-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+<!---->
+<!--                                </tr>-->
+<!--                                <tr class="list-item">-->
+<!---->
+<!--                                    <td class="icon-order">-->
+<!--                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="id-order">-->
+<!--                                        IT96281-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="date-order">-->
+<!--                                        03/11/2023-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="quantity-order">-->
+<!--                                        2-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="total-order">-->
+<!--                                        44.000.000đ-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="status-order">-->
+<!--                                        Đã hủy-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="detail-order">-->
+<!--                                        <a href="?mod=order&action=detail">-->
+<!--                                            Chi tiết-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+<!---->
+<!--                                </tr>-->
+<!--                                <tr class="list-item">-->
+<!---->
+<!--                                    <td class="icon-order">-->
+<!--                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="id-order">-->
+<!--                                        IT96281-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="date-order">-->
+<!--                                        03/11/2023-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="quantity-order">-->
+<!--                                        2-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="total-order">-->
+<!--                                        44.000.000đ-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="status-order">-->
+<!--                                        Đã hủy-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="detail-order">-->
+<!--                                        <a href="?mod=order&action=detail">-->
+<!--                                            Chi tiết-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+<!---->
+<!--                                </tr>-->
+<!--                                <tr class="list-item">-->
+<!---->
+<!--                                    <td class="icon-order">-->
+<!--                                        <label for="cancel_check"><input name="cancel_check" type="checkbox"></label>-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="id-order">-->
+<!--                                        IT96281-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="date-order">-->
+<!--                                        03/11/2023-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="quantity-order">-->
+<!--                                        2-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="total-order">-->
+<!--                                        44.000.000đ-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="status-order">-->
+<!--                                        Đã hủy-->
+<!--                                    </td>-->
+<!---->
+<!--                                    <td class="detail-order">-->
+<!--                                        <a href="?mod=order&action=detail">-->
+<!--                                            Chi tiết-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+<!---->
+<!--                                </tr>-->
 
                             </tbody>
 

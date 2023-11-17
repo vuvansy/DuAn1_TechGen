@@ -56,7 +56,7 @@
 
 .form__group {
     text-align: left;
-    margin: 20px;
+    margin: 10px;
 }
 
 .account__inner p.text-danger {
@@ -71,6 +71,7 @@
     color: var(--primary-color);
     font-weight: 600;
     font-size: 1.6rem;
+    /* display: none; */
 }
 
 .control__reset {
@@ -156,4 +157,9 @@
     width: 410px;
     line-height: 1.7;
     color: var(--orange);
+}
+
+/* ============ Edit Account  ============*/
+.editPassword .form__group {
+    margin: 20px;
 }

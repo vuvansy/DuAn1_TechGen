@@ -101,10 +101,13 @@
                     <!-- Search box  -->
                     <div class="search-box">
                         <div class="border-form">
-                            <form action="" class="search-form">
-                                <input type="text" class="search-form__input" placeholder="Nhập từ khóa cần tìm gì?" />
+                            <?php
+                            if (!isset($search)) $search = "";
+                            ?>
+                            <form action="?mod=product&action=productsearch" class="search-form" method="POST">
+                                <input type="text" name="search" class="search-form__input" value="" placeholder="Nhập từ khóa cần tìm gì?" />
                                 <!-- Submit button -->
-                                <button type="submit" class="search-form__btn">
+                                <button type="submit" name="btn-submit" class="search-form__btn">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
 
@@ -141,7 +144,7 @@
                                             <ul class="sub__login">
                                                 <?php if (info_user(user_login(), 'user_role') == 1) : ?>
                                                     <li>
-                                                        <a href="./admin/?"><i class="fa-solid fa-house"></i> Trang quản trị</a>
+                                                        <a href="./admin/?"><i class="fa-solid fa-user-gear"></i> Trang quản trị</a>
                                                     </li>
                                                 <?php endif ?>
                                                 <li>
