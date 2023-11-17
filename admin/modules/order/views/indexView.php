@@ -1,6 +1,63 @@
 <?php
 get_header();
 ?>
+<?php
+$status = [
+    0 => 'chờ xác nhận',
+    1 => 'đang vận chuyển',
+    2 => 'đã hủy',
+    3 => 'đã giao hàng',
+];
+$oder_wait_html = '';
+foreach ($orderListWait as $value) {
+    $updateLink = "?mod=order&action=confirm_update&key=" . $value['id_order'] ;
+    $detailLink = "?mod=order&action=detail&key=" . $value['id_order'] ;
+    $oder_wait_html .= '
+        <tr class="list-item">
+            <td class="icon-order">
+                <label for="select-order">
+                    <input name="select-order" type="checkbox">
+                </label>
+            </td>
+            <td class="id-order">
+                IT'.$value['id_order'].'
+            </td>
+            <td class="date-order">
+                '.$value['order_date'].'
+            </td>
+            <td class="quantity-order">
+               '.$value['order_quantity'].'
+            </td>
+            <td class="total-order">
+                '.number_format($value['order_total'], 0, '', '.').'
+            </td>
+            <td class="status-order">
+                '.$status[$value['order_status']].'
+            </td>
+            <td class="update-order">
+                <a href="'.$updateLink.'" class="update">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <g clip-path="url(#clip0_648_856)">
+                            <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_648_856">
+                                <rect width="16" height="16" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </td>
+            <td>
+                <a href="'.$detailLink.'" class="detail">
+                    Chi tiết
+                </a>
+            </td>
+        </tr>
+    ';
+}
+?>
+
 <main>
     <div class="main-wrapper">
         <?php
@@ -64,458 +121,7 @@ get_header();
                             </thead>
 
                             <tbody class="list-group">
-
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <tr class="list-item">
-
-                                    <td class="icon-order">
-                                        <label for="select-order">
-                                            <input name="select-order" type="checkbox">
-                                        </label>
-                                    </td>
-
-                                    <td class="id-order">
-                                        IT96281
-                                    </td>
-
-                                    <td class="date-order">
-                                        03/11/2023
-                                    </td>
-
-                                    <td class="quantity-order">
-                                        2
-                                    </td>
-
-                                    <td class="total-order">
-                                        44.000.000đ
-                                    </td>
-
-                                    <td class="status-order">
-                                        Chờ xác nhận
-                                    </td>
-
-                                    <td class="update-order">
-                                        <a href="?mod=order&action=confirm_update" class="update">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <g clip-path="url(#clip0_648_856)">
-                                                    <path d="M15.5596 4.44023L14.119 5.88086C13.9721 6.02773 13.7346 6.02773 13.5877 5.88086L10.119 2.41211C9.97211 2.26523 9.97211 2.02773 10.119 1.88086L11.5596 0.440234C12.144 -0.144141 13.094 -0.144141 13.6815 0.440234L15.5596 2.31836C16.1471 2.90273 16.1471 3.85273 15.5596 4.44023ZM8.88149 3.11836L0.675236 11.3246L0.0127361 15.1215C-0.0778889 15.634 0.368986 16.0777 0.881486 15.9902L4.67836 15.3246L12.8846 7.11836C13.0315 6.97148 13.0315 6.73398 12.8846 6.58711L9.41586 3.11836C9.26586 2.97148 9.02836 2.97148 8.88149 3.11836ZM3.87836 10.6215C3.70649 10.4496 3.70649 10.1746 3.87836 10.0027L8.69086 5.19023C8.86274 5.01836 9.13774 5.01836 9.30961 5.19023C9.48149 5.36211 9.48149 5.63711 9.30961 5.80898L4.49711 10.6215C4.32524 10.7934 4.05024 10.7934 3.87836 10.6215ZM2.75024 13.2496H4.25024V14.384L2.23461 14.7371L1.26274 13.7652L1.61586 11.7496H2.75024V13.2496Z" fill="#FD475A" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_648_856">
-                                                        <rect width="16" height="16" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </a>
-                                    </td>
-
-                                    <td>
-                                        <a href="?mod=order&action=detail" class="detail">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-
-                                </tr>
-
+                                <?=$oder_wait_html?>
                             </tbody>
 
                         </table>
