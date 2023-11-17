@@ -105,7 +105,7 @@
                             if (!isset($search)) $search = "";
                             ?>
                             <form action="?mod=product&action=productsearch" class="search-form" method="POST">
-                                <input type="text" name="search" class="search-form__input" value="" placeholder="Nhập từ khóa cần tìm gì?" />
+                                <input type="text" name="search" class="search-form__input" value="<?php echo $search ?>" placeholder="Nhập từ khóa cần tìm gì?" />
                                 <!-- Submit button -->
                                 <button type="submit" name="btn-submit" class="search-form__btn">
                                     <i class="fa-solid fa-magnifying-glass"></i>
