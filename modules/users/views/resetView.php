@@ -26,7 +26,7 @@ get_header();
                     <div class="avatar__user">
                         <img src="public/images/user/user2.jpg" alt="">
                     </div>
-                    <h2 class="subtitle__user">Vũ Văn Sỹ</h2>
+                    <h2 class="subtitle__user">User</h2>
                 </div>
             </div>
         </div>

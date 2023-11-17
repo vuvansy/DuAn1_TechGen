@@ -8,37 +8,43 @@ get_header();
         <div class="container">
             <div class="form__account">
                 <div class="account__inner">
-                    <h1 class="heading-title">ĐỔI MẬT KHẨU</h1>
+                    <div class="account__inner--title">
+                        <h1 class="heading-title">ĐỔI MẬT KHẨU</h1>
+                        <?php echo form_error('account'); ?>
+                    </div>
                     <form action="" id="form-login" method="POST">
 
                         <div class="form__group">
-                            <label for="old-pass">Mật khẩu cũ</label>
-                            <input type="password" name="pass-old" id="pass-old" placeholder="Mật khẩu cũ">
-                            <?php echo form_error('pass-old'); ?>
+                            <label for="pass_old">Mật khẩu cũ</label>
+                            <input type="password" name="pass_old" id="pass_old" placeholder="Mật khẩu cũ">
+                            <?php echo form_error('pass_old'); ?>
                         </div>
 
                         <div class="form__group">
-                            <label for="new-pass">Mật khẩu mới</label>
-                            <input type="password" name="pass-new" id="pass-new" placeholder="Mật khẩu mới">
-                            <?php echo form_error('pass-new'); ?>
+                            <label for="pass_new">Mật khẩu mới</label>
+                            <input type="password" name="pass_new" id="pass_new" placeholder="Mật khẩu mới">
+                            <?php echo form_error('pass_new'); ?>
                         </div>
 
                         <div class="form__group">
-                            <label for="confirm-pass">Xác nhận mật khẩu</label>
-                            <input type="password" name="confirm-pass" id="confirm-pass" placeholder="Mật khẩu mới">
-                            <?php echo form_error('confirm-pass'); ?>
+                            <label for="pass_confirm">Xác nhận mật khẩu</label>
+                            <input type="password" name="pass_confirm" id="pass_confirm" placeholder="Mật khẩu mới">
+                            <?php echo form_error('pass_confirm'); ?>
                         </div>
 
-                        <input type="submit" name="btn-edit-pass" class="btn user__cta" id="btn-login" value="CẬP NHẬT" />
-                        <?php echo form_error('account'); ?>
+                        <input type="submit" name="btn-editPass" class="btn user__cta" id="btn-login" value="CẬP NHẬT" />
                     </form>
 
                 </div>
                 <div class="sidebar__user">
                     <div class="avatar__user">
-                        <img src="public/images/user/user2.jpg" alt="">
+                        <?php if ($info_user_by_id['image'] == '') : ?>
+                            <img src="public/images/user/user2.jpg" alt="">
+                        <?php else : ?>
+                            <img src="public/images/user/<?php echo info_user(user_login(), 'image'); ?>" alt="<?php echo info_user(is_login(), 'image') ?>">
+                        <?php endif; ?>
                     </div>
-                    <h2 class="subtitle__user">Vũ Văn Sỹ</h2>
+                    <h2 class="subtitle__user"><?php echo $info_user_by_id['fullname'] ?></h2>
                 </div>
             </div>
         </div>
