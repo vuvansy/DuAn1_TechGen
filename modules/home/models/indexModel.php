@@ -24,3 +24,12 @@ function get_product_sale()
     if (!empty($item))
         return $item;
 }
+
+function get_users($start = 1, $num_per_page = 10, $where = "")
+{
+    if (!empty($where)) {
+        $where = "WHERE $where";
+    }
+    $list_user = db_fetch_array("SELECT * FROM `tbl_users` $where LIMIT $start,$num_per_page");
+    return $list_user;
+};

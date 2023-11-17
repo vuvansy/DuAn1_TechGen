@@ -26,3 +26,12 @@ function  get_product()
     if (!empty($item))
         return $item;
 }
+
+
+
+
+function get_product_search($search = "")
+{
+    $list_product = db_fetch_array("SELECT * FROM `product` WHERE `product_name` LIKE '%$search%'");
+    return  $list_product;
+};
