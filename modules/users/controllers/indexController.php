@@ -109,8 +109,8 @@ function regAction()
         if (empty($_POST['phone'])) {
             $error['phone'] = "Không được để trống Số điện thoại";
         } else {
-            if (!is_phone($_POST['phone'])) {
-                $error['phone'] = "Số điện thoại không đúng định dạng";
+            if (!is_phone()) {
+                $error['phone'] = "Số điện thoại không đúng định dạng và phải bao gồm 10 số";
             } else {
                 $phone = $_POST['phone'];
             }
