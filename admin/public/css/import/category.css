@@ -129,6 +129,17 @@
     justify-content: center;
     text-align: center;
 } */
+th.category_id {
+    width: 100px;
+}
+
+th.category-tbody-img {
+    width: 140px;
+}
+
+th.category_name {
+    width: 600px;
+}
 
 .category-tbody-img > img {
     margin: 0 auto;
