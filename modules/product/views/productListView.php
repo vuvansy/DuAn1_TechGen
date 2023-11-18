@@ -76,7 +76,8 @@ $imagesURL = "public/images";
             </div>
             <!-- Pagination  -->
             <div class="pagination">
-                <ul class="pagging">
+                <?php echo get_pagging($num_pages, $page, "?mod=product&action=productList&cat_id", $cat_id) ?>
+                <!-- <ul class="pagging">
                     <li>
                         <a href="" class="control__btn">
                             < </a>
@@ -89,7 +90,7 @@ $imagesURL = "public/images";
                             >
                         </a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </section>

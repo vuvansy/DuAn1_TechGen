@@ -105,7 +105,7 @@
                             if (!isset($search)) $search = "";
                             ?>
                             <form action="?mod=product&action=productsearch" class="search-form" method="POST">
-                                <input type="text" name="search" class="search-form__input" value="" placeholder="Nhập từ khóa cần tìm gì?" />
+                                <input type="text" name="search" class="search-form__input" value="<?php echo $search ?>" placeholder="Nhập từ khóa cần tìm gì?" />
                                 <!-- Submit button -->
                                 <button type="submit" name="btn-submit" class="search-form__btn">
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -187,7 +187,16 @@
                                 </span>
                                 <div>
                                     <span>Giỏ hàng của bạn</span>
-                                    <span>(10) sản phẩm</span>
+                                    <span>(
+                                        <?php
+                                        if(isset($_SESSION['cart'])) {
+                                            echo count($_SESSION['cart']);
+                                        } else {
+                                            echo 0;
+                                        }
+                                        ?>)
+                                        sản phẩm
+                                    </span>
                                 </div>
                             </a>
                         </div>
