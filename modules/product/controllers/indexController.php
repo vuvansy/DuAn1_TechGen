@@ -35,7 +35,15 @@ function indexAction()
     $data['id_product'] = $id_product;
     load_view('index', $data);
 }
-
+function errorAction(){
+    if (isset($_GET['id'])) {
+        $id_product = $_GET['id'];
+        // echo  $id_product;
+        $_SESSION['error'] = 'Vui lòng đăng nhập !';
+        $load_header = 'Location: ?mod=product&cation=index&id='.$id_product;
+        header($load_header);
+    }
+}
 
 function productListAction()
 {
