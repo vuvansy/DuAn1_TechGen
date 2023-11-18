@@ -65,7 +65,7 @@ function detailAction()
 {
     if(isset($_GET['key']) && ($_GET['key'] != '')) {
         $id = $_GET['key'];
-        echo $id;
+        $data['order_detail'] = get_detail_order_by_id_order($id);
+        load_view('detail', $data);
     }
-//    load_view('detail');
 }

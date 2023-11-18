@@ -25,4 +25,19 @@ function update_order_status($data, $id_order) {
     return db_update('order_tg', $data, $id_order);
 }
 
+function get_detail_order_by_id_order($id) {
+    $sql = "SELECT * FROM `order_detail` WHERE `id_order` = " . $id;
+    return db_fetch_array($sql);
+}
+
+function get_image_by_id_order($id) {
+    $sql = "SELECT `product_image` FROM `product` WHERE `id_product` = " . $id;
+    return db_fetch_array($sql);
+}
+
+function get_name_by_id_order($id) {
+    $sql = "SELECT `product_name` FROM `product` WHERE `id_product` = " . $id;
+    return db_fetch_array($sql);
+}
+
 ?>
