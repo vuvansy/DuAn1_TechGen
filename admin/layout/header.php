@@ -44,15 +44,40 @@
             <div class="dropdown-user">
                 <ul class="dropdown-user__main">
                     <li>
-                        <button type="button" class="dropdown-user__cta">
-                            <img src="public/images/user/user.png" class="dropdown-user__img">
-                            <h3 class="heading lv2">Văn Sỹ</h3>
-                            <i class="fa-solid fa-caret-down"></i>
-                        </button>
-                        <ul class="dropdown-user__sub">
-                            <li><a href="" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
-                            <li><a href="#" title="Thoát">Thoát</a></li>
-                        </ul>
+                        <!-- User Login  -->
+                        <div class="admin">
+                            <!-- Login Success  -->
+                            <?php if (isset($_SESSION['user_login'])) : ?>
+                                <button type="button" class="dropdown-user__cta">
+                                    <!-- <img src="public/images/user/user.png" class="dropdown-user__img"> -->
+                                    <?php if (info_user(user_login(), 'image') == '') : ?>
+                                        <img class="dropdown-user__img" src="public/images/user/user2.jpg" alt="">
+                                    <?php else : ?>
+                                        <img class="dropdown-user__img" src="public/images/user/<?php echo info_user(user_login(), 'image'); ?>" alt="<?php echo info_user(is_login(), 'image') ?>">
+                                    <?php endif; ?>
+                                    <h3 class="heading lv2"><?php echo info_user(user_login(), 'fullname'); ?></h3>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </button>
+                            <?php else : ?>
+                                <!-- No Login  -->
+                                <button type="button" class="dropdown-user__cta">
+                                    <!-- <img src="public/images/user/user.png" class="dropdown-user__img"> -->
+                                    <?php if (info_user(user_login(), 'image') == '') : ?>
+                                        <img class="dropdown-user__img" src="public/images/user/user2.jpg" alt="">
+                                    <?php else : ?>
+                                        <img class="dropdown-user__img" src="public/images/user/<?php echo info_user(user_login(), 'image'); ?>" alt="<?php echo info_user(is_login(), 'image') ?>">
+                                    <?php endif; ?>
+                                    <h3 class="heading lv2">ADMIN</h3>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </button>
+                            <?php endif ?>
+                        </div>
+                        <?php if (isset($_SESSION['user_login'])) : ?>
+                            <ul class="dropdown-user__sub">
+                                <li><a href="?mod=account&action=update" title="Thông tin cá nhân">Cập nhật thông tin</a></li>
+                                <li><a href="?mod=account&action=logout" title="Thoát">Thoát</a></li>
+                            </ul>
+                        <?php endif ?>
                     </li>
                 </ul>
 
