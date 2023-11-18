@@ -3,15 +3,19 @@ get_header();
 ?>
 
 <?php
-
 //    $_SESSION['user'] = [
-//        'id' => 3,
-//        'name' => 'tiến',
+//        'id_user' => 3,
+//        'fullname' => 'tiến',
 //        'email' => 'ngyasuooo@gmail.com',
 //        'phone' => '0338015163',
 //        'address' => 'hòa lạc, phường hoànd đông, thành phố Hồ Chí Minh'
 //    ];
 //    unset($_SESSION['user']);
+    if(isset($_SESSION['user']) && ($_SESSION['user'] != '')) {
+        $actionForm = "?mod=order&action=pay";
+    } else {
+        $actionForm = "?mod=users&action=index";
+    }
     $cartHtm = '';
     $key = 0;
     $cartQuantity = 0;
@@ -82,10 +86,10 @@ get_header();
                         <p><?=number_format($cartTotal,0, ',', '.' )?></p>
                     </div>
                     <h4>Thông tin vận chuyển</h4>
-                    <form action="?mod=order&action=pay" method="POST">
+                    <form action="<?=$actionForm?>" method="POST">
                         <input class="input-1" name="name_delivery" type="text" value="<?php
                             if(isset($_SESSION['user'])) {
-                                echo $_SESSION['user']['name'];
+                                echo $_SESSION['user']['fullname'];
                             } else {
                                 echo '';
                             }
@@ -116,7 +120,6 @@ get_header();
 
                         <h4>Phương thức thanh toán</h4>
                         <div class="input-text">
-
                             <div class="option">
                                 <div class="option-input">
                                     <input value="1" class="input-checkbox" name="delivery-order" type="radio" checked id="product_status"
