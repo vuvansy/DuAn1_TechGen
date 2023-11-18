@@ -36,6 +36,37 @@ function addAction() {
     header('location: ?mod=order&action=index');
 }
 
+function addToCartAction() {
+    if(isset($_GET['id']) && ($_GET['id'] != '')) {
+        $id = $_GET['id'];
+        $information = get_product_by_id($id);
+        $count = 1;
+        $check = true;
+        $i = 0;
+        if(isset($_SESSION['cart']) && is_array($_SESSION['cart']) ) {
+            foreach ($_SESSION['cart'] as $item) {
+                if($item['id'] == $id) {
+                    $number = $_SESSION['cart'][$i]['count'] + 1;
+                    $_SESSION['cart'][$i]['count'] = $number;
+                    $check = false;
+                    break;
+                }
+                $i++;
+            }
+        }
+        if($check) {
+            $_SESSION['cart'][] = [
+                'id' => $information['id_product'],
+                'name' => $information['product_name'],
+                'price' => $information['product_sale'],
+                'image' => $information['product_image'],
+                'count' => $count
+            ];
+        }
+        header('location: ?mod=product&action=index&id='.$id);
+    }
+}
+
 function removeAction() {
     if(isset($_GET['key']) && ($_GET['key'] != '')) {
         $key = $_GET['key'];
