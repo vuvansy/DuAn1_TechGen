@@ -1,12 +1,55 @@
-<?php get_header() ?>
+<?php get_header();
+
+
+?>
+
+<?php
+// $check = get_user_by_id_user($id_user);
+// if($check as $comment) {
+
+// }
+if (isset($_SESSION['is_login'])) {
+    $actionForm = '';
+    $id_user = info_user(user_login(), 'id_user');
+    // echo  $id_user;
+} else {
+    $id_user = 0;
+    $actionForm = '?mod=users&action=index';
+
+}
+
+$comment_list = get_comment_by_product_id($id_product);
+$comment_html = '';
+foreach ($comment_list as $comment) {
+    $user_fullname = get_user_by_id_user($id_user);
+   // var_dump( $user_fullname);
+    $comment_html .= '
+    <div class="comment-user">
+    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
+    <div class="info-user">
+        <p><strong class="name">'.$user_fullname[0]['fullname'].'</strong></p>
+        <div class="conten-comment">
+        '.$comment['content'].'
+        </div>
+    </div>
+    </div>
+    ';
+}
+
+$buyNow = '?mod=order&action=add&id='.$id_product;
+$addToCar ='?mod=order&action=addToCar&id='.$id_product;
+
+?>
 
 <main>
+
+
     <div class="container">
         <div class="product-details">
             <?php
             $imagesURL = "public/images";
             // Lấy thông tin sản phẩm dựa trên ID sản phẩm từ tham số truyền vào
-            $product_id = $_GET['id']; 
+            $product_id = $_GET['id'];
             $selected_product = get_product_by_id($product_id);
             // Kiểm tra xem sản phẩm có tồn tại hay không
             if ($selected_product) {
@@ -94,8 +137,8 @@
 
                     <!-- btn mua sp -->
                     <div class="product-buy">
-                        <a class="buybtn" href="">Mua</a>
-                        <a class="addbtn" href="">Thêm vào giỏ hàng</a>
+                        <a class="buybtn" href="<?=$buyNow?>">Mua</a>
+                        <a class="addbtn" href="<?=$addToCar?>">Thêm vào giỏ hàng</a>
                     </div>
                     <!-- btn mua sp -->
                 </div>
@@ -200,11 +243,20 @@
             <form id="comment-form" method="POST" action="<?= $actionForm ?>">
                 <h3>Bình luận</h3>
                 <input type="text" name="content" id="comment-input" placeholder="Nhập bình luận của bạn">
-                <input type="hidden" name="id_user_name" id="" value="<?=$id_user?>">
+                <input type="hidden" name="id_user_name" id="" value="<?= $id_user ?>">
                 <input class="comment-form-submit" type="submit" name="comment-form-submit" value="Gửi">
             </form>
             <div id="comment-list">
-               <?= $comment_html ?>
+                <?= $comment_html ?>
+                <!-- <div class="comment-user">
+                    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
+                    <div class="info-user">
+                        <p><strong class="name">khang</strong></p>
+                        <div class="conten-comment">
+                            Mình cần mua trả góp iphone14promax 256gb trả trước 30%
+                        </div>
+                    </div>
+                </div> -->
                 <!-- admin -->
                 <!-- trả lời admin -->
                 <!-- Danh sách các bình luận sẽ được hiển thị ở đây -->
@@ -236,7 +288,8 @@
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
@@ -262,7 +315,8 @@
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
@@ -285,7 +339,8 @@
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
@@ -311,7 +366,8 @@
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
@@ -337,7 +393,8 @@
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">

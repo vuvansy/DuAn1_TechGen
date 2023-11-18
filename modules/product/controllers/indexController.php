@@ -14,11 +14,14 @@ function indexAction()
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment-form-submit'])) {
         $commentContent = $_POST['content'];
         $id_user = $_POST['id_user_name'];
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $currentDate = date("Y-m-d");
         if (!empty($commentContent)) {
             $data = array(
                 'content' => $commentContent,
                 'id_user' => $id_user,
-                'id_product' => $id_product
+                'id_product' => $id_product,
+                'date_comment' => $currentDate
             );
             add_comment($data);
             // show_array($_POST);
