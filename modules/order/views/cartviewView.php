@@ -2,9 +2,13 @@
 get_header();
 ?>
 <?php
-    if(isset($_SESSION['user'])) {
-        $order_view = get_order_by_id_user($_SESSION['user']['id_user']);
-        $order_html = '
+    if(isset($_SESSION['is_login'])) {
+        $order_view = get_order_by_id_user(info_user(user_login(), 'id_user'));
+        $order_html = '';
+        if(empty($order_view)) {
+            $order_html .= '<h1>bạn chưa có đơn hàng nào !</h1>';
+        } else {
+            $order_html = '
              <table>
                 <tr>
                     <th>Mã đơn hàng</th>
@@ -17,23 +21,23 @@ get_header();
                 </tr>
             <tbody id="dssp">
         ';
-        $status = [
-            0 => 'chờ xác nhận',
-            1 => 'đang vận chuyển',
-            2 => 'đã hủy',
-            3 => 'đã giao hàng',
-        ];
-        $canRemove = '';
-        foreach ($order_view as $order_list) {
-            if(($order_list['order_status'] == 3) || ($order_list['order_status'] == 2))  {
-                $canRemove = '?mod=order&action=remove_order&id=' . $order_list['id_order'];
-            } else {
-                $canRemove = '';
-            }
-            $linkDetail ="?mod=order&action=orderDetail&keyOrder=" .$order_list['id_order'];
-            $order_html .= '
+            $status = [
+                0 => 'chờ xác nhận',
+                1 => 'đang vận chuyển',
+                2 => 'đã hủy',
+                3 => 'đã giao hàng',
+            ];
+            $canRemove = '';
+            foreach ($order_view as $order_list) {
+                if(($order_list['order_status'] == 3) || ($order_list['order_status'] == 2))  {
+                    $canRemove = '?mod=order&action=remove_order&id=' . $order_list['id_order'];
+                } else {
+                    $canRemove = '';
+                }
+                $linkDetail ="?mod=order&action=orderDetail&keyOrder=" .$order_list['id_order'];
+                $order_html .= '
              <tr>
-                <td>'.$order_list['id_order'].'</td>
+                <td>IT'.$order_list['id_order'].'</td>
                 <td>'.$order_list['order_quantity'].'</td>
                 <td>'.number_format($order_list['order_total'], 0, ',', '.').'</td>
                 <td>COD</td>
@@ -53,8 +57,9 @@ get_header();
         ';
         }
         $order_html .= '
-             </tbody>
+            </tbody>
         </table>';
+        }
     } else {
         $order_html = '
             <h1>Bạn phải đăng nhập mới có thể quản lí đơn hàng</h1>
