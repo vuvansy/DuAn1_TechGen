@@ -187,7 +187,16 @@
                                 </span>
                                 <div>
                                     <span>Giỏ hàng của bạn</span>
-                                    <span>(10) sản phẩm</span>
+                                    <span>(
+                                        <?php
+                                        if(isset($_SESSION['cart'])) {
+                                            echo count($_SESSION['cart']);
+                                        } else {
+                                            echo 0;
+                                        }
+                                        ?>)
+                                        sản phẩm
+                                    </span>
                                 </div>
                             </a>
                         </div>
