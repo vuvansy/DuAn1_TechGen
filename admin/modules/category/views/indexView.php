@@ -43,9 +43,9 @@ get_header();
                         <table class="list-table-section">
                             <thead class="category-thead">
                                 <tr class="list-section-desc">
-                                    <th>Mã loại</th>
+                                    <th class="category_id">Mã loại</th>
                                     <th class="category-tbody-img">Hình ảnh</th>
-                                    <th>Tên loại</th>
+                                    <th class="category_name">Tên loại</th>
                                     <th>Trạng Thái</th>
                                     <th>Tác Vụ</th>
                                 </tr>
