@@ -121,6 +121,7 @@
 
 /* order-tools  */
 
+/* No login  */
 .order-tools {
     display: flex;
     justify-content: space-between;
@@ -130,6 +131,7 @@
     font-weight: 500;
 }
 
+.main__login--btn,
 .order-tools .cart a,
 .order-tools .admin a {
     display: flex;
@@ -138,9 +140,66 @@
     color: var(--gray);
 }
 
+.order-tools .admin {
+    width: 120px;
+}
+
 .order-tools .cart a {
     width: 160px;
     height: 40px;
+}
+/* Login Success dropdown__login */
+ul.main__login {
+    cursor: pointer;
+    position: relative;
+}
+
+ul.sub__login {
+    display: none;
+    position: absolute;
+    top: 46px;
+    min-width: 170px;
+    background: var(--background);
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+}
+
+ul.sub__login li {
+    padding: 0px 20px;
+}
+
+ul.sub__login li:first-child,
+ul.sub__login li:last-child {
+    border-radius: 8px;
+}
+
+.sub__login li:hover {
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.admin ul.main__login ul.sub__login li a {
+    color: var(--gray);
+    display: block;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    padding: 6px 0px;
+}
+
+.admin ul.main__login ul.sub__login li a > i {
+    margin-right: 6px;
+}
+
+.dropdown__login .subject__login {
+    width: 86px;
+}
+
+.dropdown__login .subject__login span:first-child {
+    display: block;
+    line-height: 1.5;
+}
+
+.dropdown__login .subject__login span:last-child {
+    color: var(--black);
 }
 
 /* === Nav ===*/

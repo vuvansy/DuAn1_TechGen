@@ -1,6 +1,30 @@
 <?php
 get_header();
 ?>
+<?php
+    $detail_html = '';
+    $total_detail = 0;
+    foreach ($order_detail as $detail) {
+        if(is_array($detail)) {
+            extract($detail);
+        }
+        $total_detail += $order_detail_total;
+        $image = (get_image_by_id_order($id_product))[0]['product_image'];
+        $name = (get_name_by_id_order($id_product))[0]['product_name'];
+        $detail_html .= '
+             <tr class="list-item">
+                <td class="image-order">
+                    <img src="../public/images/product/'.$image.'" alt="">
+                </td>
+                <td class="name-order">'.$name.'</td>
+                <td class="price-order">'.number_format(($order_detail_total / $order_detail_quantity), 0, '', '.').'</td>
+                <td class="quantity-order">'.$order_detail_quantity.'</td>
+                <td class="total-order">'.number_format($order_detail_total, 0, '', '.').'</td>
+            </tr>
+        ';
+    }
+?>
+
 <main>
     <div class="main-wrapper">
         <?php
@@ -60,23 +84,13 @@ get_header();
 
                         <tbody class="list-group">
 
-                            <tr class="list-item">
-
-                                <td class="image-order">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="name-order">IPhone 14 Pro Max</td>
-                                <td class="price-order">44.000.000đ</td>
-                                <td class="quantity-order">1</td>
-                                <td class="total-order">44.000.000đ</td>
-
-                            </tr>
+                            <?=$detail_html?>
 
                             <tr class="total-bar">
 
                                 <td class="text">Tổng tiền</td>
 
-                                <td class="total">88.000.000đ</td>
+                                <td class="total"><?=number_format($total_detail, 0, '', '.')?></td>
 
                             </tr>
 

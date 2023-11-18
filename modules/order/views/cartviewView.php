@@ -1,6 +1,67 @@
 <?php
 get_header();
 ?>
+<?php
+    if(isset($_SESSION['user'])) {
+        $order_view = get_order_by_id_user($_SESSION['user']['id_user']);
+        $order_html = '
+             <table>
+                <tr>
+                    <th>Mã đơn hàng</th>
+                    <th>Số lượng</th>
+                    <th>Tổng tiền</th>
+                    <th>Hình thức thanh toán</th>
+                    <th>Ngày đặt đơn hàng</th>
+                    <th>Trạng thái đơn hàng</th>
+                    <th>Hành động</th>
+                </tr>
+            <tbody id="dssp">
+        ';
+        $status = [
+            0 => 'chờ xác nhận',
+            1 => 'đang vận chuyển',
+            2 => 'đã hủy',
+            3 => 'đã giao hàng',
+        ];
+        $canRemove = '';
+        foreach ($order_view as $order_list) {
+            if(($order_list['order_status'] == 3) || ($order_list['order_status'] == 2))  {
+                $canRemove = '?mod=order&action=remove_order&id=' . $order_list['id_order'];
+            } else {
+                $canRemove = '';
+            }
+            $linkDetail ="?mod=order&action=orderDetail&keyOrder=" .$order_list['id_order'];
+            $order_html .= '
+             <tr>
+                <td>'.$order_list['id_order'].'</td>
+                <td>'.$order_list['order_quantity'].'</td>
+                <td>'.number_format($order_list['order_total'], 0, ',', '.').'</td>
+                <td>COD</td>
+                <td>'.$order_list['order_date'].'</td>
+                <td>'.$status[$order_list['order_status']].'</td>
+                <td>
+                    <div class="bw">
+                        <div class="left-tt">
+                            <a style="color: blue;" href="'.$linkDetail.'">Chi tiết</a>
+                        </div>
+                        <div class="right-tt">
+                            <a style="color: red;" href="'.$canRemove.'">Xóa</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        ';
+        }
+        $order_html .= '
+             </tbody>
+        </table>';
+    } else {
+        $order_html = '
+            <h1>Bạn phải đăng nhập mới có thể quản lí đơn hàng</h1>
+        ';
+    }
+?>
+
 <main>
     <section class="cartView">
         <div class="container">
@@ -11,97 +72,7 @@ get_header();
             <h1>Quản lí đơn hàng</h1>
             <div class="box">
                 <div class="box-left-0fnone">
-
-                    <table>
-                        <tr>
-                            <th>Mã đơn hàng</th>
-                            <th>Số lượng</th>
-                            <th>Tổng tiền</th>
-                            <th>Hình thức thanh toán</th>
-                            <th>Ngày đặt đơn hàng</th>
-                            <th>Trạng thái đơn hàng</th>
-                            <th>Hành động</th>
-
-                        </tr>
-                        <tbody id="dssp">
-                            <tr>
-                                <td>IT69280</td>
-                                <td>2</td>
-                                <td>44.000.000</td>
-                                <td>COD</td>
-                                <td>02/11/2023</td>
-                                <td>Giao hàng thành công</td>
-                                <td>
-                                    <div class="bw">
-                                        <div class="left-tt">
-                                            <a style="color: blue;" href="?mod=order&action=orderDetail">Chi
-                                                tiết</a>
-                                        </div>
-
-
-                                        <div class="right-tt">
-                                            <a style="color: red;" href="">Xóa</a>
-                                        </div>
-
-
-                                    </div>
-
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>IT69280</td>
-                                <td>2</td>
-                                <td>44.000.000</td>
-                                <td>COD</td>
-                                <td>02/11/2023</td>
-                                <td>Giao hàng thành công</td>
-                                <td>
-                                    <div class="bw">
-                                        <div class="left-tt">
-                                            <a style="color: blue;" href="?mod=order&action=orderDetail">Chi
-                                                tiết</a>
-                                        </div>
-
-
-                                        <div class="right-tt">
-                                            <a style="color: red;" href="">Xóa</a>
-                                        </div>
-
-
-                                    </div>
-
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>IT69280</td>
-                                <td>2</td>
-                                <td>44.000.000</td>
-                                <td>COD</td>
-                                <td>02/11/2023</td>
-                                <td>Giao hàng thành công</td>
-                                <td>
-                                    <div class="bw">
-                                        <div class="left-tt">
-                                            <a style="color: blue;" href="?mod=order&action=orderDetail">Chi
-                                                tiết</a>
-                                        </div>
-
-
-                                        <div class="right-tt">
-                                            <a style="color: red;" href="">Xóa</a>
-                                        </div>
-
-
-                                    </div>
-
-
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
+                    <?=$order_html?>
                 </div>
 
             </div>
@@ -253,8 +224,6 @@ get_header();
         </div>
     </section>
 </main>
-
-
 
 <?php
 get_footer();

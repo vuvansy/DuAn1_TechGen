@@ -1,14 +1,5 @@
 <?php
 
-//Truy vấn một LOẠI HÀNG theo mã loại
-function get_category_by_id($id)
-{
-    $item = db_fetch_row("SELECT * FROM `category` WHERE `id_category` = {$id}");
-    if (!empty($item))
-        return $item;
-}
-
-
 //Truy vấn danh sách SẢN PHẨM theo mã LOẠI HÀNG
 function get_product_by_id_category($id_category)
 {
@@ -24,3 +15,12 @@ function get_product_sale()
     if (!empty($item))
         return $item;
 }
+
+function get_users($start = 1, $num_per_page = 10, $where = "")
+{
+    if (!empty($where)) {
+        $where = "WHERE $where";
+    }
+    $list_user = db_fetch_array("SELECT * FROM `tbl_users` $where LIMIT $start,$num_per_page");
+    return $list_user;
+};

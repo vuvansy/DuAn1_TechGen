@@ -1,6 +1,5 @@
 <?php
 get_header();
-get_slideshow();
 $imagesURL = "public/images";
 ?>
 <main>
@@ -9,7 +8,7 @@ $imagesURL = "public/images";
         <div class="container">
             <!-- ProductDetail heading  -->
             <div class="productDetail__heading">
-                <h2 class="heading"><?php echo $info_cart_id['category_name'] ?></h2>
+                <h2 class="heading">Sản phẩm cần tìm của bạn</h2>
                 <p class="desc heading lv2">
                     Sắp xếp theo
                 </p>
@@ -36,7 +35,7 @@ $imagesURL = "public/images";
             <div class="product__list">
                 <!-- Product item 1  -->
                 <?php
-                foreach ($list_cart_id as $item) {
+                foreach ($list_product as $item) {
                     $category = get_category_by_id($item['id_category']);
                     if ($item['product_sale'] > 0) {
                         $sale = (($item['product_price'] - $item['product_sale']) / $item['product_price']) * 100;
@@ -76,8 +75,7 @@ $imagesURL = "public/images";
             </div>
             <!-- Pagination  -->
             <div class="pagination">
-                <?php echo get_pagging($num_pages, $page, "?mod=product&action=productList&cat_id", $cat_id) ?>
-                <!-- <ul class="pagging">
+                <ul class="pagging">
                     <li>
                         <a href="" class="control__btn">
                             < </a>
@@ -90,7 +88,7 @@ $imagesURL = "public/images";
                             >
                         </a>
                     </li>
-                </ul> -->
+                </ul>
             </div>
         </div>
     </section>

@@ -1,40 +1,5 @@
-<?php
-get_header();
+<?php get_header() ?>
 
-?>
-<?php
-
-$_SESSION['user'] = get_user_by_id_user(4); //chưa đăng nhập ko có session gán id_user cứng
-//unset($_SESSION['user']);
-//show_array($_SESSION['user']);
-$comment_html= '';
-$check = isset($_SESSION['user']);
-if($check){
-   $id_user = $_SESSION['user'][0]['id_user'];
-   $actionForm = '?mod=product&cation=index&id='.$id_product;
-}else {
-    $actionForm = '?mod=users&action=index';
-   
-}
-foreach ($list_comment as $comment ) {
-    $fullname = get_fullname_user_by_id_user($comment['id_user']);
-   // var_dump( $fullname[0]["fullname"]);
-    // Kiểm tra và hiển thị nội dung comment nếu có
-    $comment_html .= '
-    <div class="comment-user">
-    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
-    <div class="info-user">
-        <p><strong class="name">
-         '.$fullname[0]["fullname"].'
-            </strong></p>
-        <div class="conten-comment">
-           '. $comment["content"].'
-        </div>
-    </div>
-</div>
-    ' ;
-}
-?>
 <main>
     <div class="container">
         <div class="product-details">
@@ -221,7 +186,6 @@ foreach ($list_comment as $comment ) {
             <div class="posts-more">
                 <button>Xem thêm</button>
             </div>
-
         </div>
         <!-- bài viết -->
         <!-- comment -->
@@ -260,7 +224,7 @@ foreach ($list_comment as $comment ) {
         <section class="productRelated">
             <div class="productRelated__body">
                 <div class="productRelated__heading">
-                    <h2 class="heading lv1">SẢN PHẨM LIÊN QUAN</h2>
+                    <h2 class="heading lv1">SẢN PHẨM MỚI</h2>
                 </div>
                 <div class="product__list">
                     <!-- Product item 1  -->
@@ -272,8 +236,7 @@ foreach ($list_comment as $comment ) {
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
-                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
@@ -299,8 +262,7 @@ foreach ($list_comment as $comment ) {
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
-                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
@@ -311,9 +273,6 @@ foreach ($list_comment as $comment ) {
                                         <small>10.1%</small>
                                     </span>
                                 </div>
-                                <button class="btn cart-btn">
-                                    Mua ngay
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -326,8 +285,7 @@ foreach ($list_comment as $comment ) {
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
-                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
@@ -353,8 +311,7 @@ foreach ($list_comment as $comment ) {
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
-                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
@@ -380,8 +337,7 @@ foreach ($list_comment as $comment ) {
                             <h3 class="product__info--title">
                                 <span class="product-brand">Apple</span>
                                 <a href="!#" class="line-clamp break-all line-2">
-                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
-                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
                                 </a>
                             </h3>
                             <div class="product__info--foot">
