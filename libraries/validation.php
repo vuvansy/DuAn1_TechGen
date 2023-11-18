@@ -47,6 +47,14 @@ function is_password()
   return false;
 }
 
+function is_confirm_pass()
+{
+  $partten = "/^[A-Za-z0-9]{6,32}$/";
+  if (preg_match($partten, $_POST['confirm_pass'], $matchs))
+    return true;
+  return false;
+}
+
 function is_pass_old()
 {
   $partten = "/^[A-Za-z0-9]{6,32}$/";

@@ -43,6 +43,7 @@ function removeAction() {
             header('location: ?mod=order&action=removeAll');
         } else {
             array_splice($_SESSION['cart'], $key, 1);
+            header('location: ?mod=order&action=index');
         }
     } else {
         header('location: ?mod=order&action=index');
