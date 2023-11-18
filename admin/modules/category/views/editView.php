@@ -8,8 +8,9 @@ get_header();
         get_sidebar();
         ?>
         <div class=" section">
-            <div class="section-heading">
-                <h2>Cập nhập loại hàng </h2>
+            <div class="account__inner--title">
+                <h1 class="heading-title">Cập nhật loại hàng</h1>
+                <?php echo form_error('account'); ?>
             </div>
             <div class="section-bar">
 
@@ -25,7 +26,7 @@ get_header();
                     </form>
                 </div>
 
-                <a href="?mod=category&action=list" class="product-btn-list-category">Danh sách</a>
+                <a href="?mod=category&action=index" class="product-btn-list-category">Danh sách</a>
 
                 <a href="?mod=category&action=add" class="product-btn-add-category">Thêm mới</a>
             </div>
@@ -40,47 +41,52 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <div class="section-form">
-                    <form action="" enctype="multipart/form-data" method="POST">
-                        <div class="category-box">
-                            <div class="input-update-img-category">
-
-                                <img src="public/images/category/laptop.webp" alt="">
-                            </div>
-                            <div class="section-form-input">
-                                <div class="section-form-input-new">
-
-                                    <div class="input-texts-update">
-                                        <p>Mã loại</p>
-                                        <input class="input-texts-update-1" type="text" name="maloai" placeholder="it6903">
-                                    </div>
-                                    <div class="input-texts-update">
-                                        <p>Tên loại</p>
-                                        <input type="text" name="tenloai" placeholder="máy tính">
-                                    </div>
-                                    <div class="input-update-text-none">
-                                        <span>Trạng thái</span>
-                                        <div class="option">
-                                            <div class="option-update-input-check">
-                                                <input class="input-checkbox-update" name="check" type="checkbox" id="block">
-                                                <p class="text-checkbox-update">Hiển thị </p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="input-update-text-nones">
-                                        <p>Hình ảnh</p>
-                                        <input class="input-update-file" name="img" type="file">
-                                    </div>
-                                </div>
-                                <div class="section-add-category">
-                                    <a href="?mod=category&action=list">
-                                        <input type="submit" name="update" value="Cập nhập">
-                                    </a>
-                                </div>
-
+                <!-- Form Edit  -->
+                <div class="section-form__edit">
+                    <div class="image__category">
+                        <div class="image__category--img">
+                            <?php if ($category['category_image'] == '') : ?>
+                                <img src="public/images/user/" alt="">
+                            <?php else : ?>
+                                <img src="public/images/category/<?php echo $category['category_image'] ?>" alt="<?php echo $category['category_image'] ?>">
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <form action="" class="form__category" enctype="multipart/form-data" method="POST">
+                        <div class="row-form__group">
+                            <div class="form__group">
+                                <label for="id_category">Mã loại</label>
+                                <input type="text" name="id_category" id="id_category" value="<?php echo $category['id_category'] ?>" readonly="readonly" placeholder="AutoNumber..." />
+                                <?php echo form_error('id_category'); ?>
                             </div>
 
+                            <div class="form__group">
+                                <label for="category_name">Tên loại</label>
+                                <input type="text" name="category_name" id="category_name" value="<?php echo $category['category_name'] ?>" placeholder="Tên loại..." />
+                                <?php echo form_error('category_name'); ?>
+                            </div>
+                        </div>
+
+                        <div class="row-form__group">
+                            <div class="form__group">
+                                <label class="title__input_m" for="category_active">Trạng thái</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" name="category_active" id="category_active" value="1"><label class="col" for="kich_hoat">Hiển thị</label>
+                                </div>
+                            </div>
+
+                            <div class="form__group">
+                                <label for="new_image">Hình</label>
+                                <input type="file" name="new_image" id="new_image" value="" placeholder="Địa chỉ..." />
+                                <input type="hidden" name="category_image" value="">
+                                <?php echo form_error('new_image'); ?>
+                            </div>
+                        </div>
+
+                        <div class="section-add-category">
+                            <a href="?mod=category&action=list">
+                                <input type="submit" name="edit_btn" value="Cập nhật">
+                            </a>
                         </div>
                     </form>
 

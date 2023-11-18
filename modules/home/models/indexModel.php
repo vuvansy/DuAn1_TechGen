@@ -11,7 +11,7 @@ function get_product_by_id_category($id_category)
 //Truy vấn Top 4 sản phẩm SALE 
 function get_product_sale()
 {
-    $item = db_fetch_array("SELECT *FROM `product`  ORDER BY ((`product_price` - `product_sale`)/`product_price`) * 100  DESC  LIMIT 0, 4 ");
+    $item = db_fetch_array("SELECT *FROM `product` WHERE ((`product_price` - `product_sale`)/`product_price`) * 100 < 100  ORDER BY ((`product_price` - `product_sale`)/`product_price`) * 100  DESC  LIMIT 0, 4 ");
     if (!empty($item))
         return $item;
 }

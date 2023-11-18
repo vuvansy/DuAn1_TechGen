@@ -464,7 +464,7 @@ function logoutAction()
     unset($_SESSION['is_login']);
     unset($_SESSION['user_login']);
 
-    redirect("?mod=account&action=index");
+    redirect("?mod=account&action=login");
 }
 
 
