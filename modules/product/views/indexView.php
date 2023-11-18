@@ -1,13 +1,8 @@
 <?php get_header();
 
-
 ?>
 
 <?php
-// $check = get_user_by_id_user($id_user);
-// if($check as $comment) {
-
-// }
 if (isset($_SESSION['is_login'])) {
     $actionForm = '';
     $id_user = info_user(user_login(), 'id_user');
@@ -17,12 +12,13 @@ if (isset($_SESSION['is_login'])) {
     $actionForm = '?mod=users&action=index';
 
 }
-
 $comment_list = get_comment_by_product_id($id_product);
 $comment_html = '';
 foreach ($comment_list as $comment) {
-    $user_fullname = get_user_by_id_user($id_user);
-   // var_dump( $user_fullname);
+    $user_fullname = get_user_by_id_user($comment['id_user']);
+    // $user_fullname = get_fullname_user_by_id_user($id_user);
+  //show_array( $user_fullname);
+  // var_dump($comment);
     $comment_html .= '
     <div class="comment-user">
     <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
@@ -35,7 +31,6 @@ foreach ($comment_list as $comment) {
     </div>
     ';
 }
-
 $buyNow = '?mod=order&action=add&id='.$id_product;
 $addToCar ='?mod=order&action=addToCar&id='.$id_product;
 
@@ -150,9 +145,7 @@ $addToCar ='?mod=order&action=addToCar&id='.$id_product;
                 echo "Sản phẩm không tồn tại.";
             }
             ?>
-
-
-        </div>
+                </div>
 
         <!-- thông tố và phẩm phẩm kèm theo -->
 
