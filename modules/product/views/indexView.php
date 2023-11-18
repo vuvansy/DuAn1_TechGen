@@ -1,38 +1,47 @@
 <?php get_header();
-
 ?>
-
 <?php
 if (isset($_SESSION['is_login'])) {
     $actionForm = '';
+    $error_html = '';
     $id_user = info_user(user_login(), 'id_user');
     // echo  $id_user;
 } else {
+    $actionForm = '?mod=product&action=error&id='.$id_product;
+    // $load_error = 'Location: ?mod=product&cation=index&id= '. $id_product ;
     $id_user = 0;
-    $actionForm = '?mod=users&action=index';
-
+    //var_dump($error);
+    // $error_html = '';
+    // if (isset($error)) {
+    //     $error_html = 'Vui lòng đăng nhập !';
+    
+    // }
+    // // header( $load_error );
 }
+
+
 $comment_list = get_comment_by_product_id($id_product);
 $comment_html = '';
 foreach ($comment_list as $comment) {
     $user_fullname = get_user_by_id_user($comment['id_user']);
     // $user_fullname = get_fullname_user_by_id_user($id_user);
-  //show_array( $user_fullname);
-  // var_dump($comment);
+    //show_array( $user_fullname);
+    // var_dump($comment);
     $comment_html .= '
     <div class="comment-user">
     <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
     <div class="info-user">
-        <p><strong class="name">'.$user_fullname[0]['fullname'].'</strong></p>
+        <p><strong class="name">' . $user_fullname[0]['fullname'] . '</strong></p>
         <div class="conten-comment">
-        '.$comment['content'].'
+        ' . $comment['content'] . '
         </div>
+
     </div>
     </div>
     ';
 }
-$buyNow = '?mod=order&action=add&id='.$id_product;
-$addToCar ='?mod=order&action=addToCar&id='.$id_product;
+$buyNow = '?mod=order&action=add&id=' . $id_product;
+$addToCar = '?mod=order&action=addToCar&id=' . $id_product;
 
 ?>
 
@@ -40,6 +49,7 @@ $addToCar ='?mod=order&action=addToCar&id='.$id_product;
 
 
     <div class="container">
+
         <div class="product-details">
             <?php
             $imagesURL = "public/images";
@@ -132,8 +142,8 @@ $addToCar ='?mod=order&action=addToCar&id='.$id_product;
 
                     <!-- btn mua sp -->
                     <div class="product-buy">
-                        <a class="buybtn" href="<?=$buyNow?>">Mua</a>
-                        <a class="addbtn" href="<?=$addToCar?>">Thêm vào giỏ hàng</a>
+                        <a class="buybtn" href="<?= $buyNow ?>">Mua</a>
+                        <a class="addbtn" href="<?= $addToCar ?>">Thêm vào giỏ hàng</a>
                     </div>
                     <!-- btn mua sp -->
                 </div>
@@ -145,7 +155,7 @@ $addToCar ='?mod=order&action=addToCar&id='.$id_product;
                 echo "Sản phẩm không tồn tại.";
             }
             ?>
-                </div>
+        </div>
 
         <!-- thông tố và phẩm phẩm kèm theo -->
 
@@ -238,6 +248,17 @@ $addToCar ='?mod=order&action=addToCar&id='.$id_product;
                 <input type="text" name="content" id="comment-input" placeholder="Nhập bình luận của bạn">
                 <input type="hidden" name="id_user_name" id="" value="<?= $id_user ?>">
                 <input class="comment-form-submit" type="submit" name="comment-form-submit" value="Gửi">
+
+                <span class="error">
+                <?php
+                 if(isset( $_SESSION['error'])){
+                    echo $_SESSION['error'];
+                    unset( $_SESSION['error']);
+                 }
+                ?>
+                    
+                </span>
+
             </form>
             <div id="comment-list">
                 <?= $comment_html ?>
@@ -408,8 +429,8 @@ $addToCar ='?mod=order&action=addToCar&id='.$id_product;
             </div>
         </section>
     </div>
-</main>
 
+</main>
 
 <?php
 get_footer();

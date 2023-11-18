@@ -334,7 +334,11 @@ td {
     border-radius: 4px;
     cursor: pointer;
 }
-
+ span.error {
+    font-size: 13px;
+    color: red;
+    padding-left: 12px;
+}
 /* Danh sách các bình luận sẽ được hiển thị ở đây */
 #comment-list {
     margin-top: 90px;
