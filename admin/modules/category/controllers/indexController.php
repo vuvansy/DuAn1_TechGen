@@ -13,7 +13,7 @@ function indexAction()
     $where = '';
     if (isset($_POST['btn-search'])) {
         $search = $_POST['search_category'];
-        var_dump($search);
+        // var_dump($search);
         $where = "`category_name` LIKE '%$search%'";
     }
     $num_per_page = 6;
@@ -64,7 +64,7 @@ function addAction()
         //     $category_active = $_POST['category_active'];
         // }
 
-        //Giới tính 
+        //Active 
         // if (empty($_POST['category_active'])) {
         //     $error['category_active'] = "Không đc để trống trường category_active";
         // } else {
