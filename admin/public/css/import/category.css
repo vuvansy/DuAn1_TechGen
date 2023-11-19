@@ -282,7 +282,7 @@ td {
 .pagination {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
 }
 
 ul.pagging li {

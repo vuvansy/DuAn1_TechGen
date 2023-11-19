@@ -170,6 +170,7 @@ function regAction()
     load_view('reg');
 }
 
+//Xử lý Update thông tin cho User
 function updateAction()
 {
     global $error, $username, $email, $fullname, $phone, $address, $image, $new_image;
@@ -238,7 +239,7 @@ function updateAction()
         // echo var_dump($_POST['image']);
 
         //Xử lý images
-        $save_image = save_file("new_image", "public/images/user/");
+        $save_image = save_file("new_image", "admin/public/images/user/");
         // echo var_dump($_FILES['new_image']);
         $save_image ? $image = $save_image  : $image = $_POST['image'];
 

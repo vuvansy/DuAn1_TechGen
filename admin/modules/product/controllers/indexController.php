@@ -89,7 +89,7 @@ function editAction()
             // echo($_FILES['product_image_new']['name']);
             $data_new['product_image'] = $_FILES['product_image_new']['name']; /*hình product*/
             $fileTmpPath = $_FILES['product_image_new']['tmp_name'];
-            $destination = '../public/images/product' . $data_new['product_image'];
+            $destination = 'public/images/product' . $data_new['product_image'];
             move_uploaded_file($fileTmpPath, $destination);
         } else {
             $data_new['product_image'] = $product_by_id['product_image'];

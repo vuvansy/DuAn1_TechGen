@@ -47,8 +47,8 @@ function addAction()
         if (empty($_POST['phone'])) {
             $error['phone'] = "Không được để trống trường này";
         } else {
-        if (!is_phone($_POST['phone'])) {
-            $error['phone'] = "Mật khẩu là số và bao gồm 10 số";
+            if (!is_phone($_POST['phone'])) {
+                $error['phone'] = "Mật khẩu là số và bao gồm 10 số";
             } else {
                 $phone = $_POST['phone'];
             }
@@ -86,7 +86,7 @@ function addAction()
             if (!is_password()) {
                 $error['password'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
             } else {
-                $password = $_POST['password'];
+                $password = md5($_POST['password']);
             }
         }
         // Role
@@ -157,7 +157,7 @@ function editAction()
             $error['phone'] = "Không được để trống trường này";
         } else {
             if (!is_phone($_POST['phone'])) {
-            $error['phone'] = "Mật khẩu phải là số và bao gồm 10 số";
+                $error['phone'] = "Mật khẩu phải là số và bao gồm 10 số";
             } else {
                 $phone = $_POST['phone'];
             }
@@ -195,7 +195,7 @@ function editAction()
             if (!is_password()) {
                 $error['password'] = "Mật khẩu không đúng định dạng";
             } else {
-                $password = $_POST['password'];
+                $password = md5($_POST['password']);
             }
         }
         // Role
@@ -249,4 +249,3 @@ function editAction()
     $data['info_user'] = $info_userr;
     load_view('edit', $data);
 }
-
