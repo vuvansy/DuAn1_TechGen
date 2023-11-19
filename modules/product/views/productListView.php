@@ -14,19 +14,19 @@ $imagesURL = "public/images";
                     Sắp xếp theo
                 </p>
                 <div class="control__option">
-                    <a href="" class="control__option--item btn">
+                    <a href="?mod=product&action=productList&cat_id=<?= $cat_id ?>&sort=desc" class="control__option--item btn">
                         <i class="fa-solid fa-arrow-down-short-wide"></i>
                         Giá Cao - Thấp
                     </a>
-                    <a href="" class="control__option--item btn">
+                    <a href="?mod=product&action=productList&cat_id=<?= $cat_id ?>&sort=asc" class="control__option--item btn">
                         <i class="fa-solid fa-arrow-up-wide-short"></i>
                         Giá Thấp - Cao
                     </a>
-                    <a href="" class="control__option--item btn">
+                    <a href="?mod=product&action=productList&cat_id=<?= $cat_id ?>&sort=sale" class="control__option--item btn">
                         <i class="fa-solid fa-percent"></i>
                         Khuyến Mãi Hót
                     </a>
-                    <a href="" class="control__option--item btn">
+                    <a href="?mod=product&action=productList&cat_id=<?= $cat_id ?>&sort=view" class="control__option--item btn">
                         <i class="fa-solid fa-eye"></i>
                         Xem Nhiều
                     </a>
@@ -36,6 +36,7 @@ $imagesURL = "public/images";
             <div class="product__list">
                 <!-- Product item 1  -->
                 <?php
+                // echo var_dump($cat_id);
                 foreach ($list_cart_id as $item) {
                     $category = get_category_by_id($item['id_category']);
                     if ($item['product_sale'] > 0) {
@@ -57,11 +58,19 @@ $imagesURL = "public/images";
                             </h3>
                             <div class="product__info--foot">
                                 <div class="product__price">
-                                    <span class="latest-price"><?php echo currency_format($item['product_sale'], 'đ'); ?></span>
-                                    <span class="price-and-discount">
-                                        <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
-                                        <small><?php echo round($sale, 1) ?>%</small>
-                                    </span>
+                                    <?php if ($sale == 0) :
+                                        $gia = $item['product_price'];
+                                    ?>
+                                        <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                    <?php else :
+                                        $gia = $item['product_sale'];
+                                    ?>
+                                        <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                        <span class="price-and-discount">
+                                            <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
+                                            <small><?php echo round($sale, 1) ?>%</small>
+                                        </span>
+                                    <?php endif ?>
                                 </div>
                                 <a class="btn cart-btn" href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
                                     Mua ngay
@@ -76,20 +85,7 @@ $imagesURL = "public/images";
             </div>
             <!-- Pagination  -->
             <div class="pagination">
-                <ul class="pagging">
-                    <li>
-                        <a href="" class="control__btn">
-                            < </a>
-                    </li>
-                    <li class="active"><a href="?mod=users&act=main&page=1">1</a></li>
-                    <li><a href="?mod=users&act=main&page=2">2</a></li>
-                    <li><a href="?mod=users&act=main&page=3">3</a></li>
-                    <li>
-                        <a href="" class="control__btn">
-                            >
-                        </a>
-                    </li>
-                </ul>
+                <?php echo get_pagging($num_pages, $page, "?mod=product&action=productList&cat_id", $cat_id) ?>
             </div>
         </div>
     </section>

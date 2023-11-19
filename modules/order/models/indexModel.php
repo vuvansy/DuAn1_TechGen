@@ -17,8 +17,9 @@ function create_detail_order($data) {
     return db_insert('order_detail',$data);
 }
 
-function get_order_all() {
-    return db_fetch_array("SELECT * FROM `order_tg`");
+function get_order_by_id_user($user) {
+    $sql = "SELECT * FROM `order_tg` WHERE `id_user` = " . $user;
+    return db_fetch_array($sql);
 }
 
 function get_detail_order($order) {

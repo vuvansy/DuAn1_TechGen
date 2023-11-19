@@ -22,7 +22,7 @@
 /* Category  */
 @import "../public/css/import/category.css";
 
-/* Admin user  */
+/*  User  */
 @import "../public/css/import/info_account.css";
 @import "../public/css/import/change_account.css";
 
@@ -34,5 +34,8 @@
 @import "../public/css/import/revenue.css";
 @import "../public/css/import/warning.css";
 
-/* @import "../public/css/import/detail_order.css";
+/* Admin Account */
+@import "../public/css/import/account_admin.css";
+
+/* 
 @import "../public/css/import/list_product.css"; */

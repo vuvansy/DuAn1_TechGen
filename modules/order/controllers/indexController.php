@@ -36,6 +36,37 @@ function addAction() {
     header('location: ?mod=order&action=index');
 }
 
+function addToCartAction() {
+    if(isset($_GET['id']) && ($_GET['id'] != '')) {
+        $id = $_GET['id'];
+        $information = get_product_by_id($id);
+        $count = 1;
+        $check = true;
+        $i = 0;
+        if(isset($_SESSION['cart']) && is_array($_SESSION['cart']) ) {
+            foreach ($_SESSION['cart'] as $item) {
+                if($item['id'] == $id) {
+                    $number = $_SESSION['cart'][$i]['count'] + 1;
+                    $_SESSION['cart'][$i]['count'] = $number;
+                    $check = false;
+                    break;
+                }
+                $i++;
+            }
+        }
+        if($check) {
+            $_SESSION['cart'][] = [
+                'id' => $information['id_product'],
+                'name' => $information['product_name'],
+                'price' => $information['product_sale'],
+                'image' => $information['product_image'],
+                'count' => $count
+            ];
+        }
+        header('location: ?mod=product&action=index&id='.$id);
+    }
+}
+
 function removeAction() {
     if(isset($_GET['key']) && ($_GET['key'] != '')) {
         $key = $_GET['key'];
@@ -43,9 +74,11 @@ function removeAction() {
             header('location: ?mod=order&action=removeAll');
         } else {
             array_splice($_SESSION['cart'], $key, 1);
+            header('location: ?mod=order&action=index');
         }
+    } else {
+        header('location: ?mod=order&action=index');
     }
-    header('location: ?mod=order&action=index');
 }
 
 function upAction() {
@@ -56,22 +89,27 @@ function upAction() {
         } else {
             $number = $_SESSION['cart'][$key]['count'] + 1;
             $_SESSION['cart'][$key]['count'] = $number;
+            header('location: ?mod=order&action=index');
         }
+    } else {
+        header('location: ?mod=order&action=index');
     }
-    header('location: ?mod=order&action=index');
 }
 
 function downAction() {
     if(isset($_GET['key']) && ($_GET['key'] != '')) {
         $key = $_GET['key'];
         if($_SESSION['cart'][$key]['count'] == 1) {
+            echo $_SESSION['cart'][$key]['count'];
             header('location: ?mod=order&action=remove&key='.$key);
         } else {
             $number = $_SESSION['cart'][$key]['count'] - 1;
             $_SESSION['cart'][$key]['count'] = $number;
+            header('location: ?mod=order&action=index');
         }
+    } else {
+        header('location: ?mod=order&action=index');
     }
-    header('location: ?mod=order&action=index');
 }
 
 function removeAllAction() {
@@ -84,7 +122,7 @@ function payAction() {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $currentDate = date("Y-m-d");
         $order['id_order'] = null;
-        $order['id_user'] = $_SESSION['user']['id'];
+        $order['id_user'] = info_user(user_login(), 'id_user');;
         $order['id_delivery'] = 1;
         $order['order_name'] = $_POST['name_delivery'];
         $order['order_total'] = $_POST['order_total'];
@@ -95,7 +133,7 @@ function payAction() {
         $order['order_status'] = 0;
         $order['order_quantity'] = $_POST['order_quantity'];
         create_order($order);
-        $id_order = (get_id_order_by_user($_SESSION['user']['id']))['id_order'];
+        $id_order = (get_id_order_by_user(info_user(user_login(), 'id_user')))['id_order'];
         show_array($_SESSION['cart']);
         foreach ($_SESSION['cart'] as $item) {
             $order_detail['id_order_detail'] = null;
@@ -131,6 +169,8 @@ function orderDetailAction()
         $data['detail'] = $detail;
         $data['totalOrder'] = (get_total_order($id))['order_total'];
         load_view('orderDetail', $data);
+    } else {
+        header('location: ?mod=order&action=cartview');
     }
 }
 
