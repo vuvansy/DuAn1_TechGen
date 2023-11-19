@@ -12,7 +12,7 @@ $imagesURL = "public/images";
 //        'address' => 'hòa lạc, phường hoànd đông, thành phố Hồ Chí Minh'
 //    ];
 //    unset($_SESSION['user']);
-if (isset($_SESSION['user']) && ($_SESSION['user'] != '')) {
+if (isset($_SESSION['is_login'])) {
     $actionForm = "?mod=order&action=pay";
 } else {
     $actionForm = "?mod=users&action=index";
@@ -89,31 +89,31 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                         <h4>Thông tin vận chuyển</h4>
                         <form action="<?= $actionForm ?>" method="POST">
                             <input class="input-1" name="name_delivery" type="text" value="<?php
-                            if (isset($_SESSION['user'])) {
-                                echo $_SESSION['user']['fullname'];
+                            if (isset($_SESSION['is_login'])) {
+                                echo info_user(user_login(), 'fullname');
                             } else {
                                 echo '';
                             }
                             ?>" placeholder="Họ và tên">
                             <div class="input-b">
                                 <input class="input-1 input--1" name="email_delivery" type="text" value="<?php
-                                if (isset($_SESSION['user'])) {
-                                    echo $_SESSION['user']['email'];
+                                if (isset($_SESSION['is_login'])) {
+                                    echo info_user(user_login(), 'email');
                                 } else {
                                     echo '';
                                 }
                                 ?>" placeholder="Email">
                                 <input class="input-1 input-2" name="phone_delivery" type="text" value="<?php
-                                if (isset($_SESSION['user'])) {
-                                    echo $_SESSION['user']['phone'];
+                                if (isset($_SESSION['is_login'])) {
+                                    echo info_user(user_login(), 'phone');
                                 } else {
                                     echo '';
                                 }
                                 ?>" placeholder="Số điện thoại">
                             </div>
                             <input class="input-1" name="address_delivery" value="<?php
-                            if (isset($_SESSION['user'])) {
-                                echo $_SESSION['user']['address'];
+                            if (isset($_SESSION['is_login'])) {
+                                echo info_user(user_login(), 'address');
                             } else {
                                 echo '';
                             }

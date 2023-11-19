@@ -14,30 +14,18 @@ get_header();
                     <h2>Danh sách loại hàng </h2>
                 </div>
                 <div class="section-bar">
-
                     <div class="section-bar-items">
-                        <form action="" class="search-section">
+                        <form action="" class="search-section" method="POST">
                             <div class="box-form-section">
 
-                                <input type="text" class="search-section-input" placeholder="Tên sản phẩm" />
-                                <input type="submit" name="search" value="Tìm kiếm">
+                                <input type="text" name="search_category" class="search-section-input" placeholder="Tên sản phẩm" />
+                                <input type="submit" name="btn-search" value="Tìm kiếm">
 
                             </div>
-
-
                         </form>
                     </div>
-
                     <a href="?mod=category&action=index" class="product-btn-list-category">Danh sách</a>
-
-
                     <a href="?mod=category&action=add" class="product-btn-add-category">Thêm mới</a>
-
-
-
-
-
-
                 </div>
                 <div class="container-section">
                     <div class="header">
@@ -55,43 +43,42 @@ get_header();
                         <table class="list-table-section">
                             <thead class="category-thead">
                                 <tr class="list-section-desc">
-                                    <th>Mã loại</th>
-                                    <th>Hình ảnh</th>
-                                    <th>Tên loại</th>
-
+                                    <th class="category_id">Mã loại</th>
+                                    <th class="category-tbody-img">Hình ảnh</th>
+                                    <th class="category_name">Tên loại</th>
                                     <th>Trạng Thái</th>
                                     <th>Tác Vụ</th>
                                 </tr>
-
                             </thead>
                             <tbody class="category-tbody">
-                                <tr class="list-section-item">
-                                    <td>1</td>
-                                    <td class="category-tbody-img">
-                                        <!-- <img src="macbook.webp" alt=""> -->
-                                        <img src="public/images/category/laptop.webp" alt="">
-                                    </td>
-                                    <td>Điện thoại</td>
-                                    <td>Hiển thị</td>
-
-                                    <td>
-                                        <div class="table-section-icon">
-                                            <a href="?mod=category&action=edit"> <i
-                                                    class="fa-sharp fa-solid fa-pencil icons"></i></a>
-                                            <a href="#!"> <i class="fa-solid fa-trash-can icons"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                <?php
+                                foreach ($list_category_search as $item) {
+                                ?>
+                                    <tr class="list-section-item">
+                                        <td><?php echo $item['id_category'] ?></td>
+                                        <td class="category-tbody-img">
+                                            <img src="public/images/category/<?php echo $item['category_image'] ?>" alt="">
+                                        </td>
+                                        <td><?php echo $item['category_name'] ?></td>
+                                        <td><?php echo show_active($item['category_active']) ?></td>
+                                        <td>
+                                            <div class="table-section-icon">
+                                                <a href="?mod=category&action=edit&cat_id=<?php echo $item['id_category'] ?>"> <i class="fa-sharp fa-solid fa-pencil icons"></i></a>
+                                                <a href="?mod=category&action=delete&cat_id=<?php echo $item['id_category'] ?>"> <i class="fa-solid fa-trash-can icons"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
                             </tbody>
-
-
-
                         </table>
                     </div>
-
-
                 </div>
+            </div>
+            <!-- Pagination  -->
+            <div class="pagination">
+                <?php echo get_pagging($num_pages, $page, "?mod=category&action=index") ?>
             </div>
         </div>
     </div>

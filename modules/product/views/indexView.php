@@ -1,22 +1,79 @@
 <?php get_header();
 $imagesURL = "public/images";
 ?>
+<?php
+if (isset($_SESSION['is_login'])) {
+    $actionForm = '';
+    $error_html = '';
+    $id_user = info_user(user_login(), 'id_user');
+    // echo  $id_user;
+} else {
+    $actionForm = '?mod=product&action=error&id=' . $id_product;
+    // $load_error = 'Location: ?mod=product&cation=index&id= '. $id_product ;
+     $id_user = 0;
+    //var_dump($error);
+    // $error_html = '';
+    // if (isset($error)) {
+    //     $error_html = 'Vui lòng đăng nhập !';
+
+    // }
+    // // header( $load_error );
+}
+
+
+$comment_list = get_comment_by_product_id($id_product);
+$comment_html = '';
+foreach ($comment_list as $comment) {
+    $user_fullname = get_user_by_id_user($comment['id_user']);
+    // $user_fullname = get_fullname_user_by_id_user($id_user);
+    //show_array( $user_fullname);
+    // var_dump($comment);
+    $comment_html .= '
+    <div class="comment-user">
+    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
+    <div class="info-user">
+        <p><strong class="name">' . $user_fullname[0]['fullname'] . '</strong></p>
+        <div class="conten-comment">
+        ' . $comment['content'] . '
+        </div>
+
+    </div>
+    </div>
+    ';
+}
+$buyNow = '?mod=order&action=add&id=' . $id_product;
+$addToCar = '?mod=order&action=addToCar&id=' . $id_product;
+
+?>
 
 <main>
+
+
     <div class="container">
+
         <div class="product-details">
             <!-- div hình ảnh -->
             <div class="product-image">
-                <div class="img-main">
-                    <img src="public/images/product/Iphone/phonemian.jpg" alt="anh">
-                </div>
-                <div class="img-extra">
-                    <img src="public/images/product/Iphone/iphone1.jpg" alt="anh">
-                    <img src="public/images/product/Iphone/iphone2.jpg" alt="anh">
-                    <img src="public/images/product/Iphone/iphone3.jpg" alt="anh">
-                    <img src="public/images/product/Iphone/iphone4.jpg" alt="anh">
-                </div>
 
+                <div id="wp-slider">
+                    <div class="show-picture">
+                        <img src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>?>" alt="">
+                        <div class="next-prev">
+                            <div class="prev">
+                                <i class="fa-solid fa-angles-left"></i>
+                            </div>
+                            <div class="next">
+                                <i class="fa-solid fa-angles-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-thumb">
+                        <li class="thumb-item"><img src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>" alt=""></li>
+                        <li class=" thumb-item"><img src="public/images/product/Iphone/iphone2.jpg" alt=""></li>
+                        <li class="thumb-item"><img src="public/images/product/Iphone/iphone3.jpg" alt=""></li>
+                        <li class="thumb-item"><img src="public/images/product/Iphone/iphone4.jpg" alt=""></li>
+                    </ul>
+                </div>
             </div>
             <!-- div hình ảnh -->
 
@@ -27,9 +84,13 @@ $imagesURL = "public/images";
                 <!-- thông tin sp -->
                 <!-- tên sp -->
                 <div class="product-name">
-                    <h2>IPhone 14 Pro Max | Chính Hãng VNA</h2>
+                    <h2>
+                        <?php echo $product_id['product_name']; ?>
+                    </h2>
                     <p>Thương hiệu APPLE SKU | 220909018Mã vạch | 381525 </p>
-                    <p class="short-describe">Cấu hình iPhone 14 Pro Max mạnh mẽ, hiệu năng cực khủng từ chipset A16 Bionic</p>
+                    <p class="short-describe">
+                        <?php echo $product_id['product_desc']; ?>
+                    </p>
                 </div>
                 <!-- tên sp -->
 
@@ -63,25 +124,43 @@ $imagesURL = "public/images";
                 <!-- giá sp -->
                 <div class="product-price">
                     <div class="cost">
-                        <p>22.000.000 đ</p>
+                        <p>
+                            <?php echo currency_format($product_id['product_sale'], 'đ'); ?>
+                        </p>
                     </div>
                     <div class="sale">
-                        <p>29.900.000đ đ</p>
-                        <small>10.1%</small>
+                        <p>
+                            <?php echo currency_format($product_id['product_price'], 'đ'); ?>
+                        </p>
+                        <small>
+                            <?php
+                            if ($product_id['product_sale'] > 0) {
+                                $sale = (($product_id['product_price'] - $product_id['product_sale']) / $product_id['product_price']) * 100;
+                            } else {
+                                $sale = 0;
+                            }
+                            ?>
+                            <?php echo round($sale, 1); ?>%
+                        </small>
                     </div>
                 </div>
                 <!-- giá sp -->
 
                 <!-- btn mua sp -->
                 <div class="product-buy">
-                    <a class="buybtn" href="">Mua</a>
-                    <a class="addbtn" href="">Thêm vào giỏ hàng</a>
+                    <a class="buybtn" href="<?= $buyNow ?>">Mua</a>
+                    <a class="addbtn" href="<?= $addToCar ?>">Thêm vào giỏ hàng</a>
                 </div>
                 <!-- btn mua sp -->
             </div>
             <!-- thông tin sp -->
             <!-- div chứa thông tin sản phẩm -->
-
+            <?php
+            // } else {
+            //     // Hiển thị thông báo nếu sản phẩm không tồn tại
+            //     echo "Sản phẩm không tồn tại.";
+            // }
+            ?>
         </div>
 
         <!-- thông tố và phẩm phẩm kèm theo -->
@@ -150,47 +229,46 @@ $imagesURL = "public/images";
 
         <!-- bài viết -->
         <div class="posts">
-            <h2>Đặc điểm nổi bật của iPhone 14 Pro Max</h2>
-            <p class="Content">iPhone 14 Pro Max đem đến những trải nghiệm không thể tìm thấy trên mọi thế hệ iPhone
-                trước đó với màu Tím Deep Purple sang trọng, camera 48MP lần đầu xuất hiện, chip A16 Bionic và màn hình
-                “viên thuốc” Dynamic Island linh hoạt, nịnh mắt.</p>
-            <div class="posts-img">
-                <img src="public/images/product/Iphone/anhbaiviet1.jpg" alt="anh">
-            </div>
-            <p class="Content">Đỉnh cao thiết kế sang trọng và bền bỉ</p>
-            <p class="Content">Rất khó để tìm ra chiếc điện thoại nào sang trọng như iPhone 14 Pro Max trên thị trường.
-                Thừa hưởng thiết kế vát phẳng từ thế hệ trước, thủ lĩnh iPhone 14 series khoác lên bộ khung vỏ thép, đầm
-                tay và chắc chắn. Bạn sẽ lập tức bị lôi cuốn bởi vẻ ngoài cao cấp với thân máy bóng bẩy của sản phẩm.
+            <h2>
+                <?php echo $product_id['product_name']; ?>
+            </h2>
+            <p class="Content">
+                <?php echo $product_id['product_content']; ?>
             </p>
-            <p class="Content">Nhờ kỹ nghệ hoàn thiện xuất sắc, thiết kế iPhone 14 Pro Max đạt chuẩn chống nước IP68 cao
-                nhất có thể trên smartphone. Apple đã phủ lên màn hình thiết bị chất liệu kính Ceramic Shield siêu bền,
-                tối ưu khả năng kháng lực và chống xước cực tốt suốt vòng đời sử dụng</p>
-            “viên thuốc” Dynamic Island linh hoạt, nịnh mắt.</p>
-            <div class="posts-img">
-                <img src="public/images/product/Iphone/anhbaiviet2.jpg" alt="anh">
-            </div>
             <div class="posts-more">
                 <button>Xem thêm</button>
             </div>
         </div>
-
-
         <!-- bài viết -->
-
         <!-- comment -->
         <div class="comment-full">
             <div class="comment-heading">
-                <h2>Bình luận về iPhone 14 Pro Max (256GB) - Chính hãng VN/A</h2>
+                <h2>Bình luận về:
+                    <?php echo $product_id['product_name']; ?>
+                </h2>
             </div>
-            <form id="comment-form">
+            <!-- indexView.php -->
+
+            <form id="comment-form" method="POST" action="<?= $actionForm ?>">
                 <h3>Bình luận</h3>
-                <input type="text" id="comment-input" placeholder="Nhập bình luận của bạn">
-                <input class="comment-form-submit" type="submit" name="" id="">
+                <input type="text" name="content" id="comment-input" placeholder="Nhập bình luận của bạn">
+                <input type="hidden" name="id_user_name" id="" value="<?= $id_user ?>">
+                <input class="comment-form-submit" type="submit" name="comment-form-submit" value="Gửi">
+
+                <span class="error">
+                    <?php
+                    if (isset($_SESSION['error'])) {
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                    }
+                    ?>
+
+                </span>
+
             </form>
-
             <div id="comment-list">
-                <!-- Danh sách các bình luận sẽ được hiển thị ở đây -->
-                <div class="comment-user">
+                <?= $comment_html ?>
+                <!-- <div class="comment-user">
                     <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
                     <div class="info-user">
                         <p><strong class="name">khang</strong></p>
@@ -198,22 +276,11 @@ $imagesURL = "public/images";
                             Mình cần mua trả góp iphone14promax 256gb trả trước 30%
                         </div>
                     </div>
-                </div>
-                <!-- admin trả lời -->
-                <div class="reply-admin">
-                    <div class="logo-admin"><img src="public/images/logo/logo2.jpg" alt=""></div>
-                    <div class="conten-admin">
-                        <p>Dạ hiện Hoàng Hà đang hỗ trợ trả góp tại trực tiếp chi nhánh qua các hình thức: <br>
-                            Trả góp 0% lãi suất qua thẻ tín dụng trong 6 tháng với phí chuyển đổi 5% (các sản phẩm từ 3
-                            triệu)Thủ tục: CCCD + thẻ tín dụng <br>
-                            Trả góp qua công ty tài chính Home Credit với lãi suất giao động từ 1,8 - 5% trong 6-12
-                            tháng (sản phẩm từ 3 triệu)Thủ tục: CCCD (từ 19 tuổi)</p>
-                    </div>
-                </div>
+                </div> -->
+                <!-- admin -->
                 <!-- trả lời admin -->
-
                 <!-- Danh sách các bình luận sẽ được hiển thị ở đây -->
-                <div class="comment-user">
+                <!-- <div class="comment-user">
                     <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
                     <div class="info-user">
                         <p><strong class="name">khang</strong></p>
@@ -221,41 +288,7 @@ $imagesURL = "public/images";
                             Mình cần mua trả góp iphone14promax 256gb trả trước 30%
                         </div>
                     </div>
-                </div>
-                <!-- admin trả lời -->
-                <div class="reply-admin">
-                    <div class="logo-admin"><img src="public/images/logo/logo2.jpg" alt=""></div>
-                    <div class="conten-admin">
-                        <p>Dạ hiện Hoàng Hà đang hỗ trợ trả góp tại trực tiếp chi nhánh qua các hình thức: <br>
-                            Trả góp 0% lãi suất qua thẻ tín dụng trong 6 tháng với phí chuyển đổi 5% (các sản phẩm từ 3
-                            triệu)Thủ tục: CCCD + thẻ tín dụng <br>
-                            Trả góp qua công ty tài chính Home Credit với lãi suất giao động từ 1,8 - 5% trong 6-12
-                            tháng (sản phẩm từ 3 triệu)Thủ tục: CCCD (từ 19 tuổi)</p>
-                    </div>
-                </div>
-                <!-- trả lời admin -->
-                <!-- Danh sách các bình luận sẽ được hiển thị ở đây -->
-                <div class="comment-user">
-                    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
-                    <div class="info-user">
-                        <p><strong class="name">khang</strong></p>
-                        <div class="conten-comment">
-                            Mình cần mua trả góp iphone14promax 256gb trả trước 30%
-                        </div>
-                    </div>
-                </div>
-                <!-- admin trả lời -->
-                <div class="reply-admin">
-                    <div class="logo-admin"><img src="public/images/logo/logo2.jpg" alt=""></div>
-                    <div class="conten-admin">
-                        <p>Dạ hiện Hoàng Hà đang hỗ trợ trả góp tại trực tiếp chi nhánh qua các hình thức: <br>
-                            Trả góp 0% lãi suất qua thẻ tín dụng trong 6 tháng với phí chuyển đổi 5% (các sản phẩm từ 3
-                            triệu)Thủ tục: CCCD + thẻ tín dụng <br>
-                            Trả góp qua công ty tài chính Home Credit với lãi suất giao động từ 1,8 - 5% trong 6-12
-                            tháng (sản phẩm từ 3 triệu)Thủ tục: CCCD (từ 19 tuổi)</p>
-                    </div>
-                </div>
-                <!-- trả lời admin -->
+                </div> -->
             </div>
         </div>
 
@@ -267,50 +300,143 @@ $imagesURL = "public/images";
                 </div>
                 <div class="product__list">
                     <!-- Product item 1  -->
-                    <?php
-                    $product_new = get_product_new();
-                    foreach ($product_new as $item) {
-                        $category = get_category_by_id($item['id_category']);
-                        if ($item['product_sale'] > 0) {
-                            $sale = (($item['product_price'] - $item['product_sale']) / $item['product_price']) * 100;
-                        } else {
-                            $sale = 0;
-                        }
-                    ?>
-                        <div class="product__item">
-                            <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
-                                <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
-                            </a>
-                            <div class="product__info">
-                                <h3 class="product__info--title">
-                                    <span class="product-brand"><?php echo $category['category_name'] ?></span>
-                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
-                                        <?php echo $item['product_name'] ?>
-                                    </a>
-                                </h3>
-                                <div class="product__info--foot">
-                                    <div class="product__price">
-                                        <span class="latest-price"><?php echo currency_format($item['product_sale'], 'đ'); ?></span>
-                                        <span class="price-and-discount">
-                                            <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
-                                            <small><?php echo round($sale, 1) ?>%</small>
-                                        </span>
-                                    </div>
-                                    <a class="btn cart-btn" href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
-                                        Mua ngay
-                                    </a>
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product item 2  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                    <?php
-                    }
-                    ?>
+                    </div>
+                    <!-- Product item 3  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product item 4  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product item 5  -->
+                    <div class="product__item">
+                        <a href="">
+                            <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
+                        </a>
+                        <div class="product__info">
+                            <h3 class="product__info--title">
+                                <span class="product-brand">Apple</span>
+                                <a href="!#" class="line-clamp break-all line-2">
+                                    Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di động
+                                    iPhone 14 Pro Max (128GB) - Chính hãng VN/A
+                                </a>
+                            </h3>
+                            <div class="product__info--foot">
+                                <div class="product__price">
+                                    <span class="latest-price">22.900.000đ</span>
+                                    <span class="price-and-discount">
+                                        <label class="price-old">29.900.000đ</label>
+                                        <small>10.1%</small>
+                                    </span>
+                                </div>
+                                <button class="btn cart-btn">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-</main>
 
+</main>
 
 <?php
 get_footer();
