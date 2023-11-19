@@ -68,146 +68,149 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
 }
 ?>
 
-    <main>
-        <section class="cartShow">
-            <div class="container">
-                <div class="cartView__control">
-                    <a href="?mod=order&action=index" class="btn cart__cta">Giỏ hàng</a>
-                    <a href="?mod=order&action=cartview" class="btn cart__cta">Quản lí đơn hàng</a>
-                </div>
-                <div class="box-order-all">
-                    <div class="box-order-left">
-                        <h3>Giỏ hàng của bạn</h3>
-                        <?= $cartHtm ?>
-                    </div>
-                    <div class="box-order-right">
-                        <h3>Thanh toán</h3>
-                        <div class="right-detail new">
-                            <p>Sản phẩm: <span><?= $cartQuantity ?></span></p>
-                            <p><?= number_format($cartTotal, 0, ',', '.') ?></p>
-                        </div>
-                        <h4>Thông tin vận chuyển</h4>
-                        <form action="<?= $actionForm ?>" method="POST">
-                            <input class="input-1" name="name_delivery" type="text" value="<?php
-                            if (isset($_SESSION['is_login'])) {
-                                echo info_user(user_login(), 'fullname');
-                            } else {
-                                echo '';
-                            }
-                            ?>" placeholder="Họ và tên">
-                            <div class="input-b">
-                                <input class="input-1 input--1" name="email_delivery" type="text" value="<?php
-                                if (isset($_SESSION['is_login'])) {
-                                    echo info_user(user_login(), 'email');
-                                } else {
-                                    echo '';
-                                }
-                                ?>" placeholder="Email">
-                                <input class="input-1 input-2" name="phone_delivery" type="text" value="<?php
-                                if (isset($_SESSION['is_login'])) {
-                                    echo info_user(user_login(), 'phone');
-                                } else {
-                                    echo '';
-                                }
-                                ?>" placeholder="Số điện thoại">
-                            </div>
-                            <input class="input-1" name="address_delivery" value="<?php
-                            if (isset($_SESSION['is_login'])) {
-                                echo info_user(user_login(), 'address');
-                            } else {
-                                echo '';
-                            }
-                            ?>" type="text" placeholder="Địa chỉ">
-
-                            <h4>Phương thức thanh toán</h4>
-                            <div class="input-text">
-                                <div class="option">
-                                    <div class="option-input">
-                                        <input value="1" class="input-checkbox" name="delivery-order" type="radio"
-                                               checked id="product_status" name="product_status">
-                                        <div class="option-detail">
-                                            <p>Thanh toán khi nhận hàng</p>
-                                            <p>Miễn phí</p>
-                                        </div>
-
-                                    </div>
-                                    <div class="option-input">
-                                        <input value="2" class="input-checkbox" name="delivery-order" type="radio"
-                                               id="special" name="special">
-                                        <p>Thanh toán online</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right-detail new">
-                                <p>Tổng cộng: </p>
-                                <p><?= number_format($cartTotal, 0, ',', '.') ?></p>
-                                <input type="hidden" name="order_total" value="<?= $cartTotal ?>">
-                                <input type="hidden" name="order_quantity" value="<?= $cartQuantity ?>">
-                            </div>
-                            <div class="button-bottom">
-                                <input type="submit" value="Thanh toán">
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-
-
-                <!-- productRelated  -->
-                <section class="productRelated">
-                    <div class="productRelated__body">
-                        <div class="productRelated__heading">
-                            <h2 class="heading lv1">SẢN PHẨM MỚI</h2>
-                        </div>
-                        <div class="product__list">
-                            <!-- Product item 1  -->
-                            <?php
-                            $product_new = get_product_new();
-                            foreach ($product_new as $item) {
-                                $category = get_category_by_id($item['id_category']);
-                                if ($item['product_sale'] > 0) {
-                                    $sale = (($item['product_price'] - $item['product_sale']) / $item['product_price']) * 100;
-                                } else {
-                                    $sale = 0;
-                                }
-                                ?>
-                                <div class="product__item">
-                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
-                                        <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>"
-                                             alt="<?php echo $category['category_name'] ?>" class="thumb">
-                                    </a>
-                                    <div class="product__info">
-                                        <h3 class="product__info--title">
-                                            <span class="product-brand"><?php echo $category['category_name'] ?></span>
-                                            <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>"
-                                               class="line-clamp break-all line-2">
-                                                <?php echo $item['product_name'] ?>
-                                            </a>
-                                        </h3>
-                                        <div class="product__info--foot">
-                                            <div class="product__price">
-                                                <span class="latest-price"><?php echo currency_format($item['product_sale'], 'đ'); ?></span>
-                                                <span class="price-and-discount">
-                                                <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
-                                                <small><?php echo round($sale, 1) ?>%</small>
-                                            </span>
-                                            </div>
-                                            <a class="btn cart-btn"
-                                               href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
-                                                Mua ngay
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </section>
+<main>
+    <section class="cartShow">
+        <div class="container">
+            <div class="cartView__control">
+                <a href="?mod=order&action=index" class="btn cart__cta">Giỏ hàng</a>
+                <a href="?mod=order&action=cartview" class="btn cart__cta">Quản lí đơn hàng</a>
             </div>
-        </section>
-    </main>
+            <div class="box-order-all">
+                <div class="box-order-left">
+                    <h3>Giỏ hàng của bạn</h3>
+                    <?= $cartHtm ?>
+                </div>
+                <div class="box-order-right">
+                    <h3>Thanh toán</h3>
+                    <div class="right-detail new">
+                        <p>Sản phẩm: <span><?= $cartQuantity ?></span></p>
+                        <p><?= number_format($cartTotal, 0, ',', '.') ?></p>
+                    </div>
+                    <h4>Thông tin vận chuyển</h4>
+                    <form action="<?= $actionForm ?>" method="POST">
+                        <input class="input-1" name="name_delivery" type="text" value="<?php
+                                                                                        if (isset($_SESSION['is_login'])) {
+                                                                                            echo info_user(user_login(), 'fullname');
+                                                                                        } else {
+                                                                                            echo '';
+                                                                                        }
+                                                                                        ?>" placeholder="Họ và tên">
+                        <div class="input-b">
+                            <input class="input-1 input--1" name="email_delivery" type="text" value="<?php
+                                                                                                        if (isset($_SESSION['is_login'])) {
+                                                                                                            echo info_user(user_login(), 'email');
+                                                                                                        } else {
+                                                                                                            echo '';
+                                                                                                        }
+                                                                                                        ?>" placeholder="Email">
+                            <input class="input-1 input-2" name="phone_delivery" type="text" value="<?php
+                                                                                                    if (isset($_SESSION['is_login'])) {
+                                                                                                        echo info_user(user_login(), 'phone');
+                                                                                                    } else {
+                                                                                                        echo '';
+                                                                                                    }
+                                                                                                    ?>" placeholder="Số điện thoại">
+                        </div>
+                        <input class="input-1" name="address_delivery" value="<?php
+                                                                                if (isset($_SESSION['is_login'])) {
+                                                                                    echo info_user(user_login(), 'address');
+                                                                                } else {
+                                                                                    echo '';
+                                                                                }
+                                                                                ?>" type="text" placeholder="Địa chỉ">
+
+                        <h4>Phương thức thanh toán</h4>
+                        <div class="input-text">
+                            <div class="option">
+                                <div class="option-input">
+                                    <input value="1" class="input-checkbox" name="delivery-order" type="radio" checked id="product_status" name="product_status">
+                                    <div class="option-detail">
+                                        <p>Thanh toán khi nhận hàng</p>
+                                        <p>Miễn phí</p>
+                                    </div>
+
+                                </div>
+                                <div class="option-input">
+                                    <input value="2" class="input-checkbox" name="delivery-order" type="radio" id="special" name="special">
+                                    <p>Thanh toán online</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-detail new">
+                            <p>Tổng cộng: </p>
+                            <p><?= number_format($cartTotal, 0, ',', '.') ?></p>
+                            <input type="hidden" name="order_total" value="<?= $cartTotal ?>">
+                            <input type="hidden" name="order_quantity" value="<?= $cartQuantity ?>">
+                        </div>
+                        <div class="button-bottom">
+                            <input type="submit" value="Thanh toán">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+            <!-- productRelated  -->
+            <section class="productRelated">
+                <div class="productRelated__body">
+                    <div class="productRelated__heading">
+                        <h2 class="heading lv1">SẢN PHẨM MỚI</h2>
+                    </div>
+                    <div class="product__list">
+                        <!-- Product item 1  -->
+                        <?php
+                        $product_new = get_product_new();
+                        foreach ($product_new as $item) {
+                            $category = get_category_by_id($item['id_category']);
+                            if ($item['product_sale'] > 0) {
+                                $sale = (($item['product_price'] - $item['product_sale']) / $item['product_price']) * 100;
+                            } else {
+                                $sale = 0;
+                            }
+                        ?>
+                            <div class="product__item">
+                                <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
+                                    <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
+                                </a>
+                                <div class="product__info">
+                                    <h3 class="product__info--title">
+                                        <span class="product-brand"><?php echo $category['category_name'] ?></span>
+                                        <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
+                                            <?php echo $item['product_name'] ?>
+                                        </a>
+                                    </h3>
+                                    <div class="product__info--foot">
+                                        <div class="product__price">
+                                            <?php if ($sale == 0) :
+                                                $gia = $item['product_price'];
+                                            ?>
+                                                <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                            <?php else :
+                                                $gia = $item['product_sale'];
+                                            ?>
+                                                <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                                <span class="price-and-discount">
+                                                    <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
+                                                    <small><?php echo round($sale, 1) ?>%</small>
+                                                </span>
+                                            <?php endif ?>
+                                        </div>
+                                        <a class="btn cart-btn" href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
+                                            Mua ngay
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
 
 <?php
 get_footer();

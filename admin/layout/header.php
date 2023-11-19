@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Quản lý ADMIN TECHGEN</title>
+    <title>Admin TECHGEN</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon  -->

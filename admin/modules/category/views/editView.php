@@ -78,7 +78,7 @@ get_header();
                             <div class="form__group">
                                 <label for="new_image">Hình</label>
                                 <input type="file" name="new_image" id="new_image" value="" placeholder="Địa chỉ..." />
-                                <input type="hidden" name="category_image" value="">
+                                <input type="hidden" name="category_image" value="<?php echo $category['category_image'] ?>">
                                 <?php echo form_error('new_image'); ?>
                             </div>
                         </div>

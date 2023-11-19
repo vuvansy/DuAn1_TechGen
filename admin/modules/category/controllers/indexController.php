@@ -16,7 +16,7 @@ function indexAction()
         // var_dump($search);
         $where = "`category_name` LIKE '%$search%'";
     }
-    $num_per_page = 6;
+    $num_per_page = 7;
     $total_rows = $num_rows;
     $num_pages = ceil($total_rows / $num_per_page);
 

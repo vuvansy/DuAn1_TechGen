@@ -41,7 +41,7 @@ get_header();
                         <?php if ($info_user_by_id['image'] == '') : ?>
                             <img src="public/images/user/user2.jpg" alt="">
                         <?php else : ?>
-                            <img src="public/images/user/<?php echo info_user(user_login(), 'image'); ?>" alt="<?php echo info_user(is_login(), 'image') ?>">
+                            <img src="admin/public/images/user/<?php echo info_user(user_login(), 'image'); ?>" alt="<?php echo info_user(is_login(), 'image') ?>">
                         <?php endif; ?>
                     </div>
                     <h2 class="subtitle__user"><?php echo $info_user_by_id['fullname'] ?></h2>
