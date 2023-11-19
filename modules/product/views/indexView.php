@@ -10,7 +10,7 @@ if (isset($_SESSION['is_login'])) {
 } else {
     $actionForm = '?mod=product&action=error&id=' . $id_product;
     // $load_error = 'Location: ?mod=product&cation=index&id= '. $id_product ;
-    $id_user = 0;
+     $id_user = 0;
     //var_dump($error);
     // $error_html = '';
     // if (isset($error)) {
