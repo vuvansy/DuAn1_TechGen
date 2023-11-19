@@ -33,14 +33,18 @@ function indexAction()
     $list_comment = get_comment_by_product_id($id_product);
     $data['list_comment'] = $list_comment;
     $data['id_product'] = $id_product;
+    // view
+    $view_product =  product_views($id_product);
+    $data['view_product'] =  $view_product;
     load_view('index', $data);
 }
-function errorAction(){
+function errorAction()
+{
     if (isset($_GET['id'])) {
         $id_product = $_GET['id'];
         // echo  $id_product;
         $_SESSION['error'] = 'Vui lòng đăng nhập !';
-        $load_header = 'Location: ?mod=product&cation=index&id='.$id_product;
+        $load_header = 'Location: ?mod=product&cation=index&id=' . $id_product;
         header($load_header);
     }
 }
@@ -65,7 +69,7 @@ function productListAction()
     // echo "Số trang: $num_pages <br>";
 
     //Page : Chỉ số trang hiện tại
-    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
     // echo "Trang: $page";
 
     //start : Chỉ số sản phẩm bắt đầu mỗi trang
