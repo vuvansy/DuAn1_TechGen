@@ -30,6 +30,15 @@ function indexAction()
             // echo 'Vui lòng nhập nội dung bình luận.';
         }
     }
+
+    $product_id = get_product_by_id($id_product);
+    // show_array($product_id);
+    $data['product_id'] = $product_id;
+
+    // $list_gallery = get_gallery($id_product);
+    // show_array($list_gallery);
+    // $data['list_gallery'] = $list_gallery;
+
     $list_comment = get_comment_by_product_id($id_product);
     $data['list_comment'] = $list_comment;
     $data['id_product'] = $id_product;
@@ -100,7 +109,6 @@ function productListAction()
         // show_array($info_cart);
 
         //Truy xuất dữ liệu về theo điều kiện $where
-
         $list_cart_by_id = get_product_by_id_category($start, $num_per_page, $where);
         // show_array($list_cart_by_id);
 

@@ -1,4 +1,5 @@
 <?php get_header();
+$imagesURL = "public/images";
 ?>
 <?php
 if (isset($_SESSION['is_login'])) {
@@ -7,14 +8,14 @@ if (isset($_SESSION['is_login'])) {
     $id_user = info_user(user_login(), 'id_user');
     // echo  $id_user;
 } else {
-    $actionForm = '?mod=product&action=error&id='.$id_product;
+    $actionForm = '?mod=product&action=error&id=' . $id_product;
     // $load_error = 'Location: ?mod=product&cation=index&id= '. $id_product ;
     $id_user = 0;
     //var_dump($error);
     // $error_html = '';
     // if (isset($error)) {
     //     $error_html = 'Vui lòng đăng nhập !';
-    
+
     // }
     // // header( $load_error );
 }
@@ -51,109 +52,114 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
     <div class="container">
 
         <div class="product-details">
-            <?php
-            $imagesURL = "public/images";
-            // Lấy thông tin sản phẩm dựa trên ID sản phẩm từ tham số truyền vào
-            $product_id = $_GET['id'];
-            $selected_product = get_product_by_id($product_id);
-            // Kiểm tra xem sản phẩm có tồn tại hay không
-            if ($selected_product) {
-                // Lấy thông tin danh mục của sản phẩm
-                $category = get_category_by_id($selected_product['id_category']);
-                // Tính toán phần trăm giảm giá (tương tự như trong vòng lặp)
-                $sale = ($selected_product['product_sale'] > 0) ? (($selected_product['product_price'] - $selected_product['product_sale']) / $selected_product['product_price']) * 100 : 0;
-                ?>
-                <!-- div hình ảnh -->
-                <div class="product-image">
-                    <div class="img-main">
-                        <img src="<?php echo $imagesURL ?>/product/<?php echo $selected_product['product_image'] ?>"
-                            alt="anh">
+            <!-- div hình ảnh -->
+            <div class="product-image">
+
+                <div id="wp-slider">
+                    <div class="show-picture">
+                        <img src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>?>" alt="">
+                        <div class="next-prev">
+                            <div class="prev">
+                                <i class="fa-solid fa-angles-left"></i>
+                            </div>
+                            <div class="next">
+                                <i class="fa-solid fa-angles-right"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="img-extra">
-                        <img src="public/images/product/Iphone/iphone1.jpg" alt="anh">
-                        <img src="public/images/product/Iphone/iphone2.jpg" alt="anh">
-                        <img src="public/images/product/Iphone/iphone3.jpg" alt="anh">
-                        <img src="public/images/product/Iphone/iphone4.jpg" alt="anh">
+                    <ul class="list-thumb">
+                        <li class="thumb-item"><img src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>" alt=""></li>
+                        <li class=" thumb-item"><img src="public/images/product/Iphone/iphone2.jpg" alt=""></li>
+                        <li class="thumb-item"><img src="public/images/product/Iphone/iphone3.jpg" alt=""></li>
+                        <li class="thumb-item"><img src="public/images/product/Iphone/iphone4.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- div hình ảnh -->
+
+            <!-- div chứa thông tin sản phẩm -->
+            <div class="product-info">
+                <!-- sản phẩm chi tiết -->
+                <!-- <div class="nav-info-detail"> -->
+                <!-- thông tin sp -->
+                <!-- tên sp -->
+                <div class="product-name">
+                    <h2>
+                        <?php echo $product_id['product_name']; ?>
+                    </h2>
+                    <p>Thương hiệu APPLE SKU | 220909018Mã vạch | 381525 </p>
+                    <p class="short-describe">
+                        <?php echo $product_id['product_desc']; ?>
+                    </p>
+                </div>
+                <!-- tên sp -->
+
+                <!-- màu sắc -->
+                <div class="product-color">
+                    <p>MÀU SẮC: DEEP PURPLE</p>
+                    <!-- bảng màu -->
+                    <div class="color-table">
+                        <button class="color-cell">Deep Purple</button>
+                        <button class="color-cell">Gold</button>
+                        <button class="color-cell">Silver</button>
+                        <button class="color-cell">Space Black</button>
+                    </div>
+
+                    <!-- bảng màu -->
+                </div>
+                <!-- màu sắc -->
+
+                <!-- dụng lượng sản phẩm -->
+                <div class="product-GB">
+                    <p>DUNG LƯỢNG (ROM): 256GB</p>
+                    <div class="GB-table">
+                        <button class="GB-cell">1TB</button>
+                        <button class="GB-cell">512GB</button>
+                        <button class="GB-cell">256GB</button>
+                        <button class="GB-cell">128GB</button>
                     </div>
                 </div>
-                <!-- div hình ảnh -->
+                <!-- dụng lượng sản phẩm -->
 
-                <!-- div chứa thông tin sản phẩm -->
-                <div class="product-info">
-                    <!-- sản phẩm chi tiết -->
-                    <!-- <div class="nav-info-detail"> -->
-                    <!-- thông tin sp -->
-                    <!-- tên sp -->
-                    <div class="product-name">
-                        <h2>
-                            <?php echo $selected_product['product_name']; ?>
-                        </h2>
-                        <p>Thương hiệu APPLE SKU | 220909018Mã vạch | 381525 </p>
-                        <p class="short-describe">
-                            <?php echo $selected_product['product_desc']; ?>
+                <!-- giá sp -->
+                <div class="product-price">
+                    <div class="cost">
+                        <p>
+                            <?php echo currency_format($product_id['product_sale'], 'đ'); ?>
                         </p>
                     </div>
-                    <!-- tên sp -->
-
-                    <!-- màu sắc -->
-                    <div class="product-color">
-                        <p>MÀU SẮC: DEEP PURPLE</p>
-                        <!-- bảng màu -->
-                        <div class="color-table">
-                            <button class="color-cell">Deep Purple</button>
-                            <button class="color-cell">Gold</button>
-                            <button class="color-cell">Silver</button>
-                            <button class="color-cell">Space Black</button>
-                        </div>
-
-                        <!-- bảng màu -->
+                    <div class="sale">
+                        <p>
+                            <?php echo currency_format($product_id['product_price'], 'đ'); ?>
+                        </p>
+                        <small>
+                            <?php
+                            if ($product_id['product_sale'] > 0) {
+                                $sale = (($product_id['product_price'] - $product_id['product_sale']) / $product_id['product_price']) * 100;
+                            } else {
+                                $sale = 0;
+                            }
+                            ?>
+                            <?php echo round($sale, 1); ?>%
+                        </small>
                     </div>
-                    <!-- màu sắc -->
-
-                    <!-- dụng lượng sản phẩm -->
-                    <div class="product-GB">
-                        <p>DUNG LƯỢNG (ROM): 256GB</p>
-                        <div class="GB-table">
-                            <button class="GB-cell">1TB</button>
-                            <button class="GB-cell">512GB</button>
-                            <button class="GB-cell">256GB</button>
-                            <button class="GB-cell">128GB</button>
-                        </div>
-                    </div>
-                    <!-- dụng lượng sản phẩm -->
-
-                    <!-- giá sp -->
-                    <div class="product-price">
-                        <div class="cost">
-                            <p>
-                                <?php echo currency_format($selected_product['product_sale'], 'đ'); ?>
-                            </p>
-                        </div>
-                        <div class="sale">
-                            <p>
-                                <?php echo currency_format($selected_product['product_price'], 'đ'); ?>
-                            </p>
-                            <small>
-                                <?php echo round($sale, 1); ?>%
-                            </small>
-                        </div>
-                    </div>
-                    <!-- giá sp -->
-
-                    <!-- btn mua sp -->
-                    <div class="product-buy">
-                        <a class="buybtn" href="<?= $buyNow ?>">Mua</a>
-                        <a class="addbtn" href="<?= $addToCar ?>">Thêm vào giỏ hàng</a>
-                    </div>
-                    <!-- btn mua sp -->
                 </div>
-                <!-- thông tin sp -->
-                <!-- div chứa thông tin sản phẩm -->
-                <?php
-            } else {
-                // Hiển thị thông báo nếu sản phẩm không tồn tại
-                echo "Sản phẩm không tồn tại.";
-            }
+                <!-- giá sp -->
+
+                <!-- btn mua sp -->
+                <div class="product-buy">
+                    <a class="buybtn" href="<?= $buyNow ?>">Mua</a>
+                    <a class="addbtn" href="<?= $addToCar ?>">Thêm vào giỏ hàng</a>
+                </div>
+                <!-- btn mua sp -->
+            </div>
+            <!-- thông tin sp -->
+            <!-- div chứa thông tin sản phẩm -->
+            <?php
+            // } else {
+            //     // Hiển thị thông báo nếu sản phẩm không tồn tại
+            //     echo "Sản phẩm không tồn tại.";
+            // }
             ?>
         </div>
 
@@ -224,10 +230,10 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
         <!-- bài viết -->
         <div class="posts">
             <h2>
-                <?php echo $selected_product['product_name']; ?>
+                <?php echo $product_id['product_name']; ?>
             </h2>
             <p class="Content">
-                <?php echo $selected_product['product_content']; ?>
+                <?php echo $product_id['product_content']; ?>
             </p>
             <div class="posts-more">
                 <button>Xem thêm</button>
@@ -238,7 +244,7 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
         <div class="comment-full">
             <div class="comment-heading">
                 <h2>Bình luận về:
-                    <?php echo $selected_product['product_name']; ?>
+                    <?php echo $product_id['product_name']; ?>
                 </h2>
             </div>
             <!-- indexView.php -->
@@ -250,13 +256,13 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
                 <input class="comment-form-submit" type="submit" name="comment-form-submit" value="Gửi">
 
                 <span class="error">
-                <?php
-                 if(isset( $_SESSION['error'])){
-                    echo $_SESSION['error'];
-                    unset( $_SESSION['error']);
-                 }
-                ?>
-                    
+                    <?php
+                    if (isset($_SESSION['error'])) {
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                    }
+                    ?>
+
                 </span>
 
             </form>
