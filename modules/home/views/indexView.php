@@ -38,11 +38,28 @@ $imagesURL = "public/images";
                                     </a>
                                 </h3>
                                 <div class="product-sales__info--foot">
-                                    <span class="latest-price"><?php echo currency_format($item['product_sale'], 'đ'); ?></span>
-                                    <span class="price-and-discount">
-                                        <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
-                                        <small><?php echo round($sale, 1) ?>%</small>
-                                    </span>
+                                    <?php if ($sale == 0) :
+                                        $gia = $item['product_price'];
+                                    ?>
+
+                                        <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                        <span>&nbsp;</span>
+                                        <!-- <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                        <span class="price-and-discount">
+                                            <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
+                                            <small><?php echo round($sale, 1) ?>%</small>
+                                        </span> -->
+                                    <?php else :
+                                        $gia = $item['product_sale'];
+                                    ?>
+                                        <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                        <span class="price-and-discount">
+                                            <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
+                                            <small><?php echo round($sale, 1) ?>%</small>
+                                        </span>
+                                        <!-- <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                        <span>&nbsp;</span> -->
+                                    <?php endif ?>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +85,7 @@ $imagesURL = "public/images";
                         <div class="category-item">
                             <a href="?mod=product&action=productList&cat_id=<?php echo $item['id_category'] ?>">
                                 <div class="category-item__thumb">
-                                    <img src="<?php echo $imagesURL ?>/category/<?php echo $item['category_image'] ?>" alt="laptop">
+                                    <img src="admin/public/images/category/<?php echo $item['category_image'] ?>" alt="laptop">
                                 </div>
                                 <span><?php echo $item['category_name'] ?></span>
                             </a>

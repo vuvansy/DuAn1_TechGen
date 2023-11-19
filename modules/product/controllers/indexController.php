@@ -30,6 +30,15 @@ function indexAction()
             // echo 'Vui lòng nhập nội dung bình luận.';
         }
     }
+
+    $product_id = get_product_by_id($id_product);
+    // show_array($product_id);
+    $data['product_id'] = $product_id;
+
+    // $list_gallery = get_gallery($id_product);
+    // show_array($list_gallery);
+    // $data['list_gallery'] = $list_gallery;
+
     $list_comment = get_comment_by_product_id($id_product);
     $data['list_comment'] = $list_comment;
     $data['id_product'] = $id_product;
@@ -78,11 +87,31 @@ function productListAction()
 
 
     if (isset($_GET['cat_id'])) {
+        if (isset($_GET['sort'])) {
+            switch ($_GET['sort']) {
+                case 'desc':
+                    $where = "`id_category` = {$cat_id} ORDER BY `product_price` DESC";
+                    break;
+                case 'asc':
+                    $where = "`id_category` = {$cat_id} ORDER BY `product_price` ASC";
+                    break;
+                case 'sale':
+                    $where = "`id_category` = {$cat_id} ORDER BY ((`product_price` - `product_sale`)/`product_price`) * 100  DESC";
+                    break;
+                case 'view':
+                    $where = "`id_category` = {$cat_id} ORDER BY  `product_view` DESC";
+                    break;
+                default:
+                    $where = "`id_category` = {$cat_id}";
+            }
+        } else {
+            $where = "`id_category` = {$cat_id}";
+        }
+
         $info_cart = get_category_by_id($cat_id);
         // show_array($info_cart);
 
         //Truy xuất dữ liệu về theo điều kiện $where
-        $where = "`id_category` = {$cat_id}";
         $list_cart_by_id = get_product_by_id_category($start, $num_per_page, $where);
         // show_array($list_cart_by_id);
 
@@ -91,6 +120,7 @@ function productListAction()
         $data['list_cart_id'] = $list_cart_by_id;
     }
 
+    //Gửi dữ liệu cho thanh phân trang
     $data['num_pages'] = $num_pages;
     $data['page'] = $page;
     $data['cat_id'] = $cat_id;

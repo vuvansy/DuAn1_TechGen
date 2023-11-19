@@ -34,7 +34,8 @@ function get_pagging($num_pages, $page, $base_url = "", $cat_id)
     return $str_pagging;
 }
 
-function get_product_by_id($product_id) {
+function get_product_by_id($product_id)
+{
     $products =   get_product();
     // Tìm sản phẩm trong mảng dựa trên ID sản phẩm
     foreach ($products as $product) {
@@ -48,29 +49,30 @@ function get_product_by_id($product_id) {
 // comment
 
 function get_comment_by_product_id($id_product) {
-$sql = "SELECT * FROM `comment` WHERE `id_product`  = ".$id_product."  ORDER BY `id_comment` DESC" ;
+    $sql = "SELECT * FROM `comment` WHERE `id_product`  = ".$id_product."  ORDER BY `id_comment` DESC" ;
   $item = db_fetch_array($sql);
         return $item;
 }
-function get_fullname_user_by_id_user($id_user) {
-    $sql = "SELECT `fullname` FROM `user` WHERE `id_user` = ".$id_user;
+function get_fullname_user_by_id_user($id_user)
+{
+    $sql = "SELECT `fullname` FROM `user` WHERE `id_user` = " . $id_user;
     $item = db_fetch_array($sql);
     return $item;
 }
-function get_user_by_id_user($id_user){
-    $sql = "SELECT * FROM `user` WHERE `id_user`=".$id_user;
+function get_user_by_id_user($id_user)
+{
+    $sql = "SELECT * FROM `user` WHERE `id_user`=" . $id_user;
     $item = db_fetch_array($sql);
     return $item;
 }
 
 
 // nhập bình luận
-function add_comment($data){
-      return db_insert('comment', $data);
-
+function add_comment($data)
+{
+    return db_insert('comment', $data);
 }
-
-// product_view
+// view
 function product_views($id_product){
     // số lượng tăng lên 1
     $sql = "UPDATE `product` SET `product_view`= `product_view` + 1 WHERE `id_product` = ".$id_product;
@@ -78,4 +80,11 @@ function product_views($id_product){
     $item = db_query($sql);
     return $item; 
 
+}
+// ========= Product Detail =========
+
+function get_gallery($id_product)
+{
+    $list_gallery = db_fetch_array("SELECT * FROM `gallery` WHERE `id_product` = {$id_product}");
+    return $list_gallery;
 }

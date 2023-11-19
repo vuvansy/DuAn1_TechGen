@@ -1,6 +1,21 @@
 <?php
 get_header();
 ?>
+
+<?php
+    $option = "";
+    $category = get_all_category();
+    // show_array($category); 
+    $id_product_new = get_last_id();
+    // var_dump($id_product_new);
+    $id_product_last = (int)$id_product_new[0]['id_product'] + 1;
+    foreach ($category as $item){
+        $option.='<option value="'.$item['id_category'].'">'.$item['category_name'].'</option>';
+    }
+
+    $masew ="";
+
+?>
 <main>
     <div class="main-wrapper">
         <?php
@@ -10,7 +25,15 @@ get_header();
             <div class="product-heading">
                 Thêm mới hàng hóa
             </div>
+            <?php 
+                if(isset($_SESSION['masew'])){
+                    echo $_SESSION['masew'];
+                    unset($_SESSION['masew']);
+                }
+            ?>
+
             <div class="product-bar">
+               
                 <a href="?mod=product&action=index" class="product-btn-list">Danh sách</a>
                 <a href="?mod=product&action=add" class="product-btn-add">Thêm mới</a>
             </div>
@@ -30,7 +53,8 @@ get_header();
                         <form action="" id="add-product" class="container-form-input" enctype="multipart/form-data" method="POST">
                             <div class="input-text">
                                 <label for="">Mã sản phẩm</label>
-                                <input type="text" id="id_product" name="id_product" placeholder="ps...">
+                                <input value="<?=$id_product_last?>" type="text" id="id_product"  placeholder="ps..." disabled>
+                                <input value="<?=$id_product_last?>" type="hidden" id="id_product" name="id_product" placeholder="ps..." >
                             </div>
                             <div class="input-text">
                                 <label for="">Tên sản phẩm</label>
@@ -50,9 +74,8 @@ get_header();
                             </div>
                             <div class="input-text">
                                 <label for="">Loại hàng</label>
-                                <select class="select-box" name="" id="">
-                                    <option value="">Điện Thoại</option>
-                                    <option value="">Laptop</option>
+                                <select class="select-box" name="id_category" id="">
+                                    <?=$option?>
                                 </select>
                             </div>
                             <div class="input-text">
@@ -63,11 +86,11 @@ get_header();
                                 <label for="">Tùy chọn</label>
                                 <div class="option">
                                     <div class="option-input">
-                                        <input class="input-checkbox" type="checkbox" id="product_status" name="product_status">
+                                        <input class="input-checkbox" type="checkbox" id="product_status" name="product_status" value="hidden" checked>
                                         <p class="text-checkbox">Hiển thị sản phẩm</p>
                                     </div>
                                     <div class="option-input">
-                                        <input class="input-checkbox" type="checkbox" id="special" name="special">
+                                        <input class="input-checkbox" type="checkbox" id="special" value="special" name="special">
                                         <p class="text-checkbox">Sản phẩm đặc biệt</p>
                                     </div>
                                 </div>
@@ -78,7 +101,7 @@ get_header();
                             </div>
                             <div class="input-text">
                                 <label for="">Ảnh chi tiết (4)</label>
-                                <input class="input-file" id="delivery_name" name="delivery_name" type="file">
+                                <input class="input-file" id="gallery_name" name="gallery_name[]" type="file" multiple>
                             </div>
 
                             <div class="input-desc">
@@ -90,7 +113,7 @@ get_header();
                                 <textarea name="product_content" id="product_content" class="input-content">Nội dung</textarea>
                             </div>
                             <div class="box-btn-button">
-                                <input class="btn-button" type="submit" name="btn-add-product" id="btn-list" value="Thêm mới">
+                                <input  class="btn-button" type="submit" name="btn-add-product" id="btn-list" value="Thêm mới">
                             </div>
                         </form>
                     </div>
@@ -100,7 +123,9 @@ get_header();
         </div>
     </div>
     </div>
-
+    <!-- <script>
+        confirm("thêm thành công");
+    </script> -->
 </main>
 <?php
 get_footer();

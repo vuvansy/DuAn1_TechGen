@@ -1,6 +1,34 @@
 <?php
 get_header();
 ?>
+
+<?php
+$product_html = "";
+$status = [
+    0 => "Ẩn",
+    1 => "Hiện",
+];
+foreach ($get_product as $item) {
+
+    $id_cta = get_category_by_id($item["id_category"]);
+    // show_array($id_cta);
+    $product_html .= '  <tr class="list-item">
+        <td>' . $item["id_product"] . '</td>
+        <td>' . $item["product_name"] . '</td>
+        <td>' . $item["product_quantity"] . '</td>
+        <td>' . $item["product_price"] . '</td>
+        <td>' . $item["product_sale"] . '</td>
+        <td>' . $id_cta[0]["category_name"] . '</td>
+        <td>' . $status[$item["product_status"]] . '</td>
+        <td>
+            <div class="table-icon">
+                <a  href="?mod=product&action=edit&id=' . $item["id_product"] . '" > <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
+                <a onclick="return ale()" id="remove" href="?mod=product&action=delete&id=' . $item["id_product"] . '"> <img  src="./public/images/icon/delete.svg" alt=""></a>
+            </div>
+        </td>
+    </tr>';
+}
+?>
 <main>
     <div class="main-wrapper">
         <?php
@@ -16,7 +44,7 @@ get_header();
                         <!-- input -->
                         <input type="text" name="box-search-product" id="box-search-product" class="search-product-input" value="" placeholder="Tên sản phẩm" />
                     </div>
-                    <input type="submit" id="search-product-btn" class="search-product-btn" value="Tìm kiếm">
+                    <input type="submit" id="search-product-btn" name="search-product-btn" class="search-product-btn" value="Tìm kiếm">
                 </form>
                 <a href="?mod=product&action=index" class="product-btn-list">Danh sách</a>
                 <a href="?mod=product&action=add" class="product-btn-add">Thêm mới</a>
@@ -45,36 +73,8 @@ get_header();
                                 <th class="tt">Trạng Thái</th>
                                 <th class="tv">Tác Vụ</th>
                             </tr>
-                            <tr class="list-item">
-                                <td>1</td>
-                                <td>Lenovo IdeaPad 3 15ITL6 i7 1165G7 (82H803CUVN)</td>
-                                <td>99</td>
-                                <td>290.000.000</td>
-                                <td>250.000.000</td>
-                                <td>Laptop</td>
-                                <td>Hiện</td>
-                                <td>
-                                    <div class="table-icon">
-                                        <a href="?mod=product&action=edit"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
-                                        <a href="#!"> <img src="./public/images/icon/delete.svg" alt=""></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="list-item">
-                                <td>2</td>
-                                <td>MacBook Air 13 inch M1 2020 8CPU 7GPU 8GB/256GB</td>
-                                <td>99</td>
-                                <td>290.000.000</td>
-                                <td>250.000.000</td>
-                                <td>MacBook</td>
-                                <td>Hiện</td>
-                                <td>
-                                    <div class="table-icon">
-                                        <a href="?mod=product&action=edit"> <img src="./public/images/icon/pencil-alt.svg" alt=""></a>
-                                        <a href="#!"><img src="./public/images/icon/delete.svg" alt=""></a>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?= $product_html ?>
+
                         </table>
                     </div>
 
@@ -83,7 +83,27 @@ get_header();
         </div>
     </div>
 </main>
+<script>
+    var remove = document.getElementById("remove");
+    console.log(remove);
+    // remove.onclick = function(e) {
+    //     // e.preventDefault();
+    //     // e.stopPropagation();
+    //     alert("thêm thành công");
+    // }
+    // remove.addEventListener('click', function(event) {
+    //     event.preventDefault();
 
+    // });
+
+    function ale() {
+        if (confirm("bạn có muốn xóa không ?")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
 <?php
 get_footer();
 ?>

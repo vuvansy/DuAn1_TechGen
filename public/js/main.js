@@ -12,6 +12,32 @@
                 $(this).find(".sub__login a").css("color", "var(--gray)");
                 // return false;
             });
+
+
+          //Slide ảnh Detail
+                $('.list-thumb .thumb-item').click(function(){
+                    var link_img=$(this).find('img').attr('src');
+                    $('.show-picture').find('img').attr('src',link_img);
+                    $('.list-thumb .thumb-item').removeClass('active');
+                    $(this).addClass('active');
+                })
+                $('.next-prev .next').click(function(){
+                    if($('.list-thumb .thumb-item:last-child').hasClass('active')){
+                       $('.list-thumb .thumb-item:first-child').click();
+                    }else{
+                        $('.active').next().click();
+                    }
+                })
+                $('.next-prev .prev').click(function(){
+                    if($('.list-thumb .thumb-item:first-child').hasClass('active')){
+                        $('.list-thumb .thumb-item:last-child').click();
+                     }else{
+                         $('.active').prev().click();
+                     }
+                })
+                 //active phần tử đầu tiên
+                 $('.list-thumb .thumb-item:first-child').click();
+               
         });
 
     
