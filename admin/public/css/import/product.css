@@ -10,6 +10,14 @@
   text-align: center;
 }
 
+.massew{
+  height: 40px;
+  font-size: 1.6rem;
+  padding: 20px;
+  margin-left: 20px;
+  color: red;
+}
+
 .product-bar {
   width: 100%;
   height: 40px;
@@ -302,13 +310,13 @@
 
 .container-form-input .input-desc textarea {
   width: 100%;
-  height: 60px;
+  height: 80px;
   border: 1px solid #4f4e4e;
   border-radius: 6px;
-  padding-left: 10px;
+  padding: 10px;
   font-size: 1.2rem;
   font-weight: 400;
-  padding-top: 10px;
+  
 }
 
 .container-form-input .input-desc .input-content {
