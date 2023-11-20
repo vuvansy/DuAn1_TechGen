@@ -79,3 +79,16 @@ function get_pagging($num_pages, $page, $base_url = "")
     $str_pagging .= "</ul>";
     return $str_pagging;
 }
+
+// ====== DELETE CATEGORY ======
+
+function num_product_category($cat_id)
+{
+    $num_row = db_num_rows("SELECT * FROM `product` WHERE `id_category` = '{$cat_id}'");
+    return $num_row;
+    // if ($check_product > 0) {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+}

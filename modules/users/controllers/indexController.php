@@ -287,7 +287,7 @@ function editPassAction()
 
         //Kiểm tra Pass_old
         if (empty($_POST['pass_old'])) {
-            $error['pass_old'] = "Không được để trống tên Password";
+            $error['pass_old'] = "Không được để trống Password";
         } else {
             if (!is_pass_old($_POST["pass_old"])) {
                 $error['pass_old'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
@@ -298,7 +298,7 @@ function editPassAction()
 
         //Kiểm tra pass_new
         if (empty($_POST['pass_new'])) {
-            $error['pass_new'] = "Không được để trống tên Password";
+            $error['pass_new'] = "Không được để trống Password";
         } else {
             if (!is_pass_new($_POST["pass_new"])) {
                 $error['pass_new'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
@@ -309,7 +309,7 @@ function editPassAction()
 
         // Kiểm tra pass_confirm
         if (empty($_POST['pass_confirm'])) {
-            $error['pass_confirm'] = "Không được để trống tên Password";
+            $error['pass_confirm'] = "Không được để trống Password";
         } else {
             if (!is_pass_confirm($_POST["pass_confirm"])) {
                 $error['pass_confirm'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";
@@ -403,7 +403,7 @@ function newPassAction()
 
                 //Kiểm tra password
                 if (empty($_POST['password'])) {
-                    $error['password'] = "Không được để trống tên Password";
+                    $error['password'] = "Không được để trống Password";
                 } else {
                     if (!is_password($_POST['password'])) {
                         $error['password'] = "Password nhập không đúng định dạng";
@@ -414,7 +414,7 @@ function newPassAction()
 
                 // Kiểm tra pass_confirm
                 if (empty($_POST['pass_confirm'])) {
-                    $error['pass_confirm'] = "Không được để trống tên Password";
+                    $error['pass_confirm'] = "Không được để trống Password";
                 } else {
                     if (!is_pass_confirm($_POST["pass_confirm"])) {
                         $error['pass_confirm'] = "Mật khẩu phải từ 6-32 kí tự và không có kí tự đặc biệt";

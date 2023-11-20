@@ -31,6 +31,7 @@
     <script src="public/js/app.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
 
+    <!-- JS Chart  -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="public/js/cart.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>

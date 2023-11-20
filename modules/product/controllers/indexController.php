@@ -35,9 +35,9 @@ function indexAction()
     // show_array($product_id);
     $data['product_id'] = $product_id;
 
-    // $list_gallery = get_gallery($id_product);
+    $list_gallery = get_gallery($id_product);
     // show_array($list_gallery);
-    // $data['list_gallery'] = $list_gallery;
+    $data['list_gallery'] = $list_gallery;
 
     $list_comment = get_comment_by_product_id($id_product);
     $data['list_comment'] = $list_comment;
