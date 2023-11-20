@@ -62,8 +62,8 @@ function addAction()
             }
         }
         
-        // $_SESSION['masew'] = '<span class="massew">Thêm mới thành công !</span>';
-        // header('location: ?mod=product&action=add');
+        $_SESSION['masew'] = '<span class="massew">Thêm mới thành công !</span>';
+        header('location: ?mod=product&action=add');
     } else {
         load_view('add');
     }
