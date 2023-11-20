@@ -1,19 +1,19 @@
 <?php
 
 function get_order_wait() {
-    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 0");
+    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 0 ORDER BY `id_order` DESC");
 }
 
 function get_order_trans() {
-    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 1");
+    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 1 ORDER BY `id_order` DESC");
 }
 
 function get_order_cancel() {
-    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 2");
+    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 2 ORDER BY `id_order` DESC");
 }
 
 function get_order_success() {
-    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 3");
+    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 3 ORDER BY `id_order` DESC");
 }
 
 function get_part_order_by_id($id_order) {
