@@ -28,7 +28,7 @@ function num_row_category()
     return $num_row_category;
 }
 
-
+//============= warning =============
 
 //Sản phẩm sắp hết
 function product_warning()

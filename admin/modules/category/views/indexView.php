@@ -10,8 +10,9 @@ get_header();
         ?>
         <div class="sidebar-right">
             <div class="section">
-                <div class="section-heading">
-                    <h2>Danh sách loại hàng </h2>
+                <div class="account__inner--title">
+                    <h1 class="heading-title">Danh sách loại hàng</h1>
+                    <?php echo form_error('account'); ?>
                 </div>
                 <div class="section-bar">
                     <div class="section-bar-items">

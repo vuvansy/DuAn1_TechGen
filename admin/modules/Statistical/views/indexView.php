@@ -91,151 +91,6 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
 
                         <div class="content">
 
-                            <!-- <div class="heading">
-                                <div class="line"></div>
-                                <div class="title">
-                                    Doanh thu theo tháng
-                                </div>
-                            </div>
-
-                            <div class="main-chart">
-
-                                <div class="top">
-                                    <div class="left-chart">
-                                        <div class="price">
-                                            40,000,000
-                                        </div>
-                                        <div class="price">
-                                            35,000,000
-                                        </div>
-                                        <div class="price">
-                                            30,000,000
-                                        </div>
-                                        <div class="price">
-                                            25,000,000
-                                        </div>
-                                        <div class="price">
-                                            20,000,000
-                                        </div>
-                                        <div class="price">
-                                            15,000,000
-                                        </div>
-                                        <div class="price">
-                                            10,000,000
-                                        </div>
-                                        <div class="price">
-                                            5,000,000
-                                        </div>
-                                        <div class="price">
-                                            0
-                                        </div>
-                                    </div>
-                                    <div class="right-chart">
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="bottom">
-
-                                    <div class="month">
-                                        1
-                                    </div>
-
-                                    <div class="month">
-                                        2
-                                    </div>
-
-                                    <div class="month">
-                                        3
-                                    </div>
-
-                                    <div class="month">
-                                        4
-                                    </div>
-
-                                    <div class="month">
-                                        5
-                                    </div>
-
-                                    <div class="month">
-                                        6
-                                    </div>
-
-                                    <div class="month">
-                                        7
-                                    </div>
-
-                                    <div class="month">
-                                        8
-                                    </div>
-
-                                    <div class="month">
-                                        9
-                                    </div>
-
-                                    <div class="month">
-                                        10
-                                    </div>
-
-                                    <div class="month">
-                                        11
-                                    </div>
-
-                                    <div class="month">
-                                        12
-                                    </div>
-
-                                </div>
-
-                            </div> -->
                             <div class="card-body">
                                 <div>
                                     <canvas id="myChart"></canvas>
@@ -253,12 +108,12 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
                                                 data: [
                                                     <?php
                                                     for ($i = 1; $i <= 12; $i++) {
-                                                        // echo bill_select_sum_by_month($month)($i, $current_year) . ",";
+                                                        echo bill_select_sum_by_month($i, $current_year) . ",";
                                                     }
                                                     ?>
                                                 ],
                                                 borderWidth: 1,
-                                                backgroundColor: '#2A6BBF',
+                                                backgroundColor: '#0000FF',
                                             }]
                                         },
                                         options: {
@@ -292,174 +147,6 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
                         </div>
 
                         <div class="content">
-
-                            <!-- <div class="heading">
-                                <div class="head-left">
-                                    <div class="line"></div>
-                                    <div class="title">
-                                        Đơn hàng thành công
-                                    </div>
-                                </div>
-                                <div class="head-right">
-                                    <div class="line"></div>
-                                    <div class="title">
-                                        Đơn hàng bị hủy
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="main-chart">
-
-                                <div class="top">
-                                    <div class="left-chart">
-                                        <div class="price">
-                                            0.8
-                                        </div>
-                                        <div class="price">
-                                            0.7
-                                        </div>
-                                        <div class="price">
-                                            0.6
-                                        </div>
-                                        <div class="price">
-                                            0.5
-                                        </div>
-                                        <div class="price">
-                                            0.4
-                                        </div>
-                                        <div class="price">
-                                            0.3
-                                        </div>
-                                        <div class="price">
-                                            0.2
-                                        </div>
-                                        <div class="price">
-                                            0.1
-                                        </div>
-                                        <div class="price">
-                                            0
-                                        </div>
-                                    </div>
-                                    <div class="right-chart">
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="bottom">
-
-                                    <div class="month">
-                                        1
-                                    </div>
-
-                                    <div class="month">
-                                        2
-                                    </div>
-
-                                    <div class="month">
-                                        3
-                                    </div>
-
-                                    <div class="month">
-                                        4
-                                    </div>
-
-                                    <div class="month">
-                                        5
-                                    </div>
-
-                                    <div class="month">
-                                        6
-                                    </div>
-
-                                    <div class="month">
-                                        7
-                                    </div>
-
-                                    <div class="month">
-                                        8
-                                    </div>
-
-                                    <div class="month">
-                                        9
-                                    </div>
-
-                                    <div class="month">
-                                        10
-                                    </div>
-
-                                    <div class="month">
-                                        11
-                                    </div>
-
-                                    <div class="month">
-                                        12
-                                    </div>
-
-                                </div>
-
-                            </div> -->
-
                             <div class="card-body">
                                 <div>
                                     <canvas id="myChartMonth"></canvas>
@@ -473,28 +160,40 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
                                             labels: ['T1', 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 
                                             datasets: [{
-                                                    label: 'Đơn hàng thành công',
+                                                    label: 'ĐH success',
                                                     data: [
                                                         <?php
                                                         for ($i = 1; $i <= 12; $i++) {
-                                                            // echo don_hang_thanh_cong($i, $current_year) . ",";
+                                                            echo order_success($i, $current_year) . ",";
                                                         }
                                                         ?>
                                                     ],
                                                     borderWidth: 1,
-                                                    backgroundColor: '#2A6BBF',
+                                                    backgroundColor: '#008000',
                                                 },
                                                 {
-                                                    label: 'Đơn hàng bị hủy',
+                                                    label: 'ĐH warning',
                                                     data: [
                                                         <?php
                                                         for ($i = 1; $i <= 12; $i++) {
-                                                            // echo don_hang_bi_huy($i, $current_year) . ",";
+                                                            echo order_cancel($i, $current_year) . ",";
                                                         }
                                                         ?>
                                                     ],
                                                     borderWidth: 1,
-                                                    backgroundColor: '#D95436',
+                                                    backgroundColor: '#DC143C',
+                                                },
+                                                {
+                                                    label: 'ĐH transport',
+                                                    data: [
+                                                        <?php
+                                                        for ($i = 1; $i <= 12; $i++) {
+                                                            echo order_transport($i, $current_year) . ",";
+                                                        }
+                                                        ?>
+                                                    ],
+                                                    borderWidth: 1,
+                                                    backgroundColor: '#0000FF',
                                                 }
                                             ]
                                         },

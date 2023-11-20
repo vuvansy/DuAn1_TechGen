@@ -53,42 +53,24 @@ function addAction()
             $category_name = $_POST['category_name'];
         }
 
+        //Xử lý images
+        $save_image = save_file("new_image", "public/images/category/");
+        // echo var_dump($_FILES['new_image']);
+        // $save_image ? $category_image = $save_image  : $category_image = $_POST['category_image'];
+
         //Kiểm tra File image
-        if (empty($_POST['new_image'])) {
-            $error['new_image'] = "Không được để trống Image";
+        if (empty($save_image)) {
+            $error['new_image'] = "Không được để trống ";
         } else {
-            $category_name = $_POST['new_image'];
+            $category_image = $save_image;
         }
-
-        // if (!empty($category_active)) {
-        //     $category_active = 0;
-        // } else {
-        //     $category_active = $_POST['category_active'];
-        // }
-
-        //Active 
-        // if (empty($_POST['category_active'])) {
-        //     $error['category_active'] = "Không đc để trống trường category_active";
-        // } else {
-        //     $category_active = $_POST['category_active'];
-        // }
-        // echo $category_active;
-
-        // if (isset($_POST['category_active'])) {
-        //     $category_active = 1;
-        // } else if (is_null($_POST['category_active'])) {
-        //     $category_active = 0;
-        // }
 
         // extract($_REQUEST);
 
         isset($_POST['category_active']) ? $_POST['category_active'] : $_POST['category_active'] = 0;
         $category_active = $_POST['category_active'];
 
-        //Xử lý images
-        $save_image = save_file("new_image", "public/images/category/");
-        // echo var_dump($_FILES['new_image']);
-        $save_image ? $category_image = $save_image  : $category_image = $_POST['category_image'];
+
 
         #Dữ liệu gửi lên DATABASE
         if (empty($error)) {
@@ -116,12 +98,6 @@ function editAction()
 
     if (isset($_POST['edit_btn'])) {
         $error = array();
-
-        if (empty($_POST['category_name'])) {
-            $error['category_name'] = "Không được để trống họ tên";
-        } else {
-            $category_name = $_POST['category_name'];
-        }
 
         if (empty($_POST['category_name'])) {
             $error['category_name'] = "Không được để trống họ tên";
@@ -159,7 +135,15 @@ function editAction()
 
 function deleteAction()
 {
+    global $error;
+
     $cat_id = (int)($_GET['cat_id']);
-    db_delete("category", "`id_category` = $cat_id");
-    redirect("?mod=category&action=index");
+    // echo num_product_category($cat_id);
+    if (num_product_category($cat_id) > 0) {
+        $error['account'] = "Đã tồn tại sản phẩm không thể xóa loại hàng này";
+        // redirect("?mod=category&action=index");
+    } else {
+        db_delete("category", "`id_category` = $cat_id");
+        redirect("?mod=category&action=index");
+    }
 }
