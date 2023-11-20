@@ -57,6 +57,12 @@ foreach ($category_new as $value) {
             <div class="product-heading">
                 Chỉnh sửa hàng hóa
             </div>
+            <?php 
+                if(isset($_SESSION['masew'])){
+                    echo $_SESSION['masew'];
+                    unset($_SESSION['masew']);
+                }
+            ?>
             <div class="product-bar">
                 <a href="?mod=product&action=index" class="product-btn-list">Danh sách</a>
                 <a href="?mod=product&action=add" class="product-btn-add">Thêm mới</a>
