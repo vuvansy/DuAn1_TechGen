@@ -38,6 +38,12 @@ foreach ($get_product as $item) {
             <div class="product-heading">
                 Danh sách hàng hóa
             </div>
+            <?php 
+                if(isset($_SESSION['masew'])){
+                    echo $_SESSION['masew'];
+                    unset($_SESSION['masew']);
+                }
+            ?>
             <div class="product-bar">
                 <form action="" id="search-product" class="search-product" method="POST">
                     <div class="box-form-product">
