@@ -1,6 +1,9 @@
 <?php
 get_header();
+$current_month = $_GET['month'] ?? intval(date('m'));
+$current_year = $_GET['year'] ?? intval(date('Y'));
 ?>
+
 <main>
     <div class="main-wrapper">
         <?php
@@ -29,39 +32,39 @@ get_header();
 
                     <div class="inline">
 
-                        <div class="user">
+                        <div class="order">
                             <div class="title">
-                                Tổng số khách hàng
+                                Tổng Số Đơn Hàng
                             </div>
                             <div class="number">
-                                4
+                                <?php echo $num_row_order ?>
+                            </div>
+                        </div>
+
+                        <div class="user">
+                            <div class="title">
+                                Tổng Số Khách Hàng
+                            </div>
+                            <div class="number">
+                                <?php echo $num_rows_user ?>
                             </div>
                         </div>
 
                         <div class="product">
                             <div class="title">
-                                Tổng số sản phẩm
+                                Tổng Số Sản Phẩm
                             </div>
                             <div class="number">
-                                4
-                            </div>
-                        </div>
-
-                        <div class="order">
-                            <div class="title">
-                                Tổng số đơn hàng
-                            </div>
-                            <div class="number">
-                                4
+                                <?php echo $num_row_product ?>
                             </div>
                         </div>
 
                         <div class="category">
                             <div class="title">
-                                Tổng số sản phẩm
+                                Tổng Số Loại Hàng
                             </div>
                             <div class="number">
-                                4
+                                <?php echo $num_row_category ?>
                             </div>
                         </div>
 
@@ -88,7 +91,7 @@ get_header();
 
                         <div class="content">
 
-                            <div class="heading">
+                            <!-- <div class="heading">
                                 <div class="line"></div>
                                 <div class="title">
                                     Doanh thu theo tháng
@@ -232,6 +235,41 @@ get_header();
 
                                 </div>
 
+                            </div> -->
+                            <div class="card-body">
+                                <div>
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                                <script>
+                                    const ctx = document.getElementById('myChart');
+
+                                    new Chart(ctx, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+
+                                            datasets: [{
+                                                label: 'Doanh thu tháng',
+                                                data: [
+                                                    <?php
+                                                    for ($i = 1; $i <= 12; $i++) {
+                                                        // echo bill_select_sum_by_month($month)($i, $current_year) . ",";
+                                                    }
+                                                    ?>
+                                                ],
+                                                borderWidth: 1,
+                                                backgroundColor: '#2A6BBF',
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
 
                         </div>
@@ -255,7 +293,7 @@ get_header();
 
                         <div class="content">
 
-                            <div class="heading">
+                            <!-- <div class="heading">
                                 <div class="head-left">
                                     <div class="line"></div>
                                     <div class="title">
@@ -420,6 +458,55 @@ get_header();
 
                                 </div>
 
+                            </div> -->
+
+                            <div class="card-body">
+                                <div>
+                                    <canvas id="myChartMonth"></canvas>
+                                </div>
+                                <script>
+                                    const ctxMonth = document.getElementById('myChartMonth');
+
+                                    new Chart(ctxMonth, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: ['T1', 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+
+                                            datasets: [{
+                                                    label: 'Đơn hàng thành công',
+                                                    data: [
+                                                        <?php
+                                                        for ($i = 1; $i <= 12; $i++) {
+                                                            // echo don_hang_thanh_cong($i, $current_year) . ",";
+                                                        }
+                                                        ?>
+                                                    ],
+                                                    borderWidth: 1,
+                                                    backgroundColor: '#2A6BBF',
+                                                },
+                                                {
+                                                    label: 'Đơn hàng bị hủy',
+                                                    data: [
+                                                        <?php
+                                                        for ($i = 1; $i <= 12; $i++) {
+                                                            // echo don_hang_bi_huy($i, $current_year) . ",";
+                                                        }
+                                                        ?>
+                                                    ],
+                                                    borderWidth: 1,
+                                                    backgroundColor: '#D95436',
+                                                }
+                                            ]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
 
                         </div>

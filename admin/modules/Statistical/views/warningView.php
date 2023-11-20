@@ -60,161 +60,29 @@ get_header();
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="image-warning">
-                                    <img src="public/images/product/Iphone/iphone1.jpg" alt="">
-                                </td>
-                                <td class="id-warning">
-                                    00001
-                                </td>
-                                <td class="name-warning">
-                                    iphone 14 pro max
-                                </td>
-                                <td class="exists-warning">
-                                    0
-                                </td>
-                                <td class="add-warning">
-                                    <a href="">Thêm</a>
-                                </td>
-                            </tr>
-
+                            <?php
+                            foreach ($product_warning as $item) {
+                            ?>
+                                <tr>
+                                    <td class="image-warning">
+                                        <img src="../public/images/product/<?php echo $item['product_image'] ?>" alt="">
+                                    </td>
+                                    <td class="id-warning">
+                                        <?php echo $item['id_product'] ?>
+                                    </td>
+                                    <td class="name-warning">
+                                        <?php echo $item['product_name'] ?>
+                                    </td>
+                                    <td class="exists-warning">
+                                        <?php echo $item['product_quantity'] ?>
+                                    </td>
+                                    <td class="add-warning">
+                                        <a href="?mod=product&action=edit&id=<?php echo $item['id_product'] ?>">Thêm</a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
                         </tbody>
 
 
