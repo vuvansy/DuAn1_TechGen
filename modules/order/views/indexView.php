@@ -61,12 +61,28 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
     }
     $cartHtm .= '</tbody>
             </table>';
+    $noti = '
+        <script> 
+            function noti() {
+                return true;
+            }
+        </script>
+    ';
 } else {
     $cartHtm .= '
           <h1> Bạn chưa thêm sản phẩm nào vào giỏ hàng !</h1>  
-        ';
+    ';
+    $noti = '
+        <script> 
+            function noti() {
+                confirm("bạn không có sản phầm nào để thanh toán !");
+                return false;
+            }
+        </script>
+    ';
 }
 ?>
+<?=$noti?>
 
 <main>
     <section class="cartShow">
@@ -87,7 +103,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                         <p><?= number_format($cartTotal, 0, ',', '.') ?></p>
                     </div>
                     <h4>Thông tin vận chuyển</h4>
-                    <form action="<?= $actionForm ?>" method="POST">
+                    <form action="<?=$actionForm?>" method="POST">
                         <input class="input-1" name="name_delivery" type="text" value="<?php
                                                                                         if (isset($_SESSION['is_login'])) {
                                                                                             echo info_user(user_login(), 'fullname');
@@ -143,7 +159,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                             <input type="hidden" name="order_quantity" value="<?= $cartQuantity ?>">
                         </div>
                         <div class="button-bottom">
-                            <input type="submit" value="Thanh toán">
+                            <input onclick="return noti();" type="submit" value="Thanh toán">
                         </div>
                     </form>
 
@@ -211,6 +227,8 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
         </div>
     </section>
 </main>
+
+
 
 <?php
 get_footer();

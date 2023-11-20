@@ -9,61 +9,67 @@ function addAction() {
     if(isset($_GET['id']) && ($_GET['id'] != '')) {
         $id = $_GET['id'];
         $information = get_product_by_id($id);
-        $count = 1;
-        $check = true;
-        $i = 0;
-        if(isset($_SESSION['cart']) && is_array($_SESSION['cart']) ) {
-            foreach ($_SESSION['cart'] as $item) {
-                if($item['id'] == $id) {
-                    $number = $_SESSION['cart'][$i]['count'] + 1;
-                    $_SESSION['cart'][$i]['count'] = $number;
-                    $check = false;
-                    break;
+        if($information['product_quantity'] > 1 ) {
+            $count = 1;
+            $check = true;
+            $i = 0;
+            if(isset($_SESSION['cart']) && is_array($_SESSION['cart']) ) {
+                foreach ($_SESSION['cart'] as $item) {
+                    if($item['id'] == $id) {
+                        $number = $_SESSION['cart'][$i]['count'] + 1;
+                        $_SESSION['cart'][$i]['count'] = $number;
+                        $check = false;
+                        break;
+                    }
+                    $i++;
                 }
-                $i++;
             }
-        }
-        if($check) {
-            $_SESSION['cart'][] = [
-                'id' => $information['id_product'],
-                'name' => $information['product_name'],
-                'price' => $information['product_sale'],
-                'image' => $information['product_image'],
-                'count' => $count
-            ];
+            if($check) {
+                $_SESSION['cart'][] = [
+                    'id' => $information['id_product'],
+                    'name' => $information['product_name'],
+                    'price' => $information['product_sale'],
+                    'image' => $information['product_image'],
+                    'count' => $count
+                ];
+            }
         }
     }
     header('location: ?mod=order&action=index');
 }
 
-function addToCartAction() {
+function addToCarAction() {
     if(isset($_GET['id']) && ($_GET['id'] != '')) {
         $id = $_GET['id'];
         $information = get_product_by_id($id);
-        $count = 1;
-        $check = true;
-        $i = 0;
-        if(isset($_SESSION['cart']) && is_array($_SESSION['cart']) ) {
-            foreach ($_SESSION['cart'] as $item) {
-                if($item['id'] == $id) {
-                    $number = $_SESSION['cart'][$i]['count'] + 1;
-                    $_SESSION['cart'][$i]['count'] = $number;
-                    $check = false;
-                    break;
+        if($information['product_quantity'] > 1 ) {
+            $count = 1;
+            $check = true;
+            $i = 0;
+            if(isset($_SESSION['cart']) && is_array($_SESSION['cart']) ) {
+                foreach ($_SESSION['cart'] as $item) {
+                    if($item['id'] == $id) {
+                        $number = $_SESSION['cart'][$i]['count'] + 1;
+                        $_SESSION['cart'][$i]['count'] = $number;
+                        $check = false;
+                        break;
+                    }
+                    $i++;
                 }
-                $i++;
+            }
+            if($check) {
+                $_SESSION['cart'][] = [
+                    'id' => $information['id_product'],
+                    'name' => $information['product_name'],
+                    'price' => $information['product_sale'],
+                    'image' => $information['product_image'],
+                    'count' => $count
+                ];
             }
         }
-        if($check) {
-            $_SESSION['cart'][] = [
-                'id' => $information['id_product'],
-                'name' => $information['product_name'],
-                'price' => $information['product_sale'],
-                'image' => $information['product_image'],
-                'count' => $count
-            ];
-        }
         header('location: ?mod=product&action=index&id='.$id);
+    } else {
+        header('location: ?mod=order&action=index');
     }
 }
 
@@ -118,7 +124,7 @@ function removeAllAction() {
 }
 
 function payAction() {
-    if(isset($_POST)) {
+    if(isset($_POST) && isset($_SESSION['cart'])) {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $currentDate = date("Y-m-d");
         $order['id_order'] = null;
@@ -136,12 +142,12 @@ function payAction() {
         $id_order = (get_id_order_by_user(info_user(user_login(), 'id_user')))['id_order'];
         show_array($_SESSION['cart']);
         foreach ($_SESSION['cart'] as $item) {
+            set_down_quantity($item['id'], $item['count']);
             $order_detail['id_order_detail'] = null;
             $order_detail['id_product'] = $item['id'];
             $order_detail['id_order'] = $id_order;
             $order_detail['order_detail_quantity'] = $item['count'];
             $order_detail['order_detail_total'] = ($item['price'] * $item['count']);
-            show_array($order_detail);
             create_detail_order($order_detail);
         }
         unset($_SESSION['cart']);
@@ -172,6 +178,12 @@ function orderDetailAction()
     } else {
         header('location: ?mod=order&action=cartview');
     }
+}
+
+function removeOrderAction() {
+
+
+
 }
 
 function successAction()
