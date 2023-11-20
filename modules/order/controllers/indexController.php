@@ -182,8 +182,6 @@ function orderDetailAction()
 
 function removeOrderAction() {
 
-
-
 }
 
 function successAction()

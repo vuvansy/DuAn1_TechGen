@@ -18,7 +18,7 @@ function create_detail_order($data) {
 }
 
 function get_order_by_id_user($user) {
-    $sql = "SELECT * FROM `order_tg` WHERE `id_user` = " . $user;
+    $sql = "SELECT * FROM `order_tg` WHERE `id_user` = " . $user . " ORDER BY `id_order` DESC";
     return db_fetch_array($sql);
 }
 
