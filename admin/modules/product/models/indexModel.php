@@ -37,29 +37,52 @@ function get_last_id()
    return db_fetch_array($sql);
 }
 
+// truy vấn hình ảnh chi tiết của sp theo id_product
 function get_gallery_product_by($id_product){
    $sql = "SELECT * FROM `gallery` WHERE `id_product`=".$id_product;
    return db_fetch_array($sql);
 }
 
+// xóa ảnh chi tiết theo id_product
 function delete_gallery_by_id($id_product){
    // $sql="DELETE FROM `gallery` WHERE `id_product`=".$id_product;
    return db_delete("gallery", "`id_product` = '{$id_product}'");
 }
 
+// xóa cmt theo id_product
+
+function delete_cmt_by_id($id_product){
+   // $sql="DELETE FROM `gallery` WHERE `id_product`=".$id_product;
+   return db_delete("comment", "`id_product` = '{$id_product}'");
+}
+
+
+// xóa oder theo id_product
+
+function delete_order_detail_by_id($id_product){
+   // $sql="DELETE FROM `gallery` WHERE `id_product`=".$id_product;
+   return db_delete("order_detail", "`id_product` = '{$id_product}'");
+}
+
+// truy vấn sản phẩm theo id
 function get_product_by_id($id_product){
    $sql = "SELECT * FROM `product` WHERE `id_product` =" .$id_product;
    return db_fetch_array($sql);
 }
 
+// cập nhật sản phẩm theo id
 function update_product_by_id($data,$id_product){
    return db_update("product",$data,"`id_product` = '{$id_product}'");
 }
 
+// tìm kiếm sản phẩm theo tên
 function search_product_by_name($name){
    $sql = "SELECT * FROM `product` WHERE `product_name`LIKE '%$name%'";
    return db_fetch_array($sql);
 }
+
+
+
 ?>
 
 

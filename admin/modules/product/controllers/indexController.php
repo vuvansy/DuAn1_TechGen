@@ -46,19 +46,22 @@ function addAction()
         if (isset($_POST['special'])) {
             $data['special'] = 1;
         }
-        $destination = '../public/images/product' . $data['product_image'];
+        $destination = '../public/images/product/' . $data['product_image'];
         move_uploaded_file($fileTmpPath, $destination);
         db_insert('product', $data);
 
         $gallery_name = [];
-        for ($i = 0; $i < 4; $i++) {
-            $gallery['id_gallery'] = null;
-            $gallery['gallery_name'] = $_FILES['gallery_name']['name'][$i];
-            $fileTmpPath = $_FILES['gallery_name']['tmp_name'][$i];
-            $destination = '../public/images/gallery' . $gallery['gallery_name'];
-            move_uploaded_file($fileTmpPath, $destination);
-            db_insert('gallery', $gallery);
+        if($_FILES['gallery_name']['name'] != ''){
+            for ($i = 0; $i <count($_FILES['gallery_name']['name']) ; $i++) {
+                $gallery['id_gallery'] = null;
+                $gallery['gallery_name'] = $_FILES['gallery_name']['name'][$i];
+                $fileTmpPath = $_FILES['gallery_name']['tmp_name'][$i];
+                $destination = '../public/images/gallery/' . $gallery['gallery_name'];
+                move_uploaded_file($fileTmpPath, $destination);
+                db_insert('gallery', $gallery);
+            }
         }
+        
         $_SESSION['masew'] = '<span class="massew">Thêm mới thành công !</span>';
         header('location: ?mod=product&action=add');
     } else {
@@ -89,7 +92,7 @@ function editAction()
             // echo($_FILES['product_image_new']['name']);
             $data_new['product_image'] = $_FILES['product_image_new']['name']; /*hình product*/
             $fileTmpPath = $_FILES['product_image_new']['tmp_name'];
-            $destination = 'public/images/product' . $data_new['product_image'];
+            $destination = 'public/images/product/' . $data_new['product_image'];
             move_uploaded_file($fileTmpPath, $destination);
         } else {
             $data_new['product_image'] = $product_by_id['product_image'];
@@ -112,6 +115,7 @@ function editAction()
         $where = 'id_product = ' . $data_new['id_product'];
         db_update('product', $data_new, $where);
         header('location: ?mod=product&action=index');
+        $_SESSION['masew'] = '<span class="massew">Cập nhật thành công !</span>';
     }
 }
 
@@ -122,6 +126,12 @@ function deleteAction()
     // dell_product_by_id($id_product);
     if (isset($_GET['id'])) {
         $id_product = $_GET['id'];
+        if(delete_order_detail_by_id($id_product)){
+            header('location: ?mod=product');
+        }
+        if(delete_cmt_by_id($id_product)){
+            header('location: ?mod=product');
+        }
         if (delete_gallery_by_id($id_product)) {
             header('location: ?mod=product');
         }
