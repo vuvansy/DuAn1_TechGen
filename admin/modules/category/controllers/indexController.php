@@ -46,16 +46,18 @@ function addAction()
     if (isset($_POST['add_btn'])) {
         $error = array();
 
+        //Kiểm tra Name Category
         if (empty($_POST['category_name'])) {
             $error['category_name'] = "Không được để trống họ tên";
         } else {
             $category_name = $_POST['category_name'];
         }
 
-        if (empty($_POST['category_name'])) {
-            $error['category_name'] = "Không được để trống họ tên";
+        //Kiểm tra File image
+        if (empty($_POST['new_image'])) {
+            $error['new_image'] = "Không được để trống Image";
         } else {
-            $category_name = $_POST['category_name'];
+            $category_name = $_POST['new_image'];
         }
 
         // if (!empty($category_active)) {
