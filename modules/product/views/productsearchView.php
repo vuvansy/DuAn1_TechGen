@@ -56,11 +56,19 @@ $imagesURL = "public/images";
                             </h3>
                             <div class="product__info--foot">
                                 <div class="product__price">
-                                    <span class="latest-price"><?php echo currency_format($item['product_sale'], 'đ'); ?></span>
-                                    <span class="price-and-discount">
-                                        <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
-                                        <small><?php echo round($sale, 1) ?>%</small>
-                                    </span>
+                                    <?php if ($sale == 0) :
+                                        $gia = $item['product_price'];
+                                    ?>
+                                        <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                    <?php else :
+                                        $gia = $item['product_sale'];
+                                    ?>
+                                        <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                        <span class="price-and-discount">
+                                            <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
+                                            <small><?php echo round($sale, 1) ?>%</small>
+                                        </span>
+                                    <?php endif ?>
                                 </div>
                                 <a class="btn cart-btn" href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
                                     Mua ngay
