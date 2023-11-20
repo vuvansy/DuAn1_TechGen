@@ -34,7 +34,10 @@ function update_user($data, $id)
 }
 
 function check_exsist($username, $email) {
-  $check = db_num_rows("SELECT * FROM `user` WHERE `username` = '$username' AND `email` = '$email'");
-  if ($check > 0) return true;
-  return false;
+  $check = db_num_rows("SELECT * FROM `user` WHERE `username` = '{$username}' OR `email` = '{$email}'");
+  if ($check > 0) 
+    return true;
+  else{
+    return false;
+  }
 }
