@@ -24,16 +24,12 @@ function indexAction()
 function deleteAction()
 {
     $id_user = isset($_GET['id']) ? intval($_GET['id']) : "";
-    if (check_roles($id_user)) {
-        $data = [
-            'message' => "Đây là admin. Không thể xoá!",
-        ];
-    } else {
+    
         delete_user_by_id($id_user);
         $data = [
             'message' => "Thực hiện xoá thành công",
         ];
-    }
+    
     load_view("delete", $data);
 }
 function addAction()
@@ -111,17 +107,13 @@ function addAction()
             $dir = "public/images/user/";
             $file_name = $dir . $_FILES['file']['name'];
             $image =  $_FILES['file']['full_path'];
-            if (move_uploaded_file($_FILES['file']['tmp_name'], $file_name)) {
-                $notify['file'] = "File đã được upload thành công";
-            } else {
-                $error['file'] = "File upload không thành công";
-            }
+            
         } else {
             $error['file'] = "Phải upload 1 file ảnh";
         }
         # Final
         if (empty($error)) {
-            if (check_exsist($username, $email)) {
+            if (!check_exsist($username, $email)) {
                 $data = array(
                     'fullname' => $fullname,
                     'phone' => $phone,
