@@ -16,7 +16,7 @@ get_header();
                         <!-- input -->
                         <input type="text" name="box-search-user" id="box-search-user" class="search-user-input" value="" placeholder="Tên sản phẩm" />
                     </div>
-                    <input type="submit" id="search-user-btn" class="search-user-btn" value="Tìm kiếm">
+                    <input type="submit" name="search-btn" id="search-user-btn" class="search-user-btn" value="Tìm kiếm">
                 </form>
                 <a href="?mod=users&action=index" class="user-btn-list">Danh sách</a>
                 <a href="?mod=users&action=add" class="user-btn-add">Thêm mới</a>

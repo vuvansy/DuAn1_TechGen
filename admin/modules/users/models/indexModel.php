@@ -1,7 +1,11 @@
 <?php
-function get_list_user()
+function get_list_user($value = "")
 {
-  $list = db_fetch_array("SELECT * FROM `user`");
+  if (!empty($value)) {
+    $list = db_fetch_array("SELECT * FROM `user` WHERE `username` LIKE '%$value%' OR `fullname` LIKE '%$value%' OR `email` LIKE '%$value%'");
+  } else {
+    $list = db_fetch_array("SELECT * FROM `user`");
+  }
   return $list;
 }
 function check_roles($user_id)
@@ -29,3 +33,8 @@ function update_user($data, $id)
   return db_update("user", $data, "`id_user` = '{$id}'");
 }
 
+function check_exsist($username, $email) {
+  $check = db_num_rows("SELECT * FROM `user` WHERE `username` = '$username' AND `email` = '$email'");
+  if ($check > 0) return true;
+  return false;
+}

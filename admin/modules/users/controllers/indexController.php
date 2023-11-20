@@ -10,7 +10,12 @@ function construct()
 
 function indexAction()
 {
-    $list_user = get_list_user();
+    if (isset($_POST['search-btn'])) {
+        $value = strval($_POST['box-search-user']);
+        $list_user = get_list_user($value);
+    } else {
+        $list_user = get_list_user();
+    }
     $data = [
         'list_user' => $list_user,
     ];
@@ -116,19 +121,23 @@ function addAction()
         }
         # Final
         if (empty($error)) {
-            $data = array(
-                'fullname' => $fullname,
-                'phone' => $phone,
-                'email' => $email,
-                'address' => $address,
-                'username' => $username,
-                'password' => $password,
-                'user_role' => $role,
-                'is_active' => $active,
-                'image' => $image
-            );
-            add_user($data);
-            $finish = "Thêm mới người dùng thành công";
+            if (check_exsist($username, $email)) {
+                $data = array(
+                    'fullname' => $fullname,
+                    'phone' => $phone,
+                    'email' => $email,
+                    'address' => $address,
+                    'username' => $username,
+                    'password' => $password,
+                    'user_role' => $role,
+                    'is_active' => $active,
+                    'image' => $image
+                );
+                add_user($data);
+                $finish = "Thêm mới người dùng thành công";
+            } else {
+                $error['account'] = "Tên đăng nhập hoặc email đã tồn tại trên hệ thống!";
+            }
         } else {
             $failed = "Có lỗi trong khi thêm người dùng";
         }
@@ -240,7 +249,6 @@ function editAction()
             $finish = "Cập nhật thông tin người dùng thành công";
         } else {
             $failed = "Có lỗi trong khi cập nhật thông tin người dùng";
-            show_array($error);
         }
     }
     $info_userr = get_user_by_id($id_user);
