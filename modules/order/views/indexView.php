@@ -57,10 +57,11 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                 const address_delivery = document.getElementById("address_delivery");
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 const phoneNumberRegex = /^[0-9]+$/;
+                const addressRegex = /^\d+$/;
                 
-                if(address_delivery.value.length === 0) { 
+                if(address_delivery.value === "") { 
                     return false;
-                } else if(address_delivery.value > 0) { 
+                } else if(addressRegex.test(address_delivery.value)) { 
                     return false;
                 } else if(address_delivery.value.length < 20) { 
                     return false;
@@ -280,80 +281,123 @@ if (isset($_SESSION['is_login'])) {
         (function validate() {
             const name_delivery = document.getElementById("name_delivery");
             const name_error = document.querySelector(".name_delivery-message");
-            name_delivery.onchange = function() {
-                name_delivery.onblur= function() {
-                    if(name_delivery.value === "") {
-                        name_delivery.style.outline = "1px solid red";
-                        name_error.textContent = "Bạn phải nhập họ và tên để đặt hàng !";
-                    } else if(name_delivery.value.length < 10) {
-                        name_delivery.style.outline = "1px solid red";
-                        name_error.textContent = "Họ và tên người đặt hàng ít nhất 10 kí tự !";
-                    }
-                }
-                name_delivery.onfocus= function() {
-                    name_delivery.style.outline = "1px solid #000";
-                    name_error.textContent = "";
+
+            if(name_delivery.value === "") {
+                name_delivery.style.outline = "1px solid red";
+                name_error.textContent = "Bạn phải nhập họ và tên để đặt hàng !";
+            } else if(name_delivery.value.length < 10) {
+                name_delivery.style.outline = "1px solid red";
+                name_error.textContent = "Họ và tên người đặt hàng ít nhất 10 kí tự !";
+            }
+
+            name_delivery.onblur= function() {
+                if(name_delivery.value === "") {
+                    name_delivery.style.outline = "1px solid red";
+                    name_error.textContent = "Bạn phải nhập họ và tên để đặt hàng !";
+                } else if(name_delivery.value.length < 10) {
+                    name_delivery.style.outline = "1px solid red";
+                    name_error.textContent = "Họ và tên người đặt hàng ít nhất 10 kí tự !";
                 }
             }
+
+            name_delivery.onfocus = function() {
+                name_delivery.style.outline = "1px solid #000";
+                name_error.textContent = "";
+            }
+
             const email_delivery = document.getElementById("email_delivery");
             const email_error = document.querySelector(".email_delivery-message");
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            email_delivery.onchange = function() {
-                email_delivery.onblur= function() {
-                    if(email_delivery.value === "") {
-                        email_delivery.style.outline = "1px solid red";
-                        email_error.textContent = "Bạn phải nhập email để đặt hàng !";
-                    } else if(!emailRegex.test(email_delivery.value)) {
-                        email_delivery.style.outline = "1px solid red";
-                        email_error.textContent = "Bạn đã nhập email sai !";
-                    }
-                };
-                email_delivery.onfocus = function() {
-                    email_delivery.style.outline = "1px solid #000";
-                    email_error.textContent = "";
+
+            email_delivery.onblur= function() {
+                if(email_delivery.value === "") {
+                    email_delivery.style.outline = "1px solid red";
+                    email_error.textContent = "Bạn phải nhập email để đặt hàng !";
+                } else if(!emailRegex.test(email_delivery.value)) {
+                    email_delivery.style.outline = "1px solid red";
+                    email_error.textContent = "Bạn đã nhập email sai !";
                 }
+            };
+
+            email_delivery.onfocus = function() {
+                email_delivery.style.outline = "1px solid #000";
+                email_error.textContent = "";
             }
+
+            if(email_delivery.value === "") {
+                email_delivery.style.outline = "1px solid red";
+                email_error.textContent = "Bạn phải nhập email để đặt hàng !";
+            } else if(!emailRegex.test(email_delivery.value)) {
+                email_delivery.style.outline = "1px solid red";
+                email_error.textContent = "Bạn đã nhập email sai !";
+            }
+
             const phone_delivery = document.getElementById("phone_delivery");
             const phone_error = document.querySelector(".phone_delivery-message");
             const phoneNumberRegex = /^[0-9]+$/;
-            phone_delivery.onchange = function() {
-                phone_delivery.onblur= function() {
-                    if(phone_delivery.value === "") {
-                        phone_delivery.style.outline = "1px solid red";
-                        phone_error.textContent = "Bạn phải nhập số điện thoại !";
-                    } else if(phone_delivery.value.length !== 10) {
-                        phone_delivery.style.outline = "1px solid red";
-                        phone_error.textContent = "Số điện thoại gồm 10 số !";
-                    } else if(!phoneNumberRegex.test(phone_delivery.value)) {
-                        phone_delivery.style.outline = "1px solid red";
-                        phone_error.textContent = "Số điện thoại không gồm kí tự !";
-                    }
-                }
-                phone_delivery.onfocus= function() {
-                    phone_delivery.style.outline = "1px solid #000";
-                    phone_error.textContent = "";
+
+            if(phone_delivery.value === "") {
+                phone_delivery.style.outline = "1px solid red";
+                phone_error.textContent = "Bạn phải nhập số điện thoại !";
+            } else if(phone_delivery.value.length !== 10) {
+                phone_delivery.style.outline = "1px solid red";
+                phone_error.textContent = "Số điện thoại gồm 10 số !";
+            } else if(!phoneNumberRegex.test(phone_delivery.value)) {
+                phone_delivery.style.outline = "1px solid red";
+                phone_error.textContent = "Số điện thoại không gồm kí tự !";
+            }
+
+            phone_delivery.onblur= function() {
+                if(phone_delivery.value === "") {
+                    phone_delivery.style.outline = "1px solid red";
+                    phone_error.textContent = "Bạn phải nhập số điện thoại !";
+                } else if(phone_delivery.value.length !== 10) {
+                    phone_delivery.style.outline = "1px solid red";
+                    phone_error.textContent = "Số điện thoại gồm 10 số !";
+                } else if(!phoneNumberRegex.test(phone_delivery.value)) {
+                    phone_delivery.style.outline = "1px solid red";
+                    phone_error.textContent = "Số điện thoại không gồm kí tự !";
                 }
             }
+
+            phone_delivery.onfocus= function() {
+                phone_delivery.style.outline = "1px solid #000";
+                phone_error.textContent = "";
+            }
+
             const address_delivery = document.getElementById("address_delivery");
             const address_error = document.querySelector(".address_delivery-message");
-            address_delivery.onchange = function() {
-                address_delivery.onblur= function() {
-                    if(address_delivery.value === "") {
-                        address_delivery.style.outline = "1px solid red";
-                        address_error.textContent = "Bạn phải nhập địa chỉ để đặt hàng !";
-                    } else if(address_delivery.value > 0) {
-                        address_delivery.style.outline = "1px solid red";
-                        address_error.textContent = "Địa chỉ đặt hàng phải là chuỗi kí tự !";
-                    } else if(address_delivery.value.length < 20) {
-                        address_delivery.style.outline = "1px solid red";
-                        address_error.textContent = "Địa chỉ đặt hàng ít nhất 20 kí tự !";
-                    }
-                }
-                address_delivery.onfocus= function() {
-                    address_delivery.style.outline = "1px solid #000";
-                    address_error.textContent = "";
+            const addressRegex = /^\d+$/;
+
+            if(address_delivery.value === "") {
+                address_delivery.style.outline = "1px solid red";
+                address_error.textContent = "Bạn phải nhập địa chỉ để đặt hàng !";
+            } else if(addressRegex.test(address_delivery.value)) {
+                address_delivery.style.outline = "1px solid red";
+                address_error.textContent = "Địa chỉ đặt hàng phải là chuỗi kí tự !";
+            } else if(address_delivery.value.length < 20) {
+                address_delivery.style.outline = "1px solid red";
+                address_error.textContent = "Địa chỉ đặt hàng ít nhất 20 kí tự !";
+            }
+
+            address_delivery.onblur= function() {
+                if(address_delivery.value === "") {
+                    address_delivery.style.outline = "1px solid red";
+                    address_error.textContent = "Bạn phải nhập địa chỉ để đặt hàng !";
+                } else if(address_delivery.value > 0) {
+                    address_delivery.style.outline = "1px solid red";
+                    address_error.textContent = "Địa chỉ đặt hàng phải là chuỗi kí tự !";
+                } else if(address_delivery.value.length < 20) {
+                    address_delivery.style.outline = "1px solid red";
+                    address_error.textContent = "Địa chỉ đặt hàng ít nhất 20 kí tự !";
                 }
             }
+
+            address_delivery.onfocus= function() {
+                address_delivery.style.outline = "1px solid #000";
+                address_error.textContent = "";
+            }
+
         })();
     </script>
 
