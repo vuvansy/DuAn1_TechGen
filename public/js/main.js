@@ -38,6 +38,11 @@
                  //active phần tử đầu tiên
                  $('.list-thumb .thumb-item:first-child').click();
                
+                // Sidebar 
+                $('.sidebar-nav__link').click(function(){
+                    $('.sidebar-nav__link').removeClass('sidebar-nav__active')
+                    $(this).toggleClass('sidebar-nav__active')
+                   })
         });
 
     
