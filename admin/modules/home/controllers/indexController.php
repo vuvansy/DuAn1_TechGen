@@ -15,14 +15,5 @@ function indexAction()
     $data['num_row_category'] = num_row_category();
 
 
-
     load_view('index', $data);
-    // echo 'Trang chủ';
-    load_view('index');
-}
-
-function checkAction()
-{
-    // echo 'Trang chủ';
-    load_view('check');
 }
