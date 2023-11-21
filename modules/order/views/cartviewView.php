@@ -29,10 +29,13 @@ get_header();
             ];
             $canRemove = '';
             foreach ($order_view as $order_list) {
+                if($order_list['order_status'] == 4 || $order_list['order_status'] == 5) {
+                    continue;
+                }
                 if(($order_list['order_status'] == 3) || ($order_list['order_status'] == 2))  {
-                    $canRemove = '?mod=order&action=remove_order&id=' . $order_list['id_order'];
+                    $canRemove = '?mod=order&action=removeOrder&id=' . $order_list['id_order'];
                 } else {
-                    $canRemove = '';
+                    $canRemove = '?mod=order&action=cannotRemove';
                 }
                 $linkDetail ="?mod=order&action=orderDetail&keyOrder=" .$order_list['id_order'];
                 $order_html .= '
@@ -229,6 +232,13 @@ get_header();
         </div>
     </section>
 </main>
+
+<?php
+    if(isset($_SESSION['alert_cannot_remove'])) {
+        echo $_SESSION['alert_cannot_remove'];
+        unset($_SESSION['alert_cannot_remove']);
+    }
+?>
 
 <?php
 get_footer();

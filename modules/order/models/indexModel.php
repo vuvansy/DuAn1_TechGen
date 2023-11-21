@@ -1,7 +1,7 @@
 <?php
 
 function get_product_by_id($product) {
-    return db_fetch_row("SELECT `id_product`,`product_name`, `product_sale`, `product_image`, `product_quantity` FROM `product` WHERE `id_product` = " .$product);
+    return db_fetch_row("SELECT `id_product`,`product_name`, `product_sale`, `product_price`, `product_image`, `product_quantity` FROM `product` WHERE `id_product` = " .$product);
 }
 
 function create_order($data) {
@@ -18,7 +18,7 @@ function create_detail_order($data) {
 }
 
 function get_order_by_id_user($user) {
-    $sql = "SELECT * FROM `order_tg` WHERE `id_user` = " . $user;
+    $sql = "SELECT * FROM `order_tg` WHERE `id_user` = " . $user . " ORDER BY `id_order` DESC";
     return db_fetch_array($sql);
 }
 
@@ -37,6 +37,22 @@ function set_down_quantity($id_product, $count) {
     $data['product_quantity'] = $product_quantity - $count;
     $where = 'id_product = ' . $id_product;;
     return db_update('product', $data, $where);
+}
+
+function get_status_order_by_id_order($id_order) {
+    $sql = "SELECT `order_status` FROM `order_tg` WHERE `id_order` = " . $id_order;
+    return db_fetch_row($sql);
+}
+
+function set_status_order_hidden($id_order) {
+    $status_new = [
+        2 => 4,
+        3 => 5
+    ];
+    $status_now = (get_status_order_by_id_order($id_order))['order_status'];
+    $data['order_status'] = $status_new[$status_now];
+    $where = 'id_order = ' . $id_order;;
+    return db_update('order_tg', $data, $where);
 }
 
 

@@ -14,12 +14,13 @@
     width: 88rem;
 }
 
-.order-detail-tbody tr td img{
-    width: auto;
-    height: auto;
+.order-detail-tbody tr td a img {
+    min-width: 9rem;
+    min-height: 9rem;
     max-width: 10rem;
     max-height: 10rem;
     margin-right: 1rem;
+    cursor:pointer;
 }
 
 .order-detail-thead{
@@ -122,6 +123,8 @@
 }
 
 .table-orders-detail .orders-detail {
+    display: block;
+    color: #000;
     padding-top: 1rem;
     font-size: 1.2rem;
     font-weight: 700;
@@ -170,6 +173,7 @@
 }
 
 .box-order-all .box-order-right{
+    position: relative;
     width: 30%;
 }
 
@@ -355,4 +359,52 @@
     height: 10rem;
     object-fit: contain;
     margin-top: 1rem;
+}
+
+.name_delivery-message {
+    display: block;
+    width: auto;
+    height: auto;
+    background: #FFF;
+    position: absolute;
+    font-size: 1rem;
+    top: 20.4rem;
+    left: 2rem;
+    color: red;
+}
+
+.email_delivery-message {
+    display: block;
+    width: auto;
+    height: auto;
+    background: #FFF;
+    position: absolute;
+    font-size: 1rem;
+    top: 26.2rem;
+    left: 2rem;
+    color: red;
+}
+
+.phone_delivery-message {
+    display: block;
+    width: auto;
+    height: auto;
+    background: #FFF;
+    position: absolute;
+    font-size: 1rem;
+    top: 26.2rem;
+    left: 23.5rem;
+    color: red;
+}
+
+.address_delivery-message {
+    display: block;
+    width: auto;
+    height: auto;
+    background: #FFF;
+    position: absolute;
+    font-size: 1rem;
+    top: 32.2rem;
+    left: 2rem;
+    color: red;
 }
