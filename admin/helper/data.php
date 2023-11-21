@@ -16,7 +16,7 @@ function bill_select_sum_by_month($month)
     $sql = "SELECT SUM(order_total) 
     AS doanh_thu_thang
     FROM order_tg 
-    WHERE MONTH(order_date) = $month and order_status =3";
+    WHERE MONTH(order_date) = $month and (order_status = 3 OR order_status = 5)";
     return db_fetch_row($sql)['doanh_thu_thang'];
 }
 
@@ -27,7 +27,7 @@ function order_success($month)
     $sql = "SELECT COUNT(id_order) 
     AS order_success
     FROM order_tg 
-    WHERE MONTH(order_date) = $month and order_status = 3";
+    WHERE MONTH(order_date) = $month and (order_status = 3 OR order_status = 5)";
     return db_fetch_row($sql)['order_success'];
 }
 
@@ -37,7 +37,7 @@ function order_cancel($month)
     $sql = "SELECT COUNT(id_order) 
     AS order_cancel
     FROM order_tg
-    WHERE MONTH(order_date) = $month and order_status = 2";
+    WHERE MONTH(order_date) = $month and (order_status = 2 OR order_status = 4)";
 
     return db_fetch_row($sql)['order_cancel'];
 }

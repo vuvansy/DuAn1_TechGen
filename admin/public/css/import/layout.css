@@ -95,6 +95,16 @@ ul.dropdown-user__sub li :hover {
     padding: 17px 0;
     color: var(--black);
     font-weight: 900;
+    position: relative;
+}
+
+.sidebar-nav__link::after {
+    position: absolute;
+    content: "\f105";
+    font-family: "FontAwesome";
+    top: 19px;
+    right: 10px;
+    font-size: 13px;
 }
 
 .sidebar-right {
