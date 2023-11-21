@@ -57,10 +57,11 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                 const address_delivery = document.getElementById("address_delivery");
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 const phoneNumberRegex = /^[0-9]+$/;
+                const addressRegex = /^\d+$/;
                 
-                if(address_delivery.value.length === 0) { 
+                if(address_delivery.value === "") { 
                     return false;
-                } else if(address_delivery.value > 0) { 
+                } else if(addressRegex.test(address_delivery.value)) { 
                     return false;
                 } else if(address_delivery.value.length < 20) { 
                     return false;
