@@ -10,11 +10,12 @@ get_header();
             <div class="comment-detail-title">
                 Chi tiết bình luận
             </div>
-            <form action="" class="search-comment-detail">
+            <form action="" class="search-comment-detail" method="POST">
                 <div class="box-form-comment-detail">
                     <!-- input -->
-                    <input type="text" class="search-comment-detail-input" placeholder="Nhập tên..." />
-                    <input type="submit" class="search-comment-detail-btn" value="Tìm kiếm">
+                    <input type="text" class="search-comment-detail-input" name="box-search-product"
+                        placeholder="Nhập tên..." />
+                    <input type="submit" class="search-comment-detail-btn" name="search-product-btn" value="Tìm kiếm">
                 </div>
                 <!-- Submit button -->
 
@@ -39,35 +40,35 @@ get_header();
                         </tr>
                     </thead>
                     <tbody class="table-tbody-detail">
-                        <tr>
-                            <form action="">
-                            <td class="check-input-comment-detail">
-                                <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected">
-                            </td>
-                            <td class="tbody-content-detail">
-                                Chả biết 15 như nào chứ thấy 14prm vẫn đỉnh cao mà, đầm tay thật
-                            </td>
-                            <td class="date">2018-02-24</td>
-                            <td class="user-comment">Khang</td>
-                            <td class="delete"><a href=""><i class="fa-solid fa-trash-can"></i></a>
-                            </form>
-                        </tr>
-                        <tr>
-                        <form action="">
-                            <td class="check-input-comment-detail">
-                                <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected">
-                            </td>
-                            <td class="tbody-content-detail">
-                                Chả biết 15 như nào chứ thấy 14prm vẫn đỉnh cao mà, đầm tay thật
-                            </td>
-                            <td class="date">2018-02-24</td>
-                            <td class="user-comment">Khang</td>
-                            <td class="delete"><a href=""><i class="fa-solid fa-trash-can"></i></a>
-                            </form>
-                        </tr>
+                        <?php
+                        if (isset($_GET['id'])) {
+                            $id_product = $_GET['id'];
+                        }
+                        foreach ($comment_list as $comment) {
+                            $user_fullname = get_user_by_id_user($comment['id_user']);
+                            ?>
+                            <tr>
+                                <td class="check-input-comment-detail">
+                                    <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected" checked>
+                                </td>
+                                <td class="tbody-content-detail">
+                                    <?php echo $comment['content'] ?>
+                                </td>
+                                <td class="date">
+                                    <?php echo $comment['date_comment'] ?>
+                                </td>
+                                <td class="user-comment">
+                                    <?php echo $user_fullname[0]['fullname'] ?>
+                                </td>
+                                <td class="delete"><a name="delete_comment"
+                                        href="?mod=comment&action=deteleIdcomment&id=<?php echo $comment['id_comment'] ?>"><i
+                                            class="fa-solid fa-trash-can"></i></a> </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
                     </tbody>
                 </table>
-
                 <div class="full-btn-comment-detail">
                     <a class="check-all" href="">Chọn tất cả</a>
                     <a class="cancel-all" href="">Bỏ chọn tất cả</a>
@@ -77,8 +78,7 @@ get_header();
         </div>
     </div>
 </main>
-
-
+</script>
 <?php
 get_footer();
 ?>
