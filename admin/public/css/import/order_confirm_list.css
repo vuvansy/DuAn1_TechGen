@@ -1,7 +1,7 @@
 .confirm_list-container {
     width: 119rem;
     margin: 0 0 181px 0;
-    height: 727px;
+    height: auto;
 }
 
 .confirm_list-container .confirm_list-heading {
@@ -60,6 +60,7 @@
     border: 1px solid #DDD;
     margin-top: 1rem;
     padding-bottom: 2rem;
+    height: auto;
 }
 
 .confirm_list-container .container-content .head {
@@ -79,6 +80,7 @@
 .confirm_list-container .container-content .content-list {
     margin: 2rem auto 0 auto;
     width: 111rem;
+    height: auto;
 }
 
 .confirm_list-container .container-content .content-list .content-bar {

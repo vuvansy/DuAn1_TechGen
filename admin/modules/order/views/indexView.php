@@ -7,6 +7,8 @@ $status = [
     1 => 'đang vận chuyển',
     2 => 'đã hủy',
     3 => 'đã giao hàng',
+    4 => 'đã hủy',
+    5 => 'đã giao hàng',
 ];
 $oder_wait_html = '';
 foreach ($orderListWait as $value) {
