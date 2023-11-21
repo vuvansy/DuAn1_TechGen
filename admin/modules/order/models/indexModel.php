@@ -9,11 +9,11 @@ function get_order_trans() {
 }
 
 function get_order_cancel() {
-    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 2 ORDER BY `id_order` DESC");
+    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 2 OR `order_status` = 4 ORDER BY `id_order` DESC");
 }
 
 function get_order_success() {
-    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 3 ORDER BY `id_order` DESC");
+    return db_fetch_array("SELECT * FROM `order_tg` WHERE `order_status` = 3 OR `order_status` = 5 ORDER BY `id_order` DESC");
 }
 
 function get_part_order_by_id($id_order) {
