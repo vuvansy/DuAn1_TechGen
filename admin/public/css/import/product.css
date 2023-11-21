@@ -248,6 +248,14 @@
   font-weight: 400;
 }
 
+.container-form-input .input-text .text-danger {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: red;
+  margin-top: 5px;
+}
+
+
 .container-form-input .input-text .select-box {
   width: 270px;
   height: 30px;
