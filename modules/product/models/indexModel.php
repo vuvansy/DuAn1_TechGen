@@ -50,7 +50,7 @@ function get_product_by_id($product_id)
 
 function get_comment_by_product_id($id_product) {
     $sql = "SELECT * FROM `comment` WHERE `id_product`  = ".$id_product."  ORDER BY `id_comment` DESC" ;
-  $item = db_fetch_array($sql);
+   $item = db_fetch_array($sql);
         return $item;
 }
 function get_fullname_user_by_id_user($id_user)

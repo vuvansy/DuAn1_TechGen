@@ -109,7 +109,7 @@
 }
 
 .table-comment-list .table-thead-comment .product {
-    width: 310px;
+    width: 480px;
 }
 
 .table-comment-list .table-thead-comment .quantity,
@@ -128,12 +128,14 @@
 .table-comment-list .table-tbody tr {
     border: 0.5px solid #DDDDDD;
     font-size: 13px;
+    height: 30px;
 }
 
 .table-comment-list .table-tbody tr td {
     text-align: center;
     vertical-align: middle;
     border: 1px solid #DDDDDD;
+    line-height: 22px;
 }
 
 
