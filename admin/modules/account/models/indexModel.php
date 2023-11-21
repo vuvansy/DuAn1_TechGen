@@ -19,10 +19,10 @@ function add_user($data)
 }
 
 
-//Hàm kiểm tra tài khoản có tồn tại Tài khoản trên hệ thống hay chưa
+//Hàm kiểm tra tài khoản có tồn tại Tài khoản trên hệ thống chưa và phải là tài khoản vủa quản trị viên
 function check_login($username, $password)
 {
-    $check_user = db_num_rows("SELECT * FROM `user` WHERE `username` = '$username' AND `password` = '$password'");
+    $check_user = db_num_rows("SELECT * FROM `user` WHERE `username` = '$username' AND `password` = '$password' AND `user_role` = '1'");
     if ($check_user > 0) {
         return true;
     } else {

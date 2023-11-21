@@ -1,6 +1,9 @@
 <?php
 get_header();
+$current_month = $_GET['month'] ?? intval(date('m'));
+$current_year = $_GET['year'] ?? intval(date('Y'));
 ?>
+
 <main>
     <div class="main-wrapper">
         <?php
@@ -29,39 +32,39 @@ get_header();
 
                     <div class="inline">
 
-                        <div class="user">
+                        <div class="order">
                             <div class="title">
-                                Tổng số khách hàng
+                                Tổng Số Đơn Hàng
                             </div>
                             <div class="number">
-                                4
+                                <?php echo $num_row_order ?>
+                            </div>
+                        </div>
+
+                        <div class="user">
+                            <div class="title">
+                                Tổng Số Khách Hàng
+                            </div>
+                            <div class="number">
+                                <?php echo $num_rows_user ?>
                             </div>
                         </div>
 
                         <div class="product">
                             <div class="title">
-                                Tổng số sản phẩm
+                                Tổng Số Sản Phẩm
                             </div>
                             <div class="number">
-                                4
-                            </div>
-                        </div>
-
-                        <div class="order">
-                            <div class="title">
-                                Tổng số đơn hàng
-                            </div>
-                            <div class="number">
-                                4
+                                <?php echo $num_row_product ?>
                             </div>
                         </div>
 
                         <div class="category">
                             <div class="title">
-                                Tổng số sản phẩm
+                                Tổng Số Loại Hàng
                             </div>
                             <div class="number">
-                                4
+                                <?php echo $num_row_category ?>
                             </div>
                         </div>
 
@@ -88,150 +91,40 @@ get_header();
 
                         <div class="content">
 
-                            <div class="heading">
-                                <div class="line"></div>
-                                <div class="title">
-                                    Doanh thu theo tháng
+                            <div class="card-body">
+                                <div>
+                                    <canvas id="myChart"></canvas>
                                 </div>
-                            </div>
+                                <script>
+                                    const ctx = document.getElementById('myChart');
 
-                            <div class="main-chart">
+                                    new Chart(ctx, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 
-                                <div class="top">
-                                    <div class="left-chart">
-                                        <div class="price">
-                                            40,000,000
-                                        </div>
-                                        <div class="price">
-                                            35,000,000
-                                        </div>
-                                        <div class="price">
-                                            30,000,000
-                                        </div>
-                                        <div class="price">
-                                            25,000,000
-                                        </div>
-                                        <div class="price">
-                                            20,000,000
-                                        </div>
-                                        <div class="price">
-                                            15,000,000
-                                        </div>
-                                        <div class="price">
-                                            10,000,000
-                                        </div>
-                                        <div class="price">
-                                            5,000,000
-                                        </div>
-                                        <div class="price">
-                                            0
-                                        </div>
-                                    </div>
-                                    <div class="right-chart">
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class=""></span>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="bottom">
-
-                                    <div class="month">
-                                        1
-                                    </div>
-
-                                    <div class="month">
-                                        2
-                                    </div>
-
-                                    <div class="month">
-                                        3
-                                    </div>
-
-                                    <div class="month">
-                                        4
-                                    </div>
-
-                                    <div class="month">
-                                        5
-                                    </div>
-
-                                    <div class="month">
-                                        6
-                                    </div>
-
-                                    <div class="month">
-                                        7
-                                    </div>
-
-                                    <div class="month">
-                                        8
-                                    </div>
-
-                                    <div class="month">
-                                        9
-                                    </div>
-
-                                    <div class="month">
-                                        10
-                                    </div>
-
-                                    <div class="month">
-                                        11
-                                    </div>
-
-                                    <div class="month">
-                                        12
-                                    </div>
-
-                                </div>
-
+                                            datasets: [{
+                                                label: 'Doanh thu tháng',
+                                                data: [
+                                                    <?php
+                                                    for ($i = 1; $i <= 12; $i++) {
+                                                        echo bill_select_sum_by_month($i, $current_year) . ",";
+                                                    }
+                                                    ?>
+                                                ],
+                                                borderWidth: 1,
+                                                backgroundColor: '#0000FF',
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
 
                         </div>
@@ -254,172 +147,65 @@ get_header();
                         </div>
 
                         <div class="content">
-
-                            <div class="heading">
-                                <div class="head-left">
-                                    <div class="line"></div>
-                                    <div class="title">
-                                        Đơn hàng thành công
-                                    </div>
+                            <div class="card-body">
+                                <div>
+                                    <canvas id="myChartMonth"></canvas>
                                 </div>
-                                <div class="head-right">
-                                    <div class="line"></div>
-                                    <div class="title">
-                                        Đơn hàng bị hủy
-                                    </div>
-                                </div>
-                            </div>
+                                <script>
+                                    const ctxMonth = document.getElementById('myChartMonth');
 
-                            <div class="main-chart">
+                                    new Chart(ctxMonth, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: ['T1', 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 
-                                <div class="top">
-                                    <div class="left-chart">
-                                        <div class="price">
-                                            0.8
-                                        </div>
-                                        <div class="price">
-                                            0.7
-                                        </div>
-                                        <div class="price">
-                                            0.6
-                                        </div>
-                                        <div class="price">
-                                            0.5
-                                        </div>
-                                        <div class="price">
-                                            0.4
-                                        </div>
-                                        <div class="price">
-                                            0.3
-                                        </div>
-                                        <div class="price">
-                                            0.2
-                                        </div>
-                                        <div class="price">
-                                            0.1
-                                        </div>
-                                        <div class="price">
-                                            0
-                                        </div>
-                                    </div>
-                                    <div class="right-chart">
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-                                        <div class="month">
-                                            <span class="success"></span>
-                                            <span class="cancel"></span>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="bottom">
-
-                                    <div class="month">
-                                        1
-                                    </div>
-
-                                    <div class="month">
-                                        2
-                                    </div>
-
-                                    <div class="month">
-                                        3
-                                    </div>
-
-                                    <div class="month">
-                                        4
-                                    </div>
-
-                                    <div class="month">
-                                        5
-                                    </div>
-
-                                    <div class="month">
-                                        6
-                                    </div>
-
-                                    <div class="month">
-                                        7
-                                    </div>
-
-                                    <div class="month">
-                                        8
-                                    </div>
-
-                                    <div class="month">
-                                        9
-                                    </div>
-
-                                    <div class="month">
-                                        10
-                                    </div>
-
-                                    <div class="month">
-                                        11
-                                    </div>
-
-                                    <div class="month">
-                                        12
-                                    </div>
-
-                                </div>
-
+                                            datasets: [{
+                                                    label: 'ĐH success',
+                                                    data: [
+                                                        <?php
+                                                        for ($i = 1; $i <= 12; $i++) {
+                                                            echo order_success($i, $current_year) . ",";
+                                                        }
+                                                        ?>
+                                                    ],
+                                                    borderWidth: 1,
+                                                    backgroundColor: '#008000',
+                                                },
+                                                {
+                                                    label: 'ĐH warning',
+                                                    data: [
+                                                        <?php
+                                                        for ($i = 1; $i <= 12; $i++) {
+                                                            echo order_cancel($i, $current_year) . ",";
+                                                        }
+                                                        ?>
+                                                    ],
+                                                    borderWidth: 1,
+                                                    backgroundColor: '#DC143C',
+                                                },
+                                                {
+                                                    label: 'ĐH transport',
+                                                    data: [
+                                                        <?php
+                                                        for ($i = 1; $i <= 12; $i++) {
+                                                            echo order_transport($i, $current_year) . ",";
+                                                        }
+                                                        ?>
+                                                    ],
+                                                    borderWidth: 1,
+                                                    backgroundColor: '#0000FF',
+                                                }
+                                            ]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
 
                         </div>

@@ -8,9 +8,17 @@ function construct()
 
 function indexAction()
 {
+
+    $data["num_rows_user"] =  num_row_user();
+    $data["num_row_product"] =  num_row_product();
+    $data['num_row_order'] = num_row_order();
+    $data['num_row_category'] = num_row_category();
+
+
+
+    load_view('index', $data);
     // echo 'Trang chủ';
     load_view('index');
-
 }
 
 function checkAction()
@@ -18,6 +26,3 @@ function checkAction()
     // echo 'Trang chủ';
     load_view('check');
 }
-
-
-

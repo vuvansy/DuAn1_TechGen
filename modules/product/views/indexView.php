@@ -10,7 +10,7 @@ if (isset($_SESSION['is_login'])) {
 } else {
     $actionForm = '?mod=product&action=error&id=' . $id_product;
     // $load_error = 'Location: ?mod=product&cation=index&id= '. $id_product ;
-     $id_user = 0;
+    $id_user = 0;
     //var_dump($error);
     // $error_html = '';
     // if (isset($error)) {
@@ -58,20 +58,17 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
                 <div id="wp-slider">
                     <div class="show-picture">
                         <img src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>?>" alt="">
-                        <div class="next-prev">
-                            <div class="prev">
-                                <i class="fa-solid fa-angles-left"></i>
-                            </div>
-                            <div class="next">
-                                <i class="fa-solid fa-angles-right"></i>
-                            </div>
-                        </div>
                     </div>
                     <ul class="list-thumb">
                         <li class="thumb-item"><img src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>" alt=""></li>
-                        <li class=" thumb-item"><img src="public/images/product/Iphone/iphone2.jpg" alt=""></li>
-                        <li class="thumb-item"><img src="public/images/product/Iphone/iphone3.jpg" alt=""></li>
-                        <li class="thumb-item"><img src="public/images/product/Iphone/iphone4.jpg" alt=""></li>
+                        <?php
+                        foreach ($list_gallery as $item) {
+                        ?>
+                            <li class="thumb-item"><img src="<?php echo $imagesURL ?>/gallery/<?php echo $item['gallery_name'] ?>" alt=""></li>
+                        <?php
+                        }
+                        ?>
+
                     </ul>
                 </div>
             </div>
