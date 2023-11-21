@@ -58,6 +58,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 const phoneNumberRegex = /^[0-9]+$/;
                 const addressRegex = /^\d+$/;
+                const check = true;
                 
                 if(address_delivery.value === "") { 
                     return false;
