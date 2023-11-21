@@ -69,7 +69,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
   
                 if(name_delivery.value === "") { 
                     return false;
-                } else if(name_delivery.value.length < 10) {
+                } else if(name_delivery.value.length < 6) {
                     return false;
                 }
                 if(email_delivery.value === "") { 
@@ -280,9 +280,9 @@ if (isset($_SESSION['is_login'])) {
         if (name_delivery.value === "") {
             name_delivery.style.outline = "1px solid red";
             name_error.textContent = "Bạn phải nhập họ và tên để đặt hàng !";
-        } else if (name_delivery.value.length < 10) {
+        } else if (name_delivery.value.length < 6) {
             name_delivery.style.outline = "1px solid red";
-            name_error.textContent = "Họ và tên người đặt hàng ít nhất 10 kí tự !";
+            name_error.textContent = "Họ và tên người đặt hàng ít nhất 6 kí tự !";
         }
 
         name_delivery.onblur = function() {
