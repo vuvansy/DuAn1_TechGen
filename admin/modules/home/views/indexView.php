@@ -126,13 +126,10 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
                                     });
                                 </script>
                             </div>
-
                         </div>
-
                     </div>
 
                     <div class="right">
-
                         <div class="head">
                             <div class="inline">
                                 <div class="icon">
@@ -213,7 +210,6 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
                     </div>
 
                 </div>
-
             </section>
         </div>
     </div>
