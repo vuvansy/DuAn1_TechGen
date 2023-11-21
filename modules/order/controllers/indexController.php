@@ -24,11 +24,16 @@ function addAction() {
                     $i++;
                 }
             }
+            if($information['product_sale'] > 0) {
+                $price_product = $information['product_sale'];
+            } else {
+                $price_product = $information['product_price'];
+            }
             if($check) {
                 $_SESSION['cart'][] = [
                     'id' => $information['id_product'],
                     'name' => $information['product_name'],
-                    'price' => $information['product_sale'],
+                    'price' => $price_product,
                     'image' => $information['product_image'],
                     'count' => $count
                 ];
@@ -57,11 +62,16 @@ function addToCarAction() {
                     $i++;
                 }
             }
+            if($information['product_sale'] > 0) {
+                $price_product = $information['product_sale'];
+            } else {
+                $price_product = $information['product_price'];
+            }
             if($check) {
                 $_SESSION['cart'][] = [
                     'id' => $information['id_product'],
                     'name' => $information['product_name'],
-                    'price' => $information['product_sale'],
+                    'price' => $price_product,
                     'image' => $information['product_image'],
                     'count' => $count
                 ];
@@ -181,7 +191,18 @@ function orderDetailAction()
 }
 
 function removeOrderAction() {
+    if(isset($_GET['id'])) {
+        $id = $_GET['id'];
+        set_status_order_hidden($id);
+        header('location: ?mod=order&action=cartview');
+    }
+}
 
+function cannotRemoveAction() {
+    $_SESSION['alert_cannot_remove'] = '<script>
+        alert("Đơn hàng này đang trong trạng thái xử lý ! Bạn không thể xóa")
+    </script>';
+    header('location: ?mod=order&action=cartview');
 }
 
 function successAction()
