@@ -132,7 +132,7 @@ foreach ($category_new as $value) {
                             </div>  
                             <div class="input-text">
                                 <label for="">Ảnh chi tiết (4)</label>
-                                <input class="input-file" id="delivery_name" name="delivery_name" type="file">
+                                <input class="input-file"  id="delivery_name" name="delivery_name" type="file" multiple>
                             </div>
                             <div class="input-desc">
                                 <label for="">Mô tả ngắn</label>
