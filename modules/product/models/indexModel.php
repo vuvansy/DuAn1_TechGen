@@ -48,10 +48,11 @@ function get_product_by_id($product_id)
 
 // comment
 
-function get_comment_by_product_id($id_product) {
-    $sql = "SELECT * FROM `comment` WHERE `id_product`  = ".$id_product."  ORDER BY `id_comment` DESC" ;
-   $item = db_fetch_array($sql);
-        return $item;
+function get_comment_by_product_id($id_product)
+{
+    $sql = "SELECT * FROM `comment` WHERE `id_product`  = " . $id_product . "  ORDER BY `id_comment` DESC";
+    $item = db_fetch_array($sql);
+    return $item;
 }
 function get_fullname_user_by_id_user($id_user)
 {
@@ -73,13 +74,13 @@ function add_comment($data)
     return db_insert('comment', $data);
 }
 // view
-function product_views($id_product){
+function product_views($id_product)
+{
     // số lượng tăng lên 1
-    $sql = "UPDATE `product` SET `product_view`= `product_view` + 1 WHERE `id_product` = ".$id_product;
-     // echo $sql;
+    $sql = "UPDATE `product` SET `product_view`= `product_view` + 1 WHERE `id_product` = " . $id_product;
+    // echo $sql;
     $item = db_query($sql);
-    return $item; 
-
+    return $item;
 }
 // ========= Product Detail =========
 

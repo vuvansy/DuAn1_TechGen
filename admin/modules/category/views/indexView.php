@@ -65,7 +65,7 @@ get_header();
                                         <td>
                                             <div class="table-section-icon">
                                                 <a href="?mod=category&action=edit&cat_id=<?php echo $item['id_category'] ?>"> <i class="fa-sharp fa-solid fa-pencil icons"></i></a>
-                                                <a href="?mod=category&action=delete&cat_id=<?php echo $item['id_category'] ?>"> <i class="fa-solid fa-trash-can icons"></i></a>
+                                                <a href="?mod=category&action=delete&cat_id=<?php echo $item['id_category'] ?>" class="Remove" onclick="return ale()"> <i class="fa-solid fa-trash-can icons"></i></a>
                                             </div>
                                         </td>
                                     </tr>

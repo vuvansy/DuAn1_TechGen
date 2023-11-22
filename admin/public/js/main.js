@@ -6,9 +6,19 @@
                 // return false;
             });
 
-              // Sidebar 
-            //   $('.sidebar-nav__item').click(function(){
-            //     $('.sidebar-nav__item').removeClass('sidebar-nav__active')
-            //     $(this).toggleClass('sidebar-nav__active')
-            //    })
+            //Chức năng xóa của Comment
+            $("#check-all").click(function (){
+              $(":checkbox").prop("checked", true);
+               });
+            $("#clear-all").click(function (){
+              $(":checkbox").prop("checked", false);
+              });
+            $("#btn-delete").click(function (){
+              if($(":checked").length === 0){
+                  alert("Vui lòng chọn ít nhất một mục!");
+                  return false;
+              }
+              });
+
+              
         });

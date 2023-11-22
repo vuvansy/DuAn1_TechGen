@@ -139,11 +139,6 @@ function deleteAction()
 
     $cat_id = (int)($_GET['cat_id']);
     // echo num_product_category($cat_id);
-    if (num_product_category($cat_id) > 0) {
-        $error['account'] = "Đã tồn tại sản phẩm không thể xóa loại hàng này";
-        // redirect("?mod=category&action=index");
-    } else {
-        db_delete("category", "`id_category` = $cat_id");
-        redirect("?mod=category&action=index");
-    }
+    db_delete("category", "`id_category` = $cat_id");
+    redirect("?mod=category&action=index");
 }
