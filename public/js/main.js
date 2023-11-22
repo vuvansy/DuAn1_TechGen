@@ -70,3 +70,13 @@ function next() {
     document.getElementById('hinh').src = arr_hinh[index];
 }
 setInterval("next()", 5000);
+
+var removeCategory = document.getElementsByClassName("remove");
+
+function ale() {
+    if (confirm("bạn có muốn xóa không ?")){
+        return true;
+    }else{
+        return false;
+    }
+}
