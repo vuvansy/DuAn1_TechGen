@@ -10,6 +10,7 @@ get_header();
             <div class="comment-detail-title">
                 Chi tiết bình luận
             </div>
+            <div class="comment-detail-bar">
             <form action="" class="search-comment-detail" method="POST">
                 <div class="box-form-comment-detail">
                     <!-- input -->
@@ -18,8 +19,9 @@ get_header();
                     <input type="submit" class="search-comment-detail-btn" name="search-product-btn" value="Tìm kiếm">
                 </div>
                 <!-- Submit button -->
-
             </form>
+            <a href="?mod=comment&action=index"class="list-comment-btn" >Danh Sách</a>
+            </div>
 
             <div class="comment-detail-content">
                 <div class="head-comment-detail">
@@ -49,11 +51,11 @@ get_header();
                             ?>
                             <tr>
                                 <td class="check-input-comment-detail">
-                                    <input type="checkbox" id="myCheckbox" name="myCheckbox" value="selected" checked>
+                                    <input type="checkbox" id="myCheckbox" name="id_comment[]" value="<?php echo $comment['id_comment']?>" >
                                 </td>
                                 <td class="tbody-content-detail">
                                     <?php echo $comment['content'] ?>
-                                </td>
+                                </td> 
                                 <td class="date">
                                     <?php echo $comment['date_comment'] ?>
                                 </td>
@@ -70,9 +72,9 @@ get_header();
                     </tbody>
                 </table>
                 <div class="full-btn-comment-detail">
-                    <a class="check-all" href="">Chọn tất cả</a>
-                    <a class="cancel-all" href="">Bỏ chọn tất cả</a>
-                    <a class="delete-all" href="">Xóa tất cả</a>
+                    <button  id="check-all" >Chọn tất cả</button>
+                    <button id="clear-all" >Bỏ chọn tất cả</button>
+                    <button id="btn-delete" name="btn-detele">Xóa tất cả</button>
                 </div>
             </div>
         </div>

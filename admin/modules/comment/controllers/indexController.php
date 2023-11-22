@@ -46,13 +46,35 @@ function commentDetailAction()
 
 function deteleIdcommentAction(){
     
+    // if (isset($_GET['id'])) {
+    //     $id_comment = $_GET['id'];
+    //     $id_product = (get_comment_by_id_comment($id_comment))[0]['id_product'];
+    //     // echo $id_product ;
+    //     $detele = deleteCommentByID_comment($id_comment);
+    //     header('Location: ?mod=comment&action=commentDetail&id='.$id_product);
+    // }
     if (isset($_GET['id'])) {
         $id_comment = $_GET['id'];
         $id_product = (get_comment_by_id_comment($id_comment))[0]['id_product'];
-        // echo $id_product ;
-        $detele = deleteCommentByID_comment($id_comment);
-        header('Location: ?mod=comment&action=commentDetail&id='.$id_product);
-    }
+        // show_array($id_comment);
+    if(is_array($id_comment)) {
+            foreach ($id_comment as $item) {
+            show_array($id_comment);
+            db_delete("comment", "`id_comment` = '{$item}'");
+         // var_dump($item);
         
+      } 
+   } else {
+      db_delete("comment", "`id_comment` = '{$id_comment}'");       
+   }
+      header('Location: ?mod=comment&action=commentDetail&id='.$id_product);
+    }    
+     
+   
 }
+
+
+    
+
+
 

@@ -35,6 +35,11 @@
     width: 100px;
     background-color: #DDDDDD;
     cursor: pointer;
+    border: none;
+}
+.box-form-comment .search-comment-submit:hover {
+    color: #fff;
+    background: #f25c05;
 }
 
 /* nội dung comment */
@@ -152,10 +157,29 @@
     float: right;
     
 }
+.comment-detail-bar {
+    height: 40px;
+    display: flex;
+    float: right;
+}
+.comment-detail-bar .list-comment-btn {
+   background: #ddd;;
+    height: 40px;
+    width: 110px;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000000;
+}
+.comment-detail-bar .list-comment-btn:hover {
+    color: #fff;
+    background: #f25c05;
+}
 
 .box-form-comment-detail {
     display: flex;
-    margin-right: 8px;
 }
 
 .box-form-comment-detail .search-comment-detail-input:focus,
@@ -172,7 +196,7 @@
 .box-form-comment-detail .search-comment-detail-btn
 {
     border: 1px solid #4F4E4E;
-    margin-right: 8px;
+    margin-right: 14px;
 
 }
 
@@ -183,6 +207,13 @@
     width: 100px;
     background-color: #DDDDDD;
     cursor: pointer;
+    border: none;
+}
+.box-form-comment-detail 
+.search-comment-detail-btn:hover {
+    color: #fff;
+    background: #f25c05;
+  
 }
 
 
@@ -320,9 +351,9 @@
     background-color: #F25C05;
 }
 
-.check-all,
-.cancel-all,
-.delete-all  {
+#check-all,
+#clear-all,
+#btn-delete  {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 10px;
