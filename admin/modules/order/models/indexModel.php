@@ -40,4 +40,9 @@ function get_name_by_id_order($id) {
     return db_fetch_array($sql);
 }
 
+function get_order_by_id_order($id) {
+    $sql = "SELECT * FROM `order_tg` WHERE `id_order` = " . $id;
+    return db_fetch_array($sql);
+}
+
 ?>

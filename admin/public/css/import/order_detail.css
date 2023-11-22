@@ -148,6 +148,65 @@
     margin: 0 auto;
 }
 
+.detail-container .container-content .content-list .list-group .title {
+    display: grid;
+    grid-template-columns: 1fr 14rem;
+    width: 111rem;
+    border-left: 1px solid #DDD;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+}
+
+.detail-container .container-content .content-list .list-group .title td {
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    font-weight: 700;
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+}
+
+.detail-container .container-content .content-list .list-group .title td:nth-child(1) {
+    border-right: none;
+}
+
+.detail-container .container-content .content-list .list-group .information  {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 111rem;
+    height: 8rem;
+    border-left: 1px solid #DDD;
+    border-right: none;
+    border-bottom: 1px solid #DDD;
+    border-top: none;
+}
+
+.detail-container .container-content .content-list .list-group .information td {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 5rem 1rem 5rem;
+    gap: 5rem;
+    height: 8rem;
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+    text-align: justify;
+}
+
+.detail-container .container-content .content-list .list-group .information .left div {
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.detail-container .container-content .content-list .list-group .information .right div {
+    height: 2rem;
+    line-height: 2rem;
+}
+
 .detail-container .container-content .content-list .total-bar {
     display: grid;
     grid-template-columns: 96.9rem 14rem;
