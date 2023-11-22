@@ -86,6 +86,42 @@ get_header();
 
                             <?=$detail_html?>
 
+                            <tr class="title">
+                                <td>
+                                    Thông tin đơn hàng
+                                </td>
+                                <td></td>
+                            </tr>
+
+                            <tr class="information">
+                                <td>
+                                    <div class="left">
+                                        <div class="id_order">
+                                            Mã đơn hàng: IT<?=$order_information[0]['id_order']?>
+                                        </div>
+                                        <div class="user_order">
+                                            Tên người đặt hàng: <?=$order_information[0]['order_name']?>
+                                        </div>
+                                        <div class="phone_order">
+                                            Số điện thoại người đặt hàng: <?=$order_information[0]['order_phone']?>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="email_order">
+                                            Email: <?=$order_information[0]['order_email']?>
+                                        </div>
+                                        <div class="address_order">
+                                            Địa chỉ đặt hàng: <?=$order_information[0]['order_address']?>
+                                        </div>
+                                        <div class="data_order">
+                                            Thời gian đặt hàng: <?=$order_information[0]['order_date']?>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                            </tr>
+
                             <tr class="total-bar">
 
                                 <td class="text">Tổng tiền</td>
@@ -93,6 +129,8 @@ get_header();
                                 <td class="total"><?=number_format($total_detail, 0, '', '.')?></td>
 
                             </tr>
+
+
 
                         </tbody>
 
