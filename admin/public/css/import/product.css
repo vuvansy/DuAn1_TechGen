@@ -204,6 +204,7 @@
   text-align: center;
 }
 .container-product .list-table .list-item td {
+  vertical-align: middle;
   font-size: 1.3rem;
   font-weight: 400;
   color: black;
@@ -215,7 +216,7 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding-top: 6px;
+
 }
 
 /****************** add.css + edit.css **************************/
