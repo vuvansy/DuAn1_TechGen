@@ -21,6 +21,10 @@ get_header();
                 </tr>
             <tbody id="dssp">
         ';
+            $payOrder = [
+                    1 => 'Tiền mặt',
+                    2 => 'Trực tuyến'
+            ];
             $status = [
                 0 => 'chờ xác nhận',
                 1 => 'đang vận chuyển',
@@ -48,7 +52,7 @@ get_header();
                 <td>IT'.$order_list['id_order'].'</td>
                 <td>'.$order_list['order_quantity'].'</td>
                 <td>'.number_format($order_list['order_total'], 0, ',', '.').'</td>
-                <td>COD</td>
+                <td>'.$payOrder[$order_list['id_delivery']].'</td>
                 <td>'.$order_list['order_date'].'</td>
                 <td>'.$status[$order_list['order_status']].'</td>
                 <td>
