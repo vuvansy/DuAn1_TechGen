@@ -18,19 +18,15 @@
  * charset: Mã ký tự nội dung mail(UTF-8)
  */
 
-$config['email'] = Array(
+$config['email'] = array(
     'protocol' => 'smtp',
     'smtp_host' => 'smtp.gmail.com',
     'smtp_port' => 587,
     'smtp_user' => 'vvsy8119@gmail.com',
     'smtp_pass' => 'yumwddvskxynrptl',
-    'smtp_fullname' => 'Văn Sỹ',
+    'smtp_fullname' => 'TechGen',
     'smtp_timeout' => '7',
     'smtp_secure' => 'tls',
     'mailtype' => 'html',
     'charset' => 'UTF-8'
 );
-
-
-
-
