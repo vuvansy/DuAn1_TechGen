@@ -15,5 +15,5 @@ call_function(array('construct', $action_name));
 
 
 //Chặn hành động cố tình vào các trang khác khi chưa đăng nhập
-if (!is_login() && get_action() != 'login' && get_action() != 'reset' && get_action() != 'newPass' && (info_user(user_login(), 'user_role') == 0))
+if (!is_login() && get_action() != 'login' && get_action() != 'reset' && get_action() != 'newPass')
     redirect("?mod=account&action=login");
