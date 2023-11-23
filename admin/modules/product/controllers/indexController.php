@@ -132,10 +132,6 @@ function editAction()
     if (isset($_GET['id'])) {
         $id_product = $_GET['id'];
         $product_by_id = (get_product_by_id($id_product))[0];
-        // show_array($product_by_id);
-        // $data["product_by_id"] = $product_by_id;
-        // // show_array($data["product_by_id"]);
-        // load_view('edit', $data);
     }
    
     global $error;
@@ -225,26 +221,10 @@ function editAction()
 
         if (empty($error)) {
             db_update('product', $data_new, $where);
-            // update_img
-            // $gallery_name = [];
-            // if ($_FILES['gallery_name']['name'] != '') {
-            //     for ($i = 0; $i < count($_FILES['gallery_name']['name']); $i++) {
-            //         $gallery['id_gallery'] = null;
-            //         $gallery['gallery_name'] = $_FILES['gallery_name']['name'][$i];
-            //         $fileTmpPath = $_FILES['gallery_name']['tmp_name'][$i];
-            //         $destination = '../public/images/gallery/' . $gallery['gallery_name'];
-            //         move_uploaded_file($fileTmpPath, $destination);
-            //         db_update('gallery', $gallery,$id_product);
-            //     }
-            // }
-            header('location: ?mod=product&action=index');
-            $_SESSION['masew'] = '<span class="massew">Cập nhật thành công !</span>';
-           
+            $_SESSION['maseww'] = '<span class="massew">Cập nhật thành công !</span>';
+             header('location: ?mod=product&action=index');
             
         } else {
-            // header('location: ?mod=product&action=edit&id=' . $id_product);
-            // load_view('edit', $data);
-            // show_array($error); 
             $_SESSION['masew'] = '<span class="massew">Vui lòng nhập đủ thông tin !</span>';
         }
     }
