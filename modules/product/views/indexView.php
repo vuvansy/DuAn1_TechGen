@@ -30,7 +30,7 @@ foreach ($comment_list as $comment) {
     // var_dump($comment);
     $comment_html .= '
     <div class="comment-user">
-    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
+    <div class="img-user"><img src="admin/public/images/user/' . info_user(user_login(), 'image') . '" alt=""></div> 
     <div class="info-user">
         <p><strong class="name">' . $user_fullname[0]['fullname'] . '</strong></p>
         <div class="conten-comment">
@@ -121,38 +121,38 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
 
                 <!-- giá sp -->
                 <div class="product-price">
-                <?php
-                  
-                  if ($product_id['product_sale'] > 0) {
-                      $sale = (($product_id['product_price'] - $product_id['product_sale']) / $product_id['product_price']) * 100;
-                  } else {
-                      $sale = 0;
-                  }
-                  ?>
-                  <div class="cost">
-                      <?php if ($sale == 0):
-                          $gia = $product_id['product_price'];
-                          ?>
-                          <p >
-                            <?php echo currency_format($gia, 'đ'); ?>
-                          </p>
-                      </div>
+                    <?php
 
-                      <div class="sale">
-                      <?php else:
-                          $gia = $product_id['product_sale'];
-                          ?>
-                          <p class="sale">   
-                              <?php echo currency_format($gia, 'đ'); ?>
-                          </p>
-                          <span >   
-                              <?php echo currency_format($product_id['product_price'], 'đ'); ?>
-                          </span>
-                          <small>
-                              <?php echo round($sale, 1); ?>%
-                          </small>
-                      <?php endif ?>
-                  </div>
+                    if ($product_id['product_sale'] > 0) {
+                        $sale = (($product_id['product_price'] - $product_id['product_sale']) / $product_id['product_price']) * 100;
+                    } else {
+                        $sale = 0;
+                    }
+                    ?>
+                    <div class="cost">
+                        <?php if ($sale == 0) :
+                            $gia = $product_id['product_price'];
+                        ?>
+                            <p>
+                                <?php echo currency_format($gia, 'đ'); ?>
+                            </p>
+                    </div>
+
+                    <div class="sale">
+                    <?php else :
+                            $gia = $product_id['product_sale'];
+                    ?>
+                        <p class="sale">
+                            <?php echo currency_format($gia, 'đ'); ?>
+                        </p>
+                        <span>
+                            <?php echo currency_format($product_id['product_price'], 'đ'); ?>
+                        </span>
+                        <small>
+                            <?php echo round($sale, 1); ?>%
+                        </small>
+                    <?php endif ?>
+                    </div>
                 </div>
                 <!-- giá sp -->
 

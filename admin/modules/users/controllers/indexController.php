@@ -21,33 +21,34 @@ function indexAction()
     ];
     load_view('index', $data);
 }
-function deleteAction(){
+function deleteAction()
+{
 
-if (isset($_GET['id'])) {
-    $id_user = $_GET['id'];
-    if (delete_order_tg_by_id($id_user)) {
+    if (isset($_GET['id'])) {
+        $id_user = $_GET['id'];
+        if (delete_order_tg_by_id($id_user)) {
+            header('location: ?mod=users');
+        }
+        if (delete_cmt_by_id($id_user)) {
+            header('location: ?mod=users');
+        }
+        if (delete_user_by_id($id_user)) {
+            header('location: ?mod=users');
+        }
+    } else {
         header('location: ?mod=users');
     }
-    if (delete_cmt_by_id($id_user)) {
-        header('location: ?mod=users');
-    }
-    if (delete_user_by_id($id_user)) {
-        header('location: ?mod=users');
-    }
-} else {
-    header('location: ?mod=users');
-}
 }
 
 //{
-    //$id_user = isset($_GET['id']) ? intval($_GET['id']) : "";
-    
-        //delete_user_by_id($id_user);
-        //$data = [
-        //    'message' => "Thực hiện xoá thành công",
-        //];
-    
-    //load_view("delete", $data);
+//$id_user = isset($_GET['id']) ? intval($_GET['id']) : "";
+
+//delete_user_by_id($id_user);
+//$data = [
+//    'message' => "Thực hiện xoá thành công",
+//];
+
+//load_view("delete", $data);
 //}
 function addAction()
 {
@@ -66,7 +67,7 @@ function addAction()
             $error['phone'] = "Không được để trống trường này";
         } else {
             if (!is_phone($_POST['phone'])) {
-                $error['phone'] = "Mật khẩu là số và bao gồm 10 số";
+                $error['phone'] = "Số điện thoại bao gồm 10 số";
             } else {
                 $phone = $_POST['phone'];
             }
@@ -124,7 +125,6 @@ function addAction()
             $dir = "public/images/user/";
             $file_name = $dir . $_FILES['file']['name'];
             $image =  $_FILES['file']['full_path'];
-            
         } else {
             $error['file'] = "Phải upload 1 file ảnh";
         }
@@ -175,7 +175,7 @@ function editAction()
             $error['phone'] = "Không được để trống trường này";
         } else {
             if (!is_phone($_POST['phone'])) {
-                $error['phone'] = "Mật khẩu phải là số và bao gồm 10 số";
+                $error['phone'] = "Số điện thoại bao gồm 10 số";
             } else {
                 $phone = $_POST['phone'];
             }
