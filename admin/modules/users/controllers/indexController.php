@@ -21,17 +21,34 @@ function indexAction()
     ];
     load_view('index', $data);
 }
-function deleteAction()
-{
-    $id_user = isset($_GET['id']) ? intval($_GET['id']) : "";
-    
-        delete_user_by_id($id_user);
-        $data = [
-            'message' => "Thực hiện xoá thành công",
-        ];
-    
-    load_view("delete", $data);
+function deleteAction(){
+
+if (isset($_GET['id'])) {
+    $id_user = $_GET['id'];
+    if (delete_order_tg_by_id($id_user)) {
+        header('location: ?mod=users');
+    }
+    if (delete_cmt_by_id($id_user)) {
+        header('location: ?mod=users');
+    }
+    if (delete_user_by_id($id_user)) {
+        header('location: ?mod=users');
+    }
+} else {
+    header('location: ?mod=users');
 }
+}
+
+//{
+    //$id_user = isset($_GET['id']) ? intval($_GET['id']) : "";
+    
+        //delete_user_by_id($id_user);
+        //$data = [
+        //    'message' => "Thực hiện xoá thành công",
+        //];
+    
+    //load_view("delete", $data);
+//}
 function addAction()
 {
     global $error, $notify, $fullname, $phone, $email, $address, $username, $password, $role, $active, $image, $finish, $failed;
