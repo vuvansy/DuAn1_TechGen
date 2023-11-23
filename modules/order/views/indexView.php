@@ -272,8 +272,11 @@ if (isset($_SESSION['is_login'])) {
 
 <?= $noti ?>
 
-<script>
-    (function validate() {
+<?php
+    if (isset($_SESSION['is_login'])) {
+        echo '
+            <script>
+                (function validate() {
         const name_delivery = document.getElementById("name_delivery");
         const name_error = document.querySelector(".name_delivery-message");
 
@@ -388,12 +391,13 @@ if (isset($_SESSION['is_login'])) {
             address_delivery.style.outline = "1px solid #000";
             address_error.textContent = "";
         }
-
-
-
-
     })();
-</script>
+            </script>
+        ';
+    }
+?>
+
+
 
 <?php
 get_footer();

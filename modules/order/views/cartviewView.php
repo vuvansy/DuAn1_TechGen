@@ -21,6 +21,10 @@ get_header();
                 </tr>
             <tbody id="dssp">
         ';
+            $payOrder = [
+                    1 => 'Tiền mặt',
+                    2 => 'Trực tuyến'
+            ];
             $status = [
                 0 => 'chờ xác nhận',
                 1 => 'đang vận chuyển',
@@ -35,7 +39,12 @@ get_header();
                 if(($order_list['order_status'] == 3) || ($order_list['order_status'] == 2))  {
                     $canRemove = '?mod=order&action=removeOrder&id=' . $order_list['id_order'];
                 } else {
-                    $canRemove = '?mod=order&action=cannotRemove';
+                    $canRemove = '?mod=order&action=cannotRemove&id=' . $order_list['id_order'];
+                }
+                if($order_list['order_status'] == 0) {
+                    $canCancel = '?mod=order&action=Cancel&id='.$order_list['id_order'];
+                } else {
+                    $canCancel = '?mod=order&action=cannotCancel&status=' . $order_list['order_status'];
                 }
                 $linkDetail ="?mod=order&action=orderDetail&keyOrder=" .$order_list['id_order'];
                 $order_html .= '
@@ -43,13 +52,16 @@ get_header();
                 <td>IT'.$order_list['id_order'].'</td>
                 <td>'.$order_list['order_quantity'].'</td>
                 <td>'.number_format($order_list['order_total'], 0, ',', '.').'</td>
-                <td>COD</td>
+                <td>'.$payOrder[$order_list['id_delivery']].'</td>
                 <td>'.$order_list['order_date'].'</td>
                 <td>'.$status[$order_list['order_status']].'</td>
                 <td>
                     <div class="bw">
                         <div class="left-tt">
                             <a style="color: blue;" href="'.$linkDetail.'">Chi tiết</a>
+                        </div>
+                        <div class="mid-tt">
+                            <a href="'.$canCancel.'">Hủy</a>
                         </div>
                         <div class="right-tt">
                             <a style="color: red;" href="'.$canRemove.'">Xóa</a>

@@ -69,7 +69,13 @@
 }
 .bw {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+
+}
+
+.bw .mid-tt a {
+    color: rgba(0,100,0,0.8);
+    text-decoration: none;
 }
 
 /* splq */
