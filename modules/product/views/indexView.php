@@ -84,7 +84,8 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
                     <h2>
                         <?php echo $product_id['product_name']; ?>
                     </h2>
-                    <p>Thương hiệu APPLE SKU | 220909018Mã vạch | 381525 </p>
+                    <p>Mã sản phẩm:
+                        <?php echo $product_id['id_product']; ?> </p>
                     <p class="short-describe">
                         <?php echo $product_id['product_desc']; ?>
                     </p>
@@ -93,13 +94,13 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
 
                 <!-- màu sắc -->
                 <div class="product-color">
-                    <p>MÀU SẮC: DEEP PURPLE</p>
+                    <p></p>
                     <!-- bảng màu -->
                     <div class="color-table">
-                        <button class="color-cell">Deep Purple</button>
-                        <button class="color-cell">Gold</button>
-                        <button class="color-cell">Silver</button>
-                        <button class="color-cell">Space Black</button>
+                        <button class="color-cell"></button>
+                        <button class="color-cell"></button>
+                        <button class="color-cell"></button>
+                        <button class="color-cell"></button>
                     </div>
 
                     <!-- bảng màu -->
@@ -108,38 +109,50 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
 
                 <!-- dụng lượng sản phẩm -->
                 <div class="product-GB">
-                    <p>DUNG LƯỢNG (ROM): 256GB</p>
+                    <p></p>
                     <div class="GB-table">
-                        <button class="GB-cell">1TB</button>
-                        <button class="GB-cell">512GB</button>
-                        <button class="GB-cell">256GB</button>
-                        <button class="GB-cell">128GB</button>
+                        <button class="GB-cell"></button>
+                        <button class="GB-cell"></button>
+                        <button class="GB-cell"></button>
+                        <button class="GB-cell"></button>
                     </div>
                 </div>
                 <!-- dụng lượng sản phẩm -->
 
                 <!-- giá sp -->
                 <div class="product-price">
-                    <div class="cost">
-                        <p>
-                            <?php echo currency_format($product_id['product_sale'], 'đ'); ?>
-                        </p>
-                    </div>
-                    <div class="sale">
-                        <p>
-                            <?php echo currency_format($product_id['product_price'], 'đ'); ?>
-                        </p>
-                        <small>
-                            <?php
-                            if ($product_id['product_sale'] > 0) {
-                                $sale = (($product_id['product_price'] - $product_id['product_sale']) / $product_id['product_price']) * 100;
-                            } else {
-                                $sale = 0;
-                            }
-                            ?>
-                            <?php echo round($sale, 1); ?>%
-                        </small>
-                    </div>
+                <?php
+                  
+                  if ($product_id['product_sale'] > 0) {
+                      $sale = (($product_id['product_price'] - $product_id['product_sale']) / $product_id['product_price']) * 100;
+                  } else {
+                      $sale = 0;
+                  }
+                  ?>
+                  <div class="cost">
+                      <?php if ($sale == 0):
+                          $gia = $product_id['product_price'];
+                          ?>
+                          <p >
+                            <?php echo currency_format($gia, 'đ'); ?>
+                          </p>
+                      </div>
+
+                      <div class="sale">
+                      <?php else:
+                          $gia = $product_id['product_sale'];
+                          ?>
+                          <p class="sale">   
+                              <?php echo currency_format($gia, 'đ'); ?>
+                          </p>
+                          <span >   
+                              <?php echo currency_format($product_id['product_price'], 'đ'); ?>
+                          </span>
+                          <small>
+                              <?php echo round($sale, 1); ?>%
+                          </small>
+                      <?php endif ?>
+                  </div>
                 </div>
                 <!-- giá sp -->
 
