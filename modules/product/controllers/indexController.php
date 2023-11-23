@@ -52,7 +52,7 @@ function errorAction()
     if (isset($_GET['id'])) {
         $id_product = $_GET['id'];
         // echo  $id_product;
-        $_SESSION['error'] = 'Vui lòng đăng nhập !';
+        $_SESSION['error'] = 'Mời bạn đăng nhập để bình luận !';
         $load_header = 'Location: ?mod=product&cation=index&id=' . $id_product;
         header($load_header);
     }
