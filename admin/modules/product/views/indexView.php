@@ -39,9 +39,9 @@ foreach ($get_product as $item) {
                 Danh sách hàng hóa
             </div>
             <?php 
-                if(isset($_SESSION['masew'])){
-                    echo $_SESSION['masew'];
-                    unset($_SESSION['masew']);
+                if(isset($_SESSION['maseww'])){
+                    echo $_SESSION['maseww'];
+                    unset($_SESSION['maseww']);
                 }
             ?>
             <div class="product-bar">
