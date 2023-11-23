@@ -72,9 +72,9 @@ get_header();
                     </tbody>
                 </table>
                 <div class="full-btn-comment-detail">
-                    <button  id="check-all" >Chọn tất cả</button>
+                    <!-- <button  id="check-all" >Chọn tất cả</button>
                     <button id="clear-all" >Bỏ chọn tất cả</button>
-                    <button id="btn-delete" name="btn-detele">Xóa tất cả</button>
+                    <button id="btn-delete" name="btn-detele">Xóa tất cả</button> -->
                 </div>
             </div>
         </div>
