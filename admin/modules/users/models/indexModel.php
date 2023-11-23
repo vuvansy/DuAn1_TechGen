@@ -23,7 +23,7 @@ function delete_order_tg_by_id($id_user){
 }
 
 function delete_cmt_by_id($id_user){
-  // $sql="DELETE FROM `gallery` WHERE `id_product`=".$id_product;
+
   return db_delete("comment", "`id_user` = '{$id_user}'");
 }
 
