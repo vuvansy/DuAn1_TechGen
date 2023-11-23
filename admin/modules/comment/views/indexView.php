@@ -9,7 +9,7 @@ get_header();
         <div class="sidebar-right">
             <div class="comment-list">
                 <div class="comment-title">
-                    Danh sách danh sách bình luận
+                    Danh sách  bình luận
                 </div>
             </div>
             <form action="" class="search-comment" method="POST">

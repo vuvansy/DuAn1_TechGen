@@ -160,7 +160,7 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
                                             labels: ['T1', 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 
                                             datasets: [{
-                                                    label: 'ĐH success',
+                                                    label: 'ĐH Thành Công',
                                                     data: [
                                                         <?php
                                                         for ($i = 1; $i <= 12; $i++) {
@@ -172,7 +172,7 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
                                                     backgroundColor: '#008000',
                                                 },
                                                 {
-                                                    label: 'ĐH warning',
+                                                    label: 'ĐH Hủy',
                                                     data: [
                                                         <?php
                                                         for ($i = 1; $i <= 12; $i++) {
@@ -184,7 +184,7 @@ $current_year = $_GET['year'] ?? intval(date('Y'));
                                                     backgroundColor: '#DC143C',
                                                 },
                                                 {
-                                                    label: 'ĐH transport',
+                                                    label: 'ĐH Đang Giao',
                                                     data: [
                                                         <?php
                                                         for ($i = 1; $i <= 12; $i++) {
