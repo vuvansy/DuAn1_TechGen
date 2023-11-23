@@ -90,8 +90,8 @@ foreach ($get_product as $item) {
     </div>
 </main>
 <script>
-    var remove = document.getElementById("remove");
-    console.log(remove);
+    // var remove = document.getElementById("remove");
+    // console.log(remove);
     // remove.onclick = function(e) {
     //     // e.preventDefault();
     //     // e.stopPropagation();
