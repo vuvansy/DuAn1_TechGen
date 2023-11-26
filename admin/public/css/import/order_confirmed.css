@@ -1,13 +1,13 @@
-.transport-container {
+.confirmed_list-container {
     width: 119rem;
     margin: 0 0 181px 0;
     height: auto;
 }
 
-.transport-container .transport-heading {
+.confirmed_list-container .confirmed_list-heading {
     font-size: 2.8rem;
     font-weight: bold;
-    width: 38.5rem;
+    width: 35.5rem;
     height: 7.3rem;
     font-family: 'roboto', 'sans-serif';
     line-height: 7.3rem;
@@ -15,7 +15,7 @@
     margin-bottom: 1rem;
 }
 
-.transport-container .transport-bar {
+.confirmed_list-container .confirmed_list-bar {
     width: 100%;
     height: 4rem;
     display: flex;
@@ -24,7 +24,7 @@
     gap: 2rem;
 }
 
-.transport-container .transport-bar a {
+.confirmed_list-container .confirmed_list-bar a {
     display: block;
     font-size: 1.6rem;
     font-weight: 600;
@@ -34,47 +34,47 @@
     text-decoration: none;
 }
 
-.transport-container .transport-bar .cancel-btn-wait {
+.confirmed_list-container .confirmed_list-bar .cancel-btn-wait {
     padding: 1rem 2.7rem 1.1rem 2.7rem;
     background: #DDD;
 }
 
-.transport-container .transport-bar .cancel-btn-now {
+.confirmed_list-container .confirmed_list-bar .cancel-btn-confirm {
     padding: 1rem 1.3rem 1.1rem 1.3rem;
-    color: #fff;
     background: #F25C05;
+    color: #fff;
 }
 
-.transport-container .transport-bar .cancel-btn-confirmed {
+.confirmed_list-container .confirmed_list-bar .cancel-btn-now {
     padding: 1rem 1.3rem 1.1rem 1.3rem;
     background: #DDD;
 }
 
-.transport-container .transport-bar .cancel-btn-cancel {
+.confirmed_list-container .confirmed_list-bar .cancel-btn-cancel {
     padding: 1rem 2.3rem 1.1rem 2.3rem;
     background: #DDD;
 }
 
-.transport-container .transport-bar .cancel-btn-success {
+.confirmed_list-container .confirmed_list-bar .cancel-btn-success {
     padding: 1rem 2.4rem 1.1rem 2.3rem;
     background: #DDD;
 }
 
-.transport-container .container-content {
+.confirmed_list-container .container-content {
     border-radius: 1rem;
     border: 1px solid #DDD;
-    background: #FFF;
     margin-top: 1rem;
     padding-bottom: 2rem;
+    height: auto;
 }
 
-.transport-container .container-content .head {
+.confirmed_list-container .container-content .head {
     width: 100%;
     height: 4rem;
     border-bottom: 1px solid #DDD;
 }
 
-.transport-container .container-content .head .inline {
+.confirmed_list-container .container-content .head .inline {
     display: flex;
     height: 4rem;
     padding: 0 4rem;
@@ -82,12 +82,13 @@
     gap: 1rem;
 }
 
-.transport-container .container-content .content-list {
+.confirmed_list-container .container-content .content-list {
     margin: 2rem auto 0 auto;
     width: 111rem;
+    height: auto;
 }
 
-.transport-container .container-content .content-list .content-bar {
+.confirmed_list-container .container-content .content-list .content-bar {
     display: grid;
     width: 111rem;
     grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 14.2rem 10rem 11rem;
@@ -98,10 +99,10 @@
     line-height: 3rem;
 }
 
-.transport-container .container-content .content-list .list-group .list-item {
+.confirmed_list-container .container-content .content-list .list-group .list-item {
     display: grid;
     width: 111rem;
-    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 14.2rem 10rem 10.9rem;
+    grid-template-columns: 10rem 15rem 13rem 18.5rem 19.3rem 14.2rem 10rem 11rem;
     color: #000;
     height: 3rem;
     text-align: center;
@@ -112,28 +113,42 @@
     border-top: none;
 }
 
-.transport-container .container-content .content-list .list-group .list-item td {
+.confirmed_list-container .container-content .content-list .list-group .list-item td {
     border-right: 1px solid #DDD;
     border-left: none;
     border-top: none;
     border-bottom: none;
 }
 
-.transport-container .container-content .content-list .list-group .list-item .icon-order {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.confirmed_list-container .container-content .content-list .list-group .list-item td a {
+    text-decoration: none;
+    color: #000;
 }
 
-.transport-container .container-content .content-list .list-group .list-item .update-order a {
+.confirmed_list-container .container-content .content-list .list-group .list-item .update-order a {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-.transport-container .container-content .content-list .list-group .list-item .detail-order a {
+.confirmed_list-container .container-content .content-list .list-group .list-item .icon-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmed_list-container .container-content .content-list .list-group .list-item .icon-order label input[name='select-order'] {
+    border: 1px solid #000;
+    outline: none;
+    border-radius: 0;
+}
+
+.confirmed_list-container .container-content .content-list .list-group .list-item .detail-order {
+    display: block;
     color: #000;
     text-decoration: none;
 }
+

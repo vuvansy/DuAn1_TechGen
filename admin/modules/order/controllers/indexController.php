@@ -40,13 +40,36 @@ function update_statusAction() {
     if(isset($_GET['key']) && ($_GET['key'] != '')) {
         $page = [
             0 => 'index',
-            1 => 'transport',
-            2 => 'cancel',
-            3 => 'success'
+            1 => 'confirmed',
+            2 => 'transport',
+            3 => 'cancel',
+            4 => 'success'
         ];
         $id = $_GET['key'];
         $data['order_status'] = $_POST['status_order'];
         $backLink = 'Location: ?mod=order&action=' . $page[$_POST['status_order']];
+        if($_POST['status_order'] == 2) {
+            $detail = get_detail_order_by_id_order($id);
+            foreach($detail as $item) {
+                $id_product = $item['id_product'];
+                $product = get_product_by_id($id_product)[0];
+                $quantity_product = $product['product_quantity'];
+                $quantity_order = $item['order_detail_quantity'];
+                $new_quantity = $quantity_order + $quantity_product;
+                set_cancel_quantity_product($id_product, $new_quantity);
+            }
+        }
+        if($_POST['status_order'] == 1) {
+            $detail = get_detail_order_by_id_order($id);
+            foreach($detail as $item) {
+                $id_product = $item['id_product'];
+                $product = get_product_by_id($id_product)[0];
+                $quantity_product = $product['product_quantity'];
+                $quantity_order = $item['order_detail_quantity'];
+                $new_quantity = $quantity_product - $quantity_order;
+                set_confirmed_quantity_product($id_product, $new_quantity);
+            }
+        }
         $where = "id_order = " . $id;
         update_order_status($data, $where);
         header($backLink);
@@ -59,6 +82,11 @@ function transportAction()
 {
     $data['orderListTrans'] = get_order_trans();
     load_view('transport', $data);
+}
+
+function confirmedAction() {
+    $data['orderConfirmedList'] = get_order_confirm();
+    load_view('confirmed', $data);
 }
 
 function detailAction()

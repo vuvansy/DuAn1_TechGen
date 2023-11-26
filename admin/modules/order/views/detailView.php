@@ -43,6 +43,10 @@ get_header();
                         Chờ xác nhận
                     </a>
 
+                    <a href="?mod=order&action=confirmed" class="cancel-btn-confirm">
+                        Đã xác nhận
+                    </a>
+
                     <a href="?mod=order&action=transport" class="cancel-btn-now">
                         Đang vận chuyển
                     </a>

@@ -39,6 +39,11 @@
     background: #DDD;
 }
 
+.success-container .success-bar .cancel-btn-confirm {
+    padding: 1rem 1.3rem 1.1rem 1.3rem;
+    background: #DDD;
+}
+
 .success-container .success-bar .cancel-btn-now {
     padding: 1rem 1.3rem 1.1rem 1.3rem;
     background: #DDD;

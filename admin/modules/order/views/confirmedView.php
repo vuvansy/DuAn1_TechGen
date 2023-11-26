@@ -12,7 +12,7 @@ $status = [
     6 => 'đã giao hàng',
 ];
 $oder_wait_html = '';
-foreach ($orderListWait as $value) {
+foreach ($orderConfirmedList as $value) {
     $updateLink = "?mod=order&action=confirm_update&key=" . $value['id_order'] ;
     $detailLink = "?mod=order&action=detail&key=" . $value['id_order'] ;
     $oder_wait_html .= '
@@ -61,60 +61,60 @@ foreach ($orderListWait as $value) {
 }
 ?>
 
-<main>
-    <div class="main-wrapper">
-        <?php
-        get_sidebar();
-        ?>
-        <div class="sidebar-right">
-            <section class="confirm_list-container">
+    <main>
+        <div class="main-wrapper">
+            <?php
+            get_sidebar();
+            ?>
+            <div class="sidebar-right">
+                <section class="confirmed_list-container">
 
-                <div class="confirm_list-heading">
-                    Danh sách chờ xác nhận
-                </div>
-
-                <div class="confirm_list-bar">
-
-                    <a href="?mod=order&action=index" class="cancel-btn-wait">
-                        Chờ xác nhận
-                    </a>
-
-                    <a href="?mod=order&action=confirmed" class="cancel-btn-confirm">
-                        Đã xác nhận
-                    </a>
-
-                    <a href="?mod=order&action=transport" class="cancel-btn-now">
-                        Đang vận chuyển
-                    </a>
-
-                    <a href="?mod=order&action=cancel" class="cancel-btn-cancel">
-                        Đã hủy
-                    </a>
-
-                    <a href="?mod=order&action=success" class="cancel-btn-success">
-                        Đã hoàn thành
-                    </a>
-
-                </div>
-
-                <div class="container-content">
-
-                    <div class="head">
-                        <div class="inline">
-                            <div class="icon">
-                                <img src="./public/images/icon/border-all.svg" alt="">
-                            </div>
-                            <div class="heading">
-                                Danh sách khách hàng
-                            </div>
-                        </div>
+                    <div class="confirmed_list-heading">
+                        Danh sách đã xác nhận
                     </div>
 
-                    <form action="">
+                    <div class="confirmed_list-bar">
 
-                        <table class="content-list">
+                        <a href="?mod=order&action=index" class="cancel-btn-wait">
+                            Chờ xác nhận
+                        </a>
 
-                            <thead>
+                        <a href="?mod=order&action=confirmed" class="cancel-btn-confirm">
+                            Đã xác nhận
+                        </a>
+
+                        <a href="?mod=order&action=transport" class="cancel-btn-now">
+                            Đang vận chuyển
+                        </a>
+
+                        <a href="?mod=order&action=cancel" class="cancel-btn-cancel">
+                            Đã hủy
+                        </a>
+
+                        <a href="?mod=order&action=success" class="cancel-btn-success">
+                            Đã hoàn thành
+                        </a>
+
+                    </div>
+
+                    <div class="container-content">
+
+                        <div class="head">
+                            <div class="inline">
+                                <div class="icon">
+                                    <img src="./public/images/icon/border-all.svg" alt="">
+                                </div>
+                                <div class="heading">
+                                    Danh sách khách hàng
+                                </div>
+                            </div>
+                        </div>
+
+                        <form action="">
+
+                            <table class="content-list">
+
+                                <thead>
                                 <tr class="content-bar">
                                     <th></th>
                                     <th>Mã đơn hàng</th>
@@ -125,23 +125,23 @@ foreach ($orderListWait as $value) {
                                     <th>Cập nhật</th>
                                     <th>Chi tiết</th>
                                 </tr>
-                            </thead>
+                                </thead>
 
-                            <tbody class="list-group">
+                                <tbody class="list-group">
                                 <?=$oder_wait_html?>
-                            </tbody>
+                                </tbody>
 
-                        </table>
+                            </table>
 
-                    </form>
+                        </form>
 
 
-                </div>
+                    </div>
 
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
 <?php
 get_footer();
