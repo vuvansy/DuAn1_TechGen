@@ -28,24 +28,35 @@ if (isset($_SESSION['is_login'])) {
         ];
         $status = [
             0 => 'chờ xác nhận',
-            1 => 'đang vận chuyển',
-            2 => 'đã hủy',
-            3 => 'đã giao hàng',
+            1 => 'đã xác nhận',
+            2 => 'đang vận chuyển',
+            3 => 'đã hủy',
+            4 => 'đã giao hàng',
         ];
         $canRemove = '';
         foreach ($order_view as $order_list) {
-            if ($order_list['order_status'] == 4 || $order_list['order_status'] == 5) {
+            if ($order_list['order_status'] == 5 || $order_list['order_status'] == 6) {
                 continue;
             }
-            if (($order_list['order_status'] == 3) || ($order_list['order_status'] == 2)) {
-                $canRemove = '?mod=order&action=removeOrder&id=' . $order_list['id_order'];
+            if (($order_list['order_status'] == 3) || ($order_list['order_status'] == 4)) {
+                $hrefRemove = '?mod=order&action=removeOrder&id=' . $order_list['id_order'];
+                $canRemove = '
+                    <div class="right-tt">
+                        <a href="'.$hrefRemove.'">Xóa</a> 
+                    </div>
+                ';
             } else {
-                $canRemove = '?mod=order&action=cannotRemove&id=' . $order_list['id_order'];
+                $canRemove = '';
             }
             if ($order_list['order_status'] == 0) {
-                $canCancel = '?mod=order&action=Cancel&id=' . $order_list['id_order'];
+                $hrefCancel = '?mod=order&action=Cancel&id=' . $order_list['id_order'];
+                $canCancel = '
+                    <div class="mid-tt">
+                        <a href="'.$hrefCancel.'">Hủy</a>
+                    </div>
+                ';
             } else {
-                $canCancel = '?mod=order&action=cannotCancel&status=' . $order_list['order_status'];
+                $canCancel = '';
             }
             $linkDetail = "?mod=order&action=orderDetail&keyOrder=" . $order_list['id_order'];
             $order_html .= '
@@ -61,12 +72,8 @@ if (isset($_SESSION['is_login'])) {
                         <div class="left-tt">
                             <a style="color: blue;" href="' . $linkDetail . '">Chi tiết</a>
                         </div>
-                        <div class="mid-tt">
-                            <a href="' . $canCancel . '">Hủy</a>
-                        </div>
-                        <div class="right-tt">
-                            <a style="color: red;" href="' . $canRemove . '">Xóa</a>
-                        </div>
+                        ' . $canCancel . '
+                        ' . $canRemove . '
                     </div>
                 </td>
             </tr>

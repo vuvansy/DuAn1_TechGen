@@ -78,6 +78,11 @@
     text-decoration: none;
 }
 
+.bw .right-tt a {
+    color: rgba(255,0,0,1);
+    text-decoration: none;
+}
+
 /* splq */
 .cartView__control {
     margin-top: 30px;

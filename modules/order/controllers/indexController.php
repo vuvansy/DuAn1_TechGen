@@ -153,7 +153,6 @@ function payAction() {
 //        show_array($_SESSION['cart']);
 //        show_array($order);
         foreach ($_SESSION['cart'] as $item) {
-            set_down_quantity($item['id'], $item['count']);
             $order_detail['id_order_detail'] = null;
             $order_detail['id_product'] = $item['id'];
             $order_detail['id_order'] = $id_order;
@@ -206,41 +205,18 @@ function CancelAction() {
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
         set_cancel_order($id);
+        $detail_order = get_detail_order($id);
+        show_array($detail_order);
+        foreach ($detail_order as $detail) {
+            $quantity_product = (get_product_by_id($detail['id_product']))['product_quantity'];
+            $new_quantity = $quantity_product + $detail['order_detail_quantity'];
+            set_up_product_quantity($detail['id_product'],$new_quantity);
+        }
         $_SESSION['alert_cannot_remove'] = '<script>
         alert("Bạn đã hủy đơn hàng có mã IT'.$id.' !")
         </script>';
         header('location: ?mod=order&action=cartview');
     }
-}
-
-function cannotRemoveAction() {
-    if(isset($_GET['id'])) {
-        $id = $_GET['id'];
-    $_SESSION['alert_cannot_remove'] = '<script>
-        alert("Đơn hàng IT'.$id.' đang trong trạng thái xử lý ! Bạn không thể xóa")
-    </script>';
-    header('location: ?mod=order&action=cartview');
-    } else {
-        header('location: ?mod=order&action=cartview');
-    }
-}
-
-function cannotCancelAction() {
-    if(isset($_GET['status'])) {
-        $status = $_GET['status'];
-    } else {
-        $status = 6;
-    }
-    $status_arr = [
-        1 => 'đang vận chuyển',
-        2 => 'đã hủy',
-        3 => 'đã giao hàng',
-        6 => 'đang xử lý',
-    ];
-    $_SESSION['alert_cannot_remove'] = '<script>
-        alert("Bạn không thể hủy đơn hàng có trạng thái '.$status_arr[$status].' !")
-    </script>';
-    header('location: ?mod=order&action=cartview');
 }
 
 function successAction()
