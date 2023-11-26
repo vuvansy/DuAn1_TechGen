@@ -40,6 +40,11 @@
     color: #fff;
 }
 
+.confirm_update-container .confirm_update-bar .cancel-btn-confirm {
+    padding: 1rem 1.3rem 1.1rem 1.3rem;
+    background: #DDD;
+}
+
 .confirm_update-container .confirm_update-bar .cancel-btn-now {
     padding: 1rem 1.3rem 1.1rem 1.3rem;
     background: #DDD;

@@ -40,6 +40,11 @@
     background: #F25C05;
 }
 
+.detail-container .detail-bar .cancel-btn-confirm {
+    padding: 1rem 1.3rem 1.1rem 1.3rem;
+    background: #DDD;
+}
+
 .detail-container .detail-bar .cancel-btn-now {
     padding: 1rem 1.3rem 1.1rem 1.3rem;
     background: #DDD;

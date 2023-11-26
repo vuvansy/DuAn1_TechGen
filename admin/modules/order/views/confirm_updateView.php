@@ -8,16 +8,20 @@ $status = [
         'value' => 0
     ],
     [
-        'status' => 'đang vận chuyển',
+        'status' => 'đã xác nhận',
         'value' => 1
     ],
     [
-        'status' => 'đã hủy',
+        'status' => 'đang vận chuyển',
         'value' => 2
     ],
     [
-        'status' => 'đã giao hàng',
+        'status' => 'đã hủy',
         'value' => 3
+    ],
+    [
+        'status' => 'đã giao hàng',
+        'value' => 4
     ],
 ];
 $newStatus = [];
@@ -56,6 +60,10 @@ foreach ($newStatus as $item) {
 
                     <a href="?mod=order&action=index" class="cancel-btn-wait">
                         Chờ xác nhận
+                    </a>
+
+                    <a href="?mod=order&action=confirmed" class="cancel-btn-confirm">
+                        Đã xác nhận
                     </a>
 
                     <a href="?mod=order&action=transport" class="cancel-btn-now">
