@@ -37,12 +37,6 @@ function set_cancel_order($order) {
     return db_update('order_tg', $data, $where);
 }
 
-function set_up_product_quantity($id,$quantity) {
-    $data['product_quantity'] = $quantity;
-    $where = 'id_product = ' . $id;
-    return db_update('product', $data, $where);
-}
-
 function get_status_order_by_id_order($id_order) {
     $sql = "SELECT `order_status` FROM `order_tg` WHERE `id_order` = " . $id_order;
     return db_fetch_row($sql);
