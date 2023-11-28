@@ -205,13 +205,6 @@ function CancelAction() {
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
         set_cancel_order($id);
-        $detail_order = get_detail_order($id);
-        show_array($detail_order);
-        foreach ($detail_order as $detail) {
-            $quantity_product = (get_product_by_id($detail['id_product']))['product_quantity'];
-            $new_quantity = $quantity_product + $detail['order_detail_quantity'];
-            set_up_product_quantity($detail['id_product'],$new_quantity);
-        }
         $_SESSION['alert_cannot_remove'] = '<script>
         alert("Bạn đã hủy đơn hàng có mã IT'.$id.' !")
         </script>';
