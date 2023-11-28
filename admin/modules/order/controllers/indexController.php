@@ -48,26 +48,32 @@ function update_statusAction() {
         $id = $_GET['key'];
         $data['order_status'] = $_POST['status_order'];
         $backLink = 'Location: ?mod=order&action=' . $page[$_POST['status_order']];
-        if($_POST['status_order'] == 2) {
-            $detail = get_detail_order_by_id_order($id);
-            foreach($detail as $item) {
-                $id_product = $item['id_product'];
-                $product = get_product_by_id($id_product)[0];
-                $quantity_product = $product['product_quantity'];
-                $quantity_order = $item['order_detail_quantity'];
-                $new_quantity = $quantity_order + $quantity_product;
-                set_cancel_quantity_product($id_product, $new_quantity);
+        $order_status = (get_part_order_by_id($id))[0]['order_status'];
+        var_dump($order_status);
+        if($order_status == 0) {
+            if($_POST['status_order'] == 1) {
+                $detail = get_detail_order_by_id_order($id);
+                foreach($detail as $item) {
+                    $id_product = $item['id_product'];
+                    $product = get_product_by_id($id_product)[0];
+                    $quantity_product = $product['product_quantity'];
+                    $quantity_order = $item['order_detail_quantity'];
+                    $new_quantity = $quantity_product - $quantity_order;
+                    set_confirmed_quantity_product($id_product, $new_quantity);
+                }
             }
         }
-        if($_POST['status_order'] == 1) {
-            $detail = get_detail_order_by_id_order($id);
-            foreach($detail as $item) {
-                $id_product = $item['id_product'];
-                $product = get_product_by_id($id_product)[0];
-                $quantity_product = $product['product_quantity'];
-                $quantity_order = $item['order_detail_quantity'];
-                $new_quantity = $quantity_product - $quantity_order;
-                set_confirmed_quantity_product($id_product, $new_quantity);
+        if($order_status == 1 || $order_status == 2) {
+            if($_POST['status_order'] == 3) {
+                $detail = get_detail_order_by_id_order($id);
+                foreach($detail as $item) {
+                    $id_product = $item['id_product'];
+                    $product = get_product_by_id($id_product)[0];
+                    $quantity_product = $product['product_quantity'];
+                    $quantity_order = $item['order_detail_quantity'];
+                    $new_quantity = $quantity_order + $quantity_product;
+                    set_cancel_quantity_product($id_product, $new_quantity);
+                }
             }
         }
         $where = "id_order = " . $id;
