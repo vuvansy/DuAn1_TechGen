@@ -60,8 +60,7 @@ foreach ($category_new as $value) {
             <?php 
                 if(isset($_SESSION['masew'])){
                     echo $_SESSION['masew'];
-                    unset($_SESSION['masew']);
-                }
+                    unset($_SESSION['masew']);}
             ?>
             <div class="product-bar">
                 <a href="?mod=product&action=index" class="product-btn-list">Danh sách</a>
@@ -89,18 +88,21 @@ foreach ($category_new as $value) {
                             <div class="input-text">
                                 <label for="">Tên sản phẩm</label>
                                 <input value="<?= $item_name ?>" type="text" id="product_name" name="product_name" placeholder="Tên sản phẩm">
+                                <?php echo form_error("product_name") ?>
                             </div>
                             <div class="input-text">
                                 <label for="">Đơn giá</label>
                                 <input value="<?= $item_price ?>" type="text" id="product_price" name="product_price" placeholder="Đơn giá">
+                                <?php echo form_error("product_price") ?>
                             </div>
                             <div class="input-text">
                                 <label for="">Giảm giá</label>
-                                <input value="<?= $item_sale ?>" type="text" id="product_sale" name="product_sale" placeholder="Giảm giá">
+                                <input value="<?= $item_sale ?>" type="text" id="product_sale" name="product_sale" placeholder="Giảm giá">                              
                             </div>
                             <div class="input-text">
                                 <label for="">Số lượng</label>
                                 <input value="<?= $item_quantity ?>" type="text" id="product_quantity" name="product_quantity" placeholder="Số lượng">
+                                <?php echo form_error("product_quantity") ?>
                             </div>
                             <div class="input-text">
                                 <label for="">Loại hàng</label>
@@ -111,6 +113,7 @@ foreach ($category_new as $value) {
                             <div class="input-text">
                                 <label for="">Ngày nhập</label>
                                 <input value="<?= $item_date ?>" type="date" id="date_import" name="date_import" placeholder="Ngày nhập">
+                                <?php echo form_error("date_import") ?>
                             </div>
                             <div class="input-text">
                                 <label for="">Tùy chọn</label>
@@ -137,10 +140,12 @@ foreach ($category_new as $value) {
                             <div class="input-desc">
                                 <label for="">Mô tả ngắn</label>
                                 <textarea name="product_desc" id="product_desc"><?= $item_desc ?></textarea>
+                                <?php echo form_error("product_desc") ?>
                             </div>
                             <div class="input-desc">
                                 <label for="">Nội dung</label>
                                 <textarea name="product_content" id="product_content" class="input-content"><?= $item_content ?></textarea>
+                                <?php echo form_error("product_content") ?>
                             </div>
                             <div class="box-btn-button">
                                 <input class="btn-button" type="submit" name="btn-edit-product" id="btn-list" value="Cập Nhật">

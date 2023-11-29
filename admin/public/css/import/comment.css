@@ -344,7 +344,9 @@
 .full-btn-comment-detail {
     width: 95%;
     display: flex;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .full-btn-comment-detail a:hover {

@@ -28,12 +28,12 @@ $imagesURL = "public/images";
 
                     ?>
                         <div class="product-sales__item">
-                            <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
+                            <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>">
                                 <img src="public/images/product/<?php echo $item['product_image'] ?>" alt="" class="thumb">
                             </a>
                             <div class="product-sales__info">
                                 <h3 class="product-sales__info--title">
-                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
+                                    <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
                                         <?php echo $item['product_name'] ?>
                                     </a>
                                 </h3>
@@ -126,13 +126,13 @@ $imagesURL = "public/images";
                         }
                     ?>
                         <div class="product__item">
-                            <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
+                            <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>">
                                 <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
                             </a>
                             <div class="product__info">
                                 <h3 class="product__info--title">
                                     <span class="product-brand"><?php echo $category['category_name'] ?></span>
-                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
+                                    <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
                                         <?php echo $item['product_name'] ?>
                                     </a>
                                 </h3>
@@ -189,13 +189,13 @@ $imagesURL = "public/images";
                         }
                     ?>
                         <div class="product__item">
-                            <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
+                            <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>">
                                 <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
                             </a>
                             <div class="product__info">
                                 <h3 class="product__info--title">
                                     <span class="product-brand"><?php echo $category['category_name'] ?></span>
-                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
+                                    <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
                                         <?php echo $item['product_name'] ?>
                                     </a>
                                 </h3>
@@ -252,13 +252,13 @@ $imagesURL = "public/images";
                         }
                     ?>
                         <div class="product__item">
-                            <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
+                            <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>">
                                 <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
                             </a>
                             <div class="product__info">
                                 <h3 class="product__info--title">
                                     <span class="product-brand"><?php echo $category['category_name'] ?></span>
-                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
+                                    <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
                                         <?php echo $item['product_name'] ?>
                                     </a>
                                 </h3>

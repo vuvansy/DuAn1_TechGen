@@ -2,24 +2,114 @@
 get_header();
 ?>
 <?php
-$status = [
-    [
-        'status' => 'chờ xác nhận',
-        'value' => 0
-    ],
-    [
-        'status' => 'đang vận chuyển',
-        'value' => 1
-    ],
-    [
-        'status' => 'đã hủy',
-        'value' => 2
-    ],
-    [
-        'status' => 'đã giao hàng',
-        'value' => 3
-    ],
-];
+//var_dump($order_update[0]['order_status']);
+switch ($order_update[0]['order_status']) {
+    case 1: {
+        $status = [
+            [
+                'status' => 'đang vận chuyển',
+                'value' => 2
+            ],
+            [
+                'status' => 'đã xác nhận',
+                'value' => 1
+            ],
+            [
+                'status' => 'đã hủy',
+                'value' => 3
+            ],
+        ];
+        break;
+    }
+    case 2: {
+        $status = [
+            [
+                'status' => 'đã hủy',
+                'value' => 3
+            ],
+            [
+                'status' => 'đã giao hàng',
+                'value' => 4
+            ],
+            [
+                'status' => 'đang vận chuyển',
+                'value' => 2
+            ],
+        ];
+        break;
+    }
+    default : {
+        $status = [
+            [
+                'status' => 'chờ xác nhận',
+                'value' => 0
+            ],
+            [
+                'status' => 'đã xác nhận',
+                'value' => 1
+            ],
+            [
+                'status' => 'đang vận chuyển',
+                'value' => 2
+            ],
+            [
+                'status' => 'đã hủy',
+                'value' => 3
+            ],
+            [
+                'status' => 'đã giao hàng',
+                'value' => 4
+            ],
+        ];
+        break;
+    }
+}
+if($order_update[0]['order_status'] == 0) {
+    $status = [
+        [
+            'status' => 'chờ xác nhận',
+            'value' => 0
+        ],
+        [
+            'status' => 'đã xác nhận',
+            'value' => 1
+        ],
+        [
+            'status' => 'đang vận chuyển',
+            'value' => 2
+        ],
+        [
+            'status' => 'đã hủy',
+            'value' => 3
+        ],
+        [
+            'status' => 'đã giao hàng',
+            'value' => 4
+        ],
+    ];
+}
+//$status = [
+//    [
+//        'status' => 'chờ xác nhận',
+//        'value' => 0
+//    ],
+//    [
+//        'status' => 'đã xác nhận',
+//        'value' => 1
+//    ],
+//    [
+//        'status' => 'đang vận chuyển',
+//        'value' => 2
+//    ],
+//    [
+//        'status' => 'đã hủy',
+//        'value' => 3
+//    ],
+//    [
+//        'status' => 'đã giao hàng',
+//        'value' => 4
+//    ],
+//];
 $newStatus = [];
 $option_html = '';
 $index = 0;
@@ -56,6 +146,10 @@ foreach ($newStatus as $item) {
 
                     <a href="?mod=order&action=index" class="cancel-btn-wait">
                         Chờ xác nhận
+                    </a>
+
+                    <a href="?mod=order&action=confirmed" class="cancel-btn-confirm">
+                        Đã xác nhận
                     </a>
 
                     <a href="?mod=order&action=transport" class="cancel-btn-now">

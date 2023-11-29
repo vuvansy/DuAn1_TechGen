@@ -1,14 +1,15 @@
 <?php
 get_header();
+$imagesURL = "public/images";
 ?>
 <?php
-    if(isset($_SESSION['is_login'])) {
-        $order_view = get_order_by_id_user(info_user(user_login(), 'id_user'));
-        $order_html = '';
-        if(empty($order_view)) {
-            $order_html .= '<h1>bạn chưa có đơn hàng nào !</h1>';
-        } else {
-            $order_html = '
+if (isset($_SESSION['is_login'])) {
+    $order_view = get_order_by_id_user(info_user(user_login(), 'id_user'));
+    $order_html = '';
+    if (empty($order_view)) {
+        $order_html .= '<h1>bạn chưa có đơn hàng nào !</h1>';
+    } else {
+        $order_html = '
              <table>
                 <tr>
                     <th>Mã đơn hàng</th>
@@ -21,39 +22,58 @@ get_header();
                 </tr>
             <tbody id="dssp">
         ';
-            $status = [
-                0 => 'chờ xác nhận',
-                1 => 'đang vận chuyển',
-                2 => 'đã hủy',
-                3 => 'đã giao hàng',
-            ];
-            $canRemove = '';
-            foreach ($order_view as $order_list) {
-                if($order_list['order_status'] == 4 || $order_list['order_status'] == 5) {
-                    continue;
-                }
-                if(($order_list['order_status'] == 3) || ($order_list['order_status'] == 2))  {
-                    $canRemove = '?mod=order&action=removeOrder&id=' . $order_list['id_order'];
-                } else {
-                    $canRemove = '?mod=order&action=cannotRemove';
-                }
-                $linkDetail ="?mod=order&action=orderDetail&keyOrder=" .$order_list['id_order'];
-                $order_html .= '
+        $payOrder = [
+            1 => 'Tiền mặt',
+            2 => 'Trực tuyến'
+        ];
+        $status = [
+            0 => 'chờ xác nhận',
+            1 => 'đã xác nhận',
+            2 => 'đang vận chuyển',
+            3 => 'đã hủy',
+            4 => 'đã giao hàng',
+        ];
+        $canRemove = '';
+        foreach ($order_view as $order_list) {
+            if ($order_list['order_status'] == 5 || $order_list['order_status'] == 6) {
+                continue;
+            }
+            if (($order_list['order_status'] == 3) || ($order_list['order_status'] == 4)) {
+                $hrefRemove = '?mod=order&action=removeOrder&id=' . $order_list['id_order'];
+                $canRemove = '
+                    <div class="right-tt">
+                        <a href="' . $hrefRemove . '">Xóa</a> 
+                    </div>
+                ';
+            } else {
+                $canRemove = '';
+            }
+            if ($order_list['order_status'] == 0) {
+                $hrefCancel = '?mod=order&action=Cancel&id=' . $order_list['id_order'];
+                $canCancel = '
+                    <div class="mid-tt">
+                        <a href="' . $hrefCancel . '">Hủy</a>
+                    </div>
+                ';
+            } else {
+                $canCancel = '';
+            }
+            $linkDetail = "?mod=order&action=orderDetail&keyOrder=" . $order_list['id_order'];
+            $order_html .= '
              <tr>
-                <td>IT'.$order_list['id_order'].'</td>
-                <td>'.$order_list['order_quantity'].'</td>
-                <td>'.number_format($order_list['order_total'], 0, ',', '.').'</td>
-                <td>COD</td>
-                <td>'.$order_list['order_date'].'</td>
-                <td>'.$status[$order_list['order_status']].'</td>
+                <td>IT' . $order_list['id_order'] . '</td>
+                <td>' . $order_list['order_quantity'] . '</td>
+                <td>' . number_format($order_list['order_total'], 0, ',', '.') . '</td>
+                <td>' . $payOrder[$order_list['id_delivery']] . '</td>
+                <td>' . $order_list['order_date'] . '</td>
+                <td>' . $status[$order_list['order_status']] . '</td>
                 <td>
                     <div class="bw">
                         <div class="left-tt">
-                            <a style="color: blue;" href="'.$linkDetail.'">Chi tiết</a>
+                            <a style="color: blue;" href="' . $linkDetail . '">Chi tiết</a>
                         </div>
-                        <div class="right-tt">
-                            <a style="color: red;" href="'.$canRemove.'">Xóa</a>
-                        </div>
+                        ' . $canCancel . '
+                        ' . $canRemove . '
                     </div>
                 </td>
             </tr>
@@ -62,12 +82,12 @@ get_header();
         $order_html .= '
             </tbody>
         </table>';
-        }
-    } else {
-        $order_html = '
+    }
+} else {
+    $order_html = '
             <h1>Bạn phải đăng nhập mới có thể quản lí đơn hàng</h1>
         ';
-    }
+}
 ?>
 
 <main>
@@ -80,7 +100,7 @@ get_header();
             <h1>Quản lí đơn hàng</h1>
             <div class="box">
                 <div class="box-left-0fnone">
-                    <?=$order_html?>
+                    <?= $order_html ?>
                 </div>
 
             </div>
@@ -88,144 +108,56 @@ get_header();
             <section class="productRelated">
                 <div class="productRelated__body">
                     <div class="productRelated__heading">
-                        <h2 class="heading lv1">SẢN PHẨM LIÊN QUAN</h2>
+                        <h2 class="heading lv1">SẢN PHẨM MỚI</h2>
                     </div>
                     <div class="product__list">
                         <!-- Product item 1  -->
-                        <div class="product__item">
-                            <a href="">
-                                <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                            </a>
-                            <div class="product__info">
-                                <h3 class="product__info--title">
-                                    <span class="product-brand">Apple</span>
-                                    <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
-                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                    </a>
-                                </h3>
-                                <div class="product__info--foot">
-                                    <div class="product__price">
-                                        <span class="latest-price">22.900.000đ</span>
-                                        <span class="price-and-discount">
-                                            <label class="price-old">29.900.000đ</label>
-                                            <small>10.1%</small>
-                                        </span>
+                        <?php
+                        $product_new = get_product_new();
+                        foreach ($product_new as $item) {
+                            $category = get_category_by_id($item['id_category']);
+                            if ($item['product_sale'] > 0) {
+                                $sale = (($item['product_price'] - $item['product_sale']) / $item['product_price']) * 100;
+                            } else {
+                                $sale = 0;
+                            }
+                        ?>
+                            <div class="product__item">
+                                <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>">
+                                    <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
+                                </a>
+                                <div class="product__info">
+                                    <h3 class="product__info--title">
+                                        <span class="product-brand"><?php echo $category['category_name'] ?></span>
+                                        <a href="?mod=product&action=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
+                                            <?php echo $item['product_name'] ?>
+                                        </a>
+                                    </h3>
+                                    <div class="product__info--foot">
+                                        <div class="product__price">
+                                            <?php if ($sale == 0) :
+                                                $gia = $item['product_price'];
+                                            ?>
+                                                <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                            <?php else :
+                                                $gia = $item['product_sale'];
+                                            ?>
+                                                <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                                <span class="price-and-discount">
+                                                    <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
+                                                    <small><?php echo round($sale, 1) ?>%</small>
+                                                </span>
+                                            <?php endif ?>
+                                        </div>
+                                        <a class="btn cart-btn" href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
+                                            Mua ngay
+                                        </a>
                                     </div>
-                                    <button class="btn cart-btn">
-                                        Mua ngay
-                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Product item 2  -->
-                        <div class="product__item">
-                            <a href="">
-                                <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                            </a>
-                            <div class="product__info">
-                                <h3 class="product__info--title">
-                                    <span class="product-brand">Apple</span>
-                                    <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
-                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                    </a>
-                                </h3>
-                                <div class="product__info--foot">
-                                    <div class="product__price">
-                                        <span class="latest-price">22.900.000đ</span>
-                                        <span class="price-and-discount">
-                                            <label class="price-old">29.900.000đ</label>
-                                            <small>10.1%</small>
-                                        </span>
-                                    </div>
-                                    <button class="btn cart-btn">
-                                        Mua ngay
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product item 3  -->
-                        <div class="product__item">
-                            <a href="">
-                                <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                            </a>
-                            <div class="product__info">
-                                <h3 class="product__info--title">
-                                    <span class="product-brand">Apple</span>
-                                    <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
-                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                    </a>
-                                </h3>
-                                <div class="product__info--foot">
-                                    <div class="product__price">
-                                        <span class="latest-price">22.900.000đ</span>
-                                        <span class="price-and-discount">
-                                            <label class="price-old">29.900.000đ</label>
-                                            <small>10.1%</small>
-                                        </span>
-                                    </div>
-                                    <button class="btn cart-btn">
-                                        Mua ngay
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product item 4  -->
-                        <div class="product__item">
-                            <a href="">
-                                <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                            </a>
-                            <div class="product__info">
-                                <h3 class="product__info--title">
-                                    <span class="product-brand">Apple</span>
-                                    <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
-                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                    </a>
-                                </h3>
-                                <div class="product__info--foot">
-                                    <div class="product__price">
-                                        <span class="latest-price">22.900.000đ</span>
-                                        <span class="price-and-discount">
-                                            <label class="price-old">29.900.000đ</label>
-                                            <small>10.1%</small>
-                                        </span>
-                                    </div>
-                                    <button class="btn cart-btn">
-                                        Mua ngay
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product item 5  -->
-                        <div class="product__item">
-                            <a href="">
-                                <img src="public/images/product/iphone/iphone14.webp" alt="" class="thumb">
-                            </a>
-                            <div class="product__info">
-                                <h3 class="product__info--title">
-                                    <span class="product-brand">Apple</span>
-                                    <a href="!#" class="line-clamp break-all line-2">
-                                        Điện thoại di động iPhone 14 Pro Max (128GB) - Chính hãng VN/A Điện thoại di
-                                        động iPhone 14 Pro Max (128GB) - Chính hãng VN/A
-                                    </a>
-                                </h3>
-                                <div class="product__info--foot">
-                                    <div class="product__price">
-                                        <span class="latest-price">22.900.000đ</span>
-                                        <span class="price-and-discount">
-                                            <label class="price-old">29.900.000đ</label>
-                                            <small>10.1%</small>
-                                        </span>
-                                    </div>
-                                    <button class="btn cart-btn">
-                                        Mua ngay
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </section>
@@ -234,10 +166,10 @@ get_header();
 </main>
 
 <?php
-    if(isset($_SESSION['alert_cannot_remove'])) {
-        echo $_SESSION['alert_cannot_remove'];
-        unset($_SESSION['alert_cannot_remove']);
-    }
+if (isset($_SESSION['alert_cannot_remove'])) {
+    echo $_SESSION['alert_cannot_remove'];
+    unset($_SESSION['alert_cannot_remove']);
+}
 ?>
 
 <?php

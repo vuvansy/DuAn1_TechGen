@@ -8,7 +8,10 @@ get_header();
         <div class="container">
             <div class="form__account">
                 <div class="account__inner">
-                    <h1 class="heading-title">KHÔI PHỤC MẬT KHẨU</h1>
+                    <div class="account__inner--title">
+                        <h1 class="heading-title">KHÔI PHỤC MẬT KHẨU</h1>
+                        <?php echo form_error('account'); ?>
+                    </div>
                     <form action="" id="form-login" method="POST">
 
                         <div class="form__group">
@@ -18,7 +21,6 @@ get_header();
                         </div>
 
                         <input type="submit" name="btn-reset" class="btn user__cta" id="btn-login" value="GỬI YÊU CẦU" />
-                        <?php echo form_error('account'); ?>
                     </form>
 
                 </div>

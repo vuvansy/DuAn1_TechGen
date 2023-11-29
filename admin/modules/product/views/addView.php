@@ -58,7 +58,7 @@ get_header();
                             <div class="input-text">
                                 <label for="">Tên sản phẩm</label>
                                 <input type="text" id="product_name" name="product_name" placeholder="Tên sản phẩm">
-                                <?php echo form_error("product_name") ?></p>
+                                <?php echo form_error("product_name") ?>
                             </div>
                             <div class="input-text">
                                 <label for="">Đơn giá</label>
@@ -72,7 +72,7 @@ get_header();
                             <div class="input-text">
                                 <label for="">Số lượng</label>
                                 <input type="text" id="product_quantity" name="product_quantity" placeholder="Số lượng">
-                                <?php echo form_error("product_quantity") ?></p>
+                                <?php echo form_error("product_quantity") ?>
                             </div>
                             <div class="input-text">
                                 <label for="">Loại hàng</label>
@@ -83,7 +83,7 @@ get_header();
                             <div class="input-text">
                                 <label for="">Ngày nhập</label>
                                 <input type="date" id="date_import" name="date_import" placeholder="Ngày nhập">
-                                <?php echo form_error("date_import") ?></p>
+                                <?php echo form_error("date_import") ?>
                             </div>
                             <div class="input-text">
                                 <label for="">Tùy chọn</label>
@@ -101,23 +101,23 @@ get_header();
                             <div class="input-text">
                                 <label for="">Hình ảnh</label>
                                 <input class="input-file" name="product_image" id="product_image" type="file">
-                                <?php echo form_error("product_image") ?></p>
+                                <?php echo form_error("product_image") ?>
                             </div>
                             <div class="input-text">
                                 <label for="">Ảnh chi tiết (4)</label>
                                 <input class="input-file" id="gallery_name" name="gallery_name[]" type="file" multiple>
-                                <?php echo form_error('gallery_name') ?></p>
+                                <?php echo form_error('gallery_name') ?>
                             </div>
 
                             <div class="input-desc">
                                 <label for="">Mô tả ngắn</label>
                                 <textarea name="product_desc" id="product_desc">Mô tả ngắn</textarea>
-                                <?php echo form_error("product_desc") ?></p>
+                                <?php echo form_error("product_desc") ?>
                             </div>
                             <div class="input-desc">
                                 <label for="">Nội dung</label>
                                 <textarea name="product_content" id="product_content" class="input-content">Nội dung</textarea>
-                                <?php echo form_error("product_content") ?></p>
+                                <?php echo form_error("product_content") ?>
                             </div>
                             <div class="box-btn-button">
                                 <input  class="btn-button" type="submit" name="btn-add-product" id="btn-list" value="Thêm mới">

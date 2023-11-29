@@ -10,6 +10,11 @@
     padding: 0;
     font: inherit;
 }
+.text-danger {
+    margin-top: 5px;
+    font-size: 1.3rem;
+    color: red;
+}
 img,
 picture,
 svg,

@@ -4,11 +4,12 @@ get_header();
 <?php
 $status = [
     0 => 'chờ xác nhận',
-    1 => 'đang vận chuyển',
-    2 => 'đã hủy',
-    3 => 'đã giao hàng',
-    4 => 'đã hủy',
-    5 => 'đã giao hàng',
+    1 => 'đã xác nhận',
+    2 => 'đang vận chuyển',
+    3 => 'đã hủy',
+    4 => 'đã giao hàng',
+    5 => 'đã hủy',
+    6 => 'đã giao hàng',
 ];
 $oder_trans_html = '';
 foreach ($orderListTrans as $value) {
@@ -74,6 +75,10 @@ foreach ($orderListTrans as $value) {
 
                     <a href="?mod=order&action=index" class="cancel-btn-wait">
                         Chờ xác nhận
+                    </a>
+
+                    <a href="?mod=order&action=confirmed" class="cancel-btn-confirmed">
+                        Đã xác nhận
                     </a>
 
                     <a href="?mod=order&action=transport" class="cancel-btn-now">

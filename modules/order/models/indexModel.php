@@ -31,12 +31,10 @@ function get_total_order($order) {
     return db_fetch_row($sql);
 }
 
-function set_down_quantity($id_product, $count) {
-    $product = get_product_by_id($id_product);
-    $product_quantity = $product['product_quantity'];
-    $data['product_quantity'] = $product_quantity - $count;
-    $where = 'id_product = ' . $id_product;;
-    return db_update('product', $data, $where);
+function set_cancel_order($order) {
+    $data['order_status'] = 3;
+    $where = 'id_order = ' . $order ;
+    return db_update('order_tg', $data, $where);
 }
 
 function get_status_order_by_id_order($id_order) {
@@ -46,8 +44,8 @@ function get_status_order_by_id_order($id_order) {
 
 function set_status_order_hidden($id_order) {
     $status_new = [
-        2 => 4,
-        3 => 5
+        3 => 5,
+        4 => 6
     ];
     $status_now = (get_status_order_by_id_order($id_order))['order_status'];
     $data['order_status'] = $status_new[$status_now];

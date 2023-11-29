@@ -139,7 +139,7 @@ function payAction() {
         $currentDate = date("Y-m-d");
         $order['id_order'] = null;
         $order['id_user'] = info_user(user_login(), 'id_user');;
-        $order['id_delivery'] = 1;
+        $order['id_delivery'] = $_POST['delivery-order'];
         $order['order_name'] = $_POST['name_delivery'];
         $order['order_total'] = $_POST['order_total'];
         $order['order_email'] = $_POST['email_delivery'];
@@ -150,9 +150,9 @@ function payAction() {
         $order['order_quantity'] = $_POST['order_quantity'];
         create_order($order);
         $id_order = (get_id_order_by_user(info_user(user_login(), 'id_user')))['id_order'];
-        show_array($_SESSION['cart']);
+//        show_array($_SESSION['cart']);
+//        show_array($order);
         foreach ($_SESSION['cart'] as $item) {
-            set_down_quantity($item['id'], $item['count']);
             $order_detail['id_order_detail'] = null;
             $order_detail['id_product'] = $item['id'];
             $order_detail['id_order'] = $id_order;
@@ -194,15 +194,22 @@ function removeOrderAction() {
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
         set_status_order_hidden($id);
+        $_SESSION['alert_cannot_remove'] = '<script>
+        alert("Bạn đã xóa đơn hàng có mã IT'.$id.' !")
+        </script>';
         header('location: ?mod=order&action=cartview');
     }
 }
 
-function cannotRemoveAction() {
-    $_SESSION['alert_cannot_remove'] = '<script>
-        alert("Đơn hàng này đang trong trạng thái xử lý ! Bạn không thể xóa")
-    </script>';
-    header('location: ?mod=order&action=cartview');
+function CancelAction() {
+    if(isset($_GET['id'])) {
+        $id = $_GET['id'];
+        set_cancel_order($id);
+        $_SESSION['alert_cannot_remove'] = '<script>
+        alert("Bạn đã hủy đơn hàng có mã IT'.$id.' !")
+        </script>';
+        header('location: ?mod=order&action=cartview');
+    }
 }
 
 function successAction()

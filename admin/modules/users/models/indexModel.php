@@ -16,10 +16,26 @@ function check_roles($user_id)
   }
   return false;
 }
+
+function delete_order_tg_by_id($id_user)
+{
+
+  return db_delete("order_tg", "`id_user` = '{$id_user}'");
+}
+
+function delete_cmt_by_id($id_user)
+{
+
+  return db_delete("comment", "`id_user` = '{$id_user}'");
+}
+
+
 function delete_user_by_id($user_id)
 {
   return db_delete("user", "`id_user` = '{$user_id}'");
 }
+
+
 function add_user($data)
 {
   return db_insert("user", $data);
@@ -33,11 +49,12 @@ function update_user($data, $id)
   return db_update("user", $data, "`id_user` = '{$id}'");
 }
 
-function check_exsist($username, $email) {
+function check_exsist($username, $email)
+{
   $check = db_num_rows("SELECT * FROM `user` WHERE `username` = '{$username}' OR `email` = '{$email}'");
-  if ($check > 0) 
+  if ($check > 0)
     return true;
-  else{
+  else {
     return false;
   }
 }
