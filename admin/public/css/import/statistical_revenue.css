@@ -1,7 +1,4 @@
 .revenue-container {
-    width: 119rem;
-    margin: 0 0 181px 0;
-    height: 727px;
 }
 
 .revenue-container .revenue-heading {
@@ -111,10 +108,8 @@
 
 .revenue-container .revenue_chart {
     display: flex;
-    width: 115rem;
-    height: 38.9rem;
+    flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
 }
 
 .revenue-container .revenue_chart .left {

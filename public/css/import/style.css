@@ -50,7 +50,9 @@
 .product-sales__item > a {
     padding: 10%;
     height: 300px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--background);
 }
 
@@ -222,7 +224,9 @@
 
 .product__item > a {
     padding: 6%;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--background);
 }
 
