@@ -1,46 +1,28 @@
-<?php get_header();
+<?php
+get_header();
 $imagesURL = "public/images";
+
 ?>
 <?php
-if (isset($_SESSION['is_login'])) {
-    $actionForm = '';
-    $error_html = '';
-    $id_user = info_user(user_login(), 'id_user');
-    // echo  $id_user;
-} else {
-    $actionForm = '?mod=product&action=error&id=' . $id_product;
-    // $load_error = 'Location: ?mod=product&cation=index&id= '. $id_product ;
-    $id_user = 0;
-    //var_dump($error);
-    // $error_html = '';
-    // if (isset($error)) {
-    //     $error_html = 'Vui lòng đăng nhập !';
-
-    // }
-    // // header( $load_error );
-}
-
 
 $comment_list = get_comment_by_product_id($id_product);
 $comment_html = '';
-foreach ($comment_list as $comment) {
-    $user_fullname = get_user_by_id_user($comment['id_user']);
-    // $user_fullname = get_fullname_user_by_id_user($id_user);
-    //show_array( $user_fullname);
-    // var_dump($comment);
-    $comment_html .= '
-    <div class="comment-user">
-    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
-    <div class="info-user">
-        <p><strong class="name">' . $user_fullname[0]['fullname'] . '</strong></p>
-        <div class="conten-comment">
-        ' . $comment['content'] . '
-        </div>
+// foreach ($comment_list as $comment) {
+//     $user_fullname = get_user_by_id_user($comment['id_user']);
+//     $comment_html .= '
+//     <div class="comment-user">
+//      <div class="img-user">
+//      </div>
+//      <div class="info-user">
+//         <p><strong class="name">'.$user_fullname[0]['fullname'] . '</strong></p>
+//         <div class="conten-comment">
+//         ' . $comment['content'] . '
+//         </div>
 
-    </div>
-    </div>
-    ';
-}
+//     </div>
+//     </div>
+//     ';
+// }
 $buyNow = '?mod=order&action=add&id=' . $id_product;
 $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
 
@@ -60,12 +42,15 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
                         <img src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>?>" alt="">
                     </div>
                     <ul class="list-thumb">
-                        <li class="thumb-item"><img src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>" alt=""></li>
+                        <li class="thumb-item"><img
+                                src="<?php echo $imagesURL ?>/product/<?php echo $product_id['product_image'] ?>"
+                                alt=""></li>
                         <?php
                         foreach ($list_gallery as $item) {
-                        ?>
-                            <li class="thumb-item"><img src="<?php echo $imagesURL ?>/gallery/<?php echo $item['gallery_name'] ?>" alt=""></li>
-                        <?php
+                            ?>
+                            <li class="thumb-item"><img
+                                    src="<?php echo $imagesURL ?>/gallery/<?php echo $item['gallery_name'] ?>" alt=""></li>
+                            <?php
                         }
                         ?>
 
@@ -85,7 +70,8 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
                         <?php echo $product_id['product_name']; ?>
                     </h2>
                     <p>Mã sản phẩm:
-                        <?php echo $product_id['id_product']; ?> </p>
+                        <?php echo $product_id['id_product']; ?>
+                    </p>
                     <p class="short-describe">
                         <?php echo $product_id['product_desc']; ?>
                     </p>
@@ -121,38 +107,38 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
 
                 <!-- giá sp -->
                 <div class="product-price">
-                <?php
-                  
-                  if ($product_id['product_sale'] > 0) {
-                      $sale = (($product_id['product_price'] - $product_id['product_sale']) / $product_id['product_price']) * 100;
-                  } else {
-                      $sale = 0;
-                  }
-                  ?>
-                  <div class="cost">
-                      <?php if ($sale == 0):
-                          $gia = $product_id['product_price'];
-                          ?>
-                          <p >
-                            <?php echo currency_format($gia, 'đ'); ?>
-                          </p>
-                      </div>
+                    <?php
 
-                      <div class="sale">
-                      <?php else:
-                          $gia = $product_id['product_sale'];
-                          ?>
-                          <p class="sale">   
-                              <?php echo currency_format($gia, 'đ'); ?>
-                          </p>
-                          <span >   
-                              <?php echo currency_format($product_id['product_price'], 'đ'); ?>
-                          </span>
-                          <small>
-                              <?php echo round($sale, 1); ?>%
-                          </small>
-                      <?php endif ?>
-                  </div>
+                    if ($product_id['product_sale'] > 0) {
+                        $sale = (($product_id['product_price'] - $product_id['product_sale']) / $product_id['product_price']) * 100;
+                    } else {
+                        $sale = 0;
+                    }
+                    ?>
+                    <div class="cost">
+                        <?php if ($sale == 0):
+                            $gia = $product_id['product_price'];
+                            ?>
+                            <p>
+                                <?php echo currency_format($gia, 'đ'); ?>
+                            </p>
+                        </div>
+
+                        <div class="sale">
+                        <?php else:
+                            $gia = $product_id['product_sale'];
+                            ?>
+                            <p class="sale">
+                                <?php echo currency_format($gia, 'đ'); ?>
+                            </p>
+                            <span>
+                                <?php echo currency_format($product_id['product_price'], 'đ'); ?>
+                            </span>
+                            <small>
+                                <?php echo round($sale, 1); ?>%
+                            </small>
+                        <?php endif ?>
+                    </div>
                 </div>
                 <!-- giá sp -->
 
@@ -258,47 +244,44 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
                 </h2>
             </div>
             <!-- indexView.php -->
-
-            <form id="comment-form" method="POST" action="<?= $actionForm ?>">
+            <!-- <?= $actionForm ?> form_error('content') -->
+            <form id="comment-form" method="POST" action="">
                 <h3>Bình luận</h3>
-                <input type="text" name="content" id="comment-input" placeholder="Nhập bình luận của bạn">
-                <input type="hidden" name="id_user_name" id="" value="<?= $id_user ?>">
-                <input class="comment-form-submit" type="submit" name="comment-form-submit" value="Gửi">
-
+                <input type="text" name="content" id="comment-input" value="" placeholder="Nhập bình luận của bạn">
                 <span class="error">
                     <?php
-                    if (isset($_SESSION['error'])) {
-                        echo $_SESSION['error'];
-                        unset($_SESSION['error']);
-                    }
+                     echo form_error('content');
                     ?>
-
                 </span>
-
+                <input class="comment-form-submit" type="submit" name="comment-form-submit" value="Gửi">
             </form>
             <div id="comment-list">
-                <?= $comment_html ?>
-                <!-- <div class="comment-user">
-                    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
-                    <div class="info-user">
-                        <p><strong class="name">khang</strong></p>
+                <!-- <?= $comment_html 
+                ?> -->
+                <?php
+                  foreach ($comment_list as $comment) { 
+                    $user_fullname = get_user_by_id_user($comment['id_user']);
+                     ?>
+                   
+                    <div class="comment-user">
+                     <div class="img-user">
+                         <?php 
+                             if($comment['id_user'] == info_user(user_login(), 'id_user')): ?>
+                              <img src="admin/public/images/user/<?php echo info_user(user_login(), 'image') ?>" alt="">
+                                 <?php else: ?>
+                                 <img src="public/images/user/user2.jpg" alt="">
+                                 <?php endif ?>
+                      </div>
+                     <div class="info-user">
+                        <p><strong class="name"><?php echo $user_fullname[0]['fullname']?></strong></p>
                         <div class="conten-comment">
-                            Mình cần mua trả góp iphone14promax 256gb trả trước 30%
+                          <?php echo  $comment['content']  ?>
                         </div>
                     </div>
-                </div> -->
-                <!-- admin -->
-                <!-- trả lời admin -->
-                <!-- Danh sách các bình luận sẽ được hiển thị ở đây -->
-                <!-- <div class="comment-user">
-                    <div class="img-user"><img src="public/images/logo/avt-user.png" alt=""></div>
-                    <div class="info-user">
-                        <p><strong class="name">khang</strong></p>
-                        <div class="conten-comment">
-                            Mình cần mua trả góp iphone14promax 256gb trả trước 30%
-                        </div>
                     </div>
-                </div> -->
+                  
+              <?php  }
+                ?>
             </div>
         </div>
 
@@ -319,41 +302,54 @@ $addToCar = '?mod=order&action=addToCar&id=' . $id_product;
                         } else {
                             $sale = 0;
                         }
-                    ?>
+                        ?>
                         <div class="product__item">
                             <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>">
-                                <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>" alt="<?php echo $category['category_name'] ?>" class="thumb">
+                                <img src="<?php echo $imagesURL ?>/product/<?php echo $item['product_image'] ?>"
+                                    alt="<?php echo $category['category_name'] ?>" class="thumb">
                             </a>
                             <div class="product__info">
                                 <h3 class="product__info--title">
-                                    <span class="product-brand"><?php echo $category['category_name'] ?></span>
-                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>" class="line-clamp break-all line-2">
+                                    <span class="product-brand">
+                                        <?php echo $category['category_name'] ?>
+                                    </span>
+                                    <a href="?mod=product&cation=index&id=<?php echo $item['id_product'] ?>"
+                                        class="line-clamp break-all line-2">
                                         <?php echo $item['product_name'] ?>
                                     </a>
                                 </h3>
                                 <div class="product__info--foot">
                                     <div class="product__price">
-                                        <?php if ($sale == 0) :
+                                        <?php if ($sale == 0):
                                             $gia = $item['product_price'];
-                                        ?>
-                                            <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
-                                        <?php else :
+                                            ?>
+                                            <span class="latest-price">
+                                                <?php echo currency_format($gia, 'đ'); ?>
+                                            </span>
+                                        <?php else:
                                             $gia = $item['product_sale'];
-                                        ?>
-                                            <span class="latest-price"><?php echo currency_format($gia, 'đ'); ?></span>
+                                            ?>
+                                            <span class="latest-price">
+                                                <?php echo currency_format($gia, 'đ'); ?>
+                                            </span>
                                             <span class="price-and-discount">
-                                                <label class="price-old"><?php echo currency_format($item['product_price'], 'đ'); ?></label>
-                                                <small><?php echo round($sale, 1) ?>%</small>
+                                                <label class="price-old">
+                                                    <?php echo currency_format($item['product_price'], 'đ'); ?>
+                                                </label>
+                                                <small>
+                                                    <?php echo round($sale, 1) ?>%
+                                                </small>
                                             </span>
                                         <?php endif ?>
                                     </div>
-                                    <a class="btn cart-btn" href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
+                                    <a class="btn cart-btn"
+                                        href="?mod=order&action=add&id=<?php echo $item['id_product'] ?>">
                                         Mua ngay
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    <?php
+                        <?php
                     }
                     ?>
                 </div>

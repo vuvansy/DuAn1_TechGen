@@ -1,44 +1,54 @@
 <?php
-
 function construct()
 {
-
+    load('lib', 'validation');
     load_model('index');
 }
 
 function indexAction()
+
 {
+   
     if (isset($_GET['id'])) {
         $id_product = $_GET['id'];
     }
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment-form-submit'])) {
-        $commentContent = $_POST['content'];
-        $id_user = $_POST['id_user_name'];
+    if (isset($_POST['comment-form-submit'])) {
+        global $error;
+        $error = array();
+        if(empty($_POST['content'])) {
+            $error['content'] = 'Vui lòng nhập nội dung';
+        } else {
+            $commentContent = $_POST['content'];
+        }
+         $id_user = info_user(user_login(), 'id_user') ;
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $currentDate = date("Y-m-d");
-        if (!empty($commentContent)) {
-            $data = array(
-                'content' => $commentContent,
-                'id_user' => $id_user,
-                'id_product' => $id_product,
-                'date_comment' => $currentDate
-            );
-            add_comment($data);
-            // show_array($_POST);
-            // echo 'Bình luận của bạn đã được gửi thành công!';
-        } else {
-            // echo 'Vui lòng nhập nội dung bình luận.';
-        }
-    }
-
+        
+        if (empty($error)) {
+            if(!empty(info_user(user_login(), 'id_user'))) {
+                $data = array(
+                    'content' => $commentContent,
+                    'id_user' => $id_user,
+                    'id_product' => $id_product,
+                    'date_comment' => $currentDate
+                );
+                  add_comment($data);
+                  $load_header = 'Location: ?mod=product&cation=index&id=' . $id_product;
+                  header($load_header);
+                  exit();
+            } else {
+                $error['content'] = 'Vui lòng đăng nhập để bình luận';
+               
+            }
+        } 
+    }  
+ 
     $product_id = get_product_by_id($id_product);
     // show_array($product_id);
     $data['product_id'] = $product_id;
-
     $list_gallery = get_gallery($id_product);
     // show_array($list_gallery);
     $data['list_gallery'] = $list_gallery;
-
     $list_comment = get_comment_by_product_id($id_product);
     $data['list_comment'] = $list_comment;
     $data['id_product'] = $id_product;
@@ -47,16 +57,16 @@ function indexAction()
     $data['view_product'] =  $view_product;
     load_view('index', $data);
 }
-function errorAction()
-{
-    if (isset($_GET['id'])) {
-        $id_product = $_GET['id'];
-        // echo  $id_product;
-        $_SESSION['error'] = 'Mời bạn đăng nhập để bình luận !';
-        $load_header = 'Location: ?mod=product&cation=index&id=' . $id_product;
-        header($load_header);
-    }
-}
+// function errorAction()
+// {
+//     if (isset($_GET['id'])) {
+//         $id_product = $_GET['id'];
+//         // echo  $id_product;
+//         $_SESSION['error'] = 'Mời bạn đăng nhập để bình luận !';
+//         $load_header = 'Location: ?mod=product&cation=index&id=' . $id_product;
+//         header($load_header);
+//     }
+// }
 
 function productListAction()
 {
